@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<article class="px-1">
+  <header>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-desc fw-light mb-4">{{ page.description }}</p>
+    {% endif %}
+
+    <div class="post-meta text-muted">
+      {% if page.stack %}
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+          {% for item in page.stack %}
+            <span class="proj-chip">{{ item }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="d-flex flex-wrap gap-3 mt-2">
+        {% if page.repo %}
+          <a class="proj-link" href="https://github.com/{{ page.repo }}" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+            <span>{{ page.repo }}</span>
+          </a>
+        {% endif %}
+        <a class="proj-link" href="{{ '/projects/' | relative_url }}">
+          <i class="fas fa-arrow-left"></i>
+          <span>All projects</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  {% if page.highlights %}
+    <div class="proj-metrics">
+      {% for metric in page.highlights %}
+        <div class="proj-metric">
+          <div class="proj-metric-value">{{ metric.value }}</div>
+          <div class="proj-metric-label">{{ metric.label }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <a class="proj-link" href="{{ '/projects/' | relative_url }}">
+        <i class="fas fa-arrow-left"></i>
+        <span>All projects</span>
+      </a>
+      {% if page.repo %}
+        <a class="proj-link" href="https://github.com/{{ page.repo }}" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+          <span>Source and full write-up on GitHub</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</article>

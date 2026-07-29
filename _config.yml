@@ -19,11 +19,12 @@ title: MVS Sri Harsha # the main title
 tagline: ML enthusiast # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  MVS Sri Harsha — machine learning engineer. LLM inference and serving,
+  agent reliability, and AI systems security, with measured results.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "harsha-moparthy.github.io"
+url: "https://harsha-moparthy.github.io"
 
 github:
   username: harsha-moparthy # change to your GitHub username
@@ -170,6 +171,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  projects:
+    output: true
+    sort_by: order
 
 defaults:
   - scope:
@@ -192,6 +196,12 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: projects # see `site.collections`
+    values:
+      layout: project
+      permalink: /projects/:name/
 
 sass:
   style: compressed
