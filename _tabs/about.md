@@ -34,8 +34,11 @@ machine-learning systems built across seven areas:
   **[GenAI Observability]({{ '/projects/genai-observability-otel/' | relative_url }})** — cost and
   observability: routing against the honest null of random-at-equal-spend, and instrumenting an LLM app
   to the OpenTelemetry GenAI conventions.
-- **[Synth Pipeline]({{ '/projects/synth-pipeline/' | relative_url }})** — training data: measuring
-  that unfiltered synthetic data made a model *worse* than no synthetic data at all.
+- **[Synth Pipeline]({{ '/projects/synth-pipeline/' | relative_url }})** and
+  **[Toolcall DPO]({{ '/projects/toolcall-dpo/' | relative_url }})** — training data and post-training:
+  measuring that unfiltered synthetic data made a model *worse* than no synthetic data at all, and
+  writing DPO and GRPO from scratch to watch GRPO raise its own reward while making the model less
+  exact.
 
 A habit that runs through all of them: reporting the baseline I lose to, the metric that disagrees with
 my conclusion, and the bugs that produced convincing-looking wrong answers before I caught them.
