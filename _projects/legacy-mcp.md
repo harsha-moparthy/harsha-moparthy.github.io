@@ -96,8 +96,7 @@ probes opened the circuit, five subsequent agent calls fast-failed in ~0ms with 
 backend calls** across the whole episode.
 
 Against the 5-calls/s SYSTEM BUSY ceiling, 25 reads: an unthrottled caller burned **20/25** requests
-into faults in 0.02
-s; the wrapper paced the same workload to **0/25** faults, spending 5.95s
+into faults in 0.02s; the wrapper paced the same workload to **0/25** faults, spending 5.95s
 deliberately waiting instead of hammering. The first bucket sizing (burst 4 + 4/s) still produced
 2 faults because burst plus refill exceeded the backend's ceiling in the first second — the fix and
 the lesson (size the bucket to the backend's measured capacity, not a round number) are kept in the
