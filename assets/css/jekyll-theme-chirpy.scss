@@ -311,3 +311,41 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- track sections (multi-track projects index) ---- */
+
+.proj-track {
+  margin-top: 2.5rem;
+
+  &:first-of-type {
+    margin-top: 1.5rem;
+  }
+}
+
+.proj-track-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-bottom: none;
+  scroll-margin-top: 5rem;
+}
+
+.proj-track-blurb {
+  margin: 0 0 1.1rem;
+  max-width: 46rem;
+  color: var(--text-muted-color);
+  font-size: 0.95rem;
+}
+
+.proj-pipeline {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+  background: var(--sidebar-bg);
+  border: 1px dashed var(--main-border-color);
+  border-radius: 8px;
+  max-width: 46rem;
+}

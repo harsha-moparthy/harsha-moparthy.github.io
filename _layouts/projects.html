@@ -4,91 +4,120 @@ layout: page
 ---
 
 {% comment %}
-  Projects are bracketed by their `group` front-matter field. `group_by` preserves the
-  collection's sort order (site.collections.projects sorts by `order`), so the bracket
-  sequence and the order inside each bracket are both controlled from the project files.
+  The index is organized by engineering track (_data/tracks.yml, ordered). Within a
+  track, projects are bracketed by their `group` front-matter field; `group_by`
+  preserves the collection's `order` sort, so bracket sequence and in-bracket order
+  are both controlled from the project files. Tracks without shipped pages render
+  their pipeline note instead of an empty grid.
 {% endcomment %}
-{% assign groups = site.projects | group_by: 'group' %}
 
 <div class="proj-intro">
   <p>
-    {{ site.projects | size }} machine-learning systems projects, grouped by the problem they address:
-    LLM inference and serving, agent reliability, multi-agent protocols, AI security, retrieval and
-    memory, cost and observability, and data and post-training. Each one is a working implementation
-    with committed benchmark reports, and each page below reports the results its own measurement
-    harness produced — including the findings that changed my mind about the technique.
+    {{ site.projects | size }} shipped systems projects across
+    {{ site.data.tracks | size }} engineering tracks, every one a working implementation
+    with committed benchmark reports. Each page below reports the results its own
+    measurement harness produced — including the findings that changed my mind about
+    the technique.
   </p>
 </div>
 
-<nav class="proj-toc" aria-label="Project groups">
-  {% for group in groups %}
-    <a class="proj-toc-link" href="#{{ group.name | slugify }}">
-      {{ group.name }}
-      <span class="proj-toc-count">{{ group.items | size }}</span>
+<nav class="proj-toc" aria-label="Tracks">
+  {% for track in site.data.tracks %}
+    {% assign track_projects = site.projects | where: 'track', track.id %}
+    <a class="proj-toc-link" href="#{{ track.id }}">
+      {{ track.name }}
+      <span class="proj-toc-count">
+        {%- if track_projects.size > 0 -%}
+          {{ track_projects.size }}
+        {%- else -%}
+          soon
+        {%- endif -%}
+      </span>
     </a>
   {% endfor %}
 </nav>
 
-{% for group in groups %}
-  <section class="proj-section">
-    <h2 class="proj-section-title" id="{{ group.name | slugify }}">
-      {{ group.name }}
-      <span class="proj-section-count">{{ group.items | size }}</span>
+{% for track in site.data.tracks %}
+  {% assign track_projects = site.projects | where: 'track', track.id %}
+  <section class="proj-track" id="{{ track.id }}">
+    <h2 class="proj-track-title">
+      {{ track.name }}
+      {% if track_projects.size > 0 %}
+        <span class="proj-section-count">{{ track_projects.size }}</span>
+      {% endif %}
     </h2>
+    <p class="proj-track-blurb">{{ track.blurb }}</p>
 
-    <div class="proj-grid">
-      {% for project in group.items %}
-        <article class="proj-card">
-          <a class="proj-card-link" href="{{ project.url | relative_url }}" aria-label="{{ project.title }}"></a>
+    {% if track_projects.size > 0 %}
+      {% assign groups = track_projects | group_by: 'group' %}
+      {% for group in groups %}
+        <section class="proj-section">
+          <h3 class="proj-section-title" id="{{ group.name | slugify }}">
+            {{ group.name }}
+            <span class="proj-section-count">{{ group.items | size }}</span>
+          </h3>
 
-          <header class="proj-card-head">
-            <h3 class="proj-card-title">{{ project.title }}</h3>
-            {% if project.kind %}
-              <span class="proj-kind">{{ project.kind }}</span>
-            {% endif %}
-          </header>
+          <div class="proj-grid">
+            {% for project in group.items %}
+              <article class="proj-card">
+                <a class="proj-card-link" href="{{ project.url | relative_url }}" aria-label="{{ project.title }}"></a>
 
-          <p class="proj-card-desc">{{ project.description }}</p>
+                <header class="proj-card-head">
+                  <h4 class="proj-card-title">{{ project.title }}</h4>
+                  {% if project.kind %}
+                    <span class="proj-kind">{{ project.kind }}</span>
+                  {% endif %}
+                </header>
 
-          {% if project.highlights %}
-            <ul class="proj-card-metrics">
-              {% for metric in project.highlights %}
-                <li>
-                  <strong>{{ metric.value }}</strong>
-                  <span>{{ metric.label }}</span>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
+                <p class="proj-card-desc">{{ project.description }}</p>
 
-          {% if project.stack %}
-            <div class="proj-card-stack">
-              {% for item in project.stack %}
-                <span class="proj-chip">{{ item }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
+                {% if project.highlights %}
+                  <ul class="proj-card-metrics">
+                    {% for metric in project.highlights %}
+                      <li>
+                        <strong>{{ metric.value }}</strong>
+                        <span>{{ metric.label }}</span>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
 
-          <footer class="proj-card-foot">
-            <span class="proj-card-more">
-              Read more
-              <i class="fas fa-angle-right"></i>
-            </span>
-            {% if project.repo %}
-              <a
-                class="proj-card-repo"
-                href="https://github.com/{{ project.repo }}"
-                target="_blank"
-                rel="noopener"
-                aria-label="{{ project.title }} on GitHub"
-              >
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </a>
-            {% endif %}
-          </footer>
-        </article>
+                {% if project.stack %}
+                  <div class="proj-card-stack">
+                    {% for item in project.stack %}
+                      <span class="proj-chip">{{ item }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <footer class="proj-card-foot">
+                  <span class="proj-card-more">
+                    Read more
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                  {% if project.repo %}
+                    <a
+                      class="proj-card-repo"
+                      href="https://github.com/{{ project.repo }}"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="{{ project.title }} on GitHub"
+                    >
+                      <i class="fab fa-github"></i>
+                      <span>GitHub</span>
+                    </a>
+                  {% endif %}
+                </footer>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
       {% endfor %}
-    </div>
+    {% else %}
+      <p class="proj-pipeline">
+        In the works:
+        {% for item in track.pipeline %}{{ item }}{% unless forloop.last %} · {% endunless %}{% endfor %}.
+      </p>
+    {% endif %}
   </section>
 {% endfor %}

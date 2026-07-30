@@ -1,5 +1,6 @@
 ---
 title: Synth Pipeline
+track: ml
 order: 14
 group: Data and post-training
 kind: Data pipeline

@@ -1,8 +1,9 @@
 ---
-title: Nice resources
-date: 2025-03-01 00:00:00 +0800
-categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-tags: [TAG]     # TAG names should always be lowercase
+title: "Course videos and slides: a running list"
+date: 2025-03-01 00:00:00 +0530
+categories: [Resources, Courses]
+tags: [courses, lectures]
+description: University courses with public videos and slides, collected in one table.
 ---
 
 The below are some of the resources which have videos available

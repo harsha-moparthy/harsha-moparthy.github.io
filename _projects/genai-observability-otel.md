@@ -1,5 +1,6 @@
 ---
 title: GenAI Observability
+track: ml
 order: 13
 group: Cost and observability
 kind: Observability

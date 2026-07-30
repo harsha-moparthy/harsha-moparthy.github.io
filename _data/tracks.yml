@@ -1,0 +1,46 @@
+# Ordered track definitions for the projects index. A track with shipped
+# project pages renders them (bracketed by each project's `group`); a track
+# with none yet renders its pipeline note instead.
+- id: ml
+  name: Machine learning & AI systems
+  blurb: >-
+    LLM inference and serving, agent reliability, multi-agent protocols, AI security,
+    retrieval and memory, cost and observability, and data and post-training. Every page
+    reports the results its own measurement harness produced — including the findings that
+    changed my mind about the technique.
+- id: fde
+  name: Forward-deployed engineering
+  blurb: >-
+    The work of making AI agents function inside real organizations: wrapping legacy systems
+    in governed tool layers, and giving operators the audit, replay, and kill-switch controls
+    they ask for on day one.
+- id: sde
+  name: Software engineering
+  blurb: >-
+    Developer infrastructure for the agent era — sandboxed execution, repo-scale context,
+    durable workflows, and plugin isolation.
+  pipeline:
+    - Sandboxed code-execution service
+    - Repo context engine
+    - Durable execution engine (mini-Temporal)
+    - WASM plugin sandbox
+- id: hft
+  name: HFT & low latency
+  blurb: >-
+    Latency engineering and market microstructure — measured in microseconds, verified by
+    fuzzing and formal methods.
+  pipeline:
+    - Sub-millisecond tick-to-trade pipeline (Rust)
+    - Matching engine with fuzz-tested invariants
+    - Deep order-book prediction
+    - Provable kill switch (TLA+)
+- id: backend
+  name: Backend engineering
+  blurb: >-
+    The service layer AI products stand on — gateways, rate limits, metering, and
+    zero-downtime operations.
+  pipeline:
+    - LLM gateway
+    - Token-based rate limiter
+    - Usage metering and billing
+    - Zero-downtime schema migration

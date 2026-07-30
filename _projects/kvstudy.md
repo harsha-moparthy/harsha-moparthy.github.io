@@ -1,5 +1,6 @@
 ---
 title: KVStudy
+track: ml
 order: 2
 group: Inference and serving
 kind: Inference study

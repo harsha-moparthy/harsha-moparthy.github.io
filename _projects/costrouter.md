@@ -1,5 +1,6 @@
 ---
 title: CostRouter
+track: ml
 order: 12
 group: Cost and observability
 kind: Routing study

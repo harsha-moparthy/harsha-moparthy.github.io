@@ -1,5 +1,6 @@
 ---
 title: PageServe
+track: ml
 order: 1
 group: Inference and serving
 kind: Inference engine

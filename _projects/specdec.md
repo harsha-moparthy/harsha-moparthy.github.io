@@ -1,5 +1,6 @@
 ---
 title: SpecDec
+track: ml
 order: 3
 group: Inference and serving
 kind: Inference study
@@ -14,8 +15,8 @@ highlights:
     label: tokens per target pass (code, k=8)
   - value: "90.9%"
     label: peak draft acceptance rate
-  - value: "15 of 16"
-    label: configs below 1.0x wall speedup
+  - value: "1.05x"
+    label: wall speedup, code at k=8
   - value: "0.40"
     label: measured draft cost ratio
 ---

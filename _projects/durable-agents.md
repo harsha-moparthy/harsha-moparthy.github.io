@@ -1,5 +1,6 @@
 ---
 title: Durable Agents
+track: ml
 order: 6
 group: Multi-agent systems
 kind: Multi-agent systems
