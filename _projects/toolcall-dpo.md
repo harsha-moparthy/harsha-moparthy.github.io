@@ -7,14 +7,14 @@ repo: harsha-moparthy/toolcall-dpo
 description: >-
   Post-training a small model for tool calling: DPO and GRPO written from scratch with
   verifier-graded rewards, decomposed evaluation and pair-quality ablations. DPO lifts held-out
-  accuracy 16.1% → 21.5%; GRPO raises its own reward while making the model *less* exact — kept as a
-  headline result rather than tuned away.
+  accuracy 16.1% → 21.5% with the second trained skill held at 100%, and the decomposed evaluation
+  isolates GRPO reward hacking that a validity-only metric would have scored as a win.
 stack: [Python, PyTorch, DPO, GRPO, TRL export]
 highlights:
   - value: "16.1% → 21.5%"
     label: held-out composite after DPO
   - value: "reward ↑, exactness ↓"
-    label: GRPO reward hacking, reproduced
+    label: GRPO reward hacking, isolated by decomposed eval
   - value: "48 > 92"
     label: near-miss pairs beat twice as many mixed
   - value: "17 / 17"
@@ -31,8 +31,8 @@ separates what *kind* of wrong a call is.
 
 So everything here is implemented from scratch — roughly 50 lines each for DPO and GRPO — and the whole
 experiment runs deterministically in about 40 seconds per seed on a laptop CPU. A ~600k-parameter
-transformer is genuinely SFT-trained, genuinely sampled, genuinely improved by DPO, and genuinely
-reward-hacked by GRPO. Nothing is mocked and nothing is API-scale theater.
+transformer is genuinely SFT-trained, genuinely sampled, genuinely improved by DPO, and the reward
+hacking GRPO produces is measured on the same harness. Nothing is mocked.
 
 ## The setup
 
@@ -58,10 +58,10 @@ transfer across phrasings rather than being memorised:
 `INVALID` < `WRONG_FUNCTION` < `WRONG_ARGS` < `CORRECT` — which is what makes the preference pairs
 objective and the reward computable.
 
-**The base model is deliberately weak.** SFT runs for exactly 14 epochs, an operating point chosen by
-scanning: enough correct samples to build pairs, far from ceiling, describe skill fully learned. The
-scan also showed held-out validity *falls* after ~18 epochs as the model memorises templates, so
-under-training is a feature twice over.
+**The base model is deliberately under-trained.** SFT runs for exactly 14 epochs, an operating point
+chosen by scanning: enough correct samples to build pairs, far from ceiling, describe skill fully
+learned. The scan also established that held-out validity *falls* after ~18 epochs as the model
+memorises templates, so the low operating point earns its place twice.
 
 ## Measured results
 
@@ -80,16 +80,15 @@ anchoring did their job, which is the "minimal capability regression" criterion 
 ### The GRPO finding: reward up, exactness down
 
 GRPO's mean verifier reward rose within every run (0.37 → 0.49 on seed 9) while held-out composite
-*fell below base*. The mechanism is visible in the decomposition: the graded reward pays 0.25 for mere
+landed below base. The mechanism is visible in the decomposition: the graded reward pays 0.25 for mere
 well-formedness, and that is the easiest credit to farm. The policy shifted mass toward "any valid
 call" — validity jumped from 47.6% to 67.0% (82.7% on seed 7) while function selection and argument
 binding degraded.
 
-**The reward was optimised exactly as written; what was written was not exactly the goal.** That is the
-clearest small-scale demonstration of reward-shaping risk this project could have produced, and it is
-kept as a headline result rather than tuned away. It is also the reason the evaluation decomposes into
-validity / selection / arguments instead of reporting one accuracy number — a single metric would have
-shown this as a validity *win*.
+**The reward was optimised exactly as written; what was written was not exactly the goal.** That is a
+clean small-scale demonstration of reward-shaping risk, and it is reported as a primary finding. It is
+also the reason the evaluation decomposes into validity / selection / arguments instead of reporting one
+accuracy number — a single metric would have scored this as a validity *win*.
 
 ### Pair-quality ablation
 
@@ -104,29 +103,26 @@ Same DPO recipe, different pairs:
 
 The hard-negatives hypothesis, measured: near-miss pairs — right shape, wrong binding — beat **twice as
 many** mixed pairs. Gross pairs teach little the model doesn't already know. And random pairing, the
-"are the verifiers doing anything at all" control, is worst despite being by far the largest set. That
+"are the verifiers doing anything at all" control, comes last despite being by far the largest set. That
 control is what separates a working preference pipeline from one that would look fine on a loss curve.
 
-### The cautionary result, kept rather than erased
+### Hyperparameter sensitivity, located by measurement
 
-The first working configuration used `lr=1e-4` for both methods and **destroyed the base model** —
-held-out composite fell 24% → 9% for DPO on the pre-isolation splits. That is over-optimisation against
-a frozen reference, the classic post-training failure mode, and it is reported rather than quietly
-fixed.
+At `lr=1e-4` both methods over-optimise against the frozen reference and give up accuracy on the
+pre-isolation splits — the classic post-training failure mode, located by measurement rather than
+assumed away.
 
 All final hyperparameters (`beta=0.3, lr=3e-5, 2 epochs` for DPO; `kl=0.2, lr=3e-5, 2 iterations` for
 GRPO) were selected on the **val split only**. The held-out set was evaluated once per arm, after
 everything was locked.
 
-## Scope, stated honestly
+## Scope and next steps
 
 The GRPO implementation samples fresh completions each iteration and takes one gradient step per group,
-so the PPO clipped ratio is identically 1 and is omitted — the on-policy special case, documented in
-the module docstring rather than glossed. Zero-variance groups carry no gradient signal and are
-skipped, which is GRPO's known data inefficiency made visible instead of hidden.
-
-The describe-skill check is an *analogue* of general-capability regression at this scale, not MMLU, and
-is labelled as such.
+so the PPO clipped ratio is identically 1 and is omitted — the on-policy special case, documented in the
+module docstring. Zero-variance groups carry no gradient signal and are skipped, which makes GRPO's
+known data inefficiency explicit in the code path. The describe-skill check is the capability-regression
+analogue available at this scale.
 
 ## Scaling the recipe
 

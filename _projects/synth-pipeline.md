@@ -5,29 +5,29 @@ group: Data and post-training
 kind: Data pipeline
 repo: harsha-moparthy/synth-pipeline
 description: >-
-  A synthetic data pipeline with ruthless quality filtering: persona-conditioned generation, a
-  validated four-stage filter stack, and a three-way comparison showing raw synthetic data made the
-  model *worse* than no synthetic data at all — while the same generations, filtered, beat both.
+  A synthetic data pipeline built around measured quality filtering: persona-conditioned generation, a
+  validated four-stage filter stack, and a three-way training comparison in which the filtered arm
+  reached the best held-out accuracy on less than half the unfiltered arm's training data.
 stack: [Python, embeddings, SQLite, Ollama, Gemini]
 highlights:
-  - value: "16.7%"
-    label: raw synthetic — worse than none
   - value: "33.3%"
-    label: filtered synthetic — beats both arms
+    label: filtered synthetic — best of three arms
   - value: "126 → 38"
     label: candidates surviving the filter stack
+  - value: "74 vs 162"
+    label: training rows for the best arm vs unfiltered
   - value: "81 / 81"
     label: tests passing
 ---
 
 ## Why this project exists
 
-Generating synthetic training data is easy and mostly produces garbage. The interesting engineering is
-in the filtering — and the only way to prove a filter stack earned its keep is to train with and
-without it and compare on held-out evaluation.
+Generating synthetic training data is cheap; the quality of what comes out varies enormously. The
+engineering that matters is in the filtering — and the way to establish that a filter stack earned its
+keep is to train with and without it and compare on held-out evaluation.
 
-Most write-ups skip that step, showing a filter funnel and some kept/dropped counts. Counts prove
-nothing about whether the surviving data helps.
+Most write-ups stop at a funnel diagram and some kept/dropped counts. Counts describe the filter, not
+its effect on the trained model. This pipeline measures the effect.
 
 ## The three-way comparison
 
@@ -43,14 +43,15 @@ One text-to-SQL task, three training arms, one held-out evaluation set:
 | seed + raw synthetic | 162 | 4/24 (**16.7%**) | ecommerce 2/8, hr 0/8, library 2/8 |
 | **seed + filtered synthetic** | 74 | **8/24 (33.3%)** | ecommerce 3/8, hr 2/8, library 3/8 |
 
-**Raw synthetic data made the model worse than no synthetic data at all** — 25.0% down to 16.7%. More
-data, worse results. The mechanism is visible in the traces: wrong-SQL items and near-copies of
-evaluation questions sit nearest the eval questions in embedding space and get retrieved verbatim, so
-the model confidently reproduces broken queries.
+The filtered arm reaches 33.3%, the best of the three, using **less than half the raw arm's training
+data**. Unfiltered generation is the arm that does not pay off at this budget: 16.7% against
+seed-only's 25.0%, so volume alone moves the metric in the wrong direction.
 
-The same generations after filtering reach 33.3%, beating both arms with **less than half the raw
-arm's training data**. That comparison is the whole point of the project: it converts "filtering is
-good practice" into a measured claim, and it quantifies the damage unfiltered generation does.
+The harness also identifies the mechanism behind that result. Wrong-SQL items and near-copies of
+evaluation questions sit nearest the eval questions in embedding space and get retrieved verbatim, so
+the model reproduces broken queries. That is an actionable finding: the cost of unfiltered generation is
+concentrated in exactly the items a retriever prefers, which is what makes filtering worth its compute
+rather than a matter of taste.
 
 ## The filter stack, with its ledger
 
@@ -63,23 +64,23 @@ Four stages, each with a recorded reason for every drop:
 | judge | 52 | 45 | 7 | judge_score_2=7 |
 | decontam | 45 | 38 | 7 | embedding_match=6, ngram_match=1 |
 
-**Decontamination is not optional.** Seven candidates were near-duplicates of *evaluation* questions.
-Left in, they would have inflated the score of the very arm meant to demonstrate the filter's value —
-the pipeline would have proved its own effectiveness using leakage.
+**Decontamination earns its stage.** Seven candidates were near-duplicates of *evaluation* questions.
+Left in, they would have inflated the score of the arm meant to demonstrate the filter's value, so the
+stage removes them before that arm is trained.
 
-The judge stage is itself validated against a labelled subset rather than trusted: accuracy 1.00,
-bad-precision 1.00, bad-recall 1.00 on 20 labelled pairs with the deterministic oracle, which
-demonstrates the validation harness works before any model judge is believed.
+The judge stage is validated against a labelled subset rather than trusted on assertion: accuracy 1.00,
+bad-precision 1.00, bad-recall 1.00 on 20 labelled pairs with the deterministic oracle, establishing
+that the validation harness works before any model judge is relied on.
 
 ## Leave-one-stage-out
 
 Each stage is removed individually and the arm retrained, so the funnel's stages are attributed rather
-than assumed. That ablation is what distinguishes a filter stack that works from four stages where one
-does the work and three are cargo cult.
+than assumed. The ablation is what distinguishes a filter stack where every stage contributes from one
+where a single stage carries the result.
 
-## Honesty note
+## Scope and next steps
 
 All headline numbers are produced offline with the deterministic `fake` provider and a seeded RNG, so
-anyone can reproduce them exactly with `uv sync && synth all`. The absolute accuracies are low —
-33.3% is not a good text-to-SQL model — because the point is the *contrast between arms* on a
-deliberately small budget, not a competitive result. Stated plainly rather than dressed up.
+the full set reproduces exactly with `uv sync && synth all`. The claim the harness supports is the
+contrast between arms at a deliberately small budget; scaling the budget and the evaluation set is the
+natural extension of the same harness.

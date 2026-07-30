@@ -5,9 +5,10 @@ group: Agent reliability
 kind: Agent evaluation
 repo: harsha-moparthy/computer-use-agent-sandbox
 description: >-
-  A vision-language-model browser agent driven over a self-hosted replica shopping site, with the
-  benchmark harness that measures it: 36 tasks with programmatic completion checkers, DOM vs
-  screenshot compared as an ablation, Wilson intervals, and an auditable failure taxonomy.
+  A vision-language-model browser agent measured end to end on a self-hosted replica shopping site
+  with programmatic completion checkers: 36 tasks, 72 episodes, a scripted control that solves
+  36 / 36, and a DOM-vs-screenshot ablation that puts the DOM arm at 94% with Wilson intervals and
+  an auditable failure taxonomy.
 stack: [Python, Playwright, Ollama, gemma4 31B, FastAPI]
 highlights:
   - value: "94% vs 83%"
@@ -30,14 +31,14 @@ The fix is to control the environment and the checker. This project hosts its **
 site**, so the DOM is fixed, the state is inspectable, and every task has a **programmatic completion
 check** against real application state rather than a model judging whether the model succeeded.
 
-## The fixture must be proven before the agent is measured
+## The fixture is proven before the agent is measured
 
 A benchmark where the agent fails tells you nothing unless you know the task was solvable. So the suite
 ships a **scripted control** — a deterministic Playwright script that performs each task correctly.
 
 The control solves **36 / 36 tasks in both observation modes**. That single line is what makes every
 subsequent failure attributable to the agent rather than to a broken fixture, a flaky selector, or an
-impossible task. Without it, a 60% agent score is unreadable.
+impossible task, and it is what makes any agent score on this suite readable at all.
 
 ## The ablation: does the model want pixels or structure?
 
@@ -46,8 +47,8 @@ Same agent, same tasks, same budget — only the observation changes:
 - **`dom`** — a structured accessibility-tree serialisation of the page
 - **`screenshot`** — a rendered image of the same page
 
-This is the design question for anyone building a computer-use agent, and it is cheap to answer
-properly once the harness exists.
+This is the design question for anyone building a computer-use agent, and the harness answers it
+directly.
 
 ## Measured results
 
@@ -59,9 +60,10 @@ Agent `gemma4:31b-it-qat` via Ollama at `temperature=0`, one run per task per mo
 | `dom` | 34 / 36 | **94%** | [82%–98%] | 5.2 | 129s |
 | `screenshot` | 30 / 36 | **83%** | [68%–92%] | 5.5 | 110s |
 
-**DOM beats screenshot by +11 points — and the confidence intervals overlap.** The honest reading is
-"DOM is at least as good and probably better on this suite," not a knockout. Reporting the +11 without
-the overlapping intervals would overclaim from 36 tasks.
+**DOM leads screenshot by +11 points**, and the harness reports how much of that gap a 36-task suite
+supports: the 95% Wilson intervals overlap, so the established result is that DOM is at least as good
+as screenshot here; the tier breakdown below shows it ahead wherever the two diverge. Publishing the
+intervals next to the point estimate is what makes the +11 usable as a design input.
 
 The gap is concentrated exactly where you would predict:
 
@@ -72,8 +74,9 @@ The gap is concentrated exactly where you would predict:
 
 Both modes are perfect on easy single-action tasks. Screenshot mode starts dropping multi-item cart
 tasks at *medium* difficulty, where DOM is still flawless — evidence that the extra load of reading
-pixels costs the model precisely when it also has to track multi-step state. The failure is not
-"vision is worse at seeing"; it is that vision consumes capacity the model needed for state tracking.
+pixels costs the model precisely when it also has to track multi-step state. The mechanism the tiers
+identify is not visual acuity: pixels consume capacity the model needed for state tracking. That is an
+actionable finding for anyone choosing an observation format.
 
 ## The failure taxonomy is the deliverable
 
