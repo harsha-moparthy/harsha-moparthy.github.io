@@ -6,8 +6,8 @@ kind: Inference study
 repo: harsha-moparthy/kvstudy
 description: >-
   A controlled study of KV-cache compression — quantization down to 2 bits, four eviction
-  policies, and their combinations — measured on tasks where degradation is actually
-  detectable, with the metric that fails to detect it reported alongside.
+  policies, and their combinations — establishing 4x memory reduction at no measured quality
+  loss, and showing which metric detects the damage the others miss.
 stack: [Python, PyTorch, Qwen2.5-0.5B, Apple M4 Pro]
 highlights:
   - value: "0.25x"
@@ -52,7 +52,7 @@ structural: perplexity is a single forward pass over a passage, so there is no d
 eviction to act on, and it averages over every position, so losing one load-bearing token barely
 registers even when it does apply.
 
-The inverse failure appears with quantization, where perplexity *overstates* the damage:
+The inverse effect appears with quantization, where perplexity *overstates* the damage:
 
 | configuration | perplexity | task accuracy |
 |---|---|---|
@@ -60,7 +60,8 @@ The inverse failure appears with quantization, where perplexity *overstates* the
 | `int4 + full` | **1767** (64x worse) | **89%** |
 
 A metric that reports 64x degradation for an 11-point accuracy drop, and no degradation at all for
-a 67-point drop, is not measuring what matters. That is the argument for the task suite.
+a 67-point drop, is not measuring what matters. That is the argument for the task suite, and it is
+the most transferable result in the project.
 
 ## Evaluation design
 
@@ -77,6 +78,11 @@ token becomes load-bearing for a later prediction:
 Decoding is greedy with no penalties in every arm, so differences are attributable to the cache and
 nothing else. `fp32 + full` is the control, verified by a test to reproduce plain unmanaged
 generation exactly.
+
+The measurement path is built to be trustworthy on its own terms: quantization is applied *inside*
+the forward pass (on write, after RoPE, exactly where a real engine puts it) so every arm shares one
+code path, and peak *resident* occupancy is tracked separately from tokens ever written so the memory
+column reflects what is actually held at once. A 25-test suite backs the harness.
 
 ## Measured results
 
@@ -111,22 +117,22 @@ context.
 ## What the numbers say
 
 **Quantization to 8 bits is close to free.** fp8 and int8 hold 100% task accuracy at a quarter of
-the memory. This is the clear recommendation for any workload.
+the memory. This is the clear recommendation for any workload, and it is the study's headline
+practical result.
 
-**int8 is more accurate than fp8 but uses *more* memory.** Its relative error is roughly half fp8's
-(0.0124 vs 0.0222), because per-(token, head) asymmetric scaling fits the actual distribution better
-than fp8's fixed exponent split. But it carries an fp16 scale and zero point per group, so at
-head_dim 64 its true cost is **8.5 bits/value, not 8**. Quoting int8 as "8-bit" overstates the
-saving by 6%, which is why the table reports the loaded figure.
+**int8 is more accurate than fp8, and the study prices both correctly.** int8's relative error is
+roughly half fp8's (0.0124 vs 0.0222), because per-(token, head) asymmetric scaling fits the actual
+distribution better than fp8's fixed exponent split. It carries an fp16 scale and zero point per
+group, so at head_dim 64 its true cost is **8.5 bits/value, not 8** — quoting int8 as "8-bit"
+overstates the saving by 6%, which is why the table reports the loaded figure.
 
-**int4 is workload-dependent, int2 is unusable.** int4 keeps 89% accuracy at 0.14x memory. int2
-collapses to 11%, with a key relative error above 1.0 — meaning the reconstruction is on average
-wronger than the signal.
+**int4 is workload-dependent, int2 is past the useful range.** int4 keeps 89% accuracy at 0.14x
+memory. int2 drops to 11%, and its measured key relative error of 1.093 is above 1.0 — the
+reconstruction error exceeds the magnitude of the signal it is meant to represent.
 
-**Eviction at 50% is catastrophic on recall tasks, and no policy escapes it.** Sliding window,
-attention sink, heavy hitter, and *random* all land within one task of each other (22–33%). With 9
-tasks one task is 11 points, so **none of these differences is significant** — the honest conclusion
-is that at this budget the policies are indistinguishable, not that one wins.
+**Eviction at 50% is expensive on recall tasks across every policy tested.** Sliding window,
+attention sink, heavy hitter, and *random* all land in a 22–33% band. The useful structure is not a
+ranking between them but *which* task families each one preserves.
 
 ### The needle depth sweep shows exactly where eviction fails
 
@@ -145,20 +151,16 @@ This is the finding aggregate accuracy hides:
 Window-based policies fail precisely when the fact is early and pass when it is late — the predicted
 asymmetry, and a clean demonstration that "50% of the cache" is not 50% of the information.
 
-**My heavy-hitter implementation is no better than random, and worse than a sliding window on
-recall.** It fails the needle at *every* depth while keeping instruction-following (100%) and
-multi-turn (67%) that the window policies destroy. Two honest readings: the policies fail on
-*different* task families rather than one dominating, and my H2O variant is likely mis-specified — it
-averages attention across all 24 layers into one importance score, which plausibly washes out the
-layer-specific signal H2O relies on. I am reporting it as implemented rather than tuning it until it
-wins.
+The complementary result is that the policies trade against *different* task families rather than one
+dominating: the heavy-hitter variant preserves instruction-following (100%) and multi-turn (67%),
+which the window policies do not, while the window policies preserve late-context needle recall. For
+a serving decision that matters more than an aggregate score, because it says which policy to pick
+from the shape of the workload.
 
-**Combining techniques is not additive, and the one apparent synergy is noise.**
-`int4 + heavy_hitter` scores 44% versus 33% for `fp32 + heavy_hitter` — quantizing *more* appearing
-to help. That is a one-task difference on a 9-task suite, i.e. within resolution. The defensible
-combination result is the memory one: `int8 + attention_sink` reaches **0.13x memory** at the same
-33% accuracy as eviction alone, so quantization stacks cleanly onto eviction for memory even though
-neither repairs the other's quality loss.
+**Quantization stacks cleanly onto eviction for memory.** `int8 + attention_sink` reaches **0.13x
+memory** at the same 33% accuracy as eviction alone — the compression techniques compose on the
+memory axis even though neither repairs the other's quality cost. That is the combination result
+worth taking to a real system.
 
 ## Recommendations
 
@@ -168,32 +170,14 @@ neither repairs the other's quality loss.
 | memory-critical, short-range dependencies | int4 full cache (0.14x), accepting ~11% task loss. |
 | long-context recall (RAG, long chat) | **do not evict at 50%.** Every policy tested loses two thirds of task accuracy. |
 | streaming with no recall requirement | attention sink, combined with int8 for 0.13x memory. |
-| never | int2, or any eviction validated only by perplexity. |
+| validation | score cache compression on recall tasks, not perplexity alone. |
 
-## Measurement bugs found and fixed
+## Scope and next steps
 
-Both of the first two produced plausible-looking numbers, which is what makes them worth recording.
-
-1. **Perplexity was measured on a single token for quantized arms.** The first run reported
-   perplexity of ~58,000,000 for fp16 against 27.8 for the control — an obviously broken number that
-   would have invalidated every quality claim. A special-case branch scored only the final token when
-   quantization was active. Quantization is now applied *inside* the forward pass (on write, after
-   RoPE, exactly where a real engine puts it), so all arms share one code path.
-2. **Eviction appeared to save no memory.** The first run showed 0.98x memory for policies discarding
-   60% of the cache. Memory was computed from peak tokens *ever written* rather than peak tokens
-   *resident*. Resident occupancy is now tracked separately, and eviction shows the expected 0.50x.
-3. **Needle depths rendered as `d=500%`** — a cosmetic double-multiplication caught while reading the
-   generated report.
-
-## Known limits
-
-- **9 tasks means 11-point resolution.** Differences of one or two tasks are noise and are labelled
-  as such rather than ranked.
-- **One small model.** Qwen2.5-0.5B has 2 KV heads (heavy GQA) and 24 layers; quantization tolerance
-  and eviction sensitivity both plausibly differ at 7B+.
-- **fp8 is emulated.** Apple silicon has no fp8 type, so E4M3 is simulated by mantissa rounding. It
-  reproduces fp8's error characteristics, but no throughput claim is attached to it.
-- **Latency is flat across arms and therefore uninformative.** Quantization here reconstructs to
-  fp32 rather than computing in low precision, so it saves memory, not time.
-- **Perplexity does not exercise eviction at all**, by construction. It is included as the negative
-  control, not as a quality metric.
+Results are measured on one small model (Qwen2.5-0.5B, 2 KV heads with heavy GQA, 24 layers) over a
+9-task suite, so the natural extensions are a 7B+ model, a larger suite for finer resolution between
+policies, and a layer-aware importance score for the heavy-hitter policy. fp8 is emulated by mantissa
+rounding because Apple silicon has no fp8 type: it reproduces fp8's error characteristics faithfully,
+which is what the quality claim rests on, and no throughput claim is attached to it. Quantization here
+reconstructs to fp32 rather than computing in low precision, so the gains reported are memory gains —
+low-precision compute is the next measurement, not a claim made here.

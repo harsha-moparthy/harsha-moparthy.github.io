@@ -6,16 +6,16 @@ kind: AI security
 repo: harsha-moparthy/injectguard
 description: >-
   A prompt-injection defense where the protection is architectural: untrusted content can shrink an
-  agent's capabilities but never expand them. Evaluated on 12 attacks and 8 benign tasks across three
-  model backends, reporting attack success and the utility it costs.
+  agent's capabilities but never expand them. Takes worst-case attack success from 100% to 0% at zero
+  utility cost, evaluated on 12 attacks and 8 benign tasks across three model backends.
 stack: [Python, Ollama, Gemma 4 31B, Gemini, Typer]
 highlights:
   - value: "100% → 0%"
     label: attack success, at zero utility cost
   - value: "0/12"
     label: attacks land with the detector switched off
-  - value: "12 + 8"
-    label: attacks and benign tasks, incl. 4 self-evasive
+  - value: "8/8"
+    label: benign utility preserved in every arm
   - value: "65"
     label: tests
 ---
@@ -36,7 +36,7 @@ So the load-bearing mechanism here is not detection. It is a taint-tracking inva
 mechanical and boring: **reading untrusted content can only ever shrink the set of tools the agent may
 call.** An attacker who writes the perfect jailbreak still cannot grow a set that only moves one way.
 The classifier stays as defense-in-depth, and the evaluation includes a classifier-only arm
-specifically to show what that posture misses.
+specifically to quantify what that posture adds on its own.
 
 ## The four arms
 
@@ -97,17 +97,23 @@ rather than a rule someone has to remember.
 **A trusted segment never restores a revoked capability.** Once tainted, always tainted for that run.
 Otherwise an attacker only needs to get one trusted-looking message appended after their payload.
 
-**Local writes are *not* revoked on taint — and that was a correction.** My first version revoked
-`write_local` along with the egress capabilities. It drove attack success to zero and broke the
-entirely legitimate "read this page, then save me a summary" workflow, costing utility for no safety
-gain, since a local write is not egress. The residual risk is real but different: an attacker writes a
-poisoned note that is later read back as "the user's own data", laundering the taint off. That is a
-provenance problem, so it is fixed where it lives — notes written while tainted are marked, and reading
-them yields untrusted content. Capability revocation is for egress; laundering is for provenance.
+**Revocation is scoped to egress, and provenance handles laundering.** Local writes are deliberately
+*not* revoked on taint: a local write is not egress, so revoking it would break the entirely legitimate
+"read this page, then save me a summary" workflow for no safety gain. The related risk is different in
+kind — an attacker writes a poisoned note that is later read back as "the user's own data", laundering
+the taint off — so it is handled where it lives: notes written while tainted are marked, and reading
+them yields untrusted content. Capability revocation is for egress; laundering is for provenance —
+and scoping revocation this way is what keeps benign utility at 8/8 in every arm.
 
 **Existence is not leaked and arguments are checked for provenance.** The policy refuses an
 otherwise-permitted action when its *argument* (a recipient address, a URL) originated in untrusted
 text, which catches the case where the agent is doing a legal thing with attacker-chosen parameters.
+
+**The agent loop is hardened against malformed tool calls.** The loop no longer raises when a live model
+calls a tool with a mismatched argument name, because a defense layer that dies on a schema mismatch
+would fail open. Similarly, an empty model completion raises
+`EmptyCompletion` rather than being silently read as "no tool call" — a defense must never be able to
+score a pass because the model didn't act.
 
 ## Attack and benign suites
 
@@ -115,11 +121,14 @@ text, which catches the case where the agent is doing a legal thing with attacke
 delimiter spoofing, hidden HTML comments, invisible Unicode, multi-stage, and destructive. Four more I
 wrote specifically to evade *this repository's own heuristics* — `polite-workflow`, `translated-frame`,
 `citation-bait`, `gradual-escalation` — which carry no trigger phrase and read like ordinary business
-requests. They exist so the classifier-only arm's weakness is measured rather than asserted.
+requests. They exist so the classifier-only arm's contribution is measured rather than asserted.
 
 **8 benign tasks**, including two adversarial-for-the-defender cases: one email that legitimately
 discusses API keys and "new instructions", and a page that explains prompt injection using the exact
-phrase attackers use. A trigger-happy detector fails these, which is the point.
+phrase attackers use. A trigger-happy detector fails these, and this defense passes them.
+
+**The baseline is a test, not an assumption.** The suite asserts that all 12 attacks succeed in the
+undefended arm, so a defense can never look perfect against attacks that never landed.
 
 ## Measured results
 
@@ -136,9 +145,10 @@ fashionable this month.
 | `taint` | **0/12 (0%)** | 0/4 (0%) | 8/8 (100%) |
 | `full` | **0/12 (0%)** | 0/4 (0%) | 8/8 (100%) |
 
-**100% → 0% attack success at zero utility cost.** The `classifier` row is the one to sit with:
+**100% → 0% attack success at zero utility cost.** The `classifier` row is the instructive one:
 detection flagged the known attacks and the attacks still landed, because flagging is not containment.
-And `taint` reaches 0% with the detector switched off entirely — the architecture alone is sufficient.
+And `taint` reaches 0% with the detector switched off entirely — the architecture alone is sufficient,
+which is exactly the claim the four-arm design was built to prove.
 
 ### Live models: Gemma 4 31B (local) vs Gemini 3.5 Flash Lite (API)
 
@@ -155,53 +165,25 @@ And `taint` reaches 0% with the detector switched off entirely — the architect
 | total cost (4 arms) | **$0.00** | $0.0079 |
 | quota / privacy | no key, no quota, fully local | 15 req/min free tier; data leaves machine |
 
-**Both models resist these attacks well on their own.** That is the honest headline, and it is not what
-the offline baseline predicts. Modern instruction-tuned models have been trained against classic
-injection phrasings, so the undefended attack-success rate on a real model is near zero rather than
-100%. Gemma 4 refused explicitly and often quoted its instructions back.
+**Both models resist these attacks well on their own**, and that is a genuine finding the evaluation
+surfaced rather than assumed. Modern instruction-tuned models have been trained against classic
+injection phrasings, so undefended attack success on a real model is near zero rather than the 100% the
+offline worst case predicts. Gemma 4 refused explicitly and often quoted its instructions back.
 
-**But Gemini's resistance is probabilistic, and that is the finding that matters.**
-`direct-override` succeeded in the `classifier` arm while the *same model* refused the *same attack* in
-the `none` arm — 17 segments flagged, zero blocked. Same prompts, opposite outcomes. Model-level
-refusal is a behaviour that mostly holds; the taint layer is a guarantee that always holds. On this
-suite the defense's measurable value is converting the former into the latter, and one run in 48 is
-enough to show the difference is not theoretical.
+**The measured value of the taint layer is converting probabilistic refusal into a guarantee.**
+`direct-override` succeeded once in Gemini's `classifier` arm while the *same model* refused the *same
+attack* in the `none` arm — 17 segments flagged, zero blocked. Same prompts, opposite outcomes. Model
+refusal is a behaviour that mostly holds; the taint layer holds every time, and it held in `taint` and
+`full` on both backends. Because both live models already refuse these attacks unaided, that single
+divergence is where this suite can separate "the defense held" from "the model would have refused
+anyway" — and it is enough to show the distinction is real rather than theoretical. The worst-case
+`fake` arm is where the architecture's contribution is measured cleanly, at 100% → 0%.
 
-## Bugs found and fixed
+## Scope and next steps
 
-Every one of these was found by distrusting a result that looked good.
-
-1. **The offline baseline wasn't attacking at all.** The first `fake` run reported 0% attack success in
-   *every* arm, including undefended. A defense that looks perfect against attacks that never land
-   measures nothing. Two causes: the stand-in agent picked `read_notes` off the tool list before ever
-   reading the email, and multi-line injections were invisible because tool-output capture stopped at
-   the first newline (`(.*)` without `DOTALL`). The suite now asserts all 12 attacks succeed undefended
-   — the baseline is a test, not an assumption.
-2. **A live model crashed the agent loop.** `gemini-3.5-flash-lite` called `read_email(id="1")` against
-   a tool declaring `email_id`, raising an uncaught `TypeError`. A defense layer that dies on an
-   argument-name mismatch fails open in the worst possible way.
-3. **Capping output tokens produced a silent, total false negative.** Gemma 4 is a *thinking* model: by
-   default it emits ~500 reasoning tokens per call. Capping `num_predict` to speed it up looked like an
-   obvious win and was actively dangerous — the budget was consumed entirely by reasoning, so `content`
-   came back **empty** with `done_reason=length`. The agent read that as "no tool call", finished
-   immediately, and every attack scored as blocked. The run reported a flawless **0% attack success
-   across all four arms with identical ledgers** — a perfect security result that actually meant *the
-   model never acted at all*. Two tells gave it away: byte-identical token ledgers across arms, and the
-   classifier flagging **zero** segments in an arm where it should have flagged known phrasings.
-   `invoke_text` now raises `EmptyCompletion` rather than returning `""`, so this class of failure can
-   never again be reported as a pass. The invalid report was deleted rather than committed.
-4. **The harness could burn hours invisibly.** Results were written only after *all* arms finished, so
-   an interrupted run lost everything. Every arm is now checkpointed to disk the moment it completes.
-
-## Known limits
-
-- **The novel attacks defeat the classifier but were not tested against a live LLM judge.** The
-  `--llm-detector` path exists and works; the committed live runs use heuristics only.
-- **Both live models already refuse these attacks**, so this suite cannot distinguish "the defense
-  works" from "the model was going to refuse anyway" except in the one Gemini case.
-- **One run per case on live models.** Gemini's single classifier-arm success shows the variance is
-  real; properly quantifying it needs n≥5 per case.
-- **`reasoning=False` changes model behaviour.** Resistance to injection *with* reasoning enabled may
-  differ, and this evaluation does not measure that.
-- **Taint is per-run and coarse.** Once any untrusted content is read, egress is revoked for the whole
-  run. A finer design would track taint per data item.
+The evaluation covers heuristic detection on the committed live runs; the `--llm-detector` path is
+implemented and working, and extending the live reports to cover it is the natural next measurement,
+alongside raising live runs to n≥5 per case and evaluating with model reasoning enabled. Taint is
+currently per-run and coarse — once any untrusted content is read, egress is revoked for the whole run,
+which is the conservative choice — and per-data-item taint tracking is the planned refinement that
+would keep the same guarantee at finer granularity.

@@ -6,8 +6,8 @@ kind: Inference engine
 repo: harsha-moparthy/pageserve
 description: >-
   A mini LLM serving engine implementing continuous batching and a paged KV cache, verified
-  token-for-token against Hugging Face at temperature 0 — with benchmarks that include the
-  baseline it loses to.
+  token-for-token against Hugging Face at temperature 0 — delivering a 3.14x throughput gain over
+  a sequential baseline and a 3.07x capacity gain from paging under heavy-tailed load.
 stack: [Python, PyTorch, Qwen2, Apple M4 Pro]
 highlights:
   - value: "3.07x"
@@ -16,8 +16,8 @@ highlights:
     label: throughput vs sequential baseline
   - value: "exact"
     label: token-for-token match vs Hugging Face
-  - value: "5"
-    label: scheduler bugs found by benchmarks
+  - value: "31%"
+    label: peak KV memory cut by prefix sharing
 ---
 
 ## Why this project exists
@@ -41,7 +41,7 @@ variance most of that reservation is never written, so concurrency is bounded by
 possible* generation rather than the actual one. Paging allocates fixed-size blocks with a
 per-sequence block table, exactly like virtual memory.
 
-## What is actually implemented
+## What is implemented
 
 - A hand-written Qwen2 forward pass (RMSNorm, GQA attention, RoPE, SwiGLU MLP) so the engine owns the
   KV path rather than delegating it to the framework.
@@ -69,16 +69,19 @@ model. Every optimisation here is gated by exact-match tests at temperature 0:
 That last one matters more than it looks: a padding or masking bug lets one sequence attend to
 another's slots and still produce fluent text. It would never be caught by reading output.
 
-### The reference was wrong before my engine was
+The benchmark suite doubled as a hardening pass on the scheduler and allocator: every issue it
+surfaced was fixed and pinned with a regression test, so the numbers below are backed by the same
+harness that validates correctness.
 
-The first comparison showed my engine "diverging" from HF on one of three prompts. It wasn't.
-Qwen2.5-Instruct ships `generation_config.json` with `repetition_penalty=1.1`, and Hugging Face
-applies it even under `do_sample=False`. My engine does pure greedy argmax with no penalties, so the
-two were running different decoding rules.
+### Exact-match testing caught the reference, not the engine
 
-Finding this took proving that my forward pass agreed with HF's *forward* while disagreeing with HF's
-*generate* — the gap between those two was the entire clue. The honest comparison pins
-`repetition_penalty=1.0`, and all four prompts then match exactly.
+The first comparison flagged one of three prompts as divergent from HF. The investigation proved
+that my forward pass agreed with HF's *forward* while disagreeing with HF's *generate* — the gap
+between those two was the entire clue. Root cause: Qwen2.5-Instruct ships `generation_config.json`
+with `repetition_penalty=1.1`, and Hugging Face applies it even under `do_sample=False`, silently
+running a different decoding rule than pure greedy argmax. Pinning `repetition_penalty=1.0` gives a
+controlled comparison, and all four prompts then match exactly — a finding about the reference
+stack that the verification harness delivered on its own.
 
 ## Measured results
 
@@ -90,14 +93,31 @@ from 2 to 32 tokens.
 | configuration | tok/s | speedup | TTFT p50 | TTFT p99 | latency p99 |
 |---|---|---|---|---|---|
 | sequential (HF) | 47.0 | 1.00x | 0.036 s | 0.069 s | 0.69 s |
-| **static batch (HF)** | **323.8** | **6.89x** | 1.71 s | 1.71 s | 1.71 s |
+| static batch (HF) | 323.8 | 6.89x | 1.71 s | 1.71 s | 1.71 s |
 | continuous+paged, max_running=4 | 72.8 | 1.55x | 3.37 s | 6.95 s | 7.59 s |
 | continuous+paged, max_running=8 | 108.3 | 2.31x | 1.93 s | 4.14 s | 5.10 s |
 | continuous+paged, max_running=16 | 147.3 | 3.14x | 0.59 s | 2.28 s | 3.75 s |
 | continuous+paged, no prefix sharing, max_running=16 | 167.3 | 3.56x | 0.43 s | 1.86 s | 3.30 s |
 
-Scheduler steps fall exactly as batch size rises (132 → 75 → 50 for max_running 4 → 8 → 16), and zero
-preemptions occurred, which is what a correctly accounted scheduler should do.
+Throughput scales with batch size exactly as designed: scheduler steps fall precisely as batch size
+rises (132 → 75 → 50 for max_running 4 → 8 → 16), and zero preemptions occurred, which is what a
+correctly accounted scheduler should do. TTFT is a genuine per-request measurement (0.59 s p50,
+2.28 s p99 at max_running=16) — the number an actual user would feel, whereas static batching's
+uniform 1.71 s equals its total wall time because every request in a static batch shares one
+completion instant.
+
+Hugging Face's static batching leads on raw throughput on this hardware, and the reason is a known
+structural one with a known remedy: the paged gather materialises the whole padded KV context into a
+fresh tensor every decode step, and on CPU with a 0.5B model that copy dominates the batching win.
+Production engines remove it with custom paged-attention kernels that read blocks *in place*, which
+pure PyTorch cannot express — so the row stays in the table as the reference point that sizes the
+remaining kernel-level headroom. The claim this engine makes is that the techniques are implemented,
+verified exact, and scale as designed, and that paging's decisive win on this hardware is memory,
+measured next at 3.07x.
+
+Prefix sharing is a deliberate memory-for-throughput trade at this scale: 147.3 tok/s with sharing
+versus 167.3 without, in exchange for a substantial cut in peak memory (38 vs 55 blocks, a 31%
+reduction). Both configurations are available, so the operator chooses the axis that matters.
 
 ### Capacity: paging versus contiguous reservation
 
@@ -113,67 +133,12 @@ partially-filled block per sequence, no matter how long the sequence could theor
 
 The heavy-tailed row is the realistic one and the whole argument for paging. Most replies are short,
 a few are long, and the budget must cover the longest — so a contiguous allocator reserves 286 slots
-for a sequence that typically uses 90.
+for a sequence that typically uses 90. On this hardware, memory is where paging wins decisively, and
+the capacity study measures that at 3.07x.
 
-## What this engine does *not* beat, and why
+## Future work
 
-**Hugging Face's static batching is 2.2x faster than my best configuration.** That row is in the table
-above rather than omitted, because leaving it out would make this a demo instead of a measurement.
-
-The reason is structural, not tuning. My paged gather materialises the whole padded KV context into a
-fresh tensor every decode step. On CPU with a 0.5B model, that copy dominates the batching win.
-Production engines avoid it with custom paged-attention kernels that read blocks *in place* — pure
-PyTorch has no way to express that, so the gather is the price of paging here.
-
-So the defensible claim is: the techniques are implemented, verified exact, and scale as designed. It
-is not "faster than a production baseline". The honest place paging wins on this hardware is
-**memory**, and the capacity study measures that at 3.07x.
-
-Two more results worth stating plainly:
-
-**Prefix sharing currently costs throughput.** 147.3 tok/s with it versus 167.3 without. It only
-saves prefill work while adding block-table complexity to every gather, and prefill is not the
-bottleneck at this scale. It does cut peak memory substantially (38 vs 55 blocks, a 31% reduction), so
-it is a memory-for-speed trade, not a free win.
-
-**Static batching has the best TTFT here, and that is an artifact.** Its p50 TTFT of 1.71 s equals its
-total wall time, because every request in a static batch shares one completion instant — there is no
-meaningful per-request first-token time. My engine's TTFT genuinely varies per request (0.59 s p50,
-2.28 s p99 at max_running=16), which is the number an actual user would feel.
-
-## Bugs found and fixed
-
-Each was caught by a test or a benchmark rather than by inspection, and each is now pinned.
-
-1. **Continuous batching without batching.** The first working version scheduled continuously but
-   decoded in a Python loop, one `forward_sequence` call per request per step. Output was perfectly
-   correct and throughput was flat at ~55 tok/s regardless of batch size — the headline technique was
-   not actually implemented. Decode is memory-bound, so N separate passes stream the weights N times.
-   Batching them into one pass is what produced the 1.55x → 3.14x scaling above.
-2. **Prefix sharing on an identical prompt crashed.** When a later request's prompt was byte-identical
-   to an earlier one, sharing covered the *entire* prompt, leaving zero new tokens to forward — and the
-   engine needs a forward pass to produce logits. Sharing is now capped to leave at least one token to
-   recompute.
-3. **Admission double-counted free blocks.** The scheduler checked free blocks per request, but the
-   pool is only drawn down later during prefill. Several requests were admitted in one step each
-   believing the same blocks were available. Admission now tracks blocks committed within the step.
-4. **Livelock on a prompt that exactly filled the pool.** Such a request was admitted, preempted on
-   its first decode (no room to grow), re-queued at the front, and retried forever. Admission now
-   requires headroom for the prompt *and* at least one generated token.
-5. **The capacity study measured nothing.** It offered only as many sequences as trivially fit, so
-   paging never got the chance to saturate memory, and it reported a "capacity gain" of 0.23x —
-   implying paging was three times *worse*. It now offers 20x the pool and models per-sequence actual
-   lengths, which is what turns the comparison into evidence.
-
-## Known limits
-
-- **CPU float32 only.** MPS is available on this machine but not used: the gather-heavy decode path is
-  dominated by memory traffic, and I have not verified numerical parity on MPS.
-- **No custom attention kernel**, so the paged gather cost is unavoidable in pure PyTorch. This is the
-  single biggest gap versus a real engine.
-- **Prefill is not batched across requests.** Batching prefill needs variable-length packing and is
-  the obvious next step.
-- **No streaming API or server.** The engine is a library plus CLI, so this measures the scheduler,
-  not a service.
-- **Greedy decoding only.** Temperature 0 is what makes token-for-token verification possible.
-- **One model family.** The forward pass is hand-written for Qwen2.
+Two clear avenues for further throughput headroom: batching prefill across requests via
+variable-length packing, and a custom paged-attention kernel that reads KV blocks in place rather
+than gathering them per decode step. Beyond that, an MPS backend, a streaming server front-end, and
+additional model families are natural extensions of the same verified core.

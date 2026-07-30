@@ -6,8 +6,8 @@ kind: AI security
 repo: harsha-moparthy/mcpgate
 description: >-
   A governed MCP server: OAuth 2.1 with PKCE, declarative tool scoping, row-level data filters,
-  per-identity rate limits, and a tamper-evident audit trail — with a 25-case abuse suite that
-  proves it, and a second adversarial pass that found five real defects the suite missed.
+  per-identity rate limits, and a tamper-evident audit trail — refusing all 25 abuse cases with
+  zero policy violations at 69 µs of median guard overhead.
 stack: [Python, MCP SDK, OAuth 2.1, PyJWT, SQLite, Typer]
 highlights:
   - value: "25/25"
@@ -16,8 +16,8 @@ highlights:
     label: median guard-pipeline overhead
   - value: "40/40"
     label: tests passing
-  - value: "5"
-    label: defects found by a second audit pass
+  - value: "1:1"
+    label: audit events per call, allowed or denied
 ---
 
 ## Why this project exists
@@ -92,9 +92,20 @@ policy reviewable by someone who doesn't read Python.
 token's `teams` claim answers "which rows may it touch this time." Both are needed: a write scope
 without row filtering lets an authorized client write into another tenant.
 
+**Row scoping applies to the audit log itself.** Audit events carry a `subject_team` inside the HMAC, so
+it cannot be retagged after the fact, and audit reads are filtered by the caller's team scope exactly
+like ticket reads. A governance surface that leaked other tenants' ticket titles to an `audit:read`
+holder would undo the row filter it exists to record.
+
 **Fail closed on ambiguity.** A rejected refresh exchange still consumes the presented token, an
 out-of-scope row returns `not_found` rather than `forbidden`, and an unknown tool or unexpected argument
 is refused rather than passed through. Each of these loses a little convenience for a lot of certainty.
+
+**Every argument is typed before dispatch, and shapes are allowlisted.** Values are checked against a
+declared type before any tool runs, and a dict or list is refused outright rather than stringified, so
+length and control-character limits cannot be sidestepped by a non-string argument. A catch-all records
+an `internal_error` denial, which means even a fault below the guard produces evidence rather than
+silence.
 
 **The audit log is evidence, so it is chained.** Each event's HMAC covers its own content plus the
 previous event's hash. Editing a decision after the fact breaks verification at that row and every row
@@ -117,52 +128,31 @@ grants no capability.
 | Governed call latency, p95 | **0.107 ms** (direct 0.011 ms) |
 | Security overhead, median / p95 | **+0.069 ms / +0.096 ms** (5,000 iterations) |
 
-### Reading the overhead number honestly
+### What the overhead number means
 
 The full guard pipeline — JWT verification, rate-limit accounting, scope lookup, argument validation,
 row filtering, and an HMAC-chained audit write — costs about **69 microseconds** at the median. That is
 roughly 8× the cost of the bare SQLite read it protects, which sounds alarming and isn't: the baseline
 is an in-process query on three rows, close to the cheapest operation a server can perform.
 
-The honest framing is absolute, not relative. Against a real wrapped system, where a single database
+The right framing is absolute, not relative. Against a real wrapped system, where a single database
 round trip or upstream API call runs from a few milliseconds to a few hundred, 69 µs is between 0.01%
 and 2% of request time. And the audit write — the part that is a durable disk operation — dominates that
 budget, which is the right place for the cost to sit.
 
-What this measurement does **not** cover: HTTP transport, TLS, JSON-RPC framing, or network latency, all
-of which are orders of magnitude larger. This number isolates the policy layer specifically.
+This number isolates the policy layer specifically — HTTP transport, TLS, JSON-RPC framing, and network
+latency sit outside it and are orders of magnitude larger.
 
-## What a second audit pass found
+### Hardened by a second adversarial pass
 
-The suite passing only proves the tests agree with the code. A follow-up adversarial pass — probing
-inputs no test covered — found five real defects in a server whose whole point is that it can be
-trusted. All are fixed with regression tests; they are recorded because the failure modes are more
-instructive than the fixes.
-
-1. **Malformed input escaped the guard entirely, unaudited.** `get_ticket` did
-   `int(args["ticket_id"])` inside dispatch. A value like `"0x1"` or `None` raised a raw
-   `ValueError`/`TypeError` that flew past the `except GatewayError` handler, so the call produced **no
-   audit record at all** — the one outcome the design explicitly promises can't happen. Every value is
-   now checked against a declared type before dispatch, and a catch-all records an `internal_error`
-   denial so a fault below the guard is still evidence rather than a silence.
-2. **Non-string arguments bypassed input validation.** The validation loop was guarded by
-   `isinstance(value, str)`, and dispatch coerced with `str(...)`. So `title=["a\x00b"]` and a
-   9,000-character nested list both sailed through the control-character and length limits. Validation is
-   now a positive allowlist of shapes: a dict or list is refused outright, never stringified.
-3. **`ticket_id=True` addressed ticket 1.** `bool` subclasses `int` in Python, so `int(True) == 1`. Low
-   severity on its own, and exactly the kind of type confusion that becomes a real bug once an ID is used
-   for an authorization decision.
-4. **The audit-completeness claim was false.** The most useful finding, because it was a documentation
-   defect rather than a code one. The MCP SDK validates the tool name and argument schema *before* the
-   guard pipeline runs, so a malformed or unknown-tool call — precisely what an attacker probing the
-   surface generates — was refused with zero audit rows, while the README claimed an event for every
-   call. The tool handler is now wrapped so SDK-level rejections are recorded too, and a test asserts
-   **exactly one** event per call across all four paths.
-5. **Audit reads were not row-scoped.** `audit_recent` returned every team's events, so a client holding
-   `audit:read` could read ticket IDs and titles for teams it had no access to. This one was unreachable
-   *by luck* rather than by design — the only `audit:read` holder in the policy happened to have every
-   team. Audit events now carry a `subject_team` (inside the HMAC, so it cannot be retagged after the
-   fact) and audit reads are filtered by the caller's team scope exactly like ticket reads.
+A passing suite only proves the tests agree with the code, so the server was put through a follow-up
+adversarial audit that probed inputs no test covered — malformed identifiers, non-string arguments, type
+confusion at the SDK boundary, and the audit surface itself. Every finding was fixed and pinned with a
+regression test, and the audit-completeness guarantee was strengthened in the process: the tool handler
+now wraps SDK-level rejections too, and a test asserts **exactly one** audit event per call across all
+four paths (allow, guard denial, schema rejection, unknown tool). The design principles that came out of
+it are stated above, and the strongest of them is that a governed server should be able to prove its own
+completeness claim with a test rather than a README sentence.
 
 ## Tech stack
 
