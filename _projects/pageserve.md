@@ -1,6 +1,7 @@
 ---
 title: PageServe
 order: 1
+group: Inference and serving
 kind: Inference engine
 repo: harsha-moparthy/pageserve
 description: >-

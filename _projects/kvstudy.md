@@ -1,6 +1,7 @@
 ---
 title: KVStudy
 order: 2
+group: Inference and serving
 kind: Inference study
 repo: harsha-moparthy/kvstudy
 description: >-

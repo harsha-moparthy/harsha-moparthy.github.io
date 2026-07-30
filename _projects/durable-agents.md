@@ -1,6 +1,7 @@
 ---
 title: Durable Agents
 order: 6
+group: Multi-agent systems
 kind: Multi-agent systems
 repo: harsha-moparthy/durable-agents
 description: >-

@@ -1,6 +1,7 @@
 ---
 title: MCPGate
-order: 4
+order: 9
+group: AI security
 kind: AI security
 repo: harsha-moparthy/mcpgate
 description: >-

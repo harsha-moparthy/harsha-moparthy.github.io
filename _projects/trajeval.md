@@ -1,6 +1,7 @@
 ---
 title: Trajeval
-order: 5
+order: 4
+group: Agent reliability
 kind: Agent evaluation
 repo: harsha-moparthy/trajeval
 description: >-

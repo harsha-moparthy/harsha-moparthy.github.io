@@ -1,6 +1,7 @@
 ---
 title: InjectGuard
-order: 3
+order: 8
+group: AI security
 kind: AI security
 repo: harsha-moparthy/injectguard
 description: >-

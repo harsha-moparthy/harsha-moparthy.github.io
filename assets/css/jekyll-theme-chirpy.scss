@@ -45,12 +45,85 @@
 /* ---------- Projects index ---------- */
 
 .proj-intro {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   color: var(--text-muted-color);
 
   p {
     margin-bottom: 0;
   }
+}
+
+/* Jump links to each bracket. With 14 projects the index is taller than a screen,
+   so this is what keeps the grouping usable rather than decorative. */
+.proj-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 1.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.proj-toc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  color: var(--text-muted-color);
+  text-decoration: none;
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 1rem;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    color: var(--link-color);
+    border-color: var(--btn-border-color);
+  }
+}
+
+.proj-toc-count {
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+
+.proj-section {
+  margin-top: 2.25rem;
+
+  &:first-of-type {
+    margin-top: 1.75rem;
+  }
+}
+
+.proj-section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+  border-bottom: none;
+
+  /* Anchor targets sit under the sticky topbar without the jump-link offset. */
+  scroll-margin-top: 5rem;
+}
+
+.proj-section-count {
+  padding: 0.05rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
 }
 
 .proj-grid {
