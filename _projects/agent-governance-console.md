@@ -1,7 +1,7 @@
 ---
 title: Governance Console
 track: fde
-order: 17
+order: 20
 group: Agent operations
 kind: Operations console
 repo: harsha-moparthy/agent-governance-console

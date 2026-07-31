@@ -342,10 +342,86 @@
 
 .proj-pipeline {
   padding: 0.75rem 1rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
   color: var(--text-muted-color);
   background: var(--sidebar-bg);
   border: 1px dashed var(--main-border-color);
   border-radius: 8px;
   max-width: 46rem;
+}
+
+/* ---- collapsible tracks: drop / collapse animation ---- */
+
+/* The track heading is a real button so the toggle is keyboard- and
+   screen-reader-accessible; it inherits the h2's type styles. */
+.proj-track-toggle {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  &:hover .proj-track-name {
+    color: var(--link-color);
+  }
+}
+
+.proj-track-chevron {
+  align-self: center;
+  font-size: 0.8em;
+  color: var(--text-muted-color);
+  transition: transform 0.3s ease;
+
+  .proj-track.is-open & {
+    transform: rotate(90deg);
+  }
+}
+
+/* Grid-rows collapse: animates from 0fr to 1fr without JS height math. */
+.proj-track-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.proj-track-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+
+  /* Breathing room so card hover shadows and the -2px lift are not clipped
+     by the overflow container; negative margins keep the layout width. */
+  padding: 0.25rem 0.75rem 1.25rem;
+  margin: 0 -0.75rem;
+  opacity: 0;
+  transform: translateY(-0.4rem);
+  transition:
+    opacity 0.3s ease 0.05s,
+    transform 0.3s ease 0.05s;
+}
+
+.proj-track.is-open {
+  .proj-track-panel {
+    grid-template-rows: 1fr;
+  }
+
+  .proj-track-panel-inner {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced motion: state changes still work, transitions are removed. */
+.proj-no-anim {
+  .proj-track-panel,
+  .proj-track-panel-inner,
+  .proj-track-chevron {
+    transition: none;
+  }
 }

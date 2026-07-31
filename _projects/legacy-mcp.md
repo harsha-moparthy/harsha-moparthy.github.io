@@ -1,7 +1,7 @@
 ---
 title: Legacy MCP
 track: fde
-order: 16
+order: 18
 group: Legacy modernization
 kind: Integration layer
 repo: harsha-moparthy/legacy-mcp
