@@ -175,8 +175,10 @@ layout: page
       });
     });
 
-    // Expand the track containing the target of a TOC click or a deep link,
-    // whether the anchor is the track itself or a group heading inside it.
+    /* Expand the track containing the target of a TOC click or a deep link,
+       whether the anchor is the track itself or a group heading inside it.
+       No line comments in this script: production HTML compression flattens
+       the page to one line, and a // comment would swallow the rest. */
     function openForHash(hash) {
       if (!hash || hash.length < 2) return;
       var el;

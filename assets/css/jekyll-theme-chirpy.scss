@@ -396,14 +396,17 @@
   overflow: hidden;
 
   /* Breathing room so card hover shadows and the -2px lift are not clipped
-     by the overflow container; negative margins keep the layout width. */
-  padding: 0.25rem 0.75rem 1.25rem;
+     by the overflow container; negative margins keep the layout width. The
+     vertical padding applies only when open — padding is not shrinkable, so
+     it would otherwise hold the collapsed row at ~24px instead of 0. */
+  padding: 0 0.75rem;
   margin: 0 -0.75rem;
   opacity: 0;
   transform: translateY(-0.4rem);
   transition:
     opacity 0.3s ease 0.05s,
-    transform 0.3s ease 0.05s;
+    transform 0.3s ease 0.05s,
+    padding 0.35s ease;
 }
 
 .proj-track.is-open {
@@ -412,6 +415,7 @@
   }
 
   .proj-track-panel-inner {
+    padding: 0.25rem 0.75rem 1.25rem;
     opacity: 1;
     transform: translateY(0);
   }
