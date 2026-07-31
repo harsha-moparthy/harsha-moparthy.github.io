@@ -14,8 +14,6 @@
     The work of making AI agents function inside real organizations: wrapping legacy systems
     in governed tool layers, and giving operators the audit, replay, and kill-switch controls
     they ask for on day one.
-  pipeline:
-    - Digital-twin what-if simulator
 - id: sde
   name: Software engineering
   blurb: >-
