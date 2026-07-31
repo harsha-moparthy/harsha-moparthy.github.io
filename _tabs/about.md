@@ -4,52 +4,74 @@ icon: fas fa-info-circle
 order: 5
 ---
 
-Hey, I am Harsha — an ML engineer interested in the systems side of machine learning: how models are
-served efficiently, how agents are made reliable enough to trust, and how both behave under adversarial
-pressure.
+Hey, I am Harsha — an engineer who builds systems and measures them: how models are served
+efficiently, how agents are made reliable enough to trust, how both behave under adversarial
+pressure, and what the infrastructure underneath — gateways, ledgers, matching engines — actually
+costs when you benchmark it honestly.
 
-Most of my recent work is in [projects]({{ '/projects/' | relative_url }}) — {{ site.projects | size }}
-machine-learning systems built across seven areas:
+{% assign ml = site.projects | where: 'track', 'ml' %}
+{% assign fde = site.projects | where: 'track', 'fde' %}
+{% assign sde = site.projects | where: 'track', 'sde' %}
+{% assign hft = site.projects | where: 'track', 'hft' %}
+{% assign backend = site.projects | where: 'track', 'backend' %}
 
-- **[PageServe]({{ '/projects/pageserve/' | relative_url }})**,
-  **[KVStudy]({{ '/projects/kvstudy/' | relative_url }})** and
-  **[SpecDec]({{ '/projects/specdec/' | relative_url }})** — LLM serving internals: continuous
-  batching, paged KV caches, what cache compression costs in quality, and what actually governs whether
-  an exactly-correct speculative decoder pays off on wall-clock.
-- **[Trajeval]({{ '/projects/trajeval/' | relative_url }})** and
-  **[Computer-Use Agent Sandbox]({{ '/projects/computer-use-agent-sandbox/' | relative_url }})** —
-  agent reliability: telling a real regression from run-to-run noise, and benchmarking a browser agent
-  against a fixture proven solvable first.
-- **[Durable Agents]({{ '/projects/durable-agents/' | relative_url }})** and
-  **[A2A Interop]({{ '/projects/a2a-interop/' | relative_url }})** — multi-agent systems: surviving a
-  `kill -9` mid-task, and what an agent-interop protocol under-specifies once you implement it.
-- **[InjectGuard]({{ '/projects/injectguard/' | relative_url }})** and
-  **[MCPGate]({{ '/projects/mcpgate/' | relative_url }})** — AI systems security: prompt-injection
-  containment by construction, and putting authorization in the graph rather than the prompt.
-- **[RAGStudy]({{ '/projects/ragstudy/' | relative_url }})** and
-  **[Memlayer]({{ '/projects/agent-long-term-memory/' | relative_url }})** — retrieval and memory:
-  where an agentic retrieval loop actually pays for itself, and isolating a memory layer's contribution
-  from the model's own ability.
-- **[CostRouter]({{ '/projects/costrouter/' | relative_url }})** and
-  **[GenAI Observability]({{ '/projects/genai-observability-otel/' | relative_url }})** — cost and
-  observability: routing measured against a random-at-equal-spend null, and instrumenting an LLM app
-  to the OpenTelemetry GenAI conventions.
-- **[Synth Pipeline]({{ '/projects/synth-pipeline/' | relative_url }})** and
-  **[Toolcall DPO]({{ '/projects/toolcall-dpo/' | relative_url }})** — training data and post-training:
-  showing that a filter stack is what turns synthetic data into a real gain, and writing DPO and GRPO
-  from scratch to demonstrate reward hacking directly — GRPO raising its own reward while exactness
-  falls.
+Most of my recent work is in [projects]({{ '/projects/' | relative_url }}) —
+{{ site.projects | size }} shipped systems across five engineering tracks, every one a working
+implementation with committed benchmark reports:
 
-A habit that runs through all of them: build the measurement harness before drawing the conclusion, and
-report the number the harness produced.
+- **[Machine learning & AI systems]({{ '/projects/#ml' | relative_url }})** ({{ ml.size }}) —
+  LLM serving internals, agent reliability, multi-agent protocols, AI security, retrieval and
+  memory, cost, and post-training. Highlights:
+  **[PageServe]({{ '/projects/pageserve/' | relative_url }})** (continuous batching and a paged
+  KV cache, token-for-token exact),
+  **[Durable Agents]({{ '/projects/durable-agents/' | relative_url }})** (`kill -9` mid-task,
+  resumes exactly-once), and
+  **[InjectGuard]({{ '/projects/injectguard/' | relative_url }})** (prompt-injection containment
+  by construction, 100% → 0% attack success).
+- **[Forward-deployed engineering]({{ '/projects/#fde' | relative_url }})** ({{ fde.size }}) —
+  making agents function inside real organizations:
+  **[Enterprise Agent Deployment]({{ '/projects/enterprise-agent-deployment/' | relative_url }})**
+  (approval gates defined over effects, not tool names),
+  **[Legacy MCP]({{ '/projects/legacy-mcp/' | relative_url }})** (0/6 → 6/6 task success through a
+  governed wrapper over an authentically awful SOAP backend), and
+  **[DocPipe]({{ '/projects/docpipe/' | relative_url }})** (a document pipeline that verifies its
+  own extractions).
+- **[Software engineering]({{ '/projects/#sde' | relative_url }})** ({{ sde.size }}) — developer
+  infrastructure for the agent era:
+  **[Sandboxd]({{ '/projects/sandboxd/' | relative_url }})** (the same hostile suite run on gVisor
+  and Firecracker, so isolation and latency are compared rather than asserted),
+  **[RepoCtx]({{ '/projects/repoctx/' | relative_url }})** (repo-scale context that lifts an 8B
+  agent's file recall 3.4x), and
+  **[MiniTemporal]({{ '/projects/minitemporal/' | relative_url }})** (a durable-execution engine
+  in ~2k lines of stdlib Go, chaos-verified).
+- **[HFT & low latency]({{ '/projects/#hft' | relative_url }})** ({{ hft.size }}) — latency
+  engineering and market microstructure:
+  **[Tick2Trade]({{ '/projects/tick2trade/' | relative_url }})** (583 ns p99 internal with a
+  published per-hop budget),
+  **[Matchbook]({{ '/projects/matchbook/' | relative_url }})** (a zero-unsafe Rust matching engine
+  within 1.01-1.09x of pointer-based C++, verified by 2.49B fuzz executions), and
+  **[Deadman]({{ '/projects/deadman/' | relative_url }})** (a kill switch model-checked in TLA+,
+  with the Go core replaying all 23,240 model sequences).
+- **[Backend engineering]({{ '/projects/#backend' | relative_url }})** ({{ backend.size }}) — the
+  service layer AI products stand on:
+  **[LLM Gateway]({{ '/projects/llmgw/' | relative_url }})** (1.84 ms p99 added latency, cost
+  ledger exact to the picodollar),
+  **[Meterd]({{ '/projects/meterd/' | relative_url }})** (292,792 chaos deliveries reconciling
+  exactly), and
+  **[Flowd]({{ '/projects/flowd/' | relative_url }})** (durable execution surviving 165 worker
+  SIGKILLs with zero lost or duplicated effects).
+
+A habit that runs through all of them: build the measurement harness before drawing the
+conclusion, report the number the harness produced — and keep the honest negatives.
 
 ## Interests
 
 1. LLM inference and serving efficiency
 2. Agent reliability, evaluation, and durable execution
-3. Deep learning architectures and their applications
-4. Information retrieval and recommendation systems
-5. The intersection of ML and privacy
+3. Low-latency systems and market microstructure
+4. Backend infrastructure for AI products — gateways, metering, multi-tenant isolation
+5. Information retrieval and recommendation systems
+6. The intersection of ML and privacy
 
 ## Publication
 
