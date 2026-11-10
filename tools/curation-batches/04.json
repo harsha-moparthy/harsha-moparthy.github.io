@@ -1,0 +1,165 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "family": [
+      "Lilian Weng",
+      "The Transformer Family Version 2.0",
+      "https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/",
+      "Research explainer",
+      "Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers."
+    ],
+    "pos": [
+      "Christopher Fleetwood / Hugging Face",
+      "You could have designed state of the art positional encoding",
+      "https://huggingface.co/blog/designing-positional-encoding",
+      "Visual derivation",
+      "Derive positional representations from simple requirements and build toward rotary embeddings."
+    ],
+    "ropeextend": [
+      "Aman Arora",
+      "How LLMs Scaled from 512 to 2M Context",
+      "https://amaarora.github.io/posts/2025-09-21-rope-context-extension.html",
+      "Math and code",
+      "Work through RoPE frequencies, interpolation, NTK scaling, and YaRN implementations."
+    ],
+    "mlp": [
+      "3Blue1Brown",
+      "How might LLMs store facts?",
+      "https://www.3blue1brown.com/lessons/mlp/",
+      "Visual lesson",
+      "Understand transformer feed-forward computations and one interpretation of how facts may be represented."
+    ],
+    "rms": [
+      "Sebastian Raschka",
+      "RMSNorm",
+      "https://sebastianraschka.com/llms-from-scratch/ch04/09_rmsnorm/",
+      "Implementation guide",
+      "Compare RMS-based rescaling with LayerNorm and inspect the normalization code."
+    ],
+    "silu": [
+      "Sebastian Raschka",
+      "SiLU / Swish",
+      "https://sebastianraschka.com/llms-from-scratch/ch04/11_silu/",
+      "Implementation guide",
+      "Examine the smooth activation used inside modern gated feed-forward blocks."
+    ],
+    "qknorm": [
+      "Sebastian Raschka",
+      "QK-Norm",
+      "https://sebastianraschka.com/llm-architecture-gallery/qk-norm/",
+      "Architecture explainer",
+      "See how normalizing queries and keys controls attention-logit scale."
+    ],
+    "mla": [
+      "Sebastian Raschka",
+      "Multi-Head Latent Attention",
+      "https://sebastianraschka.com/llm-architecture-gallery/mla/",
+      "Architecture explainer",
+      "Understand compressed key-value representations and their cache tradeoffs."
+    ],
+    "swa": [
+      "Sebastian Raschka",
+      "Sliding Window Attention",
+      "https://sebastianraschka.com/llm-architecture-gallery/swa/",
+      "Architecture explainer",
+      "Distinguish local attention windows from full-prefix attention and head sharing."
+    ],
+    "hybrid": [
+      "Sebastian Raschka",
+      "Hybrid Attention",
+      "https://sebastianraschka.com/llm-architecture-gallery/hybrid-attention/",
+      "Architecture explainer",
+      "Examine designs combining different attention mechanisms within one model."
+    ],
+    "s4": [
+      "Sasha Rush & Sidd Karamcheti",
+      "The Annotated S4",
+      "https://srush.github.io/annotated-s4/",
+      "Annotated implementation",
+      "Connect state-space equations to recurrent and convolutional implementations in JAX."
+    ],
+    "mamba2": [
+      "Tri Dao",
+      "State Space Duality: Mamba-2, Part I",
+      "https://tridao.me/blog/2024/mamba2-part1-model/",
+      "Author explanation",
+      "Relate selective state spaces to attention through the SSD formulation."
+    ],
+    "archcompare": [
+      "Sebastian Raschka / Ahead of AI",
+      "The Big LLM Architecture Comparison",
+      "https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison",
+      "Illustrated article",
+      "Compare real models' attention, feed-forward, normalization, and parameter-allocation choices."
+    ],
+    "beyond": [
+      "Sebastian Raschka / Ahead of AI",
+      "Beyond Standard LLMs",
+      "https://magazine.sebastianraschka.com/p/beyond-standard-llms",
+      "Research explainer",
+      "Explore alternatives to conventional transformers and their architectural tradeoffs."
+    ],
+    "longtheory": [
+      "TheoremPath",
+      "Sparse Attention and Long Context",
+      "https://www.theorempath.com/topics/sparse-attention-and-long-context",
+      "Theory guide",
+      "Study sparse patterns, distributed attention, streaming, and context-extension limitations."
+    ]
+  },
+  "subtopics": {
+    "10.2": [
+      "swa",
+      "family",
+      "longtheory"
+    ],
+    "10.3": [
+      "mla",
+      "hybrid",
+      "mamba2",
+      "archcompare"
+    ],
+    "11.1": [
+      "pos",
+      "family",
+      "ropeextend"
+    ],
+    "11.2": [
+      "pos",
+      "ropeextend",
+      "cache"
+    ],
+    "11.3": [
+      "ropeextend",
+      "longtheory",
+      "family"
+    ],
+    "12.1": [
+      "mlp",
+      "silu",
+      "annotated",
+      "archcompare"
+    ],
+    "12.2": [
+      "rms",
+      "qknorm",
+      "annotated"
+    ],
+    "12.3": [
+      "archcompare",
+      "family",
+      "beyond"
+    ],
+    "13.1": [
+      "bert",
+      "gpt2",
+      "annotated",
+      "family"
+    ],
+    "13.2": [
+      "s4",
+      "mamba2",
+      "beyond"
+    ]
+  }
+}

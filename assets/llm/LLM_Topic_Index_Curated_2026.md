@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 10 November 2026. 30 of 204 subtopics curated.
+Updated 2026-11-11. 40 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -439,7 +439,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Linearized/kernel attention and approximation limits
 - [ ] Cross-attention and bidirectional conditioning
 
-Reading-list review pending; see the original index for candidate links.
+1. [Sliding Window Attention](https://sebastianraschka.com/llm-architecture-gallery/swa/) — Sebastian Raschka · Architecture explainer. Distinguish local attention windows from full-prefix attention and head sharing.
+2. [The Transformer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/) — Lilian Weng · Research explainer. Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers.
+3. [Sparse Attention and Long Context](https://www.theorempath.com/topics/sparse-attention-and-long-context) — TheoremPath · Theory guide. Study sparse patterns, distributed attention, streaming, and context-extension limitations.
 
 ### 10.3 Novel and hybrid attention ideas
 
@@ -450,7 +452,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Attention-free and recurrent alternatives
 - [ ] Combining full attention with local/recurrent layers
 
-Reading-list review pending; see the original index for candidate links.
+1. [Multi-Head Latent Attention](https://sebastianraschka.com/llm-architecture-gallery/mla/) — Sebastian Raschka · Architecture explainer. Understand compressed key-value representations and their cache tradeoffs.
+2. [Hybrid Attention](https://sebastianraschka.com/llm-architecture-gallery/hybrid-attention/) — Sebastian Raschka · Architecture explainer. Examine designs combining different attention mechanisms within one model.
+3. [State Space Duality: Mamba-2, Part I](https://tridao.me/blog/2024/mamba2-part1-model/) — Tri Dao · Author explanation. Relate selective state spaces to attention through the SSD formulation.
+4. [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison) — Sebastian Raschka / Ahead of AI · Illustrated article. Compare real models' attention, feed-forward, normalization, and parameter-allocation choices.
 
 ## 11. Positional information and context length
 
@@ -464,7 +469,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Complex-number and rotation-matrix view of RoPE
 - [ ] Multi-axis and multimodal positional encoding
 
-Reading-list review pending; see the original index for candidate links.
+1. [You could have designed state of the art positional encoding](https://huggingface.co/blog/designing-positional-encoding) — Christopher Fleetwood / Hugging Face · Visual derivation. Derive positional representations from simple requirements and build toward rotary embeddings.
+2. [The Transformer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/) — Lilian Weng · Research explainer. Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers.
+3. [How LLMs Scaled from 512 to 2M Context](https://amaarora.github.io/posts/2025-09-21-rope-context-extension.html) — Aman Arora · Math and code. Work through RoPE frequencies, interpolation, NTK scaling, and YaRN implementations.
 
 ### 11.2 RoPE and extrapolation details
 
@@ -475,7 +482,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Extrapolation versus interpolation and failure modes
 - [ ] Position-ID offsets, packed sequences, and KV-cache compatibility
 
-Reading-list review pending; see the original index for candidate links.
+1. [You could have designed state of the art positional encoding](https://huggingface.co/blog/designing-positional-encoding) — Christopher Fleetwood / Hugging Face · Visual derivation. Derive positional representations from simple requirements and build toward rotary embeddings.
+2. [How LLMs Scaled from 512 to 2M Context](https://amaarora.github.io/posts/2025-09-21-rope-context-extension.html) — Aman Arora · Math and code. Work through RoPE frequencies, interpolation, NTK scaling, and YaRN implementations.
+3. [How caching works](https://huggingface.co/docs/transformers/cache_explanation) — Hugging Face · Technical guide. Understand why autoregressive decoding reuses keys and values and how masks change.
 
 ### 11.3 Long-context learning
 
@@ -487,7 +496,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Long-context attention alternatives and segment recurrence
 - [ ] Long-context evaluation and memory–compute bottlenecks
 
-Reading-list review pending; see the original index for candidate links.
+1. [How LLMs Scaled from 512 to 2M Context](https://amaarora.github.io/posts/2025-09-21-rope-context-extension.html) — Aman Arora · Math and code. Work through RoPE frequencies, interpolation, NTK scaling, and YaRN implementations.
+2. [Sparse Attention and Long Context](https://www.theorempath.com/topics/sparse-attention-and-long-context) — TheoremPath · Theory guide. Study sparse patterns, distributed attention, streaming, and context-extension limitations.
+3. [The Transformer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/) — Lilian Weng · Research explainer. Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers.
 
 ## 12. Transformer blocks, normalization, and activation design
 
@@ -499,7 +510,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] FFN expansion ratio and parameter budgeting
 - [ ] Weight tying, factorization, and depth/width trade-offs
 
-Reading-list review pending; see the original index for candidate links.
+1. [How might LLMs store facts?](https://www.3blue1brown.com/lessons/mlp/) — 3Blue1Brown · Visual lesson. Understand transformer feed-forward computations and one interpretation of how facts may be represented.
+2. [SiLU / Swish](https://sebastianraschka.com/llms-from-scratch/ch04/11_silu/) — Sebastian Raschka · Implementation guide. Examine the smooth activation used inside modern gated feed-forward blocks.
+3. [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP · Annotated implementation. Translate attention equations, masks, residual blocks, and training into runnable PyTorch.
+4. [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison) — Sebastian Raschka / Ahead of AI · Illustrated article. Compare real models' attention, feed-forward, normalization, and parameter-allocation choices.
 
 ### 12.2 Normalization and residual topology
 
@@ -510,7 +524,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Bias-free and bias-containing projections
 - [ ] Initialization and stabilization of very deep transformers
 
-Reading-list review pending; see the original index for candidate links.
+1. [RMSNorm](https://sebastianraschka.com/llms-from-scratch/ch04/09_rmsnorm/) — Sebastian Raschka · Implementation guide. Compare RMS-based rescaling with LayerNorm and inspect the normalization code.
+2. [QK-Norm](https://sebastianraschka.com/llm-architecture-gallery/qk-norm/) — Sebastian Raschka · Architecture explainer. See how normalizing queries and keys controls attention-logit scale.
+3. [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP · Annotated implementation. Translate attention equations, masks, residual blocks, and training into runnable PyTorch.
 
 ### 12.3 Structural design choices
 
@@ -521,7 +537,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multi-token prediction heads and auxiliary losses
 - [ ] Memory tokens and architectural conditioning
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison) — Sebastian Raschka / Ahead of AI · Illustrated article. Compare real models' attention, feed-forward, normalization, and parameter-allocation choices.
+2. [The Transformer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/) — Lilian Weng · Research explainer. Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers.
+3. [Beyond Standard LLMs](https://magazine.sebastianraschka.com/p/beyond-standard-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Explore alternatives to conventional transformers and their architectural tradeoffs.
 
 ## 13. Architecture families beyond standard decoder-only LLMs
 
@@ -534,7 +552,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Retrieval-augmented language-model architectures
 - [ ] Prefix conditioning and multimodal decoder variants
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Illustrated BERT, ELMo, and co.](https://jalammar.github.io/illustrated-bert/) — Jay Alammar · Visual guide. Trace contextual representations and the transition to pretrained NLP transfer learning.
+2. [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/) — Jay Alammar · Visual guide. Follow tokens through a decoder-only model and understand how next-token predictions are produced.
+3. [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP · Annotated implementation. Translate attention equations, masks, residual blocks, and training into runnable PyTorch.
+4. [The Transformer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/) — Lilian Weng · Research explainer. Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers.
 
 ### 13.2 Recurrence and state-space alternatives
 
@@ -545,7 +566,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] xLSTM and gated recurrent alternatives
 - [ ] Convolutional/long-filter sequence models
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Annotated S4](https://srush.github.io/annotated-s4/) — Sasha Rush & Sidd Karamcheti · Annotated implementation. Connect state-space equations to recurrent and convolutional implementations in JAX.
+2. [State Space Duality: Mamba-2, Part I](https://tridao.me/blog/2024/mamba2-part1-model/) — Tri Dao · Author explanation. Relate selective state spaces to attention through the SSD formulation.
+3. [Beyond Standard LLMs](https://magazine.sebastianraschka.com/p/beyond-standard-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Explore alternatives to conventional transformers and their architectural tradeoffs.
 
 ### 13.3 Hybrid and adaptive computation
 

@@ -49,7 +49,7 @@ nav, content = [], []
 for t in topics:
     count = sum(len(s['items']) for s in t['subs'])
     nav.append(f'<a href="#{t["id"]}"><span>{t["num"]}</span>{escape(t["title"])}</a>')
-    content.append(f'<details class="topic" id="{t["id"]}"><summary><span class="number">{t["num"]}</span><span class="topic-title">{escape(t["title"])}<small>{len(t["subs"])} subtopics Â· {count} concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">')
+    content.append(f'<details class="topic" id="{t["id"]}"><summary><span class="number">{t["num"]}</span><span class="topic-title">{escape(t["title"])}<small>{len(t["subs"])} subtopics · {count} concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">')
     for s in t['subs']:
         content.append(f'<section class="subtopic" id="{s["id"]}"><h3><a href="#{s["id"]}">{s["num"]}</a> {escape(s["title"])}</h3><ul class="checklist">')
         for i, item in enumerate(s['items']):
@@ -74,7 +74,7 @@ page = template.replace('<!-- TOPIC NAV -->', '\n'.join(nav)).replace('<!-- TOPI
 (root/'_tabs/llm.html').write_text('---\ntitle: LLM\nlayout: false\nicon: fas fa-brain\norder: 2\npermalink: /llm/\n---\n'+page, encoding='utf-8')
 valid_nums = {s['num'] for t in topics for s in t['subs']}
 assert curated.keys() <= valid_nums
-guide = ['# LLM Atlas: Curated Reading Guide', '', f'Updated 10 November 2026. {len(curated)} of 204 subtopics curated.', '', 'Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.', '']
+guide = ['# LLM Atlas: Curated Reading Guide', '', f'Updated {max(json.loads(p.read_text(encoding="utf-8"))["date"] for p in batches)}. {len(curated)} of 204 subtopics curated.', '', 'Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.', '']
 for t in topics:
     guide += [f'## {t["num"]}. {t["title"]}', '']
     for s in t['subs']:
