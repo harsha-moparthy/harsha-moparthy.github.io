@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "context": [
+      "Anthropic",
+      "Effective context engineering for AI agents",
+      "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "Engineering article",
+      "Select useful context and manage retrieval, compaction, and persistent notes."
+    ],
+    "contextretrieval": [
+      "Anthropic",
+      "Introducing Contextual Retrieval",
+      "https://www.anthropic.com/research/contextual-retrieval",
+      "Engineering article",
+      "Combine contextualized chunks, lexical retrieval, embeddings, and reranking."
+    ],
+    "beam": [
+      "Hugging Face",
+      "Guiding Text Generation with Constrained Beam Search",
+      "https://huggingface.co/blog/constrained-beam-search",
+      "Code walkthrough",
+      "Add lexical constraints to beam search and understand constraint-state tracking."
+    ],
+    "xgrammar": [
+      "MLC",
+      "Efficient, Flexible, Portable Structured Generation with XGrammar",
+      "https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar",
+      "Engineering article",
+      "Understand grammar-constrained token generation and its runtime costs."
+    ],
+    "lost": [
+      "Liu et al.",
+      "Lost in the Middle: How Language Models Use Long Contexts",
+      "https://arxiv.org/abs/2307.03172",
+      "Original research",
+      "Test how relevant-information position changes retrieval and question-answering performance."
+    ],
+    "lingua": [
+      "Microsoft Research",
+      "LLMLingua",
+      "https://github.com/microsoft/LLMLingua",
+      "Project and examples",
+      "Experiment with query-aware prompt compression and check what information compression discards."
+    ],
+    "memory": [
+      "Letta",
+      "Agent Memory: How to Build Agents That Learn and Remember",
+      "https://www.letta.com/blog/agent-memory/",
+      "Engineering explainer",
+      "Distinguish message buffers, core memory, searchable history, and external knowledge."
+    ],
+    "effective": [
+      "Anthropic",
+      "Building effective agents",
+      "https://www.anthropic.com/research/building-effective-agents",
+      "Engineering article",
+      "Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows."
+    ],
+    "prompttest": [
+      "Promptfoo",
+      "Test Case Configuration",
+      "https://www.promptfoo.dev/docs/configuration/test-cases/",
+      "Practical guide",
+      "Create held-out examples, assertions, repeated runs, and regression tests for prompts."
+    ],
+    "degeneration": [
+      "Holtzman et al.",
+      "The Curious Case of Neural Text Degeneration",
+      "https://arxiv.org/abs/1904.09751",
+      "Original research",
+      "Understand why likelihood-maximizing decoding can repeat and why nucleus sampling was proposed."
+    ]
+  },
+  "subtopics": {
+    "24.2": [
+      "decode",
+      "beam",
+      "testtime"
+    ],
+    "24.3": [
+      "xgrammar",
+      "beam",
+      "prompttest"
+    ],
+    "24.4": [
+      "decode",
+      "degeneration",
+      "random"
+    ],
+    "25.1": [
+      "promptweng",
+      "chat",
+      "context"
+    ],
+    "25.2": [
+      "promptweng",
+      "effective",
+      "xgrammar"
+    ],
+    "25.3": [
+      "context",
+      "lost",
+      "contextretrieval"
+    ],
+    "25.4": [
+      "prompttest",
+      "production",
+      "faith"
+    ],
+    "26.1": [
+      "context",
+      "lost",
+      "longtheory"
+    ],
+    "26.2": [
+      "context",
+      "lingua",
+      "contextretrieval"
+    ],
+    "26.3": [
+      "memory",
+      "agentweng",
+      "context"
+    ]
+  }
+}

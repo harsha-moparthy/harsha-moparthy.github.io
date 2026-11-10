@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 80 of 204 subtopics curated.
+Updated 2026-11-11. 90 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -1126,7 +1126,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Diverse generations and stochastic seed control
 - [ ] Confidence-aware stopping and stopping criteria
 
-Reading-list review pending; see the original index for candidate links.
+1. [How to generate text](https://huggingface.co/blog/how-to-generate) — Patrick von Platen / Hugging Face · Code walkthrough. Compare greedy decoding, beam search, temperature, top-k, and nucleus sampling.
+2. [Guiding Text Generation with Constrained Beam Search](https://huggingface.co/blog/constrained-beam-search) — Hugging Face · Code walkthrough. Add lexical constraints to beam search and understand constraint-state tracking.
+3. [Scaling test-time compute](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute) — Hugging Face H4 · Experimental article. Compare search and verifier-guided inference under explicit compute budgets.
 
 ### 24.3 Structured and constrained generation
 
@@ -1137,7 +1139,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Handling partial JSON and incremental streaming parsers
 - [ ] Decoder-level versus prompt-only format guarantees
 
-Reading-list review pending; see the original index for candidate links.
+1. [Efficient, Flexible, Portable Structured Generation with XGrammar](https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar) — MLC · Engineering article. Understand grammar-constrained token generation and its runtime costs.
+2. [Guiding Text Generation with Constrained Beam Search](https://huggingface.co/blog/constrained-beam-search) — Hugging Face · Code walkthrough. Add lexical constraints to beam search and understand constraint-state tracking.
+3. [Test Case Configuration](https://www.promptfoo.dev/docs/configuration/test-cases/) — Promptfoo · Practical guide. Create held-out examples, assertions, repeated runs, and regression tests for prompts.
 
 ### 24.4 Decoding pitfalls
 
@@ -1148,7 +1152,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Label smoothing and logit calibration
 - [ ] Exposure bias and long-horizon error propagation
 
-Reading-list review pending; see the original index for candidate links.
+1. [How to generate text](https://huggingface.co/blog/how-to-generate) — Patrick von Platen / Hugging Face · Code walkthrough. Compare greedy decoding, beam search, temperature, top-k, and nucleus sampling.
+2. [The Curious Case of Neural Text Degeneration](https://arxiv.org/abs/1904.09751) — Holtzman et al. · Original research. Understand why likelihood-maximizing decoding can repeat and why nucleus sampling was proposed.
+3. [Reproducibility](https://docs.pytorch.org/docs/stable/notes/randomness.html) — PyTorch · Engineering guide. Identify randomness sources and the costs and limits of deterministic execution.
 
 ## 25. Prompt engineering and context engineering
 
@@ -1161,7 +1167,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Positive/negative exemplars and edge cases
 - [ ] Delimiters, quoted content, and role separation
 
-Reading-list review pending; see the original index for candidate links.
+1. [Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/) — Lilian Weng · Research explainer. Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.
+2. [Chat templates](https://huggingface.co/docs/transformers/chat_templating) — Hugging Face · Practical guide. Understand role delimiters, special tokens, and generation prompts.
+3. [Effective context engineering for AI agents](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) — Anthropic · Engineering article. Select useful context and manage retrieval, compaction, and persistent notes.
 
 ### 25.2 Advanced prompt techniques
 
@@ -1172,7 +1180,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Structured output and tool-calling prompts
 - [ ] Multi-modal prompting with images/audio/video
 
-Reading-list review pending; see the original index for candidate links.
+1. [Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/) — Lilian Weng · Research explainer. Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.
+2. [Building effective agents](https://www.anthropic.com/research/building-effective-agents) — Anthropic · Engineering article. Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.
+3. [Efficient, Flexible, Portable Structured Generation with XGrammar](https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar) — MLC · Engineering article. Understand grammar-constrained token generation and its runtime costs.
 
 ### 25.3 Context assembly
 
@@ -1183,7 +1193,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Retrieval-aware prompt design
 - [ ] Token-budget allocation among instructions, data, and output
 
-Reading-list review pending; see the original index for candidate links.
+1. [Effective context engineering for AI agents](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) — Anthropic · Engineering article. Select useful context and manage retrieval, compaction, and persistent notes.
+2. [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172) — Liu et al. · Original research. Test how relevant-information position changes retrieval and question-answering performance.
+3. [Introducing Contextual Retrieval](https://www.anthropic.com/research/contextual-retrieval) — Anthropic · Engineering article. Combine contextualized chunks, lexical retrieval, embeddings, and reranking.
 
 ### 25.4 Prompt reliability and measurement
 
@@ -1194,7 +1206,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Template version control and regression testing
 - [ ] Prompt optimization using search or automated optimizers
 
-Reading-list review pending; see the original index for candidate links.
+1. [Test Case Configuration](https://www.promptfoo.dev/docs/configuration/test-cases/) — Promptfoo · Practical guide. Create held-out examples, assertions, repeated runs, and regression tests for prompts.
+2. [Building LLM applications for production](https://huyenchip.com/2023/04/11/llm-engineering.html) — Chip Huyen · Engineering article. Connect model capabilities to evaluation, latency, cost, tools, and application design.
+3. [Measuring faithfulness in Chain-of-Thought reasoning](https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning) — Anthropic · Research article. Learn why a plausible written rationale need not faithfully explain a model's answer.
 
 ## 26. Long-context systems, compression, and persistent context
 
@@ -1207,7 +1221,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Long-context extraction and structured query answering
 - [ ] Long-range dependencies and cross-document references
 
-Reading-list review pending; see the original index for candidate links.
+1. [Effective context engineering for AI agents](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) — Anthropic · Engineering article. Select useful context and manage retrieval, compaction, and persistent notes.
+2. [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172) — Liu et al. · Original research. Test how relevant-information position changes retrieval and question-answering performance.
+3. [Sparse Attention and Long Context](https://www.theorempath.com/topics/sparse-attention-and-long-context) — TheoremPath · Theory guide. Study sparse patterns, distributed attention, streaming, and context-extension limitations.
 
 ### 26.2 Context-reduction strategies
 
@@ -1218,7 +1234,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Semantic chunk selection and salience scoring
 - [ ] Lossy compression, forgetting, and summary drift
 
-Reading-list review pending; see the original index for candidate links.
+1. [Effective context engineering for AI agents](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) — Anthropic · Engineering article. Select useful context and manage retrieval, compaction, and persistent notes.
+2. [LLMLingua](https://github.com/microsoft/LLMLingua) — Microsoft Research · Project and examples. Experiment with query-aware prompt compression and check what information compression discards.
+3. [Introducing Contextual Retrieval](https://www.anthropic.com/research/contextual-retrieval) — Anthropic · Engineering article. Combine contextualized chunks, lexical retrieval, embeddings, and reranking.
 
 ### 26.3 Memory integration
 
@@ -1229,7 +1247,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Persistent notes, knowledge graphs, and structured memories
 - [ ] Privacy-aware memory boundaries and deletion
 
-Reading-list review pending; see the original index for candidate links.
+1. [Agent Memory: How to Build Agents That Learn and Remember](https://www.letta.com/blog/agent-memory/) — Letta · Engineering explainer. Distinguish message buffers, core memory, searchable history, and external knowledge.
+2. [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) — Lilian Weng · Conceptual article. Connect planning, reflection, memory, and tools in an agent architecture.
+3. [Effective context engineering for AI agents](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) — Anthropic · Engineering article. Select useful context and manage retrieval, compaction, and persistent notes.
 
 ## 27. KV cache and inference memory management
 

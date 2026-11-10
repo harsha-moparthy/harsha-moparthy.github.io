@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>80 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>90 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -1125,10 +1125,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="24.2-3"><span>Contrastive search and contrastive decoding</span></label></li>
 <li><label><input type="checkbox" data-key="24.2-4"><span>Diverse generations and stochastic seed control</span></label></li>
 <li><label><input type="checkbox" data-key="24.2-5"><span>Confidence-aware stopping and stopping criteria</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ayushyajnik2/decoding-the-decoder-top-k-top-p-temperature-beam-search-hallucinations-in-llms-e54963eb3de7">Decoding the Decoder: Top k Top p Beam Search (2025)</a></li>
-<li><a href="https://harshitdawar.medium.com/top-p-vs-top-k-vs-temperature-60494480b9d5">Top P vs Top K vs Temperature (2026)</a></li>
-<li><a href="https://medium.com/%40CyberGee/choosing-between-top-k-top-p-temperature-53fa89f71ae5">Choosing between Top K Top P Temperature (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/how-to-generate">How to generate text</a><small>Patrick von Platen / Hugging Face · Code walkthrough</small><p>Compare greedy decoding, beam search, temperature, top-k, and nucleus sampling.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/constrained-beam-search">Guiding Text Generation with Constrained Beam Search</a><small>Hugging Face · Code walkthrough</small><p>Add lexical constraints to beam search and understand constraint-state tracking.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute">Scaling test-time compute</a><small>Hugging Face H4 · Experimental article</small><p>Compare search and verifier-guided inference under explicit compute budgets.</p></li>
 </ol></div></section>
 <section class="subtopic" id="243-structured-and-constrained-generation"><h3><a href="#243-structured-and-constrained-generation">24.3</a> Structured and constrained generation</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="24.3-0"><span>JSON schema-constrained generation</span></label></li>
@@ -1137,10 +1137,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="24.3-3"><span>Format validation and repair loops</span></label></li>
 <li><label><input type="checkbox" data-key="24.3-4"><span>Handling partial JSON and incremental streaming parsers</span></label></li>
 <li><label><input type="checkbox" data-key="24.3-5"><span>Decoder-level versus prompt-only format guarantees</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ayushyajnik2/decoding-the-decoder-top-k-top-p-temperature-beam-search-hallucinations-in-llms-e54963eb3de7">Decoding the Decoder: Top k Top p Beam Search (2025)</a></li>
-<li><a href="https://medium.com/ai-agent-engineering/what-is-ai-agent-tool-calling-84e17decfe14">AI Agent Tool Calling: MCP Function Calling A2A (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar">Efficient, Flexible, Portable Structured Generation with XGrammar</a><small>MLC · Engineering article</small><p>Understand grammar-constrained token generation and its runtime costs.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/constrained-beam-search">Guiding Text Generation with Constrained Beam Search</a><small>Hugging Face · Code walkthrough</small><p>Add lexical constraints to beam search and understand constraint-state tracking.</p></li>
+<li class="curated-resource"><a href="https://www.promptfoo.dev/docs/configuration/test-cases/">Test Case Configuration</a><small>Promptfoo · Practical guide</small><p>Create held-out examples, assertions, repeated runs, and regression tests for prompts.</p></li>
 </ol></div></section>
 <section class="subtopic" id="244-decoding-pitfalls"><h3><a href="#244-decoding-pitfalls">24.4</a> Decoding pitfalls</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="24.4-0"><span>Degeneration, loops, and repetition</span></label></li>
@@ -1149,10 +1149,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="24.4-3"><span>Sampling-induced variability and nondeterminism</span></label></li>
 <li><label><input type="checkbox" data-key="24.4-4"><span>Label smoothing and logit calibration</span></label></li>
 <li><label><input type="checkbox" data-key="24.4-5"><span>Exposure bias and long-horizon error propagation</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ayushyajnik2/decoding-the-decoder-top-k-top-p-temperature-beam-search-hallucinations-in-llms-e54963eb3de7">Decoding the Decoder: Top k Top p Beam Search (2025)</a></li>
-<li><a href="https://harshitdawar.medium.com/top-p-vs-top-k-vs-temperature-60494480b9d5">Top P vs Top K vs Temperature (2026)</a></li>
-<li><a href="https://medium.com/%40CyberGee/choosing-between-top-k-top-p-temperature-53fa89f71ae5">Choosing between Top K Top P Temperature (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/how-to-generate">How to generate text</a><small>Patrick von Platen / Hugging Face · Code walkthrough</small><p>Compare greedy decoding, beam search, temperature, top-k, and nucleus sampling.</p></li>
+<li class="curated-resource"><a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a><small>Holtzman et al. · Original research</small><p>Understand why likelihood-maximizing decoding can repeat and why nucleus sampling was proposed.</p></li>
+<li class="curated-resource"><a href="https://docs.pytorch.org/docs/stable/notes/randomness.html">Reproducibility</a><small>PyTorch · Engineering guide</small><p>Identify randomness sources and the costs and limits of deterministic execution.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="25-prompt-engineering-and-context-engineering"><summary><span class="number">25</span><span class="topic-title">Prompt engineering and context engineering<small>4 subtopics · 24 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1163,10 +1163,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="25.1-3"><span>Zero-shot, one-shot, and few-shot examples</span></label></li>
 <li><label><input type="checkbox" data-key="25.1-4"><span>Positive/negative exemplars and edge cases</span></label></li>
 <li><label><input type="checkbox" data-key="25.1-5"><span>Delimiters, quoted content, and role separation</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/codetodeploy/prompt-engineering-2026-series-0-introduction-3e331e955433">Prompt Engineering 2026: Introduction (2026)</a></li>
-<li><a href="https://medium.com/beyond-the-algorithm/prompt-engineering-vs-context-engineering-what-the-research-actually-says-c4637e46c98b">Prompt Engineering vs Context Engineering: Research (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/context-engineering-is-the-new-prompt-engineering-and-most-people-are-doing-it-wrong-79698a7698f6">Context Engineering Is the New Prompt Engineering (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/">Prompt Engineering</a><small>Lilian Weng · Research explainer</small><p>Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/chat_templating">Chat templates</a><small>Hugging Face · Practical guide</small><p>Understand role delimiters, special tokens, and generation prompts.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a><small>Anthropic · Engineering article</small><p>Select useful context and manage retrieval, compaction, and persistent notes.</p></li>
 </ol></div></section>
 <section class="subtopic" id="252-advanced-prompt-techniques"><h3><a href="#252-advanced-prompt-techniques">25.2</a> Advanced prompt techniques</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="25.2-0"><span>Decomposition and stepwise task organization</span></label></li>
@@ -1175,10 +1175,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="25.2-3"><span>Prompt chaining and prompt programs</span></label></li>
 <li><label><input type="checkbox" data-key="25.2-4"><span>Structured output and tool-calling prompts</span></label></li>
 <li><label><input type="checkbox" data-key="25.2-5"><span>Multi-modal prompting with images/audio/video</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/codetodeploy/prompt-engineering-2026-series-0-introduction-3e331e955433">Prompt Engineering 2026: Introduction (2026)</a></li>
-<li><a href="https://medium.com/beyond-the-algorithm/prompt-engineering-vs-context-engineering-what-the-research-actually-says-c4637e46c98b">Prompt Engineering vs Context Engineering: Research (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/context-engineering-is-the-new-prompt-engineering-and-most-people-are-doing-it-wrong-79698a7698f6">Context Engineering Is the New Prompt Engineering (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/">Prompt Engineering</a><small>Lilian Weng · Research explainer</small><p>Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents</a><small>Anthropic · Engineering article</small><p>Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.</p></li>
+<li class="curated-resource"><a href="https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar">Efficient, Flexible, Portable Structured Generation with XGrammar</a><small>MLC · Engineering article</small><p>Understand grammar-constrained token generation and its runtime costs.</p></li>
 </ol></div></section>
 <section class="subtopic" id="253-context-assembly"><h3><a href="#253-context-assembly">25.3</a> Context assembly</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="25.3-0"><span>Relevant context selection and ordering</span></label></li>
@@ -1187,10 +1187,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="25.3-3"><span>Source attribution and explicit uncertainty handling</span></label></li>
 <li><label><input type="checkbox" data-key="25.3-4"><span>Retrieval-aware prompt design</span></label></li>
 <li><label><input type="checkbox" data-key="25.3-5"><span>Token-budget allocation among instructions, data, and output</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://medium.com/beyond-the-algorithm/prompt-engineering-vs-context-engineering-what-the-research-actually-says-c4637e46c98b">Prompt Engineering vs Context Engineering: Research (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/context-engineering-is-the-new-prompt-engineering-and-most-people-are-doing-it-wrong-79698a7698f6">Context Engineering Is the New Prompt Engineering (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a><small>Anthropic · Engineering article</small><p>Select useful context and manage retrieval, compaction, and persistent notes.</p></li>
+<li class="curated-resource"><a href="https://arxiv.org/abs/2307.03172">Lost in the Middle: How Language Models Use Long Contexts</a><small>Liu et al. · Original research</small><p>Test how relevant-information position changes retrieval and question-answering performance.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/contextual-retrieval">Introducing Contextual Retrieval</a><small>Anthropic · Engineering article</small><p>Combine contextualized chunks, lexical retrieval, embeddings, and reranking.</p></li>
 </ol></div></section>
 <section class="subtopic" id="254-prompt-reliability-and-measurement"><h3><a href="#254-prompt-reliability-and-measurement">25.4</a> Prompt reliability and measurement</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="25.4-0"><span>Prompt injection versus legitimate instructions</span></label></li>
@@ -1199,10 +1199,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="25.4-3"><span>Perturbation testing and consistency checks</span></label></li>
 <li><label><input type="checkbox" data-key="25.4-4"><span>Template version control and regression testing</span></label></li>
 <li><label><input type="checkbox" data-key="25.4-5"><span>Prompt optimization using search or automated optimizers</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/beyond-the-algorithm/prompt-engineering-vs-context-engineering-what-the-research-actually-says-c4637e46c98b">Prompt Engineering vs Context Engineering: Research (2026)</a></li>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://medium.com/codetodeploy/prompt-engineering-2026-series-0-introduction-3e331e955433">Prompt Engineering 2026: Introduction (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.promptfoo.dev/docs/configuration/test-cases/">Test Case Configuration</a><small>Promptfoo · Practical guide</small><p>Create held-out examples, assertions, repeated runs, and regression tests for prompts.</p></li>
+<li class="curated-resource"><a href="https://huyenchip.com/2023/04/11/llm-engineering.html">Building LLM applications for production</a><small>Chip Huyen · Engineering article</small><p>Connect model capabilities to evaluation, latency, cost, tools, and application design.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning">Measuring faithfulness in Chain-of-Thought reasoning</a><small>Anthropic · Research article</small><p>Learn why a plausible written rationale need not faithfully explain a model&#x27;s answer.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="26-long-context-systems-compression-and-persistent-context"><summary><span class="number">26</span><span class="topic-title">Long-context systems, compression, and persistent context<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1213,10 +1213,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="26.1-3"><span>Long-horizon agents and ongoing tasks</span></label></li>
 <li><label><input type="checkbox" data-key="26.1-4"><span>Long-context extraction and structured query answering</span></label></li>
 <li><label><input type="checkbox" data-key="26.1-5"><span>Long-range dependencies and cross-document references</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://billtcheng2013.medium.com/retrieval-augmented-generation-advanced-6ebcc4fa4914">Advanced RAG Long Context and Multimodal (2026)</a></li>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://medium.com/beyond-the-algorithm/prompt-engineering-vs-context-engineering-what-the-research-actually-says-c4637e46c98b">Prompt Engineering vs Context Engineering: Research (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a><small>Anthropic · Engineering article</small><p>Select useful context and manage retrieval, compaction, and persistent notes.</p></li>
+<li class="curated-resource"><a href="https://arxiv.org/abs/2307.03172">Lost in the Middle: How Language Models Use Long Contexts</a><small>Liu et al. · Original research</small><p>Test how relevant-information position changes retrieval and question-answering performance.</p></li>
+<li class="curated-resource"><a href="https://www.theorempath.com/topics/sparse-attention-and-long-context">Sparse Attention and Long Context</a><small>TheoremPath · Theory guide</small><p>Study sparse patterns, distributed attention, streaming, and context-extension limitations.</p></li>
 </ol></div></section>
 <section class="subtopic" id="262-context-reduction-strategies"><h3><a href="#262-context-reduction-strategies">26.2</a> Context-reduction strategies</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="26.2-0"><span>Sliding-window history and message trimming</span></label></li>
@@ -1225,10 +1225,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="26.2-3"><span>Extractive versus abstractive compression</span></label></li>
 <li><label><input type="checkbox" data-key="26.2-4"><span>Semantic chunk selection and salience scoring</span></label></li>
 <li><label><input type="checkbox" data-key="26.2-5"><span>Lossy compression, forgetting, and summary drift</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://medium.com/beyond-the-algorithm/prompt-engineering-vs-context-engineering-what-the-research-actually-says-c4637e46c98b">Prompt Engineering vs Context Engineering: Research (2026)</a></li>
-<li><a href="https://billtcheng2013.medium.com/retrieval-augmented-generation-advanced-6ebcc4fa4914">Advanced RAG Long Context and Multimodal (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a><small>Anthropic · Engineering article</small><p>Select useful context and manage retrieval, compaction, and persistent notes.</p></li>
+<li class="curated-resource"><a href="https://github.com/microsoft/LLMLingua">LLMLingua</a><small>Microsoft Research · Project and examples</small><p>Experiment with query-aware prompt compression and check what information compression discards.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/contextual-retrieval">Introducing Contextual Retrieval</a><small>Anthropic · Engineering article</small><p>Combine contextualized chunks, lexical retrieval, embeddings, and reranking.</p></li>
 </ol></div></section>
 <section class="subtopic" id="263-memory-integration"><h3><a href="#263-memory-integration">26.3</a> Memory integration</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="26.3-0"><span>External long-term memory versus model weights</span></label></li>
@@ -1237,10 +1237,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="26.3-3"><span>Memory consolidation, expiration, and contradiction handling</span></label></li>
 <li><label><input type="checkbox" data-key="26.3-4"><span>Persistent notes, knowledge graphs, and structured memories</span></label></li>
 <li><label><input type="checkbox" data-key="26.3-5"><span>Privacy-aware memory boundaries and deletion</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/agent-memory-frameworks-showdown-cognee-vs-mem0-vs-zep-vs-letta-0f439b56f282">Agent Memory Frameworks: Mem0 Zep Letta Cognee (2026)</a></li>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://billtcheng2013.medium.com/retrieval-augmented-generation-advanced-6ebcc4fa4914">Advanced RAG Long Context and Multimodal (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.letta.com/blog/agent-memory/">Agent Memory: How to Build Agents That Learn and Remember</a><small>Letta · Engineering explainer</small><p>Distinguish message buffers, core memory, searchable history, and external knowledge.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a><small>Lilian Weng · Conceptual article</small><p>Connect planning, reflection, memory, and tools in an agent architecture.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a><small>Anthropic · Engineering article</small><p>Select useful context and manage retrieval, compaction, and persistent notes.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="27-kv-cache-and-inference-memory-management"><summary><span class="number">27</span><span class="topic-title">KV cache and inference memory management<small>4 subtopics · 24 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
