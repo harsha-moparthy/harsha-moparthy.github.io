@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>100 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>110 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -1376,10 +1376,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="29.4-3"><span>Reasoning-trace and tool-use distillation</span></label></li>
 <li><label><input type="checkbox" data-key="29.4-4"><span>Distillation from ensembles or verifier-filtered samples</span></label></li>
 <li><label><input type="checkbox" data-key="29.4-5"><span>Compression quality–latency–memory Pareto frontiers</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40izzetcansorna/parameter-efficient-fine-tuning-how-lora-qlora-and-dora-made-large-models-adaptable-d9835411f1c2">LoRA QLoRA and DoRA Parameter Efficient Fine Tuning (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40amitshekhar/llm-inference-engineering-problem-and-solution-8111b1919145">LLM Inference Engineering: Problems and Solutions (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://docs.pytorch.org/tutorials/beginner/knowledge_distillation_tutorial.html">Knowledge Distillation Tutorial</a><small>PyTorch · Code tutorial</small><p>Implement soft-target and hidden-representation losses in a teacher-student training loop.</p></li>
+<li class="curated-resource"><a href="https://thinkingmachines.ai/blog/on-policy-distillation/">On-Policy Distillation</a><small>Thinking Machines Lab · Research article</small><p>See why supervising student-generated trajectories addresses distribution mismatch.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-01-10-inference-optimization/">Large Transformer Model Inference Optimization</a><small>Lilian Weng · Technical survey</small><p>Connect quantization, pruning, distillation, and parallel inference to their costs.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="30-llm-inference-execution-and-throughput-optimization"><summary><span class="number">30</span><span class="topic-title">LLM inference execution and throughput optimization<small>4 subtopics · 24 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1390,10 +1390,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="30.1-3"><span>Throughput, goodput, and tail-latency definitions</span></label></li>
 <li><label><input type="checkbox" data-key="30.1-4"><span>Arithmetic intensity and roofline model</span></label></li>
 <li><label><input type="checkbox" data-key="30.1-5"><span>Latency–batch size and concurrency trade-offs</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/inference/">All About Transformer Inference</a><small>Scaling Book authors · Worked technical chapter</small><p>Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://horace.io/brrr_intro.html">Making Deep Learning Go Brrrr From First Principles</a><small>Horace He · Conceptual tutorial</small><p>Identify compute, memory bandwidth, and launch-overhead bottlenecks before optimizing.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/assisted-generation">Assisted Generation</a><small>Joao Gante / Hugging Face · Illustrated implementation article</small><p>Connect memory-bound decoding to draft-token generation and parallel verification.</p></li>
 </ol></div></section>
 <section class="subtopic" id="302-batching-and-request-scheduling"><h3><a href="#302-batching-and-request-scheduling">30.2</a> Batching and request scheduling</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="30.2-0"><span>Static batching versus continuous batching</span></label></li>
@@ -1402,10 +1402,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="30.2-3"><span>Prefix sharing and response-length prediction</span></label></li>
 <li><label><input type="checkbox" data-key="30.2-4"><span>Fairness, priority, deadlines, and preemption</span></label></li>
 <li><label><input type="checkbox" data-key="30.2-5"><span>Head-of-line blocking and straggler requests</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anyscale.com/blog/continuous-batching-llm-inference">How continuous batching enables 23x throughput in LLM inference</a><small>Anyscale · Engineering article</small><p>Compare static and continuous batching and interpret throughput and latency measurements.</p></li>
+<li class="curated-resource"><a href="https://docs.vllm.ai/en/latest/configuration/optimization/">Optimization and Tuning</a><small>vLLM · Implementation guide</small><p>Tune chunked prefill, memory capacity, and batching while balancing latency and throughput.</p></li>
+<li class="curated-resource"><a href="https://vllm.ai/blog/2023-06-20-vllm">vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention</a><small>vLLM team · Engineering article</small><p>Understand block tables, fragmentation, shared prefixes, and copy-on-write caching.</p></li>
 </ol></div></section>
 <section class="subtopic" id="303-speculative-and-parallel-generation"><h3><a href="#303-speculative-and-parallel-generation">30.3</a> Speculative and parallel generation</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="30.3-0"><span>Draft-model speculative decoding and acceptance/rejection</span></label></li>
@@ -1414,10 +1414,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="30.3-3"><span>EAGLE-style draft heads and verification</span></label></li>
 <li><label><input type="checkbox" data-key="30.3-4"><span>Multi-token prediction for inference</span></label></li>
 <li><label><input type="checkbox" data-key="30.3-5"><span>Parallel decoding and tree verification</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/assisted-generation">Assisted Generation</a><small>Joao Gante / Hugging Face · Illustrated implementation article</small><p>Connect memory-bound decoding to draft-token generation and parallel verification.</p></li>
+<li class="curated-resource"><a href="https://research.google/blog/looking-back-at-speculative-decoding/">Looking back at speculative decoding</a><small>Google Research · Research explanation</small><p>Understand speculative sampling and why the target output distribution is preserved.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/dynamic_speculation_lookahead">Faster Assisted Generation with Dynamic Speculation</a><small>Intel Labs / Hugging Face · Code walkthrough</small><p>Adapt draft length to acceptance behavior and measure workload-dependent speedups.</p></li>
 </ol></div></section>
 <section class="subtopic" id="304-distributed-inference-architecture"><h3><a href="#304-distributed-inference-architecture">30.4</a> Distributed inference architecture</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="30.4-0"><span>Tensor parallelism versus pipeline parallelism</span></label></li>
@@ -1426,10 +1426,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="30.4-3"><span>Disaggregated prefill, decode, and encode</span></label></li>
 <li><label><input type="checkbox" data-key="30.4-4"><span>Multi-node KV transfer and remote cache access</span></label></li>
 <li><label><input type="checkbox" data-key="30.4-5"><span>Elastic scaling and heterogeneous accelerator fleets</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40charan.panthangi/the-llm-inference-stack-in-2026-vllm-sglang-tensorrt-llm-semantic-routing-and-the-combination-d9df1a16f93f">LLM Inference Stack in 2026 (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/inference/">All About Transformer Inference</a><small>Scaling Book authors · Worked technical chapter</small><p>Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://docs.vllm.ai/en/latest/serving/parallelism_scaling/">Parallelism and Scaling</a><small>vLLM · Deployment guide</small><p>Choose tensor and pipeline parallelism and configure multi-node serving.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-01-10-inference-optimization/">Large Transformer Model Inference Optimization</a><small>Lilian Weng · Technical survey</small><p>Connect quantization, pruning, distillation, and parallel inference to their costs.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="31-model-serving-engines-and-deployment-stacks"><summary><span class="number">31</span><span class="topic-title">Model serving engines and deployment stacks<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1440,10 +1440,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="31.1-3"><span>TensorRT-LLM and compiler-driven inference</span></label></li>
 <li><label><input type="checkbox" data-key="31.1-4"><span>llama.cpp, GGUF, and CPU/local inference</span></label></li>
 <li><label><input type="checkbox" data-key="31.1-5"><span>MLX, ONNX Runtime, TGI, and alternate runtimes</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40charan.panthangi/the-llm-inference-stack-in-2026-vllm-sglang-tensorrt-llm-semantic-routing-and-the-combination-d9df1a16f93f">LLM Inference Stack in 2026 (2026)</a></li>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
-<li><a href="https://medium.com/mlworks/vllm-explained-how-it-makes-llm-inference-faster-044da99542cf">vLLM Explained (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://vllm.ai/blog/2023-06-20-vllm">vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention</a><small>vLLM team · Engineering article</small><p>Understand block tables, fragmentation, shared prefixes, and copy-on-write caching.</p></li>
+<li class="curated-resource"><a href="https://www.lmsys.org/blog/2024-01-17-sglang/">Fast and Expressive LLM Inference with RadixAttention and SGLang</a><small>LMSYS · Engineering article</small><p>Connect radix-tree prefix reuse to structured programs and runtime scheduling.</p></li>
+<li class="curated-resource"><a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a><small>ggml-org · Implementation and examples</small><p>Explore GGUF models, hardware backends, local inference, and an HTTP server.</p></li>
 </ol></div></section>
 <section class="subtopic" id="312-serving-design"><h3><a href="#312-serving-design">31.2</a> Serving design</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="31.2-0"><span>Model loading, warmup, and weight distribution</span></label></li>
@@ -1452,10 +1452,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="31.2-3"><span>Streaming responses and SSE/WebSocket transport</span></label></li>
 <li><label><input type="checkbox" data-key="31.2-4"><span>Multi-tenant isolation, quotas, and rate limits</span></label></li>
 <li><label><input type="checkbox" data-key="31.2-5"><span>Offline batch processing versus low-latency serving</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40charan.panthangi/the-llm-inference-stack-in-2026-vllm-sglang-tensorrt-llm-semantic-routing-and-the-combination-d9df1a16f93f">LLM Inference Stack in 2026 (2026)</a></li>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/mlworks/vllm-explained-how-it-makes-llm-inference-faster-044da99542cf">vLLM Explained (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.uber.com/us/en/blog/genai-gateway/">Navigating the LLM Landscape: Uber&#x27;s Innovation with GenAI Gateway</a><small>Uber Engineering · Production case study</small><p>Study provider abstraction, access controls, usage accounting, and centralized routing.</p></li>
+<li class="curated-resource"><a href="https://docs.vllm.ai/en/latest/serving/parallelism_scaling/">Parallelism and Scaling</a><small>vLLM · Deployment guide</small><p>Choose tensor and pipeline parallelism and configure multi-node serving.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/peft/main/en/package_reference/hotswap">Hotswapping adapters</a><small>Hugging Face PEFT · Implementation guide</small><p>Swap LoRA adapters in a running model and understand compilation constraints.</p></li>
+<li class="curated-resource"><a href="https://platform.claude.com/docs/en/build-with-claude/streaming">Streaming messages</a><small>Anthropic · API walkthrough</small><p>Handle incremental content, event types, partial JSON, and stream failures.</p></li>
 </ol></div></section>
 <section class="subtopic" id="313-production-performance"><h3><a href="#313-production-performance">31.3</a> Production performance</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="31.3-0"><span>End-to-end latency decomposition</span></label></li>
@@ -1464,10 +1465,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="31.3-3"><span>Model replicas, scaling policies, and queue saturation</span></label></li>
 <li><label><input type="checkbox" data-key="31.3-4"><span>Tail latency, retries, and overload protection</span></label></li>
 <li><label><input type="checkbox" data-key="31.3-5"><span>Benchmarking representative workloads and capacity planning</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
-<li><a href="https://medium.com/%40charan.panthangi/the-llm-inference-stack-in-2026-vllm-sglang-tensorrt-llm-semantic-routing-and-the-combination-d9df1a16f93f">LLM Inference Stack in 2026 (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://docs.vllm.ai/en/latest/configuration/optimization/">Optimization and Tuning</a><small>vLLM · Implementation guide</small><p>Tune chunked prefill, memory capacity, and batching while balancing latency and throughput.</p></li>
+<li class="curated-resource"><a href="https://www.anyscale.com/blog/continuous-batching-llm-inference">How continuous batching enables 23x throughput in LLM inference</a><small>Anyscale · Engineering article</small><p>Compare static and continuous batching and interpret throughput and latency measurements.</p></li>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/inference/">All About Transformer Inference</a><small>Scaling Book authors · Worked technical chapter</small><p>Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="32-llm-apis-protocols-and-application-integration"><summary><span class="number">32</span><span class="topic-title">LLM APIs, protocols, and application integration<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1478,10 +1479,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="32.1-3"><span>Streaming token events and incremental output handling</span></label></li>
 <li><label><input type="checkbox" data-key="32.1-4"><span>Retries, backoff, idempotency, and timeouts</span></label></li>
 <li><label><input type="checkbox" data-key="32.1-5"><span>Version pinning, model deprecation, and compatibility</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/ai-agent-engineering/what-is-ai-agent-tool-calling-84e17decfe14">AI Agent Tool Calling: MCP Function Calling A2A (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/building-a-financial-ai-agent-with-google-adk-a2a-and-mcp-084f5937f1e8">Building an Agent with Google ADK A2A and MCP (2026)</a></li>
-<li><a href="https://medium.com/%40Micheal-Lanham/tools-in-2026-why-picking-the-right-action-is-the-new-planning-problem-d28d8443bf3f">Tools in 2026: Action Selection (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.uber.com/us/en/blog/genai-gateway/">Navigating the LLM Landscape: Uber&#x27;s Innovation with GenAI Gateway</a><small>Uber Engineering · Production case study</small><p>Study provider abstraction, access controls, usage accounting, and centralized routing.</p></li>
+<li class="curated-resource"><a href="https://platform.claude.com/docs/en/build-with-claude/streaming">Streaming messages</a><small>Anthropic · API walkthrough</small><p>Handle incremental content, event types, partial JSON, and stream failures.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/chat_templating">Chat templates</a><small>Hugging Face · Practical guide</small><p>Understand role delimiters, special tokens, and generation prompts.</p></li>
 </ol></div></section>
 <section class="subtopic" id="322-structured-interfaces"><h3><a href="#322-structured-interfaces">32.2</a> Structured interfaces</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="32.2-0"><span>Tool/function-call schemas and validation</span></label></li>
@@ -1490,10 +1491,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="32.2-3"><span>Schema evolution and backward compatibility</span></label></li>
 <li><label><input type="checkbox" data-key="32.2-4"><span>Function-calling failure recovery and argument repair</span></label></li>
 <li><label><input type="checkbox" data-key="32.2-5"><span>Multimodal message payload representation</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/ai-agent-engineering/what-is-ai-agent-tool-calling-84e17decfe14">AI Agent Tool Calling: MCP Function Calling A2A (2026)</a></li>
-<li><a href="https://medium.com/%40Micheal-Lanham/tools-in-2026-why-picking-the-right-action-is-the-new-planning-problem-d28d8443bf3f">Tools in 2026: Action Selection (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/building-a-financial-ai-agent-with-google-adk-a2a-and-mcp-084f5937f1e8">Building an Agent with Google ADK A2A and MCP (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools">Define tools</a><small>Anthropic · API walkthrough</small><p>Design tool descriptions and input schemas for reliable model-to-application interfaces.</p></li>
+<li class="curated-resource"><a href="https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar">Efficient, Flexible, Portable Structured Generation with XGrammar</a><small>MLC · Engineering article</small><p>Understand grammar-constrained token generation and its runtime costs.</p></li>
+<li class="curated-resource"><a href="https://platform.claude.com/docs/en/build-with-claude/streaming">Streaming messages</a><small>Anthropic · API walkthrough</small><p>Handle incremental content, event types, partial JSON, and stream failures.</p></li>
 </ol></div></section>
 <section class="subtopic" id="323-system-integration"><h3><a href="#323-system-integration">32.3</a> System integration</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="32.3-0"><span>Queues, background workers, and orchestration</span></label></li>

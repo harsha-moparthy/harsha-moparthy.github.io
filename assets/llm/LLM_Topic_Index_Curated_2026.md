@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 100 of 204 subtopics curated.
+Updated 2026-11-11. 110 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -1397,7 +1397,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Distillation from ensembles or verifier-filtered samples
 - [ ] Compression quality–latency–memory Pareto frontiers
 
-Reading-list review pending; see the original index for candidate links.
+1. [Knowledge Distillation Tutorial](https://docs.pytorch.org/tutorials/beginner/knowledge_distillation_tutorial.html) — PyTorch · Code tutorial. Implement soft-target and hidden-representation losses in a teacher-student training loop.
+2. [On-Policy Distillation](https://thinkingmachines.ai/blog/on-policy-distillation/) — Thinking Machines Lab · Research article. See why supervising student-generated trajectories addresses distribution mismatch.
+3. [Large Transformer Model Inference Optimization](https://lilianweng.github.io/posts/2023-01-10-inference-optimization/) — Lilian Weng · Technical survey. Connect quantization, pruning, distillation, and parallel inference to their costs.
 
 ## 30. LLM inference execution and throughput optimization
 
@@ -1410,7 +1412,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Arithmetic intensity and roofline model
 - [ ] Latency–batch size and concurrency trade-offs
 
-Reading-list review pending; see the original index for candidate links.
+1. [All About Transformer Inference](https://jax-ml.github.io/scaling-book/inference/) — Scaling Book authors · Worked technical chapter. Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.
+2. [Making Deep Learning Go Brrrr From First Principles](https://horace.io/brrr_intro.html) — Horace He · Conceptual tutorial. Identify compute, memory bandwidth, and launch-overhead bottlenecks before optimizing.
+3. [Assisted Generation](https://huggingface.co/blog/assisted-generation) — Joao Gante / Hugging Face · Illustrated implementation article. Connect memory-bound decoding to draft-token generation and parallel verification.
 
 ### 30.2 Batching and request scheduling
 
@@ -1421,7 +1425,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Fairness, priority, deadlines, and preemption
 - [ ] Head-of-line blocking and straggler requests
 
-Reading-list review pending; see the original index for candidate links.
+1. [How continuous batching enables 23x throughput in LLM inference](https://www.anyscale.com/blog/continuous-batching-llm-inference) — Anyscale · Engineering article. Compare static and continuous batching and interpret throughput and latency measurements.
+2. [Optimization and Tuning](https://docs.vllm.ai/en/latest/configuration/optimization/) — vLLM · Implementation guide. Tune chunked prefill, memory capacity, and batching while balancing latency and throughput.
+3. [vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention](https://vllm.ai/blog/2023-06-20-vllm) — vLLM team · Engineering article. Understand block tables, fragmentation, shared prefixes, and copy-on-write caching.
 
 ### 30.3 Speculative and parallel generation
 
@@ -1432,7 +1438,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multi-token prediction for inference
 - [ ] Parallel decoding and tree verification
 
-Reading-list review pending; see the original index for candidate links.
+1. [Assisted Generation](https://huggingface.co/blog/assisted-generation) — Joao Gante / Hugging Face · Illustrated implementation article. Connect memory-bound decoding to draft-token generation and parallel verification.
+2. [Looking back at speculative decoding](https://research.google/blog/looking-back-at-speculative-decoding/) — Google Research · Research explanation. Understand speculative sampling and why the target output distribution is preserved.
+3. [Faster Assisted Generation with Dynamic Speculation](https://huggingface.co/blog/dynamic_speculation_lookahead) — Intel Labs / Hugging Face · Code walkthrough. Adapt draft length to acceptance behavior and measure workload-dependent speedups.
 
 ### 30.4 Distributed inference architecture
 
@@ -1443,7 +1451,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multi-node KV transfer and remote cache access
 - [ ] Elastic scaling and heterogeneous accelerator fleets
 
-Reading-list review pending; see the original index for candidate links.
+1. [All About Transformer Inference](https://jax-ml.github.io/scaling-book/inference/) — Scaling Book authors · Worked technical chapter. Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.
+2. [Parallelism and Scaling](https://docs.vllm.ai/en/latest/serving/parallelism_scaling/) — vLLM · Deployment guide. Choose tensor and pipeline parallelism and configure multi-node serving.
+3. [Large Transformer Model Inference Optimization](https://lilianweng.github.io/posts/2023-01-10-inference-optimization/) — Lilian Weng · Technical survey. Connect quantization, pruning, distillation, and parallel inference to their costs.
 
 ## 31. Model serving engines and deployment stacks
 
@@ -1456,7 +1466,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] llama.cpp, GGUF, and CPU/local inference
 - [ ] MLX, ONNX Runtime, TGI, and alternate runtimes
 
-Reading-list review pending; see the original index for candidate links.
+1. [vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention](https://vllm.ai/blog/2023-06-20-vllm) — vLLM team · Engineering article. Understand block tables, fragmentation, shared prefixes, and copy-on-write caching.
+2. [Fast and Expressive LLM Inference with RadixAttention and SGLang](https://www.lmsys.org/blog/2024-01-17-sglang/) — LMSYS · Engineering article. Connect radix-tree prefix reuse to structured programs and runtime scheduling.
+3. [llama.cpp](https://github.com/ggml-org/llama.cpp) — ggml-org · Implementation and examples. Explore GGUF models, hardware backends, local inference, and an HTTP server.
 
 ### 31.2 Serving design
 
@@ -1467,7 +1479,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multi-tenant isolation, quotas, and rate limits
 - [ ] Offline batch processing versus low-latency serving
 
-Reading-list review pending; see the original index for candidate links.
+1. [Navigating the LLM Landscape: Uber's Innovation with GenAI Gateway](https://www.uber.com/us/en/blog/genai-gateway/) — Uber Engineering · Production case study. Study provider abstraction, access controls, usage accounting, and centralized routing.
+2. [Parallelism and Scaling](https://docs.vllm.ai/en/latest/serving/parallelism_scaling/) — vLLM · Deployment guide. Choose tensor and pipeline parallelism and configure multi-node serving.
+3. [Hotswapping adapters](https://huggingface.co/docs/peft/main/en/package_reference/hotswap) — Hugging Face PEFT · Implementation guide. Swap LoRA adapters in a running model and understand compilation constraints.
+4. [Streaming messages](https://platform.claude.com/docs/en/build-with-claude/streaming) — Anthropic · API walkthrough. Handle incremental content, event types, partial JSON, and stream failures.
 
 ### 31.3 Production performance
 
@@ -1478,7 +1493,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Tail latency, retries, and overload protection
 - [ ] Benchmarking representative workloads and capacity planning
 
-Reading-list review pending; see the original index for candidate links.
+1. [Optimization and Tuning](https://docs.vllm.ai/en/latest/configuration/optimization/) — vLLM · Implementation guide. Tune chunked prefill, memory capacity, and batching while balancing latency and throughput.
+2. [How continuous batching enables 23x throughput in LLM inference](https://www.anyscale.com/blog/continuous-batching-llm-inference) — Anyscale · Engineering article. Compare static and continuous batching and interpret throughput and latency measurements.
+3. [All About Transformer Inference](https://jax-ml.github.io/scaling-book/inference/) — Scaling Book authors · Worked technical chapter. Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.
 
 ## 32. LLM APIs, protocols, and application integration
 
@@ -1491,7 +1508,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Retries, backoff, idempotency, and timeouts
 - [ ] Version pinning, model deprecation, and compatibility
 
-Reading-list review pending; see the original index for candidate links.
+1. [Navigating the LLM Landscape: Uber's Innovation with GenAI Gateway](https://www.uber.com/us/en/blog/genai-gateway/) — Uber Engineering · Production case study. Study provider abstraction, access controls, usage accounting, and centralized routing.
+2. [Streaming messages](https://platform.claude.com/docs/en/build-with-claude/streaming) — Anthropic · API walkthrough. Handle incremental content, event types, partial JSON, and stream failures.
+3. [Chat templates](https://huggingface.co/docs/transformers/chat_templating) — Hugging Face · Practical guide. Understand role delimiters, special tokens, and generation prompts.
 
 ### 32.2 Structured interfaces
 
@@ -1502,7 +1521,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Function-calling failure recovery and argument repair
 - [ ] Multimodal message payload representation
 
-Reading-list review pending; see the original index for candidate links.
+1. [Define tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools) — Anthropic · API walkthrough. Design tool descriptions and input schemas for reliable model-to-application interfaces.
+2. [Efficient, Flexible, Portable Structured Generation with XGrammar](https://blog.mlc.ai/2024/11/22/achieving-efficient-flexible-portable-structured-generation-with-xgrammar) — MLC · Engineering article. Understand grammar-constrained token generation and its runtime costs.
+3. [Streaming messages](https://platform.claude.com/docs/en/build-with-claude/streaming) — Anthropic · API walkthrough. Handle incremental content, event types, partial JSON, and stream failures.
 
 ### 32.3 System integration
 

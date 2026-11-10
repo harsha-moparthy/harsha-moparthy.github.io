@@ -1,0 +1,149 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "distill": [
+      "PyTorch",
+      "Knowledge Distillation Tutorial",
+      "https://docs.pytorch.org/tutorials/beginner/knowledge_distillation_tutorial.html",
+      "Code tutorial",
+      "Implement soft-target and hidden-representation losses in a teacher-student training loop."
+    ],
+    "onpolicy": [
+      "Thinking Machines Lab",
+      "On-Policy Distillation",
+      "https://thinkingmachines.ai/blog/on-policy-distillation/",
+      "Research article",
+      "See why supervising student-generated trajectories addresses distribution mismatch."
+    ],
+    "assisted": [
+      "Joao Gante / Hugging Face",
+      "Assisted Generation",
+      "https://huggingface.co/blog/assisted-generation",
+      "Illustrated implementation article",
+      "Connect memory-bound decoding to draft-token generation and parallel verification."
+    ],
+    "speculative": [
+      "Google Research",
+      "Looking back at speculative decoding",
+      "https://research.google/blog/looking-back-at-speculative-decoding/",
+      "Research explanation",
+      "Understand speculative sampling and why the target output distribution is preserved."
+    ],
+    "dynamicdraft": [
+      "Intel Labs / Hugging Face",
+      "Faster Assisted Generation with Dynamic Speculation",
+      "https://huggingface.co/blog/dynamic_speculation_lookahead",
+      "Code walkthrough",
+      "Adapt draft length to acceptance behavior and measure workload-dependent speedups."
+    ],
+    "gateway": [
+      "Uber Engineering",
+      "Navigating the LLM Landscape: Uber's Innovation with GenAI Gateway",
+      "https://www.uber.com/us/en/blog/genai-gateway/",
+      "Production case study",
+      "Study provider abstraction, access controls, usage accounting, and centralized routing."
+    ],
+    "sglang": [
+      "LMSYS",
+      "Fast and Expressive LLM Inference with RadixAttention and SGLang",
+      "https://www.lmsys.org/blog/2024-01-17-sglang/",
+      "Engineering article",
+      "Connect radix-tree prefix reuse to structured programs and runtime scheduling."
+    ],
+    "vllmtune": [
+      "vLLM",
+      "Optimization and Tuning",
+      "https://docs.vllm.ai/en/latest/configuration/optimization/",
+      "Implementation guide",
+      "Tune chunked prefill, memory capacity, and batching while balancing latency and throughput."
+    ],
+    "vllmscale": [
+      "vLLM",
+      "Parallelism and Scaling",
+      "https://docs.vllm.ai/en/latest/serving/parallelism_scaling/",
+      "Deployment guide",
+      "Choose tensor and pipeline parallelism and configure multi-node serving."
+    ],
+    "llamacpp": [
+      "ggml-org",
+      "llama.cpp",
+      "https://github.com/ggml-org/llama.cpp",
+      "Implementation and examples",
+      "Explore GGUF models, hardware backends, local inference, and an HTTP server."
+    ],
+    "streaming": [
+      "Anthropic",
+      "Streaming messages",
+      "https://platform.claude.com/docs/en/build-with-claude/streaming",
+      "API walkthrough",
+      "Handle incremental content, event types, partial JSON, and stream failures."
+    ],
+    "toolschema": [
+      "Anthropic",
+      "Define tools",
+      "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools",
+      "API walkthrough",
+      "Design tool descriptions and input schemas for reliable model-to-application interfaces."
+    ],
+    "batching": [
+      "Anyscale",
+      "How continuous batching enables 23x throughput in LLM inference",
+      "https://www.anyscale.com/blog/continuous-batching-llm-inference",
+      "Engineering article",
+      "Compare static and continuous batching and interpret throughput and latency measurements."
+    ]
+  },
+  "subtopics": {
+    "29.4": [
+      "distill",
+      "onpolicy",
+      "inferopt"
+    ],
+    "30.1": [
+      "inferencebook",
+      "brrr",
+      "assisted"
+    ],
+    "30.2": [
+      "batching",
+      "vllmtune",
+      "paged"
+    ],
+    "30.3": [
+      "assisted",
+      "speculative",
+      "dynamicdraft"
+    ],
+    "30.4": [
+      "inferencebook",
+      "vllmscale",
+      "inferopt"
+    ],
+    "31.1": [
+      "paged",
+      "sglang",
+      "llamacpp"
+    ],
+    "31.2": [
+      "gateway",
+      "vllmscale",
+      "hotswap",
+      "streaming"
+    ],
+    "31.3": [
+      "vllmtune",
+      "batching",
+      "inferencebook"
+    ],
+    "32.1": [
+      "gateway",
+      "streaming",
+      "chat"
+    ],
+    "32.2": [
+      "toolschema",
+      "xgrammar",
+      "streaming"
+    ]
+  }
+}
