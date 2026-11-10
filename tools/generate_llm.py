@@ -36,7 +36,7 @@ nav, content = [], []
 for t in topics:
     count = sum(len(s['items']) for s in t['subs'])
     nav.append(f'<a href="#{t["id"]}"><span>{t["num"]}</span>{escape(t["title"])}</a>')
-    content.append(f'<details class="topic" id="{t["id"]}"><summary><span class="number">{t["num"]}</span><span class="topic-title">{escape(t["title"])}<small>{len(t["subs"])} subtopics · {count} concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">')
+    content.append(f'<details class="topic" id="{t["id"]}"><summary><span class="number">{t["num"]}</span><span class="topic-title">{escape(t["title"])}<small>{len(t["subs"])} subtopics Â· {count} concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">')
     for s in t['subs']:
         content.append(f'<section class="subtopic" id="{s["id"]}"><h3><a href="#{s["id"]}">{s["num"]}</a> {escape(s["title"])}</h3><ul class="checklist">')
         for i, item in enumerate(s['items']):
@@ -53,5 +53,5 @@ for line in md[md.index('## D. '):].splitlines():
     elif line.strip(): notes.append('<p>'+inline(line)+'</p>')
 template = (root/'tools/llm-template.html').read_text(encoding='utf-8')
 page = template.replace('<!-- TOPIC NAV -->', '\n'.join(nav)).replace('<!-- TOPICS -->', '\n'.join(content)).replace('<!-- NOTES -->', '\n'.join(notes))
-(root/'_tabs/llm.html').write_text('---\ntitle: LLM\nlayout: null\nicon: fas fa-brain\norder: 2\npermalink: /llm/\n---\n'+page, encoding='utf-8')
+(root/'_tabs/llm.html').write_text('---\ntitle: LLM\nlayout: false\nicon: fas fa-brain\norder: 2\npermalink: /llm/\n---\n'+page, encoding='utf-8')
 print('Generated 60 topics, 204 subtopics, 1240 concepts and 612 reading links.')
