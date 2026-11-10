@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-10",
+  "sources": {
+    "bpe": [
+      "Hugging Face",
+      "Byte-Pair Encoding tokenization",
+      "https://huggingface.co/learn/llm-course/chapter6/5",
+      "Worked tutorial",
+      "Implement frequency-based merges and trace how text becomes subword tokens."
+    ],
+    "wordpiece": [
+      "Hugging Face",
+      "WordPiece tokenization",
+      "https://huggingface.co/learn/llm-course/chapter6/6",
+      "Worked tutorial",
+      "Compare WordPiece vocabulary construction and segmentation with BPE."
+    ],
+    "unigram": [
+      "Hugging Face",
+      "Unigram tokenization",
+      "https://huggingface.co/learn/llm-course/chapter6/7",
+      "Worked tutorial",
+      "Understand probabilistic segmentation and vocabulary pruning."
+    ],
+    "tokenblocks": [
+      "Hugging Face",
+      "Building a tokenizer, block by block",
+      "https://huggingface.co/learn/llm-course/chapter6/8",
+      "Code walkthrough",
+      "Assemble normalization, pre-tokenization, token modeling, post-processing, and decoding."
+    ],
+    "minbpe": [
+      "Andrej Karpathy",
+      "minbpe: minimal byte-pair encoding",
+      "https://github.com/karpathy/minbpe",
+      "Annotated implementation",
+      "Implement byte-level BPE, regex splitting, and special-token handling."
+    ],
+    "chat": [
+      "Hugging Face",
+      "Chat templates",
+      "https://huggingface.co/docs/transformers/chat_templating",
+      "Practical guide",
+      "Understand role delimiters, special tokens, and generation prompts."
+    ],
+    "trainfrom": [
+      "Julien Chaumond / Hugging Face",
+      "How to train a new language model from scratch",
+      "https://huggingface.co/blog/how-to-train",
+      "Hands-on article",
+      "Connect a custom tokenizer to model configuration and masked-language-model training."
+    ],
+    "sbert": [
+      "Sentence Transformers",
+      "Quickstart: embeddings and rerankers",
+      "https://sbert.net/docs/quickstart.html",
+      "Code walkthrough",
+      "Compare bi-encoder embeddings with cross-encoder reranking and run similarity examples."
+    ],
+    "semantic": [
+      "Sentence Transformers",
+      "Semantic Search",
+      "https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html",
+      "Practical guide",
+      "Distinguish query-document search from symmetric similarity and build a retrieval pipeline."
+    ],
+    "matryoshka": [
+      "Hugging Face",
+      "Introduction to Matryoshka Embedding Models",
+      "https://huggingface.co/blog/matryoshka",
+      "Technical article",
+      "Understand nested embedding dimensions and their retrieval cost-quality tradeoffs."
+    ],
+    "hnsw": [
+      "Pinecone",
+      "Hierarchical Navigable Small Worlds",
+      "https://www.pinecone.io/learn/series/faiss/hnsw/",
+      "Illustrated engineering guide",
+      "Understand graph construction, approximate neighbors, and recall-speed tradeoffs."
+    ],
+    "annotated": [
+      "Harvard NLP",
+      "The Annotated Transformer",
+      "https://nlp.seas.harvard.edu/annotated-transformer/",
+      "Annotated implementation",
+      "Translate attention equations, masks, residual blocks, and training into runnable PyTorch."
+    ],
+    "attention": [
+      "3Blue1Brown",
+      "Attention in transformers, step-by-step",
+      "https://www.3blue1brown.com/lessons/attention/",
+      "Visual lesson",
+      "Visualize queries, keys, values, and the contextual mixing performed by attention."
+    ],
+    "cache": [
+      "Hugging Face",
+      "How caching works",
+      "https://huggingface.co/docs/transformers/cache_explanation",
+      "Technical guide",
+      "Understand why autoregressive decoding reuses keys and values and how masks change."
+    ],
+    "gqa": [
+      "Sebastian Raschka",
+      "Grouped-Query Attention",
+      "https://www.sebastianraschka.com/llms-from-scratch/ch04/04_gqa/",
+      "From-scratch guide",
+      "Implement shared key-value heads and quantify KV-cache memory savings."
+    ],
+    "mqa": [
+      "Fireworks AI",
+      "Multi-Query Attention is All You Need",
+      "https://fireworks.ai/blog/multi-query-attention-is-all-you-need?rp=3",
+      "Engineering article",
+      "Connect head sharing to memory bandwidth, serving throughput, and implementation details."
+    ]
+  },
+  "subtopics": {
+    "07.1": [
+      "bpe",
+      "wordpiece",
+      "unigram",
+      "minbpe"
+    ],
+    "07.2": [
+      "bpe",
+      "chat",
+      "wordpiece"
+    ],
+    "07.3": [
+      "tokenblocks",
+      "minbpe",
+      "trainfrom",
+      "chat"
+    ],
+    "08.1": [
+      "word2vec",
+      "gpt2",
+      "bert"
+    ],
+    "08.2": [
+      "sbert",
+      "semantic",
+      "matryoshka"
+    ],
+    "08.3": [
+      "semantic",
+      "hnsw",
+      "matryoshka"
+    ],
+    "09.1": [
+      "transformer",
+      "annotated",
+      "gpt2"
+    ],
+    "09.2": [
+      "attention",
+      "annotated",
+      "transformer"
+    ],
+    "09.3": [
+      "gpt2",
+      "cache",
+      "annotated"
+    ],
+    "10.1": [
+      "attention",
+      "gqa",
+      "mqa"
+    ]
+  }
+}

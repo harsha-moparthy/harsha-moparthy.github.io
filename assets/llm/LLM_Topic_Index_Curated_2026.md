@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 10 November 2026. 20 of 204 subtopics curated.
+Updated 10 November 2026. 30 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -300,7 +300,10 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] tiktoken-style vocabulary design and byte fallback
 - [ ] Morphology-aware and multilingual tokenizer design
 
-Reading-list review pending; see the original index for candidate links.
+1. [Byte-Pair Encoding tokenization](https://huggingface.co/learn/llm-course/chapter6/5) — Hugging Face · Worked tutorial. Implement frequency-based merges and trace how text becomes subword tokens.
+2. [WordPiece tokenization](https://huggingface.co/learn/llm-course/chapter6/6) — Hugging Face · Worked tutorial. Compare WordPiece vocabulary construction and segmentation with BPE.
+3. [Unigram tokenization](https://huggingface.co/learn/llm-course/chapter6/7) — Hugging Face · Worked tutorial. Understand probabilistic segmentation and vocabulary pruning.
+4. [minbpe: minimal byte-pair encoding](https://github.com/karpathy/minbpe) — Andrej Karpathy · Annotated implementation. Implement byte-level BPE, regex splitting, and special-token handling.
 
 ### 07.2 Vocabulary and token semantics
 
@@ -311,7 +314,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Added tokens, token collisions, and reserved IDs
 - [ ] Whitespace, capitalization, numerals, emojis, and Unicode edge cases
 
-Reading-list review pending; see the original index for candidate links.
+1. [Byte-Pair Encoding tokenization](https://huggingface.co/learn/llm-course/chapter6/5) — Hugging Face · Worked tutorial. Implement frequency-based merges and trace how text becomes subword tokens.
+2. [Chat templates](https://huggingface.co/docs/transformers/chat_templating) — Hugging Face · Practical guide. Understand role delimiters, special tokens, and generation prompts.
+3. [WordPiece tokenization](https://huggingface.co/learn/llm-course/chapter6/6) — Hugging Face · Worked tutorial. Compare WordPiece vocabulary construction and segmentation with BPE.
 
 ### 07.3 Tokenization engineering
 
@@ -322,7 +327,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Tokenizer migration, embedding resize, and compatibility
 - [ ] Token counting, API costs, and tokenizer attack surface
 
-Reading-list review pending; see the original index for candidate links.
+1. [Building a tokenizer, block by block](https://huggingface.co/learn/llm-course/chapter6/8) — Hugging Face · Code walkthrough. Assemble normalization, pre-tokenization, token modeling, post-processing, and decoding.
+2. [minbpe: minimal byte-pair encoding](https://github.com/karpathy/minbpe) — Andrej Karpathy · Annotated implementation. Implement byte-level BPE, regex splitting, and special-token handling.
+3. [How to train a new language model from scratch](https://huggingface.co/blog/how-to-train) — Julien Chaumond / Hugging Face · Hands-on article. Connect a custom tokenizer to model configuration and masked-language-model training.
+4. [Chat templates](https://huggingface.co/docs/transformers/chat_templating) — Hugging Face · Practical guide. Understand role delimiters, special tokens, and generation prompts.
 
 ## 08. Embeddings and representation geometry
 
@@ -335,7 +343,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Contextual versus static embeddings
 - [ ] Output logits, vocabulary projection, and logit lens
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Illustrated Word2vec](https://jalammar.github.io/illustrated-word2vec/) — Jay Alammar · Visual guide. Understand learned embeddings, similarity, context prediction, and negative sampling.
+2. [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/) — Jay Alammar · Visual guide. Follow tokens through a decoder-only model and understand how next-token predictions are produced.
+3. [The Illustrated BERT, ELMo, and co.](https://jalammar.github.io/illustrated-bert/) — Jay Alammar · Visual guide. Trace contextual representations and the transition to pretrained NLP transfer learning.
 
 ### 08.2 Sentence and document embeddings
 
@@ -346,7 +356,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Instruction-aware and query/document asymmetric embeddings
 - [ ] Multilingual and multimodal embedding spaces
 
-Reading-list review pending; see the original index for candidate links.
+1. [Quickstart: embeddings and rerankers](https://sbert.net/docs/quickstart.html) — Sentence Transformers · Code walkthrough. Compare bi-encoder embeddings with cross-encoder reranking and run similarity examples.
+2. [Semantic Search](https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html) — Sentence Transformers · Practical guide. Distinguish query-document search from symmetric similarity and build a retrieval pipeline.
+3. [Introduction to Matryoshka Embedding Models](https://huggingface.co/blog/matryoshka) — Hugging Face · Technical article. Understand nested embedding dimensions and their retrieval cost-quality tradeoffs.
 
 ### 08.3 Representation analysis and retrieval
 
@@ -357,7 +369,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Embedding evaluation (retrieval, classification, clustering)
 - [ ] Semantic similarity versus relevance versus factual entailment
 
-Reading-list review pending; see the original index for candidate links.
+1. [Semantic Search](https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html) — Sentence Transformers · Practical guide. Distinguish query-document search from symmetric similarity and build a retrieval pipeline.
+2. [Hierarchical Navigable Small Worlds](https://www.pinecone.io/learn/series/faiss/hnsw/) — Pinecone · Illustrated engineering guide. Understand graph construction, approximate neighbors, and recall-speed tradeoffs.
+3. [Introduction to Matryoshka Embedding Models](https://huggingface.co/blog/matryoshka) — Hugging Face · Technical article. Understand nested embedding dimensions and their retrieval cost-quality tradeoffs.
 
 ## 09. Transformer architecture fundamentals
 
@@ -370,7 +384,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Residual connections and layer stacking
 - [ ] Vocabulary projection, logits, and language-model loss
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) — Jay Alammar · Visual guide. Build intuition for encoder-decoder architecture, attention, positional information, and output probabilities.
+2. [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP · Annotated implementation. Translate attention equations, masks, residual blocks, and training into runnable PyTorch.
+3. [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/) — Jay Alammar · Visual guide. Follow tokens through a decoder-only model and understand how next-token predictions are produced.
 
 ### 09.2 Attention math
 
@@ -382,7 +398,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Tensor-shape derivations for B × T × d
 - [ ] Computational and memory complexity of attention
 
-Reading-list review pending; see the original index for candidate links.
+1. [Attention in transformers, step-by-step](https://www.3blue1brown.com/lessons/attention/) — 3Blue1Brown · Visual lesson. Visualize queries, keys, values, and the contextual mixing performed by attention.
+2. [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP · Annotated implementation. Translate attention equations, masks, residual blocks, and training into runnable PyTorch.
+3. [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) — Jay Alammar · Visual guide. Build intuition for encoder-decoder architecture, attention, positional information, and output probabilities.
 
 ### 09.3 Training versus autoregressive inference
 
@@ -393,7 +411,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Attention KV reuse and incremental decoding
 - [ ] Sequence packing and document boundary isolation
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/) — Jay Alammar · Visual guide. Follow tokens through a decoder-only model and understand how next-token predictions are produced.
+2. [How caching works](https://huggingface.co/docs/transformers/cache_explanation) — Hugging Face · Technical guide. Understand why autoregressive decoding reuses keys and values and how masks change.
+3. [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP · Annotated implementation. Translate attention equations, masks, residual blocks, and training into runnable PyTorch.
 
 ## 10. Attention mechanisms and variants
 
@@ -406,7 +426,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multi-scale, multi-granular, and heterogeneous heads
 - [ ] Head dimensions, KV-head counts, and head pruning
 
-Reading-list review pending; see the original index for candidate links.
+1. [Attention in transformers, step-by-step](https://www.3blue1brown.com/lessons/attention/) — 3Blue1Brown · Visual lesson. Visualize queries, keys, values, and the contextual mixing performed by attention.
+2. [Grouped-Query Attention](https://www.sebastianraschka.com/llms-from-scratch/ch04/04_gqa/) — Sebastian Raschka · From-scratch guide. Implement shared key-value heads and quantify KV-cache memory savings.
+3. [Multi-Query Attention is All You Need](https://fireworks.ai/blog/multi-query-attention-is-all-you-need?rp=3) — Fireworks AI · Engineering article. Connect head sharing to memory bandwidth, serving throughput, and implementation details.
 
 ### 10.2 Attention pattern variants
 

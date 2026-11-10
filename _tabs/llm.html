@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>20 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>30 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics Â· 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -359,10 +359,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="07.1-3"><span>SentencePiece and whitespace-agnostic processing</span></label></li>
 <li><label><input type="checkbox" data-key="07.1-4"><span>tiktoken-style vocabulary design and byte fallback</span></label></li>
 <li><label><input type="checkbox" data-key="07.1-5"><span>Morphology-aware and multilingual tokenizer design</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/from-tokens-to-agents/tokenization-part-2-the-algorithms-behind-every-token-03745b385438">Tokenization Part 2: Algorithms (2026)</a></li>
-<li><a href="https://medium.com/%40dakshrathi/byte-pair-encoding-bpe-from-data-compression-to-gpt-2-tokenization-44e35be2fd58">Byte Pair Encoding from Scratch (2026)</a></li>
-<li><a href="https://medium.com/%40dhiyaadli/bpe-vs-wordpiece-vs-sentencepiece-a-beginner-friendly-guide-to-subword-tokenization-8047b39d82e0">BPE vs WordPiece vs SentencePiece (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/learn/llm-course/chapter6/5">Byte-Pair Encoding tokenization</a><small>Hugging Face · Worked tutorial</small><p>Implement frequency-based merges and trace how text becomes subword tokens.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/learn/llm-course/chapter6/6">WordPiece tokenization</a><small>Hugging Face · Worked tutorial</small><p>Compare WordPiece vocabulary construction and segmentation with BPE.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/learn/llm-course/chapter6/7">Unigram tokenization</a><small>Hugging Face · Worked tutorial</small><p>Understand probabilistic segmentation and vocabulary pruning.</p></li>
+<li class="curated-resource"><a href="https://github.com/karpathy/minbpe">minbpe: minimal byte-pair encoding</a><small>Andrej Karpathy · Annotated implementation</small><p>Implement byte-level BPE, regex splitting, and special-token handling.</p></li>
 </ol></div></section>
 <section class="subtopic" id="072-vocabulary-and-token-semantics"><h3><a href="#072-vocabulary-and-token-semantics">07.2</a> Vocabulary and token semantics</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="07.2-0"><span>Vocabulary size, token frequency, and fertility</span></label></li>
@@ -371,10 +372,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="07.2-3"><span>FIM/infill tokens and multimodal sentinel tokens</span></label></li>
 <li><label><input type="checkbox" data-key="07.2-4"><span>Added tokens, token collisions, and reserved IDs</span></label></li>
 <li><label><input type="checkbox" data-key="07.2-5"><span>Whitespace, capitalization, numerals, emojis, and Unicode edge cases</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40dhiyaadli/bpe-vs-wordpiece-vs-sentencepiece-a-beginner-friendly-guide-to-subword-tokenization-8047b39d82e0">BPE vs WordPiece vs SentencePiece (2025)</a></li>
-<li><a href="https://medium.com/from-tokens-to-agents/tokenization-part-2-the-algorithms-behind-every-token-03745b385438">Tokenization Part 2: Algorithms (2026)</a></li>
-<li><a href="https://medium.com/data-science/sentencepiece-tokenizer-demystified-d0a3aac19b15">SentencePiece Tokenizer Demystified (2020)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/learn/llm-course/chapter6/5">Byte-Pair Encoding tokenization</a><small>Hugging Face · Worked tutorial</small><p>Implement frequency-based merges and trace how text becomes subword tokens.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/chat_templating">Chat templates</a><small>Hugging Face · Practical guide</small><p>Understand role delimiters, special tokens, and generation prompts.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/learn/llm-course/chapter6/6">WordPiece tokenization</a><small>Hugging Face · Worked tutorial</small><p>Compare WordPiece vocabulary construction and segmentation with BPE.</p></li>
 </ol></div></section>
 <section class="subtopic" id="073-tokenization-engineering"><h3><a href="#073-tokenization-engineering">07.3</a> Tokenization engineering</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="07.3-0"><span>Tokenizer training, normalization, pretokenization, and decoding</span></label></li>
@@ -383,10 +384,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="07.3-3"><span>Attention masks, loss masks, and shifted labels</span></label></li>
 <li><label><input type="checkbox" data-key="07.3-4"><span>Tokenizer migration, embedding resize, and compatibility</span></label></li>
 <li><label><input type="checkbox" data-key="07.3-5"><span>Token counting, API costs, and tokenizer attack surface</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40dakshrathi/byte-pair-encoding-bpe-from-data-compression-to-gpt-2-tokenization-44e35be2fd58">Byte Pair Encoding from Scratch (2026)</a></li>
-<li><a href="https://medium.com/from-tokens-to-agents/tokenization-part-2-the-algorithms-behind-every-token-03745b385438">Tokenization Part 2: Algorithms (2026)</a></li>
-<li><a href="https://medium.com/data-science/sentencepiece-tokenizer-demystified-d0a3aac19b15">SentencePiece Tokenizer Demystified (2020)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/learn/llm-course/chapter6/8">Building a tokenizer, block by block</a><small>Hugging Face · Code walkthrough</small><p>Assemble normalization, pre-tokenization, token modeling, post-processing, and decoding.</p></li>
+<li class="curated-resource"><a href="https://github.com/karpathy/minbpe">minbpe: minimal byte-pair encoding</a><small>Andrej Karpathy · Annotated implementation</small><p>Implement byte-level BPE, regex splitting, and special-token handling.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/how-to-train">How to train a new language model from scratch</a><small>Julien Chaumond / Hugging Face · Hands-on article</small><p>Connect a custom tokenizer to model configuration and masked-language-model training.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/chat_templating">Chat templates</a><small>Hugging Face · Practical guide</small><p>Understand role delimiters, special tokens, and generation prompts.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="08-embeddings-and-representation-geometry"><summary><span class="number">08</span><span class="topic-title">Embeddings and representation geometry<small>3 subtopics Â· 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -397,10 +399,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="08.1-3"><span>Hidden states, layerwise representations, and anisotropy</span></label></li>
 <li><label><input type="checkbox" data-key="08.1-4"><span>Contextual versus static embeddings</span></label></li>
 <li><label><input type="checkbox" data-key="08.1-5"><span>Output logits, vocabulary projection, and logit lens</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/advanced-deep-learning/how-ai-sees-and-reads-visualising-vision-language-models-5903c0fab0ab">Visualising Vision Language Models (2025)</a></li>
-<li><a href="https://medium.com/adi-insights-innovations-collective/dense-vs-hybrid-retrieval-measuring-what-each-layer-adds-f372e69d08e7">Dense vs Hybrid Retrieval Measured (2026)</a></li>
-<li><a href="https://medium.com/data-and-beyond/i-traced-every-gradient-through-attention-here-they-all-are-d284e494623a">I Traced Every Gradient Through Attention (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-word2vec/">The Illustrated Word2vec</a><small>Jay Alammar · Visual guide</small><p>Understand learned embeddings, similarity, context prediction, and negative sampling.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-gpt2/">The Illustrated GPT-2</a><small>Jay Alammar · Visual guide</small><p>Follow tokens through a decoder-only model and understand how next-token predictions are produced.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-bert/">The Illustrated BERT, ELMo, and co.</a><small>Jay Alammar · Visual guide</small><p>Trace contextual representations and the transition to pretrained NLP transfer learning.</p></li>
 </ol></div></section>
 <section class="subtopic" id="082-sentence-and-document-embeddings"><h3><a href="#082-sentence-and-document-embeddings">08.2</a> Sentence and document embeddings</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="08.2-0"><span>Mean, CLS, last-token, and weighted pooling</span></label></li>
@@ -409,10 +411,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="08.2-3"><span>Embedding normalization and similarity functions</span></label></li>
 <li><label><input type="checkbox" data-key="08.2-4"><span>Instruction-aware and query/document asymmetric embeddings</span></label></li>
 <li><label><input type="checkbox" data-key="08.2-5"><span>Multilingual and multimodal embedding spaces</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/adi-insights-innovations-collective/dense-vs-hybrid-retrieval-measuring-what-each-layer-adds-f372e69d08e7">Dense vs Hybrid Retrieval Measured (2026)</a></li>
-<li><a href="https://medium.com/models-to-systems/llm-coding-interview-series-18-30-retrieval-augmented-generation-rag-00864084fcf8">LLM Coding Interview: Retrieval Augmented Generation (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/beyond-the-embedding-how-llms-learned-to-see-ba74dae187ee">Beyond the Embedding: How LLMs Learned to See (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://sbert.net/docs/quickstart.html">Quickstart: embeddings and rerankers</a><small>Sentence Transformers · Code walkthrough</small><p>Compare bi-encoder embeddings with cross-encoder reranking and run similarity examples.</p></li>
+<li class="curated-resource"><a href="https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html">Semantic Search</a><small>Sentence Transformers · Practical guide</small><p>Distinguish query-document search from symmetric similarity and build a retrieval pipeline.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/matryoshka">Introduction to Matryoshka Embedding Models</a><small>Hugging Face · Technical article</small><p>Understand nested embedding dimensions and their retrieval cost-quality tradeoffs.</p></li>
 </ol></div></section>
 <section class="subtopic" id="083-representation-analysis-and-retrieval"><h3><a href="#083-representation-analysis-and-retrieval">08.3</a> Representation analysis and retrieval</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="08.3-0"><span>Cosine, dot product, and Euclidean distance</span></label></li>
@@ -421,10 +423,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="08.3-3"><span>Embedding drift, domain shift, and recalibration</span></label></li>
 <li><label><input type="checkbox" data-key="08.3-4"><span>Embedding evaluation (retrieval, classification, clustering)</span></label></li>
 <li><label><input type="checkbox" data-key="08.3-5"><span>Semantic similarity versus relevance versus factual entailment</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/adi-insights-innovations-collective/dense-vs-hybrid-retrieval-measuring-what-each-layer-adds-f372e69d08e7">Dense vs Hybrid Retrieval Measured (2026)</a></li>
-<li><a href="https://medium.com/%40Chioma_Kamalu/i-tested-four-enterprise-rag-architectures-was-the-most-complex-one-worth-it-c33fe82a54ca">Four Enterprise RAG Architectures Compared (2026)</a></li>
-<li><a href="https://medium.com/models-to-systems/llm-coding-interview-series-18-30-retrieval-augmented-generation-rag-00864084fcf8">LLM Coding Interview: Retrieval Augmented Generation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html">Semantic Search</a><small>Sentence Transformers · Practical guide</small><p>Distinguish query-document search from symmetric similarity and build a retrieval pipeline.</p></li>
+<li class="curated-resource"><a href="https://www.pinecone.io/learn/series/faiss/hnsw/">Hierarchical Navigable Small Worlds</a><small>Pinecone · Illustrated engineering guide</small><p>Understand graph construction, approximate neighbors, and recall-speed tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/matryoshka">Introduction to Matryoshka Embedding Models</a><small>Hugging Face · Technical article</small><p>Understand nested embedding dimensions and their retrieval cost-quality tradeoffs.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="09-transformer-architecture-fundamentals"><summary><span class="number">09</span><span class="topic-title">Transformer architecture fundamentals<small>3 subtopics Â· 19 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -435,10 +437,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="09.1-3"><span>Pre-norm versus post-norm and normalization order</span></label></li>
 <li><label><input type="checkbox" data-key="09.1-4"><span>Residual connections and layer stacking</span></label></li>
 <li><label><input type="checkbox" data-key="09.1-5"><span>Vocabulary projection, logits, and language-model loss</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-and-beyond/i-traced-every-gradient-through-attention-here-they-all-are-d284e494623a">I Traced Every Gradient Through Attention (2026)</a></li>
-<li><a href="https://medium.com/%40r9644360/learn-and-code-mha-mqa-and-gqa-a-guide-to-efficient-attention-mechanisms-in-transformers-ff621fe76680">Learn and Code MHA MQA and GQA (2025)</a></li>
-<li><a href="https://medium.com/%40wasowski.jarek/a-decade-of-misplaced-sacred-cows-in-neural-networks-residuals-norms-1a4f85749a0d">Residual Connections and Normalization in Transformers (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a><small>Jay Alammar · Visual guide</small><p>Build intuition for encoder-decoder architecture, attention, positional information, and output probabilities.</p></li>
+<li class="curated-resource"><a href="https://nlp.seas.harvard.edu/annotated-transformer/">The Annotated Transformer</a><small>Harvard NLP · Annotated implementation</small><p>Translate attention equations, masks, residual blocks, and training into runnable PyTorch.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-gpt2/">The Illustrated GPT-2</a><small>Jay Alammar · Visual guide</small><p>Follow tokens through a decoder-only model and understand how next-token predictions are produced.</p></li>
 </ol></div></section>
 <section class="subtopic" id="092-attention-math"><h3><a href="#092-attention-math">09.2</a> Attention math</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="09.2-0"><span>Queries, keys, values, and learned projections</span></label></li>
@@ -448,10 +450,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="09.2-4"><span>Multi-head splitting, reshaping, concatenation, and output projection</span></label></li>
 <li><label><input type="checkbox" data-key="09.2-5"><span>Tensor-shape derivations for B × T × d</span></label></li>
 <li><label><input type="checkbox" data-key="09.2-6"><span>Computational and memory complexity of attention</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-and-beyond/i-traced-every-gradient-through-attention-here-they-all-are-d284e494623a">I Traced Every Gradient Through Attention (2026)</a></li>
-<li><a href="https://medium.com/%40r9644360/learn-and-code-mha-mqa-and-gqa-a-guide-to-efficient-attention-mechanisms-in-transformers-ff621fe76680">Learn and Code MHA MQA and GQA (2025)</a></li>
-<li><a href="https://medium.com/data-science-collective/positional-encoding-from-sinusoidal-to-rope-to-alibi-02774e73a6a8">Positional Encoding: Sinusoidal to RoPE to ALiBi (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.3blue1brown.com/lessons/attention/">Attention in transformers, step-by-step</a><small>3Blue1Brown · Visual lesson</small><p>Visualize queries, keys, values, and the contextual mixing performed by attention.</p></li>
+<li class="curated-resource"><a href="https://nlp.seas.harvard.edu/annotated-transformer/">The Annotated Transformer</a><small>Harvard NLP · Annotated implementation</small><p>Translate attention equations, masks, residual blocks, and training into runnable PyTorch.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a><small>Jay Alammar · Visual guide</small><p>Build intuition for encoder-decoder architecture, attention, positional information, and output probabilities.</p></li>
 </ol></div></section>
 <section class="subtopic" id="093-training-versus-autoregressive-inference"><h3><a href="#093-training-versus-autoregressive-inference">09.3</a> Training versus autoregressive inference</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="09.3-0"><span>Parallel teacher-forced training and shifted targets</span></label></li>
@@ -460,10 +462,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="09.3-3"><span>Causal masks with variable sequence lengths</span></label></li>
 <li><label><input type="checkbox" data-key="09.3-4"><span>Attention KV reuse and incremental decoding</span></label></li>
 <li><label><input type="checkbox" data-key="09.3-5"><span>Sequence packing and document boundary isolation</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/data-and-beyond/i-traced-every-gradient-through-attention-here-they-all-are-d284e494623a">I Traced Every Gradient Through Attention (2026)</a></li>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-gpt2/">The Illustrated GPT-2</a><small>Jay Alammar · Visual guide</small><p>Follow tokens through a decoder-only model and understand how next-token predictions are produced.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/cache_explanation">How caching works</a><small>Hugging Face · Technical guide</small><p>Understand why autoregressive decoding reuses keys and values and how masks change.</p></li>
+<li class="curated-resource"><a href="https://nlp.seas.harvard.edu/annotated-transformer/">The Annotated Transformer</a><small>Harvard NLP · Annotated implementation</small><p>Translate attention equations, masks, residual blocks, and training into runnable PyTorch.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="10-attention-mechanisms-and-variants"><summary><span class="number">10</span><span class="topic-title">Attention mechanisms and variants<small>3 subtopics Â· 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -474,10 +476,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="10.1-3"><span>Multi-head latent attention (MLA)</span></label></li>
 <li><label><input type="checkbox" data-key="10.1-4"><span>Multi-scale, multi-granular, and heterogeneous heads</span></label></li>
 <li><label><input type="checkbox" data-key="10.1-5"><span>Head dimensions, KV-head counts, and head pruning</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40r9644360/learn-and-code-mha-mqa-and-gqa-a-guide-to-efficient-attention-mechanisms-in-transformers-ff621fe76680">Learn and Code MHA MQA and GQA (2025)</a></li>
-<li><a href="https://medium.com/%40amitshekhar/llm-inference-engineering-problem-and-solution-8111b1919145">LLM Inference Engineering: Problems and Solutions (2026)</a></li>
-<li><a href="https://medium.com/%40cosmicray001/mixture-of-experts-from-the-router-up-5c70caf9ea4b">Mixture of Experts from Router Up (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.3blue1brown.com/lessons/attention/">Attention in transformers, step-by-step</a><small>3Blue1Brown · Visual lesson</small><p>Visualize queries, keys, values, and the contextual mixing performed by attention.</p></li>
+<li class="curated-resource"><a href="https://www.sebastianraschka.com/llms-from-scratch/ch04/04_gqa/">Grouped-Query Attention</a><small>Sebastian Raschka · From-scratch guide</small><p>Implement shared key-value heads and quantify KV-cache memory savings.</p></li>
+<li class="curated-resource"><a href="https://fireworks.ai/blog/multi-query-attention-is-all-you-need?rp=3">Multi-Query Attention is All You Need</a><small>Fireworks AI · Engineering article</small><p>Connect head sharing to memory bandwidth, serving throughput, and implementation details.</p></li>
 </ol></div></section>
 <section class="subtopic" id="102-attention-pattern-variants"><h3><a href="#102-attention-pattern-variants">10.2</a> Attention pattern variants</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="10.2-0"><span>Local, sliding-window, and dilated attention</span></label></li>
