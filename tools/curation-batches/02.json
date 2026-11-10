@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-10",
+  "sources": {
+    "slp": [
+      "Jurafsky & Martin",
+      "Speech and Language Processing",
+      "https://web.stanford.edu/~jurafsky/slp3/",
+      "Open textbook",
+      "Use the language-modeling and classical NLP chapters for n-grams, smoothing, syntax, and task foundations."
+    ],
+    "lstm": [
+      "Christopher Olah",
+      "Understanding LSTM Networks",
+      "https://colah.github.io/posts/2015-08-Understanding-LSTMs/",
+      "Visual guide",
+      "Follow recurrent state and gates to understand long-range credit assignment."
+    ],
+    "rnn": [
+      "Andrej Karpathy",
+      "The Unreasonable Effectiveness of Recurrent Neural Networks",
+      "https://karpathy.github.io/2015/05/21/rnn-effectiveness/",
+      "Article with code",
+      "Build intuition for sequence modeling through character-level generation experiments."
+    ],
+    "bert": [
+      "Jay Alammar",
+      "The Illustrated BERT, ELMo, and co.",
+      "https://jalammar.github.io/illustrated-bert/",
+      "Visual guide",
+      "Trace contextual representations and the transition to pretrained NLP transfer learning."
+    ],
+    "fineweb": [
+      "Hugging Face",
+      "FineWeb: decanting the web for the finest text data at scale",
+      "https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html",
+      "Engineering deep dive",
+      "Study controlled experiments on web extraction, filtering, deduplication, and educational quality."
+    ],
+    "datatrove": [
+      "Hugging Face",
+      "DataTrove: composable data-processing pipelines",
+      "https://github.com/huggingface/datatrove",
+      "Implementation guide",
+      "Inspect executable extraction, filtering, deduplication, tokenization, and pipeline examples."
+    ],
+    "cards": [
+      "Hugging Face",
+      "Dataset Cards",
+      "https://huggingface.co/docs/hub/datasets-cards",
+      "Documentation",
+      "Document dataset composition, licensing, intended use, and limitations."
+    ],
+    "quality": [
+      "Lilian Weng",
+      "Thinking about High-Quality Human Data",
+      "https://lilianweng.github.io/posts/2024-02-05-human-data-quality/",
+      "Research explainer",
+      "Reason about annotation quality, rater agreement, noisy labels, and data selection."
+    ],
+    "dedup": [
+      "Google Research",
+      "Deduplicating Training Data Makes Language Models Better",
+      "https://research.google/pubs/deduplicating-training-data-makes-language-models-better/",
+      "Original research",
+      "Understand why repeated text affects memorization and evaluation, then follow the released implementation."
+    ],
+    "repeat": [
+      "Anthropic",
+      "Scaling laws of learning from repeated data",
+      "https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data",
+      "Research article",
+      "Examine how excessive repetition can harm training and alter data-budget decisions."
+    ],
+    "atlas": [
+      "Google Research",
+      "ATLAS: Practical scaling laws for multilingual models",
+      "https://www.research.google/blog/atlas-practical-scaling-laws-for-multilingual-models/",
+      "Research explainer",
+      "Study how language transfer and model size inform multilingual mixture choices."
+    ],
+    "synth": [
+      "Daniel Vila / Hugging Face",
+      "Using Llama 3 and distilabel to build fine-tuning datasets",
+      "https://huggingface.co/blog/dvilasuero/synthetic-data-with-llama3-distilabel",
+      "Hands-on article",
+      "Construct a reproducible synthetic-data pipeline and refine generation quality."
+    ],
+    "prefdata": [
+      "Hugging Face",
+      "Generate a Preference Dataset with distilabel",
+      "https://huggingface.co/learn/cookbook/generate_preference_dataset_distilabel",
+      "Code walkthrough",
+      "Generate and score preference pairs for downstream alignment experiments."
+    ],
+    "nemocc": [
+      "NVIDIA",
+      "Nemotron-CC Data Curation",
+      "https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html",
+      "Engineering recipe",
+      "Follow a concrete Common Crawl curation pipeline with synthetic-data stages."
+    ]
+  },
+  "subtopics": {
+    "04.1": [
+      "slp",
+      "word2vec",
+      "hfintro"
+    ],
+    "04.2": [
+      "rnn",
+      "lstm",
+      "transformer"
+    ],
+    "04.3": [
+      "bert",
+      "gpt2",
+      "foundation"
+    ],
+    "05.1": [
+      "fineweb",
+      "smol",
+      "nemocc"
+    ],
+    "05.2": [
+      "cards",
+      "fineweb",
+      "quality",
+      "dedup"
+    ],
+    "05.3": [
+      "fineweb",
+      "atlas",
+      "repeat",
+      "smol"
+    ],
+    "06.1": [
+      "fineweb",
+      "datatrove",
+      "nemocc"
+    ],
+    "06.2": [
+      "dedup",
+      "datatrove",
+      "repeat",
+      "fineweb"
+    ],
+    "06.3": [
+      "fineweb",
+      "quality",
+      "nemocc"
+    ],
+    "06.4": [
+      "synth",
+      "prefdata",
+      "nemocc"
+    ]
+  }
+}

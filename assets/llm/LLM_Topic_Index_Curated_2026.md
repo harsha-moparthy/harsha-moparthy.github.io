@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 10 November 2026. 10 of 204 subtopics curated.
+Updated 10 November 2026. 20 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -161,7 +161,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Bag of words, TF–IDF, and traditional sparse retrieval
 - [ ] Word2Vec, CBOW, skip-gram, GloVe, and fastText
 
-Reading-list review pending; see the original index for candidate links.
+1. [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/) — Jurafsky & Martin · Open textbook. Use the language-modeling and classical NLP chapters for n-grams, smoothing, syntax, and task foundations.
+2. [The Illustrated Word2vec](https://jalammar.github.io/illustrated-word2vec/) — Jay Alammar · Visual guide. Understand learned embeddings, similarity, context prediction, and negative sampling.
+3. [LLM Course: Introduction](https://huggingface.co/learn/llm-course/chapter1/1) — Hugging Face · Overview. Orient yourself among NLP tasks, model families, and the training workflow.
 
 ### 04.2 Sequence modeling before transformers
 
@@ -172,7 +174,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Additive and multiplicative attention
 - [ ] Beam search in classical seq2seq systems
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Unreasonable Effectiveness of Recurrent Neural Networks](https://karpathy.github.io/2015/05/21/rnn-effectiveness/) — Andrej Karpathy · Article with code. Build intuition for sequence modeling through character-level generation experiments.
+2. [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) — Christopher Olah · Visual guide. Follow recurrent state and gates to understand long-range credit assignment.
+3. [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) — Jay Alammar · Visual guide. Build intuition for encoder-decoder architecture, attention, positional information, and output probabilities.
 
 ### 04.3 Foundation-model history
 
@@ -182,7 +186,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Instruction-tuned and chat-oriented models
 - [ ] Scaling of language models and multimodal extension
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Illustrated BERT, ELMo, and co.](https://jalammar.github.io/illustrated-bert/) — Jay Alammar · Visual guide. Trace contextual representations and the transition to pretrained NLP transfer learning.
+2. [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/) — Jay Alammar · Visual guide. Follow tokens through a decoder-only model and understand how next-token predictions are produced.
+3. [On the Opportunities and Risks of Foundation Models](https://crfm.stanford.edu/report.html) — Stanford CRFM · Research overview. Understand the foundation-model framing, adaptation opportunities, and systemic limitations.
 
 ## 05. Pretraining corpora, sources, and dataset design
 
@@ -196,7 +202,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multilingual and low-resource language corpora
 - [ ] Multimodal text–image–audio–video paired data
 
-Reading-list review pending; see the original index for candidate links.
+1. [FineWeb: decanting the web for the finest text data at scale](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Study controlled experiments on web extraction, filtering, deduplication, and educational quality.
+2. [The Smol Training Playbook](https://huggingfacetb-smol-training-playbook.hf.space/) — Hugging Face · Engineering deep dive. Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.
+3. [Nemotron-CC Data Curation](https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html) — NVIDIA · Engineering recipe. Follow a concrete Common Crawl curation pipeline with synthetic-data stages.
 
 ### 05.2 Dataset provenance and governance
 
@@ -207,7 +215,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Contamination risk and benchmark overlap
 - [ ] Geographic, linguistic, temporal, and demographic coverage
 
-Reading-list review pending; see the original index for candidate links.
+1. [Dataset Cards](https://huggingface.co/docs/hub/datasets-cards) — Hugging Face · Documentation. Document dataset composition, licensing, intended use, and limitations.
+2. [FineWeb: decanting the web for the finest text data at scale](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Study controlled experiments on web extraction, filtering, deduplication, and educational quality.
+3. [Thinking about High-Quality Human Data](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/) — Lilian Weng · Research explainer. Reason about annotation quality, rater agreement, noisy labels, and data selection.
+4. [Deduplicating Training Data Makes Language Models Better](https://research.google/pubs/deduplicating-training-data-makes-language-models-better/) — Google Research · Original research. Understand why repeated text affects memorization and evaluation, then follow the released implementation.
 
 ### 05.3 Mixture construction
 
@@ -218,7 +229,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Data curriculum, staged mixtures, and annealing
 - [ ] General-domain versus specialist data trade-offs
 
-Reading-list review pending; see the original index for candidate links.
+1. [FineWeb: decanting the web for the finest text data at scale](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Study controlled experiments on web extraction, filtering, deduplication, and educational quality.
+2. [ATLAS: Practical scaling laws for multilingual models](https://www.research.google/blog/atlas-practical-scaling-laws-for-multilingual-models/) — Google Research · Research explainer. Study how language transfer and model size inform multilingual mixture choices.
+3. [Scaling laws of learning from repeated data](https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data) — Anthropic · Research article. Examine how excessive repetition can harm training and alter data-budget decisions.
+4. [The Smol Training Playbook](https://huggingfacetb-smol-training-playbook.hf.space/) — Hugging Face · Engineering deep dive. Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.
 
 ## 06. Data processing, quality filtering, and synthesis
 
@@ -231,7 +245,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Line, paragraph, document, and conversation boundaries
 - [ ] Broken-text, encoding-error, and malformed-markup detection
 
-Reading-list review pending; see the original index for candidate links.
+1. [FineWeb: decanting the web for the finest text data at scale](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Study controlled experiments on web extraction, filtering, deduplication, and educational quality.
+2. [DataTrove: composable data-processing pipelines](https://github.com/huggingface/datatrove) — Hugging Face · Implementation guide. Inspect executable extraction, filtering, deduplication, tokenization, and pipeline examples.
+3. [Nemotron-CC Data Curation](https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html) — NVIDIA · Engineering recipe. Follow a concrete Common Crawl curation pipeline with synthetic-data stages.
 
 ### 06.2 Deduplication and contamination
 
@@ -242,7 +258,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Benchmark contamination and decontamination
 - [ ] Time-aware splits and leakage diagnostics
 
-Reading-list review pending; see the original index for candidate links.
+1. [Deduplicating Training Data Makes Language Models Better](https://research.google/pubs/deduplicating-training-data-makes-language-models-better/) — Google Research · Original research. Understand why repeated text affects memorization and evaluation, then follow the released implementation.
+2. [DataTrove: composable data-processing pipelines](https://github.com/huggingface/datatrove) — Hugging Face · Implementation guide. Inspect executable extraction, filtering, deduplication, tokenization, and pipeline examples.
+3. [Scaling laws of learning from repeated data](https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data) — Anthropic · Research article. Examine how excessive repetition can harm training and alter data-budget decisions.
+4. [FineWeb: decanting the web for the finest text data at scale](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Study controlled experiments on web extraction, filtering, deduplication, and educational quality.
 
 ### 06.3 Filtering and quality estimation
 
@@ -253,7 +272,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multilingual quality scoring and language balance
 - [ ] Quality–diversity trade-offs, coverage, and bias
 
-Reading-list review pending; see the original index for candidate links.
+1. [FineWeb: decanting the web for the finest text data at scale](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Study controlled experiments on web extraction, filtering, deduplication, and educational quality.
+2. [Thinking about High-Quality Human Data](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/) — Lilian Weng · Research explainer. Reason about annotation quality, rater agreement, noisy labels, and data selection.
+3. [Nemotron-CC Data Curation](https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html) — NVIDIA · Engineering recipe. Follow a concrete Common Crawl curation pipeline with synthetic-data stages.
 
 ### 06.4 Synthetic data and augmentation
 
@@ -264,7 +285,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Self-play, simulation, and adversarial data generation
 - [ ] Model collapse, synthetic-data feedback loops, and diversity controls
 
-Reading-list review pending; see the original index for candidate links.
+1. [Using Llama 3 and distilabel to build fine-tuning datasets](https://huggingface.co/blog/dvilasuero/synthetic-data-with-llama3-distilabel) — Daniel Vila / Hugging Face · Hands-on article. Construct a reproducible synthetic-data pipeline and refine generation quality.
+2. [Generate a Preference Dataset with distilabel](https://huggingface.co/learn/cookbook/generate_preference_dataset_distilabel) — Hugging Face · Code walkthrough. Generate and score preference pairs for downstream alignment experiments.
+3. [Nemotron-CC Data Curation](https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html) — NVIDIA · Engineering recipe. Follow a concrete Common Crawl curation pipeline with synthetic-data stages.
 
 ## 07. Tokenization and text representation
 

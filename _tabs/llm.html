@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>10 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>20 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics Â· 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -230,10 +230,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="04.1-3"><span>N-gram language models, smoothing, and backoff</span></label></li>
 <li><label><input type="checkbox" data-key="04.1-4"><span>Bag of words, TF–IDF, and traditional sparse retrieval</span></label></li>
 <li><label><input type="checkbox" data-key="04.1-5"><span>Word2Vec, CBOW, skip-gram, GloVe, and fastText</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ftech/attention-is-all-you-need-the-evolution-from-rnns-to-transformers-ba81e12899d7">Attention Is All You Need: From RNNs to Transformers (2025)</a></li>
-<li><a href="https://medium.com/data-science-collective/lstm-explained-c78dd92ecf85">LSTM Explained (2026)</a></li>
-<li><a href="https://medium.com/%40dhiyaadli/bpe-vs-wordpiece-vs-sentencepiece-a-beginner-friendly-guide-to-subword-tokenization-8047b39d82e0">BPE vs WordPiece vs SentencePiece (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://web.stanford.edu/~jurafsky/slp3/">Speech and Language Processing</a><small>Jurafsky &amp; Martin · Open textbook</small><p>Use the language-modeling and classical NLP chapters for n-grams, smoothing, syntax, and task foundations.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-word2vec/">The Illustrated Word2vec</a><small>Jay Alammar · Visual guide</small><p>Understand learned embeddings, similarity, context prediction, and negative sampling.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/learn/llm-course/chapter1/1">LLM Course: Introduction</a><small>Hugging Face · Overview</small><p>Orient yourself among NLP tasks, model families, and the training workflow.</p></li>
 </ol></div></section>
 <section class="subtopic" id="042-sequence-modeling-before-transformers"><h3><a href="#042-sequence-modeling-before-transformers">04.2</a> Sequence modeling before transformers</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="04.2-0"><span>Feed-forward neural language models</span></label></li>
@@ -242,10 +242,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="04.2-3"><span>Encoder–decoder sequence-to-sequence learning</span></label></li>
 <li><label><input type="checkbox" data-key="04.2-4"><span>Additive and multiplicative attention</span></label></li>
 <li><label><input type="checkbox" data-key="04.2-5"><span>Beam search in classical seq2seq systems</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/lstm-explained-c78dd92ecf85">LSTM Explained (2026)</a></li>
-<li><a href="https://medium.com/%40ftech/attention-is-all-you-need-the-evolution-from-rnns-to-transformers-ba81e12899d7">Attention Is All You Need: From RNNs to Transformers (2025)</a></li>
-<li><a href="https://medium.com/correll-lab/beyond-attention-mamba-as-a-replacement-for-transformers-5483b6e23a6e">Beyond Attention: Mamba (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://karpathy.github.io/2015/05/21/rnn-effectiveness/">The Unreasonable Effectiveness of Recurrent Neural Networks</a><small>Andrej Karpathy · Article with code</small><p>Build intuition for sequence modeling through character-level generation experiments.</p></li>
+<li class="curated-resource"><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a><small>Christopher Olah · Visual guide</small><p>Follow recurrent state and gates to understand long-range credit assignment.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a><small>Jay Alammar · Visual guide</small><p>Build intuition for encoder-decoder architecture, attention, positional information, and output probabilities.</p></li>
 </ol></div></section>
 <section class="subtopic" id="043-foundation-model-history"><h3><a href="#043-foundation-model-history">04.3</a> Foundation-model history</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="04.3-0"><span>ELMo, ULMFiT, and contextual embeddings</span></label></li>
@@ -253,10 +253,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="04.3-2"><span>Masked, causal, prefix, and span-corruption objectives</span></label></li>
 <li><label><input type="checkbox" data-key="04.3-3"><span>Instruction-tuned and chat-oriented models</span></label></li>
 <li><label><input type="checkbox" data-key="04.3-4"><span>Scaling of language models and multimodal extension</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ftech/attention-is-all-you-need-the-evolution-from-rnns-to-transformers-ba81e12899d7">Attention Is All You Need: From RNNs to Transformers (2025)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/an-ontological-examination-of-pre-training-and-post-training-phases-in-transformer-based-language-7c7fb786d805">Pretraining vs Post-training phases (2025)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-bert/">The Illustrated BERT, ELMo, and co.</a><small>Jay Alammar · Visual guide</small><p>Trace contextual representations and the transition to pretrained NLP transfer learning.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-gpt2/">The Illustrated GPT-2</a><small>Jay Alammar · Visual guide</small><p>Follow tokens through a decoder-only model and understand how next-token predictions are produced.</p></li>
+<li class="curated-resource"><a href="https://crfm.stanford.edu/report.html">On the Opportunities and Risks of Foundation Models</a><small>Stanford CRFM · Research overview</small><p>Understand the foundation-model framing, adaptation opportunities, and systemic limitations.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="05-pretraining-corpora-sources-and-dataset-design"><summary><span class="number">05</span><span class="topic-title">Pretraining corpora, sources, and dataset design<small>3 subtopics Â· 19 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -268,10 +268,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="05.1-4"><span>Mathematics, proofs, equations, and structured reasoning corpora</span></label></li>
 <li><label><input type="checkbox" data-key="05.1-5"><span>Multilingual and low-resource language corpora</span></label></li>
 <li><label><input type="checkbox" data-key="05.1-6"><span>Multimodal text–image–audio–video paired data</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://dataman-ai.medium.com/what-large-language-models-are-trained-on-c57901349b57">What Large Language Models Are Trained On (2026)</a></li>
-<li><a href="https://medium.com/dair-ai/papers-explained-59-falcon-26831087247f">Papers Explained: Falcon (2023)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html">FineWeb: decanting the web for the finest text data at scale</a><small>Hugging Face · Engineering deep dive</small><p>Study controlled experiments on web extraction, filtering, deduplication, and educational quality.</p></li>
+<li class="curated-resource"><a href="https://huggingfacetb-smol-training-playbook.hf.space/">The Smol Training Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.</p></li>
+<li class="curated-resource"><a href="https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html">Nemotron-CC Data Curation</a><small>NVIDIA · Engineering recipe</small><p>Follow a concrete Common Crawl curation pipeline with synthetic-data stages.</p></li>
 </ol></div></section>
 <section class="subtopic" id="052-dataset-provenance-and-governance"><h3><a href="#052-dataset-provenance-and-governance">05.2</a> Dataset provenance and governance</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="05.2-0"><span>Licenses, terms, consent, and provenance metadata</span></label></li>
@@ -280,10 +280,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="05.2-3"><span>Data retention, deletion, and audit logs</span></label></li>
 <li><label><input type="checkbox" data-key="05.2-4"><span>Contamination risk and benchmark overlap</span></label></li>
 <li><label><input type="checkbox" data-key="05.2-5"><span>Geographic, linguistic, temporal, and demographic coverage</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://dataman-ai.medium.com/what-large-language-models-are-trained-on-c57901349b57">What Large Language Models Are Trained On (2026)</a></li>
-<li><a href="https://medium.com/dair-ai/papers-explained-59-falcon-26831087247f">Papers Explained: Falcon (2023)</a></li>
-<li><a href="https://medium.com/%40techalisa/ai-security-reading-list-2026-owasp-top-10-llm-agentic-apps-mitre-atlas-nist-ai-rmf-eu-ai-act-5bc484f12608">AI Security Reading List: OWASP MITRE NIST AI RMF EU AI Act (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/docs/hub/datasets-cards">Dataset Cards</a><small>Hugging Face · Documentation</small><p>Document dataset composition, licensing, intended use, and limitations.</p></li>
+<li class="curated-resource"><a href="https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html">FineWeb: decanting the web for the finest text data at scale</a><small>Hugging Face · Engineering deep dive</small><p>Study controlled experiments on web extraction, filtering, deduplication, and educational quality.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-02-05-human-data-quality/">Thinking about High-Quality Human Data</a><small>Lilian Weng · Research explainer</small><p>Reason about annotation quality, rater agreement, noisy labels, and data selection.</p></li>
+<li class="curated-resource"><a href="https://research.google/pubs/deduplicating-training-data-makes-language-models-better/">Deduplicating Training Data Makes Language Models Better</a><small>Google Research · Original research</small><p>Understand why repeated text affects memorization and evaluation, then follow the released implementation.</p></li>
 </ol></div></section>
 <section class="subtopic" id="053-mixture-construction"><h3><a href="#053-mixture-construction">05.3</a> Mixture construction</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="05.3-0"><span>Dataset sampling weights and source balancing</span></label></li>
@@ -292,10 +293,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="05.3-3"><span>Repeated-token exposure and epoch accounting</span></label></li>
 <li><label><input type="checkbox" data-key="05.3-4"><span>Data curriculum, staged mixtures, and annealing</span></label></li>
 <li><label><input type="checkbox" data-key="05.3-5"><span>General-domain versus specialist data trade-offs</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://dataman-ai.medium.com/what-large-language-models-are-trained-on-c57901349b57">What Large Language Models Are Trained On (2026)</a></li>
-<li><a href="https://medium.com/dair-ai/papers-explained-59-falcon-26831087247f">Papers Explained: Falcon (2023)</a></li>
-<li><a href="https://medium.com/%40charan.panthangi/scaling-laws-why-bigger-reliably-means-better-75dcc5b114a3">Scaling Laws: Why Bigger Reliably Means Better (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html">FineWeb: decanting the web for the finest text data at scale</a><small>Hugging Face · Engineering deep dive</small><p>Study controlled experiments on web extraction, filtering, deduplication, and educational quality.</p></li>
+<li class="curated-resource"><a href="https://www.research.google/blog/atlas-practical-scaling-laws-for-multilingual-models/">ATLAS: Practical scaling laws for multilingual models</a><small>Google Research · Research explainer</small><p>Study how language transfer and model size inform multilingual mixture choices.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data">Scaling laws of learning from repeated data</a><small>Anthropic · Research article</small><p>Examine how excessive repetition can harm training and alter data-budget decisions.</p></li>
+<li class="curated-resource"><a href="https://huggingfacetb-smol-training-playbook.hf.space/">The Smol Training Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="06-data-processing-quality-filtering-and-synthesis"><summary><span class="number">06</span><span class="topic-title">Data processing, quality filtering, and synthesis<small>4 subtopics Â· 24 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -306,10 +308,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="06.1-3"><span>Language identification and script detection</span></label></li>
 <li><label><input type="checkbox" data-key="06.1-4"><span>Line, paragraph, document, and conversation boundaries</span></label></li>
 <li><label><input type="checkbox" data-key="06.1-5"><span>Broken-text, encoding-error, and malformed-markup detection</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/dair-ai/papers-explained-59-falcon-26831087247f">Papers Explained: Falcon (2023)</a></li>
-<li><a href="https://dataman-ai.medium.com/what-large-language-models-are-trained-on-c57901349b57">What Large Language Models Are Trained On (2026)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html">FineWeb: decanting the web for the finest text data at scale</a><small>Hugging Face · Engineering deep dive</small><p>Study controlled experiments on web extraction, filtering, deduplication, and educational quality.</p></li>
+<li class="curated-resource"><a href="https://github.com/huggingface/datatrove">DataTrove: composable data-processing pipelines</a><small>Hugging Face · Implementation guide</small><p>Inspect executable extraction, filtering, deduplication, tokenization, and pipeline examples.</p></li>
+<li class="curated-resource"><a href="https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html">Nemotron-CC Data Curation</a><small>NVIDIA · Engineering recipe</small><p>Follow a concrete Common Crawl curation pipeline with synthetic-data stages.</p></li>
 </ol></div></section>
 <section class="subtopic" id="062-deduplication-and-contamination"><h3><a href="#062-deduplication-and-contamination">06.2</a> Deduplication and contamination</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="06.2-0"><span>Exact hashes, near-duplicate detection, and MinHash/LSH</span></label></li>
@@ -318,10 +320,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="06.2-3"><span>Train–validation–test overlap detection</span></label></li>
 <li><label><input type="checkbox" data-key="06.2-4"><span>Benchmark contamination and decontamination</span></label></li>
 <li><label><input type="checkbox" data-key="06.2-5"><span>Time-aware splits and leakage diagnostics</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/dair-ai/papers-explained-59-falcon-26831087247f">Papers Explained: Falcon (2023)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
-<li><a href="https://medium.com/%40Chioma_Kamalu/i-tested-four-enterprise-rag-architectures-was-the-most-complex-one-worth-it-c33fe82a54ca">Four Enterprise RAG Architectures Compared (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://research.google/pubs/deduplicating-training-data-makes-language-models-better/">Deduplicating Training Data Makes Language Models Better</a><small>Google Research · Original research</small><p>Understand why repeated text affects memorization and evaluation, then follow the released implementation.</p></li>
+<li class="curated-resource"><a href="https://github.com/huggingface/datatrove">DataTrove: composable data-processing pipelines</a><small>Hugging Face · Implementation guide</small><p>Inspect executable extraction, filtering, deduplication, tokenization, and pipeline examples.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data">Scaling laws of learning from repeated data</a><small>Anthropic · Research article</small><p>Examine how excessive repetition can harm training and alter data-budget decisions.</p></li>
+<li class="curated-resource"><a href="https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html">FineWeb: decanting the web for the finest text data at scale</a><small>Hugging Face · Engineering deep dive</small><p>Study controlled experiments on web extraction, filtering, deduplication, and educational quality.</p></li>
 </ol></div></section>
 <section class="subtopic" id="063-filtering-and-quality-estimation"><h3><a href="#063-filtering-and-quality-estimation">06.3</a> Filtering and quality estimation</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="06.3-0"><span>Heuristic, classifier-based, and LLM-based quality filters</span></label></li>
@@ -330,10 +333,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="06.3-3"><span>Code compilability, unit tests, and license filtering</span></label></li>
 <li><label><input type="checkbox" data-key="06.3-4"><span>Multilingual quality scoring and language balance</span></label></li>
 <li><label><input type="checkbox" data-key="06.3-5"><span>Quality–diversity trade-offs, coverage, and bias</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/dair-ai/papers-explained-59-falcon-26831087247f">Papers Explained: Falcon (2023)</a></li>
-<li><a href="https://dataman-ai.medium.com/what-large-language-models-are-trained-on-c57901349b57">What Large Language Models Are Trained On (2026)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html">FineWeb: decanting the web for the finest text data at scale</a><small>Hugging Face · Engineering deep dive</small><p>Study controlled experiments on web extraction, filtering, deduplication, and educational quality.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-02-05-human-data-quality/">Thinking about High-Quality Human Data</a><small>Lilian Weng · Research explainer</small><p>Reason about annotation quality, rater agreement, noisy labels, and data selection.</p></li>
+<li class="curated-resource"><a href="https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html">Nemotron-CC Data Curation</a><small>NVIDIA · Engineering recipe</small><p>Follow a concrete Common Crawl curation pipeline with synthetic-data stages.</p></li>
 </ol></div></section>
 <section class="subtopic" id="064-synthetic-data-and-augmentation"><h3><a href="#064-synthetic-data-and-augmentation">06.4</a> Synthetic data and augmentation</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="06.4-0"><span>Self-instruct and instruction generation</span></label></li>
@@ -342,10 +345,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="06.4-3"><span>Verifier-based filtering and answer checking</span></label></li>
 <li><label><input type="checkbox" data-key="06.4-4"><span>Self-play, simulation, and adversarial data generation</span></label></li>
 <li><label><input type="checkbox" data-key="06.4-5"><span>Model collapse, synthetic-data feedback loops, and diversity controls</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://dataman-ai.medium.com/what-large-language-models-are-trained-on-c57901349b57">What Large Language Models Are Trained On (2026)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/dvilasuero/synthetic-data-with-llama3-distilabel">Using Llama 3 and distilabel to build fine-tuning datasets</a><small>Daniel Vila / Hugging Face · Hands-on article</small><p>Construct a reproducible synthetic-data pipeline and refine generation quality.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/learn/cookbook/generate_preference_dataset_distilabel">Generate a Preference Dataset with distilabel</a><small>Hugging Face · Code walkthrough</small><p>Generate and score preference pairs for downstream alignment experiments.</p></li>
+<li class="curated-resource"><a href="https://docs.nvidia.com/nemotron/0.2.0/nemotron/data/curation/nemotron-cc.html">Nemotron-CC Data Curation</a><small>NVIDIA · Engineering recipe</small><p>Follow a concrete Common Crawl curation pipeline with synthetic-data stages.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="07-tokenization-and-text-representation"><summary><span class="number">07</span><span class="topic-title">Tokenization and text representation<small>3 subtopics Â· 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
