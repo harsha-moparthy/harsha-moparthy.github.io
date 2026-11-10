@@ -1,0 +1,200 @@
+{
+  "date": "2026-11-10",
+  "sources": {
+    "hfintro": [
+      "Hugging Face",
+      "LLM Course: Introduction",
+      "https://huggingface.co/learn/llm-course/chapter1/1",
+      "Overview",
+      "Orient yourself among NLP tasks, model families, and the training workflow."
+    ],
+    "gpt2": [
+      "Jay Alammar",
+      "The Illustrated GPT-2",
+      "https://jalammar.github.io/illustrated-gpt2/",
+      "Visual guide",
+      "Follow tokens through a decoder-only model and understand how next-token predictions are produced."
+    ],
+    "smol": [
+      "Hugging Face",
+      "The Smol Training Playbook",
+      "https://huggingfacetb-smol-training-playbook.hf.space/",
+      "Engineering deep dive",
+      "Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging."
+    ],
+    "production": [
+      "Chip Huyen",
+      "Building LLM applications for production",
+      "https://huyenchip.com/2023/04/11/llm-engineering.html",
+      "Engineering article",
+      "Connect model capabilities to evaluation, latency, cost, tools, and application design."
+    ],
+    "foundation": [
+      "Stanford CRFM",
+      "On the Opportunities and Risks of Foundation Models",
+      "https://crfm.stanford.edu/report.html",
+      "Research overview",
+      "Understand the foundation-model framing, adaptation opportunities, and systemic limitations."
+    ],
+    "transformer": [
+      "Jay Alammar",
+      "The Illustrated Transformer",
+      "https://jalammar.github.io/illustrated-transformer/",
+      "Visual guide",
+      "Build intuition for encoder-decoder architecture, attention, positional information, and output probabilities."
+    ],
+    "linear": [
+      "Dive into Deep Learning",
+      "Linear Algebra",
+      "https://d2l.ai/chapter_preliminaries/linear-algebra.html",
+      "Hands-on chapter",
+      "Practice tensor shapes, matrix operations, reductions, dot products, and norms in code."
+    ],
+    "maps": [
+      "TheoremPath",
+      "Vectors, Matrices, and Linear Maps",
+      "https://www.theorempath.com/topics/vectors-matrices-and-linear-maps",
+      "Theory",
+      "Connect vector spaces, linear transformations, bases, and rank to matrix computations."
+    ],
+    "info": [
+      "Christopher Olah",
+      "Visual Information Theory",
+      "https://colah.github.io/posts/2015-09-Visual-Information/",
+      "Visual guide",
+      "Understand entropy, cross-entropy, and KL divergence through probability diagrams."
+    ],
+    "prob": [
+      "Dive into Deep Learning",
+      "Probability and Statistics",
+      "https://d2l.ai/chapter_preliminaries/probability.html",
+      "Hands-on chapter",
+      "Work through random variables, conditional probabilities, expectations, and sampling."
+    ],
+    "backprop": [
+      "Christopher Olah",
+      "Calculus on Computational Graphs: Backpropagation",
+      "https://colah.github.io/posts/2015-08-Backprop/",
+      "Visual guide",
+      "See why reverse-mode differentiation efficiently accumulates derivatives through a computation graph."
+    ],
+    "csback": [
+      "Stanford CS231n",
+      "Backpropagation, Intuitions",
+      "https://cs231n.github.io/optimization-2/",
+      "Worked tutorial",
+      "Trace gradients through scalar and vector operations and implement the chain rule."
+    ],
+    "momentum": [
+      "Gabriel Goh / Distill",
+      "Why Momentum Really Works",
+      "https://distill.pub/2017/momentum/",
+      "Interactive article",
+      "Explore how curvature, learning rate, and momentum change optimization trajectories."
+    ],
+    "optim": [
+      "Sebastian Ruder",
+      "An overview of gradient descent optimization algorithms",
+      "https://www.ruder.io/optimizing-gradient-descent/",
+      "Technical article",
+      "Compare SGD, momentum, adaptive optimizers, and practical optimization difficulties."
+    ],
+    "general": [
+      "Dive into Deep Learning",
+      "Generalization",
+      "https://d2l.ai/chapter_linear-regression/generalization.html",
+      "Theory and practice",
+      "Separate training fit from generalization and reason about model capacity and data."
+    ],
+    "nn": [
+      "3Blue1Brown",
+      "But what is a Neural Network?",
+      "https://www.3blue1brown.com/lessons/neural-networks/",
+      "Interactive lesson",
+      "Build intuition for weights, activations, layers, and learned representations."
+    ],
+    "csnn": [
+      "Stanford CS231n",
+      "Neural Networks, Part 1",
+      "https://cs231n.github.io/neural-networks-1/",
+      "Technical tutorial",
+      "Understand activations, feed-forward computation, network depth, and representational capacity."
+    ],
+    "cssetup": [
+      "Stanford CS231n",
+      "Neural Networks, Part 2",
+      "https://cs231n.github.io/neural-networks-2/",
+      "Practical tutorial",
+      "Connect preprocessing, initialization, regularization, and loss functions to training behavior."
+    ],
+    "transfer": [
+      "Stanford CS231n",
+      "Transfer Learning",
+      "https://cs231n.github.io/transfer-learning/",
+      "Practical tutorial",
+      "Distinguish frozen feature extraction from fine-tuning; examples use vision networks."
+    ],
+    "word2vec": [
+      "Jay Alammar",
+      "The Illustrated Word2vec",
+      "https://jalammar.github.io/illustrated-word2vec/",
+      "Visual guide",
+      "Understand learned embeddings, similarity, context prediction, and negative sampling."
+    ]
+  },
+  "subtopics": {
+    "01.1": [
+      "hfintro",
+      "gpt2",
+      "transformer",
+      "foundation"
+    ],
+    "01.2": [
+      "hfintro",
+      "smol",
+      "production"
+    ],
+    "01.3": [
+      "foundation",
+      "smol",
+      "production"
+    ],
+    "02.1": [
+      "maps",
+      "linear",
+      "word2vec"
+    ],
+    "02.2": [
+      "prob",
+      "info",
+      "general"
+    ],
+    "02.3": [
+      "backprop",
+      "csback",
+      "linear"
+    ],
+    "02.4": [
+      "momentum",
+      "optim",
+      "smol"
+    ],
+    "03.1": [
+      "general",
+      "cssetup",
+      "prob"
+    ],
+    "03.2": [
+      "nn",
+      "csnn",
+      "backprop",
+      "csback"
+    ],
+    "03.3": [
+      "transfer",
+      "cssetup",
+      "hfintro",
+      "smol"
+    ]
+  }
+}
