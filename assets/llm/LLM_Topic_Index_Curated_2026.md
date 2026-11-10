@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 110 of 204 subtopics curated.
+Updated 2026-11-11. 120 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -1534,7 +1534,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Cost governance and usage observability
 - [ ] API privacy, retention, and regional hosting controls
 
-Reading-list review pending; see the original index for candidate links.
+1. [Navigating the LLM Landscape: Uber's Innovation with GenAI Gateway](https://www.uber.com/us/en/blog/genai-gateway/) — Uber Engineering · Production case study. Study provider abstraction, access controls, usage accounting, and centralized routing.
+2. [Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — Marc Brooker / AWS · Distributed-systems article. Handle transient failures without amplifying overload or repeating unsafe side effects.
+3. [Patterns for Building LLM-based Systems & Products](https://eugeneyan.com/writing/llm-patterns/) — Eugene Yan · Practitioner article. Connect retrieval, evaluation, caching, guardrails, and user feedback in a complete product.
 
 ## 33. Retrieval, search, ranking, and embedding systems
 
@@ -1547,7 +1549,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Late-interaction retrieval such as ColBERT
 - [ ] Learned sparse retrieval and SPLADE-style methods
 
-Reading-list review pending; see the original index for candidate links.
+1. [Hybrid Search in Qdrant](https://qdrant.tech/documentation/search-tuning/hybrid-search/) — Qdrant · Implementation tutorial. Combine sparse, dense, and multivector search with fusion and reranking.
+2. [Retrieve & Re-Rank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) — Sentence Transformers · Code tutorial. Build a two-stage bi-encoder retrieval and cross-encoder reranking pipeline.
+3. [Semantic Search](https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html) — Sentence Transformers · Practical guide. Distinguish query-document search from symmetric similarity and build a retrieval pipeline.
 
 ### 33.2 Indexing and vector databases
 
@@ -1558,7 +1562,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Index build/update/delete, sharding, and replication
 - [ ] Embedding version migration and reindexing
 
-Reading-list review pending; see the original index for candidate links.
+1. [Faiss: The Missing Manual](https://www.pinecone.io/learn/series/faiss/) — James Briggs / Pinecone · Illustrated tutorial series. Build intuition and working indexes for exact search, IVF, HNSW, and product quantization.
+2. [Hierarchical Navigable Small Worlds](https://www.pinecone.io/learn/series/faiss/hnsw/) — Pinecone · Illustrated engineering guide. Understand graph construction, approximate neighbors, and recall-speed tradeoffs.
+3. [Hybrid Search in Qdrant](https://qdrant.tech/documentation/search-tuning/hybrid-search/) — Qdrant · Implementation tutorial. Combine sparse, dense, and multivector search with fusion and reranking.
 
 ### 33.3 Retrieval training and metrics
 
@@ -1569,7 +1575,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Domain-specific embeddings and rerankers
 - [ ] Calibration, freshness, and retrieval drift
 
-Reading-list review pending; see the original index for candidate links.
+1. [Training Overview](https://www.sbert.net/docs/sentence_transformer/training_overview.html) — Sentence Transformers · Implementation guide. Connect query-document datasets, loss functions, negative examples, and retrieval evaluators.
+2. [Retrieve & Re-Rank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) — Sentence Transformers · Code tutorial. Build a two-stage bi-encoder retrieval and cross-encoder reranking pipeline.
+3. [List of available metrics](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/) — Ragas · Metric explanations. Separate retrieval precision and recall from answer relevance and faithfulness.
 
 ## 34. Retrieval-augmented generation (RAG)
 
@@ -1582,7 +1590,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Table/image extraction and multimodal document parsing
 - [ ] ACL-aware indexing and content redaction
 
-Reading-list review pending; see the original index for candidate links.
+1. [Chunking Strategies for LLM Applications](https://www.pinecone.io/learn/chunking-strategies/) — Pinecone · Explanatory article. Choose chunk boundaries, size, and overlap according to documents and retrieval tasks.
+2. [Docling document](https://docling-project.github.io/docling/concepts/docling_document/) — Docling project · Concept and examples. Represent document structure, tables, pictures, and provenance before chunking.
+3. [Introducing Contextual Retrieval](https://www.anthropic.com/research/contextual-retrieval) — Anthropic · Engineering article. Combine contextualized chunks, lexical retrieval, embeddings, and reranking.
 
 ### 34.2 RAG query pipeline
 
@@ -1593,7 +1603,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Query routing and retrieval-depth selection
 - [ ] Handling no-answer and low-retrieval-confidence cases
 
-Reading-list review pending; see the original index for candidate links.
+1. [Introducing Contextual Retrieval](https://www.anthropic.com/research/contextual-retrieval) — Anthropic · Engineering article. Combine contextualized chunks, lexical retrieval, embeddings, and reranking.
+2. [Retrieve & Re-Rank](https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html) — Sentence Transformers · Code tutorial. Build a two-stage bi-encoder retrieval and cross-encoder reranking pipeline.
+3. [Patterns for Building LLM-based Systems & Products](https://eugeneyan.com/writing/llm-patterns/) — Eugene Yan · Practitioner article. Connect retrieval, evaluation, caching, guardrails, and user feedback in a complete product.
 
 ### 34.3 Advanced RAG strategies
 
@@ -1604,7 +1616,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multimodal RAG and vision-based page retrieval
 - [ ] Knowledge graph plus vector-store hybrids
 
-Reading-list review pending; see the original index for candidate links.
+1. [GraphRAG](https://microsoft.github.io/graphrag/) — Microsoft · Architecture and implementation guide. Follow entity extraction, graph communities, and local versus global retrieval.
+2. [Introducing Contextual Retrieval](https://www.anthropic.com/research/contextual-retrieval) — Anthropic · Engineering article. Combine contextualized chunks, lexical retrieval, embeddings, and reranking.
+3. [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) — Lilian Weng · Conceptual article. Connect planning, reflection, memory, and tools in an agent architecture.
 
 ### 34.4 RAG evaluation and optimization
 
@@ -1615,7 +1629,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Dataset construction and synthetic QA pairs
 - [ ] Latency–accuracy–cost trade-offs and caching
 
-Reading-list review pending; see the original index for candidate links.
+1. [List of available metrics](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/) — Ragas · Metric explanations. Separate retrieval precision and recall from answer relevance and faithfulness.
+2. [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) — Hamel Husain · Case-study tutorial. Build task-specific evaluations from traces, human review, and automated checks.
+3. [Patterns for Building LLM-based Systems & Products](https://eugeneyan.com/writing/llm-patterns/) — Eugene Yan · Practitioner article. Connect retrieval, evaluation, caching, guardrails, and user feedback in a complete product.
 
 ## 35. Tool use, function calling, and external computation
 
@@ -1628,7 +1644,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Errors, retries, timeouts, and partial failures
 - [ ] Human approval before consequential tool actions
 
-Reading-list review pending; see the original index for candidate links.
+1. [Writing effective tools for agents — with agents](https://www.anthropic.com/research/writing-tools-for-agents) — Anthropic · Engineering article. Improve tool boundaries, descriptions, response formats, and evaluation tasks.
+2. [Define tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools) — Anthropic · API walkthrough. Design tool descriptions and input schemas for reliable model-to-application interfaces.
+3. [Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — Marc Brooker / AWS · Distributed-systems article. Handle transient failures without amplifying overload or repeating unsafe side effects.
 
 ### 35.2 Tool-use categories
 
@@ -1639,7 +1657,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Scheduling, messaging, and third-party actions
 - [ ] Scientific tools, symbolic solvers, and APIs
 
-Reading-list review pending; see the original index for candidate links.
+1. [Introducing advanced tool use](https://www.anthropic.com/research/advanced-tool-use) — Anthropic · Engineering article. Understand tool discovery, programmatic orchestration, and examples for complex interfaces.
+2. [Code execution with MCP: Building more efficient agents](https://www.anthropic.com/research/code-execution-with-mcp) — Anthropic · Engineering article. Use executable programs to compose tools and filter large results before they enter context.
+3. [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) — Lilian Weng · Conceptual article. Connect planning, reflection, memory, and tools in an agent architecture.
 
 ### 35.3 Tool-use reliability and safety
 

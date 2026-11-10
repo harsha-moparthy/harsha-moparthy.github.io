@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "patterns": [
+      "Eugene Yan",
+      "Patterns for Building LLM-based Systems & Products",
+      "https://eugeneyan.com/writing/llm-patterns/",
+      "Practitioner article",
+      "Connect retrieval, evaluation, caching, guardrails, and user feedback in a complete product."
+    ],
+    "hybridsearch": [
+      "Qdrant",
+      "Hybrid Search in Qdrant",
+      "https://qdrant.tech/documentation/search-tuning/hybrid-search/",
+      "Implementation tutorial",
+      "Combine sparse, dense, and multivector search with fusion and reranking."
+    ],
+    "chunking": [
+      "Pinecone",
+      "Chunking Strategies for LLM Applications",
+      "https://www.pinecone.io/learn/chunking-strategies/",
+      "Explanatory article",
+      "Choose chunk boundaries, size, and overlap according to documents and retrieval tasks."
+    ],
+    "faissguide": [
+      "James Briggs / Pinecone",
+      "Faiss: The Missing Manual",
+      "https://www.pinecone.io/learn/series/faiss/",
+      "Illustrated tutorial series",
+      "Build intuition and working indexes for exact search, IVF, HNSW, and product quantization."
+    ],
+    "rerank": [
+      "Sentence Transformers",
+      "Retrieve & Re-Rank",
+      "https://www.sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html",
+      "Code tutorial",
+      "Build a two-stage bi-encoder retrieval and cross-encoder reranking pipeline."
+    ],
+    "retrievaltrain": [
+      "Sentence Transformers",
+      "Training Overview",
+      "https://www.sbert.net/docs/sentence_transformer/training_overview.html",
+      "Implementation guide",
+      "Connect query-document datasets, loss functions, negative examples, and retrieval evaluators."
+    ],
+    "docling": [
+      "Docling project",
+      "Docling document",
+      "https://docling-project.github.io/docling/concepts/docling_document/",
+      "Concept and examples",
+      "Represent document structure, tables, pictures, and provenance before chunking."
+    ],
+    "graphrag": [
+      "Microsoft",
+      "GraphRAG",
+      "https://microsoft.github.io/graphrag/",
+      "Architecture and implementation guide",
+      "Follow entity extraction, graph communities, and local versus global retrieval."
+    ],
+    "ragas": [
+      "Ragas",
+      "List of available metrics",
+      "https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/",
+      "Metric explanations",
+      "Separate retrieval precision and recall from answer relevance and faithfulness."
+    ],
+    "hamelevals": [
+      "Hamel Husain",
+      "Your AI Product Needs Evals",
+      "https://hamel.dev/blog/posts/evals/",
+      "Case-study tutorial",
+      "Build task-specific evaluations from traces, human review, and automated checks."
+    ],
+    "writetools": [
+      "Anthropic",
+      "Writing effective tools for agents — with agents",
+      "https://www.anthropic.com/research/writing-tools-for-agents",
+      "Engineering article",
+      "Improve tool boundaries, descriptions, response formats, and evaluation tasks."
+    ],
+    "advancedtools": [
+      "Anthropic",
+      "Introducing advanced tool use",
+      "https://www.anthropic.com/research/advanced-tool-use",
+      "Engineering article",
+      "Understand tool discovery, programmatic orchestration, and examples for complex interfaces."
+    ],
+    "mcpexec": [
+      "Anthropic",
+      "Code execution with MCP: Building more efficient agents",
+      "https://www.anthropic.com/research/code-execution-with-mcp",
+      "Engineering article",
+      "Use executable programs to compose tools and filter large results before they enter context."
+    ],
+    "retries": [
+      "Marc Brooker / AWS",
+      "Timeouts, retries, and backoff with jitter",
+      "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+      "Distributed-systems article",
+      "Handle transient failures without amplifying overload or repeating unsafe side effects."
+    ]
+  },
+  "subtopics": {
+    "32.3": [
+      "gateway",
+      "retries",
+      "patterns"
+    ],
+    "33.1": [
+      "hybridsearch",
+      "rerank",
+      "semantic"
+    ],
+    "33.2": [
+      "faissguide",
+      "hnsw",
+      "hybridsearch"
+    ],
+    "33.3": [
+      "retrievaltrain",
+      "rerank",
+      "ragas"
+    ],
+    "34.1": [
+      "chunking",
+      "docling",
+      "contextretrieval"
+    ],
+    "34.2": [
+      "contextretrieval",
+      "rerank",
+      "patterns"
+    ],
+    "34.3": [
+      "graphrag",
+      "contextretrieval",
+      "agentweng"
+    ],
+    "34.4": [
+      "ragas",
+      "hamelevals",
+      "patterns"
+    ],
+    "35.1": [
+      "writetools",
+      "toolschema",
+      "retries"
+    ],
+    "35.2": [
+      "advancedtools",
+      "mcpexec",
+      "agentweng"
+    ]
+  }
+}
