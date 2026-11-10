@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 60 of 204 subtopics curated.
+Updated 2026-11-11. 70 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -843,7 +843,7 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Adapter interpolation, transfer, and interference
 
 1. [PEFT welcomes new merging methods](https://huggingface.co/blog/peft_merging) — Hugging Face · Engineering tutorial. Compare adapter merging strategies including task arithmetic, TIES, and DARE.
-2. [Hotswapping adapters](https://huggingface.co/docs/peft/developer_guides/hotswapping) — Hugging Face PEFT · Implementation guide. Swap LoRA adapters in a running model and understand compilation constraints.
+2. [Hotswapping adapters](https://huggingface.co/docs/peft/main/en/package_reference/hotswap) — Hugging Face PEFT · Implementation guide. Swap LoRA adapters in a running model and understand compilation constraints.
 3. [LoRA configuration and methods](https://huggingface.co/docs/peft/developer_guides/lora) — Hugging Face PEFT · Implementation reference. Inspect ranks, target modules, scaling, initialization, and supported adapter variants.
 
 ### 19.4 Fine-tuning quality controls
@@ -855,7 +855,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Overfitting, forgetting, and generality regression tests
 - [ ] Fine-tuning hyperparameter sweeps and reproducibility
 
-Reading-list review pending; see the original index for candidate links.
+1. [Practical Tips for Finetuning LLMs Using LoRA](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms) — Sebastian Raschka / Ahead of AI · Experimental article. Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.
+2. [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/) — Andrej Karpathy · Practical article. Debug data, establish baselines, overfit a tiny batch, and add complexity deliberately.
+3. [Thinking about High-Quality Human Data](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/) — Lilian Weng · Research explainer. Reason about annotation quality, rater agreement, noisy labels, and data selection.
 
 ## 20. Instruction tuning and supervised post-training (SFT)
 
@@ -868,7 +870,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Human-written versus synthetic demonstrations
 - [ ] Refusal, safety, format-following, and tool-call examples
 
-Reading-list review pending; see the original index for candidate links.
+1. [Introduction to Instruction Tuning with SmolLM3](https://huggingface.co/learn/smol-course/en/unit1/1) — Hugging Face · Practical lesson. Separate next-token pretraining from instruction-following adaptation and plan an SFT experiment.
+2. [Dataset formats](https://huggingface.co/docs/trl/dataset_formats) — Hugging Face TRL · Practical reference. Distinguish conversational, prompt-completion, and preference datasets and their transformations.
+3. [Thinking about High-Quality Human Data](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/) — Lilian Weng · Research explainer. Reason about annotation quality, rater agreement, noisy labels, and data selection.
+4. [Chat templates](https://huggingface.co/docs/transformers/chat_templating) — Hugging Face · Practical guide. Understand role delimiters, special tokens, and generation prompts.
 
 ### 20.2 SFT objectives and methods
 
@@ -879,7 +884,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Curriculum and quality-weighted SFT
 - [ ] Multi-objective SFT and auxiliary losses
 
-Reading-list review pending; see the original index for candidate links.
+1. [Introduction to Instruction Tuning with SmolLM3](https://huggingface.co/learn/smol-course/en/unit1/1) — Hugging Face · Practical lesson. Separate next-token pretraining from instruction-following adaptation and plan an SFT experiment.
+2. [SFT Trainer](https://huggingface.co/docs/trl/sft_trainer) — Hugging Face TRL · Implementation guide. Configure conversation formatting, loss masks, sequence packing, and supervised fine-tuning.
+3. [Chat templates](https://huggingface.co/docs/transformers/chat_templating) — Hugging Face · Practical guide. Understand role delimiters, special tokens, and generation prompts.
 
 ### 20.3 SFT failure modes and evaluation
 
@@ -890,7 +897,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Catastrophic forgetting of pretrained capabilities
 - [ ] Distribution mismatch between training and usage
 
-Reading-list review pending; see the original index for candidate links.
+1. [SFT Trainer](https://huggingface.co/docs/trl/sft_trainer) — Hugging Face TRL · Implementation guide. Configure conversation formatting, loss masks, sequence packing, and supervised fine-tuning.
+2. [Practical Tips for Finetuning LLMs Using LoRA](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms) — Sebastian Raschka / Ahead of AI · Experimental article. Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.
+3. [Generalization](https://d2l.ai/chapter_linear-regression/generalization.html) — Dive into Deep Learning · Theory and practice. Separate training fit from generalization and reason about model capacity and data.
 
 ## 21. Preference learning, reward modeling, and RLHF
 
@@ -903,7 +912,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Preference noise, position bias, and annotator disagreement
 - [ ] Online versus offline preference collection
 
-Reading-list review pending; see the original index for candidate links.
+1. [Thinking about High-Quality Human Data](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/) — Lilian Weng · Research explainer. Reason about annotation quality, rater agreement, noisy labels, and data selection.
+2. [Illustrating Reinforcement Learning from Human Feedback](https://huggingface.co/blog/rlhf) — Nathan Lambert / Hugging Face · Illustrated explainer. Follow the stages from preference collection to reward modeling and policy optimization.
+3. [Dataset formats](https://huggingface.co/docs/trl/dataset_formats) — Hugging Face TRL · Practical reference. Distinguish conversational, prompt-completion, and preference datasets and their transformations.
 
 ### 21.2 Reward-model training
 
@@ -914,7 +925,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Reward hacking, specification gaming, and overoptimization
 - [ ] Reward ensemble models and disagreement detection
 
-Reading-list review pending; see the original index for candidate links.
+1. [Reward Modeling](https://rlhfbook.com/c/05-reward-models) — Nathan Lambert · Book chapter. Derive preference-based rewards and examine reward-model design and evaluation.
+2. [Reward Trainer](https://huggingface.co/docs/trl/reward_trainer) — Hugging Face TRL · Implementation guide. Prepare preference data and train a reward model with concrete code.
+3. [Thinking about High-Quality Human Data](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/) — Lilian Weng · Research explainer. Reason about annotation quality, rater agreement, noisy labels, and data selection.
 
 ### 21.3 Classical RLHF pipeline
 
@@ -925,7 +938,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Rollouts, generation sampling, and sequence rewards
 - [ ] Credit assignment for token-level decisions
 
-Reading-list review pending; see the original index for candidate links.
+1. [Illustrating Reinforcement Learning from Human Feedback](https://huggingface.co/blog/rlhf) — Nathan Lambert / Hugging Face · Illustrated explainer. Follow the stages from preference collection to reward modeling and policy optimization.
+2. [Policy Gradient Algorithms](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/) — Lilian Weng · Mathematical explainer. Derive REINFORCE, actor-critic methods, and clipped policy optimization.
+3. [The N Implementation Details of RLHF with PPO](https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo) — Shengyi Huang et al. / Hugging Face · Reproduction article. Inspect reward normalization, KL control, sampling, and implementation-sensitive PPO behavior.
 
 ### 21.4 Offline and direct preference objectives
 
@@ -936,7 +951,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] CPO, RLOO, online DPO, and related methods
 - [ ] DPO beta, margin, data quality, and instability
 
-Reading-list review pending; see the original index for candidate links.
+1. [Direct-Alignment Algorithms](https://rlhfbook.com/c/08-direct-alignment) — Nathan Lambert · Book chapter. Understand DPO's implicit reward formulation and how direct preference methods differ.
+2. [DPO Trainer](https://huggingface.co/docs/trl/dpo_trainer) — Hugging Face TRL · Implementation guide. Train on chosen/rejected responses and understand loss settings and reference policies.
+3. [Reward Modeling](https://rlhfbook.com/c/05-reward-models) — Nathan Lambert · Book chapter. Derive preference-based rewards and examine reward-model design and evaluation.
 
 ### 21.5 Alignment feedback sources
 
@@ -947,7 +964,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Personalized preference modeling and pluralistic alignment
 - [ ] Preference drift and iterative alignment updates
 
-Reading-list review pending; see the original index for candidate links.
+1. [Constitutional AI: Harmlessness from AI feedback](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback) — Anthropic · Research article. Understand critique-revision and AI feedback as alternatives to exclusively human preference labels.
+2. [Thinking about High-Quality Human Data](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/) — Lilian Weng · Research explainer. Reason about annotation quality, rater agreement, noisy labels, and data selection.
+3. [Generate a Preference Dataset with distilabel](https://huggingface.co/learn/cookbook/generate_preference_dataset_distilabel) — Hugging Face · Code walkthrough. Generate and score preference pairs for downstream alignment experiments.
 
 ## 22. Reinforcement learning for reasoning and verifiable tasks
 
@@ -960,7 +979,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Importance ratios and on-policy versus off-policy sampling
 - [ ] Exploration, entropy bonuses, and reward sparsity
 
-Reading-list review pending; see the original index for candidate links.
+1. [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/) — Lilian Weng · Foundational explainer. Build the MDP, value-function, return, and Bellman-equation foundations for reasoning RL.
+2. [Policy Gradient Algorithms](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/) — Lilian Weng · Mathematical explainer. Derive REINFORCE, actor-critic methods, and clipped policy optimization.
+3. [Illustrating Reinforcement Learning from Human Feedback](https://huggingface.co/blog/rlhf) — Nathan Lambert / Hugging Face · Illustrated explainer. Follow the stages from preference collection to reward modeling and policy optimization.
 
 ### 22.2 LLM-centric RL objectives
 

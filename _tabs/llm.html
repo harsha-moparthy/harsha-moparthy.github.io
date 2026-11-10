@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>60 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>70 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -864,7 +864,7 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="19.3-5"><span>Adapter interpolation, transfer, and interference</span></label></li>
 </ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
 <li class="curated-resource"><a href="https://huggingface.co/blog/peft_merging">PEFT welcomes new merging methods</a><small>Hugging Face · Engineering tutorial</small><p>Compare adapter merging strategies including task arithmetic, TIES, and DARE.</p></li>
-<li class="curated-resource"><a href="https://huggingface.co/docs/peft/developer_guides/hotswapping">Hotswapping adapters</a><small>Hugging Face PEFT · Implementation guide</small><p>Swap LoRA adapters in a running model and understand compilation constraints.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/peft/main/en/package_reference/hotswap">Hotswapping adapters</a><small>Hugging Face PEFT · Implementation guide</small><p>Swap LoRA adapters in a running model and understand compilation constraints.</p></li>
 <li class="curated-resource"><a href="https://huggingface.co/docs/peft/developer_guides/lora">LoRA configuration and methods</a><small>Hugging Face PEFT · Implementation reference</small><p>Inspect ranks, target modules, scaling, initialization, and supported adapter variants.</p></li>
 </ol></div></section>
 <section class="subtopic" id="194-fine-tuning-quality-controls"><h3><a href="#194-fine-tuning-quality-controls">19.4</a> Fine-tuning quality controls</h3><ul class="checklist">
@@ -874,10 +874,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="19.4-3"><span>Packing, truncation, and EOS correctness</span></label></li>
 <li><label><input type="checkbox" data-key="19.4-4"><span>Overfitting, forgetting, and generality regression tests</span></label></li>
 <li><label><input type="checkbox" data-key="19.4-5"><span>Fine-tuning hyperparameter sweeps and reproducibility</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
-<li><a href="https://medium.com/%40izzetcansorna/parameter-efficient-fine-tuning-how-lora-qlora-and-dora-made-large-models-adaptable-d9835411f1c2">LoRA QLoRA and DoRA Parameter Efficient Fine Tuning (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms">Practical Tips for Finetuning LLMs Using LoRA</a><small>Sebastian Raschka / Ahead of AI · Experimental article</small><p>Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://karpathy.github.io/2019/04/25/recipe/">A Recipe for Training Neural Networks</a><small>Andrej Karpathy · Practical article</small><p>Debug data, establish baselines, overfit a tiny batch, and add complexity deliberately.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-02-05-human-data-quality/">Thinking about High-Quality Human Data</a><small>Lilian Weng · Research explainer</small><p>Reason about annotation quality, rater agreement, noisy labels, and data selection.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="20-instruction-tuning-and-supervised-post-training-sft"><summary><span class="number">20</span><span class="topic-title">Instruction tuning and supervised post-training (SFT)<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -888,10 +888,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="20.1-3"><span>Task diversity, difficulty, and data balancing</span></label></li>
 <li><label><input type="checkbox" data-key="20.1-4"><span>Human-written versus synthetic demonstrations</span></label></li>
 <li><label><input type="checkbox" data-key="20.1-5"><span>Refusal, safety, format-following, and tool-call examples</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/an-ontological-examination-of-pre-training-and-post-training-phases-in-transformer-based-language-7c7fb786d805">Pretraining vs Post-training phases (2025)</a></li>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/learn/smol-course/en/unit1/1">Introduction to Instruction Tuning with SmolLM3</a><small>Hugging Face · Practical lesson</small><p>Separate next-token pretraining from instruction-following adaptation and plan an SFT experiment.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/dataset_formats">Dataset formats</a><small>Hugging Face TRL · Practical reference</small><p>Distinguish conversational, prompt-completion, and preference datasets and their transformations.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-02-05-human-data-quality/">Thinking about High-Quality Human Data</a><small>Lilian Weng · Research explainer</small><p>Reason about annotation quality, rater agreement, noisy labels, and data selection.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/chat_templating">Chat templates</a><small>Hugging Face · Practical guide</small><p>Understand role delimiters, special tokens, and generation prompts.</p></li>
 </ol></div></section>
 <section class="subtopic" id="202-sft-objectives-and-methods"><h3><a href="#202-sft-objectives-and-methods">20.2</a> SFT objectives and methods</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="20.2-0"><span>Token-level negative log likelihood</span></label></li>
@@ -900,10 +901,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="20.2-3"><span>Multi-turn context windows and conversational packing</span></label></li>
 <li><label><input type="checkbox" data-key="20.2-4"><span>Curriculum and quality-weighted SFT</span></label></li>
 <li><label><input type="checkbox" data-key="20.2-5"><span>Multi-objective SFT and auxiliary losses</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
-<li><a href="https://medium.com/%40brayannjoroge259/implementing-direct-preference-optimization-dpo-149360bd2e9b">Implementing DPO from Scratch (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/learn/smol-course/en/unit1/1">Introduction to Instruction Tuning with SmolLM3</a><small>Hugging Face · Practical lesson</small><p>Separate next-token pretraining from instruction-following adaptation and plan an SFT experiment.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/sft_trainer">SFT Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Configure conversation formatting, loss masks, sequence packing, and supervised fine-tuning.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/chat_templating">Chat templates</a><small>Hugging Face · Practical guide</small><p>Understand role delimiters, special tokens, and generation prompts.</p></li>
 </ol></div></section>
 <section class="subtopic" id="203-sft-failure-modes-and-evaluation"><h3><a href="#203-sft-failure-modes-and-evaluation">20.3</a> SFT failure modes and evaluation</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="20.3-0"><span>Style imitation versus genuine capability gain</span></label></li>
@@ -912,10 +913,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="20.3-3"><span>Instruction hierarchy confusion</span></label></li>
 <li><label><input type="checkbox" data-key="20.3-4"><span>Catastrophic forgetting of pretrained capabilities</span></label></li>
 <li><label><input type="checkbox" data-key="20.3-5"><span>Distribution mismatch between training and usage</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/why-does-rlhf-make-models-verbose-length-bias-in-reward-models-dpo-and-grpo-ac4a4c8c07d6">Length Bias in Reward Models DPO GRPO (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/sft_trainer">SFT Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Configure conversation formatting, loss masks, sequence packing, and supervised fine-tuning.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms">Practical Tips for Finetuning LLMs Using LoRA</a><small>Sebastian Raschka / Ahead of AI · Experimental article</small><p>Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://d2l.ai/chapter_linear-regression/generalization.html">Generalization</a><small>Dive into Deep Learning · Theory and practice</small><p>Separate training fit from generalization and reason about model capacity and data.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="21-preference-learning-reward-modeling-and-rlhf"><summary><span class="number">21</span><span class="topic-title">Preference learning, reward modeling, and RLHF<small>5 subtopics · 30 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -926,10 +927,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="21.1-3"><span>Helpfulness, harmlessness, honesty, and task-specific rewards</span></label></li>
 <li><label><input type="checkbox" data-key="21.1-4"><span>Preference noise, position bias, and annotator disagreement</span></label></li>
 <li><label><input type="checkbox" data-key="21.1-5"><span>Online versus offline preference collection</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/beyond-rlhf-aligning-llms-with-direct-preference-optimization-dpo-79f968c9177f">Beyond RLHF: Direct Preference Optimization (2026)</a></li>
-<li><a href="https://medium.com/%40brayannjoroge259/implementing-direct-preference-optimization-dpo-149360bd2e9b">Implementing DPO from Scratch (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/why-does-rlhf-make-models-verbose-length-bias-in-reward-models-dpo-and-grpo-ac4a4c8c07d6">Length Bias in Reward Models DPO GRPO (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-02-05-human-data-quality/">Thinking about High-Quality Human Data</a><small>Lilian Weng · Research explainer</small><p>Reason about annotation quality, rater agreement, noisy labels, and data selection.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/rlhf">Illustrating Reinforcement Learning from Human Feedback</a><small>Nathan Lambert / Hugging Face · Illustrated explainer</small><p>Follow the stages from preference collection to reward modeling and policy optimization.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/dataset_formats">Dataset formats</a><small>Hugging Face TRL · Practical reference</small><p>Distinguish conversational, prompt-completion, and preference datasets and their transformations.</p></li>
 </ol></div></section>
 <section class="subtopic" id="212-reward-model-training"><h3><a href="#212-reward-model-training">21.2</a> Reward-model training</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="21.2-0"><span>Scalar reward models and pairwise ranking loss</span></label></li>
@@ -938,10 +939,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="21.2-3"><span>Reward-model calibration and uncertainty</span></label></li>
 <li><label><input type="checkbox" data-key="21.2-4"><span>Reward hacking, specification gaming, and overoptimization</span></label></li>
 <li><label><input type="checkbox" data-key="21.2-5"><span>Reward ensemble models and disagreement detection</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/why-does-rlhf-make-models-verbose-length-bias-in-reward-models-dpo-and-grpo-ac4a4c8c07d6">Length Bias in Reward Models DPO GRPO (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://rlhfbook.com/c/05-reward-models">Reward Modeling</a><small>Nathan Lambert · Book chapter</small><p>Derive preference-based rewards and examine reward-model design and evaluation.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/reward_trainer">Reward Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Prepare preference data and train a reward model with concrete code.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-02-05-human-data-quality/">Thinking about High-Quality Human Data</a><small>Lilian Weng · Research explainer</small><p>Reason about annotation quality, rater agreement, noisy labels, and data selection.</p></li>
 </ol></div></section>
 <section class="subtopic" id="213-classical-rlhf-pipeline"><h3><a href="#213-classical-rlhf-pipeline">21.3</a> Classical RLHF pipeline</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="21.3-0"><span>SFT initialization, reward model, and policy optimization</span></label></li>
@@ -950,10 +951,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="21.3-3"><span>Policy–value model roles and critic training</span></label></li>
 <li><label><input type="checkbox" data-key="21.3-4"><span>Rollouts, generation sampling, and sequence rewards</span></label></li>
 <li><label><input type="checkbox" data-key="21.3-5"><span>Credit assignment for token-level decisions</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/rlhf">Illustrating Reinforcement Learning from Human Feedback</a><small>Nathan Lambert / Hugging Face · Illustrated explainer</small><p>Follow the stages from preference collection to reward modeling and policy optimization.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2018-04-08-policy-gradient/">Policy Gradient Algorithms</a><small>Lilian Weng · Mathematical explainer</small><p>Derive REINFORCE, actor-critic methods, and clipped policy optimization.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo">The N Implementation Details of RLHF with PPO</a><small>Shengyi Huang et al. / Hugging Face · Reproduction article</small><p>Inspect reward normalization, KL control, sampling, and implementation-sensitive PPO behavior.</p></li>
 </ol></div></section>
 <section class="subtopic" id="214-offline-and-direct-preference-objectives"><h3><a href="#214-offline-and-direct-preference-objectives">21.4</a> Offline and direct preference objectives</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="21.4-0"><span>Direct Preference Optimization (DPO)</span></label></li>
@@ -962,10 +963,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="21.4-3"><span>KTO and unpaired preference learning</span></label></li>
 <li><label><input type="checkbox" data-key="21.4-4"><span>CPO, RLOO, online DPO, and related methods</span></label></li>
 <li><label><input type="checkbox" data-key="21.4-5"><span>DPO beta, margin, data quality, and instability</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40brayannjoroge259/implementing-direct-preference-optimization-dpo-149360bd2e9b">Implementing DPO from Scratch (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/beyond-rlhf-aligning-llms-with-direct-preference-optimization-dpo-79f968c9177f">Beyond RLHF: Direct Preference Optimization (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/why-does-rlhf-make-models-verbose-length-bias-in-reward-models-dpo-and-grpo-ac4a4c8c07d6">Length Bias in Reward Models DPO GRPO (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://rlhfbook.com/c/08-direct-alignment">Direct-Alignment Algorithms</a><small>Nathan Lambert · Book chapter</small><p>Understand DPO&#x27;s implicit reward formulation and how direct preference methods differ.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/dpo_trainer">DPO Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Train on chosen/rejected responses and understand loss settings and reference policies.</p></li>
+<li class="curated-resource"><a href="https://rlhfbook.com/c/05-reward-models">Reward Modeling</a><small>Nathan Lambert · Book chapter</small><p>Derive preference-based rewards and examine reward-model design and evaluation.</p></li>
 </ol></div></section>
 <section class="subtopic" id="215-alignment-feedback-sources"><h3><a href="#215-alignment-feedback-sources">21.5</a> Alignment feedback sources</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="21.5-0"><span>RLHF versus RLAIF and AI-generated critiques</span></label></li>
@@ -974,10 +975,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="21.5-3"><span>Multi-objective reward trade-offs</span></label></li>
 <li><label><input type="checkbox" data-key="21.5-4"><span>Personalized preference modeling and pluralistic alignment</span></label></li>
 <li><label><input type="checkbox" data-key="21.5-5"><span>Preference drift and iterative alignment updates</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/beyond-rlhf-aligning-llms-with-direct-preference-optimization-dpo-79f968c9177f">Beyond RLHF: Direct Preference Optimization (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/why-does-rlhf-make-models-verbose-length-bias-in-reward-models-dpo-and-grpo-ac4a4c8c07d6">Length Bias in Reward Models DPO GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">Constitutional AI: Harmlessness from AI feedback</a><small>Anthropic · Research article</small><p>Understand critique-revision and AI feedback as alternatives to exclusively human preference labels.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-02-05-human-data-quality/">Thinking about High-Quality Human Data</a><small>Lilian Weng · Research explainer</small><p>Reason about annotation quality, rater agreement, noisy labels, and data selection.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/learn/cookbook/generate_preference_dataset_distilabel">Generate a Preference Dataset with distilabel</a><small>Hugging Face · Code walkthrough</small><p>Generate and score preference pairs for downstream alignment experiments.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="22-reinforcement-learning-for-reasoning-and-verifiable-tasks"><summary><span class="number">22</span><span class="topic-title">Reinforcement learning for reasoning and verifiable tasks<small>5 subtopics · 30 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -988,10 +989,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="22.1-3"><span>Baselines, advantages, and variance reduction</span></label></li>
 <li><label><input type="checkbox" data-key="22.1-4"><span>Importance ratios and on-policy versus off-policy sampling</span></label></li>
 <li><label><input type="checkbox" data-key="22.1-5"><span>Exploration, entropy bonuses, and reward sparsity</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2018-02-19-rl-overview/">A (Long) Peek into Reinforcement Learning</a><small>Lilian Weng · Foundational explainer</small><p>Build the MDP, value-function, return, and Bellman-equation foundations for reasoning RL.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2018-04-08-policy-gradient/">Policy Gradient Algorithms</a><small>Lilian Weng · Mathematical explainer</small><p>Derive REINFORCE, actor-critic methods, and clipped policy optimization.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/rlhf">Illustrating Reinforcement Learning from Human Feedback</a><small>Nathan Lambert / Hugging Face · Illustrated explainer</small><p>Follow the stages from preference collection to reward modeling and policy optimization.</p></li>
 </ol></div></section>
 <section class="subtopic" id="222-llm-centric-rl-objectives"><h3><a href="#222-llm-centric-rl-objectives">22.2</a> LLM-centric RL objectives</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="22.2-0"><span>GRPO and group-relative advantages</span></label></li>

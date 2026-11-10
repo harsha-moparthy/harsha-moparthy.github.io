@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "sft": [
+      "Hugging Face TRL",
+      "SFT Trainer",
+      "https://huggingface.co/docs/trl/sft_trainer",
+      "Implementation guide",
+      "Configure conversation formatting, loss masks, sequence packing, and supervised fine-tuning."
+    ],
+    "instruct": [
+      "Hugging Face",
+      "Introduction to Instruction Tuning with SmolLM3",
+      "https://huggingface.co/learn/smol-course/en/unit1/1",
+      "Practical lesson",
+      "Separate next-token pretraining from instruction-following adaptation and plan an SFT experiment."
+    ],
+    "formats": [
+      "Hugging Face TRL",
+      "Dataset formats",
+      "https://huggingface.co/docs/trl/dataset_formats",
+      "Practical reference",
+      "Distinguish conversational, prompt-completion, and preference datasets and their transformations."
+    ],
+    "rlhf": [
+      "Nathan Lambert / Hugging Face",
+      "Illustrating Reinforcement Learning from Human Feedback",
+      "https://huggingface.co/blog/rlhf",
+      "Illustrated explainer",
+      "Follow the stages from preference collection to reward modeling and policy optimization."
+    ],
+    "reward": [
+      "Nathan Lambert",
+      "Reward Modeling",
+      "https://rlhfbook.com/c/05-reward-models",
+      "Book chapter",
+      "Derive preference-based rewards and examine reward-model design and evaluation."
+    ],
+    "direct": [
+      "Nathan Lambert",
+      "Direct-Alignment Algorithms",
+      "https://rlhfbook.com/c/08-direct-alignment",
+      "Book chapter",
+      "Understand DPO's implicit reward formulation and how direct preference methods differ."
+    ],
+    "ppodetails": [
+      "Shengyi Huang et al. / Hugging Face",
+      "The N Implementation Details of RLHF with PPO",
+      "https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo",
+      "Reproduction article",
+      "Inspect reward normalization, KL control, sampling, and implementation-sensitive PPO behavior."
+    ],
+    "dpo": [
+      "Hugging Face TRL",
+      "DPO Trainer",
+      "https://huggingface.co/docs/trl/dpo_trainer",
+      "Implementation guide",
+      "Train on chosen/rejected responses and understand loss settings and reference policies."
+    ],
+    "rewardtrainer": [
+      "Hugging Face TRL",
+      "Reward Trainer",
+      "https://huggingface.co/docs/trl/reward_trainer",
+      "Implementation guide",
+      "Prepare preference data and train a reward model with concrete code."
+    ],
+    "cai": [
+      "Anthropic",
+      "Constitutional AI: Harmlessness from AI feedback",
+      "https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback",
+      "Research article",
+      "Understand critique-revision and AI feedback as alternatives to exclusively human preference labels."
+    ],
+    "policy": [
+      "Lilian Weng",
+      "Policy Gradient Algorithms",
+      "https://lilianweng.github.io/posts/2018-04-08-policy-gradient/",
+      "Mathematical explainer",
+      "Derive REINFORCE, actor-critic methods, and clipped policy optimization."
+    ],
+    "rlover": [
+      "Lilian Weng",
+      "A (Long) Peek into Reinforcement Learning",
+      "https://lilianweng.github.io/posts/2018-02-19-rl-overview/",
+      "Foundational explainer",
+      "Build the MDP, value-function, return, and Bellman-equation foundations for reasoning RL."
+    ]
+  },
+  "subtopics": {
+    "19.4": [
+      "finetips",
+      "recipe",
+      "quality"
+    ],
+    "20.1": [
+      "instruct",
+      "formats",
+      "quality",
+      "chat"
+    ],
+    "20.2": [
+      "instruct",
+      "sft",
+      "chat"
+    ],
+    "20.3": [
+      "sft",
+      "finetips",
+      "general"
+    ],
+    "21.1": [
+      "quality",
+      "rlhf",
+      "formats"
+    ],
+    "21.2": [
+      "reward",
+      "rewardtrainer",
+      "quality"
+    ],
+    "21.3": [
+      "rlhf",
+      "policy",
+      "ppodetails"
+    ],
+    "21.4": [
+      "direct",
+      "dpo",
+      "reward"
+    ],
+    "21.5": [
+      "cai",
+      "quality",
+      "prefdata"
+    ],
+    "22.1": [
+      "rlover",
+      "policy",
+      "rlhf"
+    ]
+  }
+}

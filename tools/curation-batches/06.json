@@ -81,7 +81,7 @@
     "hotswap": [
       "Hugging Face PEFT",
       "Hotswapping adapters",
-      "https://huggingface.co/docs/peft/developer_guides/hotswapping",
+      "https://huggingface.co/docs/peft/main/en/package_reference/hotswap",
       "Implementation guide",
       "Swap LoRA adapters in a running model and understand compilation constraints."
     ]
