@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "moe": [
+      "Hugging Face",
+      "Mixture of Experts Explained",
+      "https://huggingface.co/blog/moe",
+      "Technical explainer",
+      "Understand routers, active parameters, load balancing, capacity, and fine-tuning tradeoffs."
+    ],
+    "makemoe": [
+      "Avinash Sooriyarachchi",
+      "makeMoE: a sparse MoE language model from scratch",
+      "https://huggingface.co/blog/AviSoori1x/makemoe-from-scratch",
+      "Code walkthrough",
+      "Build expert modules, noisy top-k routing, and a complete sparse language model."
+    ],
+    "nvmoe": [
+      "NVIDIA",
+      "Applying Mixture of Experts in LLM Architectures",
+      "https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/",
+      "Engineering article",
+      "Connect routing decisions and expert activation patterns to practical model behavior."
+    ],
+    "dsmoe": [
+      "DeepSpeed",
+      "Mixture of Experts Inference",
+      "https://www.deepspeed.ai/tutorials/mixture-of-experts-inference/",
+      "Implementation guide",
+      "Configure expert-parallel inference and understand deployment requirements."
+    ],
+    "chinchilla": [
+      "Google DeepMind",
+      "An empirical analysis of compute-optimal large language model training",
+      "https://deepmind.google/blog/an-empirical-analysis-of-compute-optimal-large-language-model-training/",
+      "Research explainer",
+      "See why parameter count and training-token budget must be chosen together."
+    ],
+    "scaling": [
+      "TheoremPath",
+      "Scaling Laws",
+      "https://theorempath.com/topics/scaling-laws",
+      "Theory guide",
+      "Compare Kaplan and Chinchilla fits, data repetition, emergence claims, and extrapolation limits."
+    ],
+    "kaplan": [
+      "Kaplan et al.",
+      "Scaling Laws for Neural Language Models",
+      "https://arxiv.org/abs/2001.08361",
+      "Original research",
+      "Inspect the original fitted relationships and assumptions rather than treating scaling laws as universal rules."
+    ],
+    "ultrascale": [
+      "Hugging Face",
+      "The Ultra-Scale Playbook",
+      "https://nanotron-ultrascale-playbook.static.hf.space/index.html",
+      "Engineering deep dive",
+      "Work through memory, communication, and combinations of distributed-training parallelism."
+    ],
+    "t5": [
+      "Google Research",
+      "Exploring Transfer Learning with T5",
+      "https://research.google/blog/exploring-transfer-learning-with-t5-the-text-to-text-transfer-transformer/",
+      "Research explainer",
+      "Compare text-to-text tasks, denoising objectives, and transfer-learning choices."
+    ],
+    "causal": [
+      "Hugging Face",
+      "Causal language modeling",
+      "https://huggingface.co/docs/transformers/tasks/language_modeling",
+      "Code walkthrough",
+      "Prepare token blocks and labels, train a next-token model, and evaluate its loss."
+    ],
+    "masked": [
+      "Hugging Face",
+      "Masked language modeling",
+      "https://huggingface.co/docs/transformers/tasks/masked_language_modeling",
+      "Code walkthrough",
+      "Build masked-token training data and compare its objective with causal prediction."
+    ],
+    "fim": [
+      "Bavarian et al.",
+      "Efficient Training of Language Models to Fill in the Middle",
+      "https://arxiv.org/abs/2207.14255",
+      "Original research",
+      "Understand prefix-suffix-middle transformations and the infilling training objective."
+    ],
+    "mtp": [
+      "Gloeckle et al.",
+      "Better & Faster Large Language Models via Multi-token Prediction",
+      "https://arxiv.org/abs/2404.19737",
+      "Original research",
+      "Study auxiliary future-token heads and their effects on learning and inference."
+    ],
+    "ppl": [
+      "Hugging Face",
+      "Perplexity of fixed-length models",
+      "https://huggingface.co/docs/transformers/perplexity",
+      "Technical guide",
+      "Compute sliding-window perplexity and understand context-length and tokenizer comparability pitfalls."
+    ]
+  },
+  "subtopics": {
+    "13.3": [
+      "hybrid",
+      "beyond",
+      "family"
+    ],
+    "14.1": [
+      "moe",
+      "makemoe",
+      "nvmoe"
+    ],
+    "14.2": [
+      "makemoe",
+      "moe",
+      "nvmoe",
+      "archcompare"
+    ],
+    "14.3": [
+      "moe",
+      "dsmoe",
+      "ultrascale"
+    ],
+    "15.1": [
+      "scaling",
+      "chinchilla",
+      "kaplan"
+    ],
+    "15.2": [
+      "chinchilla",
+      "smol",
+      "ultrascale",
+      "repeat"
+    ],
+    "15.3": [
+      "scaling",
+      "archcompare",
+      "chinchilla"
+    ],
+    "16.1": [
+      "causal",
+      "masked",
+      "t5",
+      "fim"
+    ],
+    "16.2": [
+      "mtp",
+      "t5",
+      "bert"
+    ],
+    "16.3": [
+      "causal",
+      "ppl",
+      "annotated"
+    ]
+  }
+}

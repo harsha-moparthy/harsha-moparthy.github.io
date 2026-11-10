@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>40 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>50 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -618,10 +618,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="13.3-3"><span>Token pruning, token merging, and token routing</span></label></li>
 <li><label><input type="checkbox" data-key="13.3-4"><span>Recurrent memory and compressed context models</span></label></li>
 <li><label><input type="checkbox" data-key="13.3-5"><span>Architecture search and train–serve co-design</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40cenghanbayram35/attention-isnt-all-you-need-beating-the-o-n%C2%B2-wall-with-mamba-hyena-and-rwkv-602d9b1466f7">Mamba Hyena and RWKV Beyond Attention (2025)</a></li>
-<li><a href="https://medium.com/correll-lab/beyond-attention-mamba-as-a-replacement-for-transformers-5483b6e23a6e">Beyond Attention: Mamba (2025)</a></li>
-<li><a href="https://medium.com/%40cosmicray001/mixture-of-experts-from-the-router-up-5c70caf9ea4b">Mixture of Experts from Router Up (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://sebastianraschka.com/llm-architecture-gallery/hybrid-attention/">Hybrid Attention</a><small>Sebastian Raschka · Architecture explainer</small><p>Examine designs combining different attention mechanisms within one model.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/beyond-standard-llms">Beyond Standard LLMs</a><small>Sebastian Raschka / Ahead of AI · Research explainer</small><p>Explore alternatives to conventional transformers and their architectural tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/">The Transformer Family Version 2.0</a><small>Lilian Weng · Research explainer</small><p>Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="14-mixture-of-experts-moe-and-sparsity"><summary><span class="number">14</span><span class="topic-title">Mixture-of-experts (MoE) and sparsity<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -632,10 +632,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="14.1-3"><span>Shared experts versus routed experts</span></label></li>
 <li><label><input type="checkbox" data-key="14.1-4"><span>Active parameters versus total parameters</span></label></li>
 <li><label><input type="checkbox" data-key="14.1-5"><span>Capacity factors, dropped tokens, and overflow handling</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40cosmicray001/mixture-of-experts-from-the-router-up-5c70caf9ea4b">Mixture of Experts from Router Up (2026)</a></li>
-<li><a href="https://medium.com/models-to-systems/mixture-of-experts-why-routing-is-the-active-research-surface-explained-for-everyone-e4f9f5e8c07e">MoE: Routing as Active Research (2026)</a></li>
-<li><a href="https://medium.com/mlwithdev/deepseek-series-auxiliary-loss-free-load-balancing-for-mixture-of-experts-5dbd4e983bba">Auxiliary-Loss-Free Load Balancing for MoE (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/moe">Mixture of Experts Explained</a><small>Hugging Face · Technical explainer</small><p>Understand routers, active parameters, load balancing, capacity, and fine-tuning tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/AviSoori1x/makemoe-from-scratch">makeMoE: a sparse MoE language model from scratch</a><small>Avinash Sooriyarachchi · Code walkthrough</small><p>Build expert modules, noisy top-k routing, and a complete sparse language model.</p></li>
+<li class="curated-resource"><a href="https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/">Applying Mixture of Experts in LLM Architectures</a><small>NVIDIA · Engineering article</small><p>Connect routing decisions and expert activation patterns to practical model behavior.</p></li>
 </ol></div></section>
 <section class="subtopic" id="142-training-and-routing-mechanics"><h3><a href="#142-training-and-routing-mechanics">14.2</a> Training and routing mechanics</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="14.2-0"><span>Load-balancing auxiliary losses</span></label></li>
@@ -644,10 +644,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="14.2-3"><span>Expert-choice routing and alternative assignment schemes</span></label></li>
 <li><label><input type="checkbox" data-key="14.2-4"><span>Fine-grained expert segmentation and expert grouping</span></label></li>
 <li><label><input type="checkbox" data-key="14.2-5"><span>Noisy routing, token dispatch, and expert parallelism</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/mlwithdev/deepseek-series-auxiliary-loss-free-load-balancing-for-mixture-of-experts-5dbd4e983bba">Auxiliary-Loss-Free Load Balancing for MoE (2026)</a></li>
-<li><a href="https://medium.com/%40cosmicray001/mixture-of-experts-from-the-router-up-5c70caf9ea4b">Mixture of Experts from Router Up (2026)</a></li>
-<li><a href="https://medium.com/models-to-systems/mixture-of-experts-why-routing-is-the-active-research-surface-explained-for-everyone-e4f9f5e8c07e">MoE: Routing as Active Research (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/AviSoori1x/makemoe-from-scratch">makeMoE: a sparse MoE language model from scratch</a><small>Avinash Sooriyarachchi · Code walkthrough</small><p>Build expert modules, noisy top-k routing, and a complete sparse language model.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/moe">Mixture of Experts Explained</a><small>Hugging Face · Technical explainer</small><p>Understand routers, active parameters, load balancing, capacity, and fine-tuning tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/">Applying Mixture of Experts in LLM Architectures</a><small>NVIDIA · Engineering article</small><p>Connect routing decisions and expert activation patterns to practical model behavior.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison">The Big LLM Architecture Comparison</a><small>Sebastian Raschka / Ahead of AI · Illustrated article</small><p>Compare real models&#x27; attention, feed-forward, normalization, and parameter-allocation choices.</p></li>
 </ol></div></section>
 <section class="subtopic" id="143-moe-inference-and-adaptation"><h3><a href="#143-moe-inference-and-adaptation">14.3</a> MoE inference and adaptation</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="14.3-0"><span>All-to-all communication and load imbalance</span></label></li>
@@ -656,10 +657,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="14.3-3"><span>Expert parallel deployment and batch utilization</span></label></li>
 <li><label><input type="checkbox" data-key="14.3-4"><span>Expert merging, pruning, and distillation</span></label></li>
 <li><label><input type="checkbox" data-key="14.3-5"><span>Multi-LoRA expert mixtures and task-conditioned routing</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40cosmicray001/mixture-of-experts-from-the-router-up-5c70caf9ea4b">Mixture of Experts from Router Up (2026)</a></li>
-<li><a href="https://medium.com/models-to-systems/mixture-of-experts-why-routing-is-the-active-research-surface-explained-for-everyone-e4f9f5e8c07e">MoE: Routing as Active Research (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/moe">Mixture of Experts Explained</a><small>Hugging Face · Technical explainer</small><p>Understand routers, active parameters, load balancing, capacity, and fine-tuning tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://www.deepspeed.ai/tutorials/mixture-of-experts-inference/">Mixture of Experts Inference</a><small>DeepSpeed · Implementation guide</small><p>Configure expert-parallel inference and understand deployment requirements.</p></li>
+<li class="curated-resource"><a href="https://nanotron-ultrascale-playbook.static.hf.space/index.html">The Ultra-Scale Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Work through memory, communication, and combinations of distributed-training parallelism.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="15-scaling-laws-compute-and-model-design"><summary><span class="number">15</span><span class="topic-title">Scaling laws, compute, and model design<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -670,10 +671,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="15.1-3"><span>Scaling versus downstream task performance</span></label></li>
 <li><label><input type="checkbox" data-key="15.1-4"><span>Test-time scaling and inference budget allocation</span></label></li>
 <li><label><input type="checkbox" data-key="15.1-5"><span>Diminishing returns and benchmark saturation</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40charan.panthangi/scaling-laws-why-bigger-reliably-means-better-75dcc5b114a3">Scaling Laws: Why Bigger Reliably Means Better (2026)</a></li>
-<li><a href="https://medium.com/%40ppp.mishra124/why-transformers-scale-the-math-of-scaling-laws-02c045509186">Why Transformers Scale: The Math of Scaling Laws (2026)</a></li>
-<li><a href="https://medium.com/%40ardacikgoz9/ai-scaling-laws-why-bigger-isnt-always-better-and-when-it-is-c95be4d84c3a">AI Scaling Laws: Bigger Is Not Always Better (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://theorempath.com/topics/scaling-laws">Scaling Laws</a><small>TheoremPath · Theory guide</small><p>Compare Kaplan and Chinchilla fits, data repetition, emergence claims, and extrapolation limits.</p></li>
+<li class="curated-resource"><a href="https://deepmind.google/blog/an-empirical-analysis-of-compute-optimal-large-language-model-training/">An empirical analysis of compute-optimal large language model training</a><small>Google DeepMind · Research explainer</small><p>See why parameter count and training-token budget must be chosen together.</p></li>
+<li class="curated-resource"><a href="https://arxiv.org/abs/2001.08361">Scaling Laws for Neural Language Models</a><small>Kaplan et al. · Original research</small><p>Inspect the original fitted relationships and assumptions rather than treating scaling laws as universal rules.</p></li>
 </ol></div></section>
 <section class="subtopic" id="152-model-and-compute-budgeting"><h3><a href="#152-model-and-compute-budgeting">15.2</a> Model and compute budgeting</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="15.2-0"><span>Parameters and training FLOP estimators</span></label></li>
@@ -682,10 +683,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="15.2-3"><span>Dense versus MoE compute/quality trade-offs</span></label></li>
 <li><label><input type="checkbox" data-key="15.2-4"><span>Training from scratch versus continued pretraining</span></label></li>
 <li><label><input type="checkbox" data-key="15.2-5"><span>GPU utilization, MFU, throughput, and wall-clock cost</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ppp.mishra124/why-transformers-scale-the-math-of-scaling-laws-02c045509186">Why Transformers Scale: The Math of Scaling Laws (2026)</a></li>
-<li><a href="https://medium.com/%40charan.panthangi/scaling-laws-why-bigger-reliably-means-better-75dcc5b114a3">Scaling Laws: Why Bigger Reliably Means Better (2026)</a></li>
-<li><a href="https://medium.com/%40ardacikgoz9/ai-scaling-laws-why-bigger-isnt-always-better-and-when-it-is-c95be4d84c3a">AI Scaling Laws: Bigger Is Not Always Better (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://deepmind.google/blog/an-empirical-analysis-of-compute-optimal-large-language-model-training/">An empirical analysis of compute-optimal large language model training</a><small>Google DeepMind · Research explainer</small><p>See why parameter count and training-token budget must be chosen together.</p></li>
+<li class="curated-resource"><a href="https://huggingfacetb-smol-training-playbook.hf.space/">The Smol Training Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.</p></li>
+<li class="curated-resource"><a href="https://nanotron-ultrascale-playbook.static.hf.space/index.html">The Ultra-Scale Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Work through memory, communication, and combinations of distributed-training parallelism.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data">Scaling laws of learning from repeated data</a><small>Anthropic · Research article</small><p>Examine how excessive repetition can harm training and alter data-budget decisions.</p></li>
 </ol></div></section>
 <section class="subtopic" id="153-research-design-questions"><h3><a href="#153-research-design-questions">15.3</a> Research design questions</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="15.3-0"><span>Model size, depth, width, and head-count selection</span></label></li>
@@ -694,10 +696,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="15.3-3"><span>Longer training versus post-training investment</span></label></li>
 <li><label><input type="checkbox" data-key="15.3-4"><span>Smaller specialized models versus larger general models</span></label></li>
 <li><label><input type="checkbox" data-key="15.3-5"><span>Scaling failures, emergent behavior claims, and causal confounders</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40charan.panthangi/scaling-laws-why-bigger-reliably-means-better-75dcc5b114a3">Scaling Laws: Why Bigger Reliably Means Better (2026)</a></li>
-<li><a href="https://medium.com/%40ppp.mishra124/why-transformers-scale-the-math-of-scaling-laws-02c045509186">Why Transformers Scale: The Math of Scaling Laws (2026)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://theorempath.com/topics/scaling-laws">Scaling Laws</a><small>TheoremPath · Theory guide</small><p>Compare Kaplan and Chinchilla fits, data repetition, emergence claims, and extrapolation limits.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison">The Big LLM Architecture Comparison</a><small>Sebastian Raschka / Ahead of AI · Illustrated article</small><p>Compare real models&#x27; attention, feed-forward, normalization, and parameter-allocation choices.</p></li>
+<li class="curated-resource"><a href="https://deepmind.google/blog/an-empirical-analysis-of-compute-optimal-large-language-model-training/">An empirical analysis of compute-optimal large language model training</a><small>Google DeepMind · Research explainer</small><p>See why parameter count and training-token budget must be chosen together.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="16-pretraining-objectives-and-objectives-beyond-next-token-prediction"><summary><span class="number">16</span><span class="topic-title">Pretraining objectives and objectives beyond next-token prediction<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -708,10 +710,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="16.1-3"><span>Prefix language modeling</span></label></li>
 <li><label><input type="checkbox" data-key="16.1-4"><span>Sequence-to-sequence denoising objectives</span></label></li>
 <li><label><input type="checkbox" data-key="16.1-5"><span>Fill-in-the-middle (FIM) and code infilling</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40adnanmasood/an-ontological-examination-of-pre-training-and-post-training-phases-in-transformer-based-language-7c7fb786d805">Pretraining vs Post-training phases (2025)</a></li>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/tasks/language_modeling">Causal language modeling</a><small>Hugging Face · Code walkthrough</small><p>Prepare token blocks and labels, train a next-token model, and evaluate its loss.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/tasks/masked_language_modeling">Masked language modeling</a><small>Hugging Face · Code walkthrough</small><p>Build masked-token training data and compare its objective with causal prediction.</p></li>
+<li class="curated-resource"><a href="https://research.google/blog/exploring-transfer-learning-with-t5-the-text-to-text-transfer-transformer/">Exploring Transfer Learning with T5</a><small>Google Research · Research explainer</small><p>Compare text-to-text tasks, denoising objectives, and transfer-learning choices.</p></li>
+<li class="curated-resource"><a href="https://arxiv.org/abs/2207.14255">Efficient Training of Language Models to Fill in the Middle</a><small>Bavarian et al. · Original research</small><p>Understand prefix-suffix-middle transformations and the infilling training objective.</p></li>
 </ol></div></section>
 <section class="subtopic" id="162-specialized-and-auxiliary-objectives"><h3><a href="#162-specialized-and-auxiliary-objectives">16.2</a> Specialized and auxiliary objectives</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="16.2-0"><span>Multi-token prediction and multiple prediction heads</span></label></li>
@@ -720,10 +723,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="16.2-3"><span>Retrieval or grounded-generation auxiliary tasks</span></label></li>
 <li><label><input type="checkbox" data-key="16.2-4"><span>Instruction-aware continued pretraining</span></label></li>
 <li><label><input type="checkbox" data-key="16.2-5"><span>Multimodal next-token and joint-token prediction</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/an-ontological-examination-of-pre-training-and-post-training-phases-in-transformer-based-language-7c7fb786d805">Pretraining vs Post-training phases (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://arxiv.org/abs/2404.19737">Better &amp; Faster Large Language Models via Multi-token Prediction</a><small>Gloeckle et al. · Original research</small><p>Study auxiliary future-token heads and their effects on learning and inference.</p></li>
+<li class="curated-resource"><a href="https://research.google/blog/exploring-transfer-learning-with-t5-the-text-to-text-transfer-transformer/">Exploring Transfer Learning with T5</a><small>Google Research · Research explainer</small><p>Compare text-to-text tasks, denoising objectives, and transfer-learning choices.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-bert/">The Illustrated BERT, ELMo, and co.</a><small>Jay Alammar · Visual guide</small><p>Trace contextual representations and the transition to pretrained NLP transfer learning.</p></li>
 </ol></div></section>
 <section class="subtopic" id="163-objective-mechanics"><h3><a href="#163-objective-mechanics">16.3</a> Objective mechanics</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="16.3-0"><span>Teacher forcing and exposure bias</span></label></li>
@@ -732,10 +735,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="16.3-3"><span>Packing-aware per-token versus per-document normalization</span></label></li>
 <li><label><input type="checkbox" data-key="16.3-4"><span>Vocabulary loss and rare-token learning</span></label></li>
 <li><label><input type="checkbox" data-key="16.3-5"><span>Perplexity interpretation across tokenizers</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/data-and-beyond/i-traced-every-gradient-through-attention-here-they-all-are-d284e494623a">I Traced Every Gradient Through Attention (2026)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/an-ontological-examination-of-pre-training-and-post-training-phases-in-transformer-based-language-7c7fb786d805">Pretraining vs Post-training phases (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/tasks/language_modeling">Causal language modeling</a><small>Hugging Face · Code walkthrough</small><p>Prepare token blocks and labels, train a next-token model, and evaluate its loss.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/perplexity">Perplexity of fixed-length models</a><small>Hugging Face · Technical guide</small><p>Compute sliding-window perplexity and understand context-length and tokenizer comparability pitfalls.</p></li>
+<li class="curated-resource"><a href="https://nlp.seas.harvard.edu/annotated-transformer/">The Annotated Transformer</a><small>Harvard NLP · Annotated implementation</small><p>Translate attention equations, masks, residual blocks, and training into runnable PyTorch.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="17-pretraining-optimization-and-experimental-practice"><summary><span class="number">17</span><span class="topic-title">Pretraining optimization and experimental practice<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">

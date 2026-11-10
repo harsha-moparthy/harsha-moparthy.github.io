@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 40 of 204 subtopics curated.
+Updated 2026-11-11. 50 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -579,7 +579,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Recurrent memory and compressed context models
 - [ ] Architecture search and train–serve co-design
 
-Reading-list review pending; see the original index for candidate links.
+1. [Hybrid Attention](https://sebastianraschka.com/llm-architecture-gallery/hybrid-attention/) — Sebastian Raschka · Architecture explainer. Examine designs combining different attention mechanisms within one model.
+2. [Beyond Standard LLMs](https://magazine.sebastianraschka.com/p/beyond-standard-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Explore alternatives to conventional transformers and their architectural tradeoffs.
+3. [The Transformer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/) — Lilian Weng · Research explainer. Compare positional schemes, sparse patterns, recurrence, and adaptive-depth transformers.
 
 ## 14. Mixture-of-experts (MoE) and sparsity
 
@@ -592,7 +594,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Active parameters versus total parameters
 - [ ] Capacity factors, dropped tokens, and overflow handling
 
-Reading-list review pending; see the original index for candidate links.
+1. [Mixture of Experts Explained](https://huggingface.co/blog/moe) — Hugging Face · Technical explainer. Understand routers, active parameters, load balancing, capacity, and fine-tuning tradeoffs.
+2. [makeMoE: a sparse MoE language model from scratch](https://huggingface.co/blog/AviSoori1x/makemoe-from-scratch) — Avinash Sooriyarachchi · Code walkthrough. Build expert modules, noisy top-k routing, and a complete sparse language model.
+3. [Applying Mixture of Experts in LLM Architectures](https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/) — NVIDIA · Engineering article. Connect routing decisions and expert activation patterns to practical model behavior.
 
 ### 14.2 Training and routing mechanics
 
@@ -603,7 +607,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Fine-grained expert segmentation and expert grouping
 - [ ] Noisy routing, token dispatch, and expert parallelism
 
-Reading-list review pending; see the original index for candidate links.
+1. [makeMoE: a sparse MoE language model from scratch](https://huggingface.co/blog/AviSoori1x/makemoe-from-scratch) — Avinash Sooriyarachchi · Code walkthrough. Build expert modules, noisy top-k routing, and a complete sparse language model.
+2. [Mixture of Experts Explained](https://huggingface.co/blog/moe) — Hugging Face · Technical explainer. Understand routers, active parameters, load balancing, capacity, and fine-tuning tradeoffs.
+3. [Applying Mixture of Experts in LLM Architectures](https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/) — NVIDIA · Engineering article. Connect routing decisions and expert activation patterns to practical model behavior.
+4. [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison) — Sebastian Raschka / Ahead of AI · Illustrated article. Compare real models' attention, feed-forward, normalization, and parameter-allocation choices.
 
 ### 14.3 MoE inference and adaptation
 
@@ -614,7 +621,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Expert merging, pruning, and distillation
 - [ ] Multi-LoRA expert mixtures and task-conditioned routing
 
-Reading-list review pending; see the original index for candidate links.
+1. [Mixture of Experts Explained](https://huggingface.co/blog/moe) — Hugging Face · Technical explainer. Understand routers, active parameters, load balancing, capacity, and fine-tuning tradeoffs.
+2. [Mixture of Experts Inference](https://www.deepspeed.ai/tutorials/mixture-of-experts-inference/) — DeepSpeed · Implementation guide. Configure expert-parallel inference and understand deployment requirements.
+3. [The Ultra-Scale Playbook](https://nanotron-ultrascale-playbook.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Work through memory, communication, and combinations of distributed-training parallelism.
 
 ## 15. Scaling laws, compute, and model design
 
@@ -627,7 +636,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Test-time scaling and inference budget allocation
 - [ ] Diminishing returns and benchmark saturation
 
-Reading-list review pending; see the original index for candidate links.
+1. [Scaling Laws](https://theorempath.com/topics/scaling-laws) — TheoremPath · Theory guide. Compare Kaplan and Chinchilla fits, data repetition, emergence claims, and extrapolation limits.
+2. [An empirical analysis of compute-optimal large language model training](https://deepmind.google/blog/an-empirical-analysis-of-compute-optimal-large-language-model-training/) — Google DeepMind · Research explainer. See why parameter count and training-token budget must be chosen together.
+3. [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361) — Kaplan et al. · Original research. Inspect the original fitted relationships and assumptions rather than treating scaling laws as universal rules.
 
 ### 15.2 Model and compute budgeting
 
@@ -638,7 +649,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Training from scratch versus continued pretraining
 - [ ] GPU utilization, MFU, throughput, and wall-clock cost
 
-Reading-list review pending; see the original index for candidate links.
+1. [An empirical analysis of compute-optimal large language model training](https://deepmind.google/blog/an-empirical-analysis-of-compute-optimal-large-language-model-training/) — Google DeepMind · Research explainer. See why parameter count and training-token budget must be chosen together.
+2. [The Smol Training Playbook](https://huggingfacetb-smol-training-playbook.hf.space/) — Hugging Face · Engineering deep dive. Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.
+3. [The Ultra-Scale Playbook](https://nanotron-ultrascale-playbook.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Work through memory, communication, and combinations of distributed-training parallelism.
+4. [Scaling laws of learning from repeated data](https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data) — Anthropic · Research article. Examine how excessive repetition can harm training and alter data-budget decisions.
 
 ### 15.3 Research design questions
 
@@ -649,7 +663,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Smaller specialized models versus larger general models
 - [ ] Scaling failures, emergent behavior claims, and causal confounders
 
-Reading-list review pending; see the original index for candidate links.
+1. [Scaling Laws](https://theorempath.com/topics/scaling-laws) — TheoremPath · Theory guide. Compare Kaplan and Chinchilla fits, data repetition, emergence claims, and extrapolation limits.
+2. [The Big LLM Architecture Comparison](https://magazine.sebastianraschka.com/p/the-big-llm-architecture-comparison) — Sebastian Raschka / Ahead of AI · Illustrated article. Compare real models' attention, feed-forward, normalization, and parameter-allocation choices.
+3. [An empirical analysis of compute-optimal large language model training](https://deepmind.google/blog/an-empirical-analysis-of-compute-optimal-large-language-model-training/) — Google DeepMind · Research explainer. See why parameter count and training-token budget must be chosen together.
 
 ## 16. Pretraining objectives and objectives beyond next-token prediction
 
@@ -662,7 +678,10 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Sequence-to-sequence denoising objectives
 - [ ] Fill-in-the-middle (FIM) and code infilling
 
-Reading-list review pending; see the original index for candidate links.
+1. [Causal language modeling](https://huggingface.co/docs/transformers/tasks/language_modeling) — Hugging Face · Code walkthrough. Prepare token blocks and labels, train a next-token model, and evaluate its loss.
+2. [Masked language modeling](https://huggingface.co/docs/transformers/tasks/masked_language_modeling) — Hugging Face · Code walkthrough. Build masked-token training data and compare its objective with causal prediction.
+3. [Exploring Transfer Learning with T5](https://research.google/blog/exploring-transfer-learning-with-t5-the-text-to-text-transfer-transformer/) — Google Research · Research explainer. Compare text-to-text tasks, denoising objectives, and transfer-learning choices.
+4. [Efficient Training of Language Models to Fill in the Middle](https://arxiv.org/abs/2207.14255) — Bavarian et al. · Original research. Understand prefix-suffix-middle transformations and the infilling training objective.
 
 ### 16.2 Specialized and auxiliary objectives
 
@@ -673,7 +692,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Instruction-aware continued pretraining
 - [ ] Multimodal next-token and joint-token prediction
 
-Reading-list review pending; see the original index for candidate links.
+1. [Better & Faster Large Language Models via Multi-token Prediction](https://arxiv.org/abs/2404.19737) — Gloeckle et al. · Original research. Study auxiliary future-token heads and their effects on learning and inference.
+2. [Exploring Transfer Learning with T5](https://research.google/blog/exploring-transfer-learning-with-t5-the-text-to-text-transfer-transformer/) — Google Research · Research explainer. Compare text-to-text tasks, denoising objectives, and transfer-learning choices.
+3. [The Illustrated BERT, ELMo, and co.](https://jalammar.github.io/illustrated-bert/) — Jay Alammar · Visual guide. Trace contextual representations and the transition to pretrained NLP transfer learning.
 
 ### 16.3 Objective mechanics
 
@@ -684,7 +705,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Vocabulary loss and rare-token learning
 - [ ] Perplexity interpretation across tokenizers
 
-Reading-list review pending; see the original index for candidate links.
+1. [Causal language modeling](https://huggingface.co/docs/transformers/tasks/language_modeling) — Hugging Face · Code walkthrough. Prepare token blocks and labels, train a next-token model, and evaluate its loss.
+2. [Perplexity of fixed-length models](https://huggingface.co/docs/transformers/perplexity) — Hugging Face · Technical guide. Compute sliding-window perplexity and understand context-length and tokenizer comparability pitfalls.
+3. [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/) — Harvard NLP · Annotated implementation. Translate attention equations, masks, residual blocks, and training into runnable PyTorch.
 
 ## 17. Pretraining optimization and experimental practice
 
