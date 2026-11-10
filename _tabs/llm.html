@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>90 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>100 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -1251,10 +1251,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="27.1-3"><span>Effect of MHA, MQA, GQA, and MLA on KV storage</span></label></li>
 <li><label><input type="checkbox" data-key="27.1-4"><span>Cache indexing, RoPE positions, and attention masks</span></label></li>
 <li><label><input type="checkbox" data-key="27.1-5"><span>Prefill-created versus decode-appended KV entries</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
-<li><a href="https://medium.com/%40r9644360/learn-and-code-mha-mqa-and-gqa-a-guide-to-efficient-attention-mechanisms-in-transformers-ff621fe76680">Learn and Code MHA MQA and GQA (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/cache_explanation">How caching works</a><small>Hugging Face · Technical guide</small><p>Understand why autoregressive decoding reuses keys and values and how masks change.</p></li>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/inference/">All About Transformer Inference</a><small>Scaling Book authors · Worked technical chapter</small><p>Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://www.sebastianraschka.com/llms-from-scratch/ch04/04_gqa/">Grouped-Query Attention</a><small>Sebastian Raschka · From-scratch guide</small><p>Implement shared key-value heads and quantify KV-cache memory savings.</p></li>
 </ol></div></section>
 <section class="subtopic" id="272-cache-memory-architectures"><h3><a href="#272-cache-memory-architectures">27.2</a> Cache memory architectures</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="27.2-0"><span>Contiguous cache allocation versus paged cache</span></label></li>
@@ -1263,10 +1263,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="27.2-3"><span>Copy-on-write and forked sequence caches</span></label></li>
 <li><label><input type="checkbox" data-key="27.2-4"><span>Cache eviction, swapping, and compaction</span></label></li>
 <li><label><input type="checkbox" data-key="27.2-5"><span>Host/device offload and hierarchical KV storage</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/mlworks/vllm-explained-how-it-makes-llm-inference-faster-044da99542cf">vLLM Explained (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://vllm.ai/blog/2023-06-20-vllm">vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention</a><small>vLLM team · Engineering article</small><p>Understand block tables, fragmentation, shared prefixes, and copy-on-write caching.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/kv_cache">Cache strategies</a><small>Hugging Face · Implementation guide</small><p>Choose dynamic, static, offloaded, and quantized caches and understand their tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/inference/">All About Transformer Inference</a><small>Scaling Book authors · Worked technical chapter</small><p>Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.</p></li>
 </ol></div></section>
 <section class="subtopic" id="273-kv-compression-and-advanced-caching"><h3><a href="#273-kv-compression-and-advanced-caching">27.3</a> KV compression and advanced caching</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="27.3-0"><span>KV quantization and per-head quantization</span></label></li>
@@ -1275,10 +1275,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="27.3-3"><span>Cache pooling, low-rank compression, and latent cache</span></label></li>
 <li><label><input type="checkbox" data-key="27.3-4"><span>Cross-request cache reuse and cache correctness</span></label></li>
 <li><label><input type="checkbox" data-key="27.3-5"><span>Distributed KV transfers and prefill–decode disaggregation</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
-<li><a href="https://medium.com/mlworks/vllm-explained-how-it-makes-llm-inference-faster-044da99542cf">vLLM Explained (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/kv-cache-quantization">Unlocking Longer Generation with Key-Value Cache Quantization</a><small>Hugging Face · Engineering article</small><p>Compare cache precision, memory savings, and generation quality with implementation examples.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/transformers/kv_cache">Cache strategies</a><small>Hugging Face · Implementation guide</small><p>Choose dynamic, static, offloaded, and quantized caches and understand their tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://sebastianraschka.com/llm-architecture-gallery/mla/">Multi-Head Latent Attention</a><small>Sebastian Raschka · Architecture explainer</small><p>Understand compressed key-value representations and their cache tradeoffs.</p></li>
 </ol></div></section>
 <section class="subtopic" id="274-cache-performance-and-validation"><h3><a href="#274-cache-performance-and-validation">27.4</a> Cache performance and validation</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="27.4-0"><span>Cache-aware scheduling and fragmentation</span></label></li>
@@ -1287,10 +1287,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="27.4-3"><span>Long-context cache stress tests</span></label></li>
 <li><label><input type="checkbox" data-key="27.4-4"><span>Speculative decoding cache rollback</span></label></li>
 <li><label><input type="checkbox" data-key="27.4-5"><span>Memory profiler calculations and capacity planning</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/inference/">All About Transformer Inference</a><small>Scaling Book authors · Worked technical chapter</small><p>Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/kv-cache-quantization">Unlocking Longer Generation with Key-Value Cache Quantization</a><small>Hugging Face · Engineering article</small><p>Compare cache precision, memory savings, and generation quality with implementation examples.</p></li>
+<li class="curated-resource"><a href="https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html">Fused Attention</a><small>Triton · Code tutorial</small><p>Implement tiled attention and compare numerical correctness and benchmark performance.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="28-efficient-attention-kernels-and-gpu-optimization"><summary><span class="number">28</span><span class="topic-title">Efficient attention kernels and GPU optimization<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1301,10 +1301,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="28.1-3"><span>FlashAttention variants and backward recomputation</span></label></li>
 <li><label><input type="checkbox" data-key="28.1-4"><span>FlashDecoding and incremental attention</span></label></li>
 <li><label><input type="checkbox" data-key="28.1-5"><span>Memory traffic analysis and arithmetic intensity</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://arunjitha.medium.com/kernel-case-study-flash-attention-5d63a3875c2d">Kernel Case Study: Flash Attention (2025)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
-<li><a href="https://medium.com/%40amitshekhar/llm-inference-engineering-problem-and-solution-8111b1919145">LLM Inference Engineering: Problems and Solutions (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://hazyresearch.stanford.edu/blog/2023-01-12-flashattention-long-sequences">FlashAttention: Fast Transformer Training with Long Sequences</a><small>Tri Dao / Hazy Research · Illustrated article</small><p>See how tiling and sequence parallelism reduce memory traffic for exact attention.</p></li>
+<li class="curated-resource"><a href="https://horace.io/brrr_intro.html">Making Deep Learning Go Brrrr From First Principles</a><small>Horace He · Conceptual tutorial</small><p>Identify compute, memory bandwidth, and launch-overhead bottlenecks before optimizing.</p></li>
+<li class="curated-resource"><a href="https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html">Fused Attention</a><small>Triton · Code tutorial</small><p>Implement tiled attention and compare numerical correctness and benchmark performance.</p></li>
 </ol></div></section>
 <section class="subtopic" id="282-gpu-kernel-engineering"><h3><a href="#282-gpu-kernel-engineering">28.2</a> GPU kernel engineering</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="28.2-0"><span>Triton and CUDA kernel fundamentals</span></label></li>
@@ -1313,10 +1313,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="28.2-3"><span>GEMM layouts, tensor cores, and precision selection</span></label></li>
 <li><label><input type="checkbox" data-key="28.2-4"><span>CUDA graphs and launch-overhead elimination</span></label></li>
 <li><label><input type="checkbox" data-key="28.2-5"><span>Kernel autotuning and architecture-specific optimization</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://arunjitha.medium.com/kernel-case-study-flash-attention-5d63a3875c2d">Kernel Case Study: Flash Attention (2025)</a></li>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://horace.io/brrr_intro.html">Making Deep Learning Go Brrrr From First Principles</a><small>Horace He · Conceptual tutorial</small><p>Identify compute, memory bandwidth, and launch-overhead bottlenecks before optimizing.</p></li>
+<li class="curated-resource"><a href="https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html">Fused Attention</a><small>Triton · Code tutorial</small><p>Implement tiled attention and compare numerical correctness and benchmark performance.</p></li>
+<li class="curated-resource"><a href="https://tridao.me/blog/2024/flash3/">FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision</a><small>Tri Dao · Engineering article</small><p>Study asynchronous Hopper execution, low precision, and attention-kernel benchmarks.</p></li>
 </ol></div></section>
 <section class="subtopic" id="283-attention-alternatives-and-benchmarking"><h3><a href="#283-attention-alternatives-and-benchmarking">28.3</a> Attention alternatives and benchmarking</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="28.3-0"><span>FlashInfer and attention backend selection</span></label></li>
@@ -1325,10 +1325,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="28.3-3"><span>Chunked attention and context parallelism</span></label></li>
 <li><label><input type="checkbox" data-key="28.3-4"><span>Kernel correctness under different masks and shapes</span></label></li>
 <li><label><input type="checkbox" data-key="28.3-5"><span>Roofline analysis, throughput, and memory profiling</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40cenghanbayram35/attention-isnt-all-you-need-beating-the-o-n%C2%B2-wall-with-mamba-hyena-and-rwkv-602d9b1466f7">Mamba Hyena and RWKV Beyond Attention (2025)</a></li>
-<li><a href="https://arunjitha.medium.com/kernel-case-study-flash-attention-5d63a3875c2d">Kernel Case Study: Flash Attention (2025)</a></li>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://tridao.me/blog/2024/flash3/">FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision</a><small>Tri Dao · Engineering article</small><p>Study asynchronous Hopper execution, low precision, and attention-kernel benchmarks.</p></li>
+<li class="curated-resource"><a href="https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html">Fused Attention</a><small>Triton · Code tutorial</small><p>Implement tiled attention and compare numerical correctness and benchmark performance.</p></li>
+<li class="curated-resource"><a href="https://www.theorempath.com/topics/sparse-attention-and-long-context">Sparse Attention and Long Context</a><small>TheoremPath · Theory guide</small><p>Study sparse patterns, distributed attention, streaming, and context-extension limitations.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="29-quantization-pruning-sparsity-and-distillation"><summary><span class="number">29</span><span class="topic-title">Quantization, pruning, sparsity, and distillation<small>4 subtopics · 25 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1339,10 +1339,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="29.1-3"><span>Per-tensor, per-channel, and per-group scales</span></label></li>
 <li><label><input type="checkbox" data-key="29.1-4"><span>Zero points, clipping, and calibration</span></label></li>
 <li><label><input type="checkbox" data-key="29.1-5"><span>Quantization error and outlier activation distributions</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
-<li><a href="https://medium.com/%40amitshekhar/llm-inference-engineering-problem-and-solution-8111b1919145">LLM Inference Engineering: Problems and Solutions (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/hf-bitsandbytes-integration">A Gentle Introduction to 8-bit Matrix Multiplication</a><small>Tim Dettmers / Hugging Face · Illustrated tutorial</small><p>Build intuition for quantization scales, outliers, and mixed-precision matrix multiplication.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/4bit-transformers-bitsandbytes">Making LLMs even more accessible with 4-bit quantization and QLoRA</a><small>Hugging Face &amp; bitsandbytes · Technical tutorial</small><p>Understand frozen quantized weights, low-rank adapters, and memory-efficient fine-tuning.</p></li>
+<li class="curated-resource"><a href="https://hanlab.mit.edu/projects/smoothquant">SmoothQuant</a><small>MIT Han Lab / NVIDIA · Research project and paper</small><p>Explain how moving quantization difficulty from activations to weights enables W8A8 inference.</p></li>
 </ol></div></section>
 <section class="subtopic" id="292-weight-and-activation-quantization"><h3><a href="#292-weight-and-activation-quantization">29.2</a> Weight and activation quantization</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="29.2-0"><span>Post-training quantization (PTQ)</span></label></li>
@@ -1352,10 +1352,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="29.2-4"><span>SmoothQuant and activation smoothing</span></label></li>
 <li><label><input type="checkbox" data-key="29.2-5"><span>GGUF/GGML ecosystem and portable formats</span></label></li>
 <li><label><input type="checkbox" data-key="29.2-6"><span>NF4 and double quantization in QLoRA</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
-<li><a href="https://medium.com/%40amitshekhar/llm-inference-engineering-problem-and-solution-8111b1919145">LLM Inference Engineering: Problems and Solutions (2026)</a></li>
-<li><a href="https://medium.com/%40izzetcansorna/parameter-efficient-fine-tuning-how-lora-qlora-and-dora-made-large-models-adaptable-d9835411f1c2">LoRA QLoRA and DoRA Parameter Efficient Fine Tuning (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/gptq-integration">Making LLMs lighter with AutoGPTQ and transformers</a><small>Hugging Face · Historical implementation article</small><p>Learn GPTQ calibration and weight-only compression; package instructions reflect the original release.</p></li>
+<li class="curated-resource"><a href="https://hanlab.mit.edu/projects/awq">AWQ: Activation-aware Weight Quantization</a><small>MIT Han Lab · Research project and paper</small><p>Understand activation-informed scaling to protect salient weights during low-bit compression.</p></li>
+<li class="curated-resource"><a href="https://hanlab.mit.edu/projects/smoothquant">SmoothQuant</a><small>MIT Han Lab / NVIDIA · Research project and paper</small><p>Explain how moving quantization difficulty from activations to weights enables W8A8 inference.</p></li>
 </ol></div></section>
 <section class="subtopic" id="293-inference-oriented-compression"><h3><a href="#293-inference-oriented-compression">29.3</a> Inference-oriented compression</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="29.3-0"><span>Weight-only versus weight–activation quantization</span></label></li>
@@ -1364,10 +1364,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="29.3-3"><span>Mixed-bit and layer-sensitive quantization</span></label></li>
 <li><label><input type="checkbox" data-key="29.3-4"><span>Structured/unstructured pruning and N:M sparsity</span></label></li>
 <li><label><input type="checkbox" data-key="29.3-5"><span>Low-rank factorization and neural compression</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40amitshekhar/llm-inference-engineering-problem-and-solution-8111b1919145">LLM Inference Engineering: Problems and Solutions (2026)</a></li>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-01-10-inference-optimization/">Large Transformer Model Inference Optimization</a><small>Lilian Weng · Technical survey</small><p>Connect quantization, pruning, distillation, and parallel inference to their costs.</p></li>
+<li class="curated-resource"><a href="https://hanlab.mit.edu/projects/awq">AWQ: Activation-aware Weight Quantization</a><small>MIT Han Lab · Research project and paper</small><p>Understand activation-informed scaling to protect salient weights during low-bit compression.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/kv-cache-quantization">Unlocking Longer Generation with Key-Value Cache Quantization</a><small>Hugging Face · Engineering article</small><p>Compare cache precision, memory savings, and generation quality with implementation examples.</p></li>
 </ol></div></section>
 <section class="subtopic" id="294-distillation-and-compact-modeling"><h3><a href="#294-distillation-and-compact-modeling">29.4</a> Distillation and compact modeling</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="29.4-0"><span>Teacher–student distillation and soft labels</span></label></li>

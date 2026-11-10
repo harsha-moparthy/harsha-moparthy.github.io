@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "kvquant": [
+      "Hugging Face",
+      "Unlocking Longer Generation with Key-Value Cache Quantization",
+      "https://huggingface.co/blog/kv-cache-quantization",
+      "Engineering article",
+      "Compare cache precision, memory savings, and generation quality with implementation examples."
+    ],
+    "kvstrategies": [
+      "Hugging Face",
+      "Cache strategies",
+      "https://huggingface.co/docs/transformers/kv_cache",
+      "Implementation guide",
+      "Choose dynamic, static, offloaded, and quantized caches and understand their tradeoffs."
+    ],
+    "paged": [
+      "vLLM team",
+      "vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention",
+      "https://vllm.ai/blog/2023-06-20-vllm",
+      "Engineering article",
+      "Understand block tables, fragmentation, shared prefixes, and copy-on-write caching."
+    ],
+    "flash": [
+      "Tri Dao / Hazy Research",
+      "FlashAttention: Fast Transformer Training with Long Sequences",
+      "https://hazyresearch.stanford.edu/blog/2023-01-12-flashattention-long-sequences",
+      "Illustrated article",
+      "See how tiling and sequence parallelism reduce memory traffic for exact attention."
+    ],
+    "flash3": [
+      "Tri Dao",
+      "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision",
+      "https://tridao.me/blog/2024/flash3/",
+      "Engineering article",
+      "Study asynchronous Hopper execution, low precision, and attention-kernel benchmarks."
+    ],
+    "brrr": [
+      "Horace He",
+      "Making Deep Learning Go Brrrr From First Principles",
+      "https://horace.io/brrr_intro.html",
+      "Conceptual tutorial",
+      "Identify compute, memory bandwidth, and launch-overhead bottlenecks before optimizing."
+    ],
+    "tritonattention": [
+      "Triton",
+      "Fused Attention",
+      "https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html",
+      "Code tutorial",
+      "Implement tiled attention and compare numerical correctness and benchmark performance."
+    ],
+    "int8": [
+      "Tim Dettmers / Hugging Face",
+      "A Gentle Introduction to 8-bit Matrix Multiplication",
+      "https://huggingface.co/blog/hf-bitsandbytes-integration",
+      "Illustrated tutorial",
+      "Build intuition for quantization scales, outliers, and mixed-precision matrix multiplication."
+    ],
+    "gptq": [
+      "Hugging Face",
+      "Making LLMs lighter with AutoGPTQ and transformers",
+      "https://huggingface.co/blog/gptq-integration",
+      "Historical implementation article",
+      "Learn GPTQ calibration and weight-only compression; package instructions reflect the original release."
+    ],
+    "inferopt": [
+      "Lilian Weng",
+      "Large Transformer Model Inference Optimization",
+      "https://lilianweng.github.io/posts/2023-01-10-inference-optimization/",
+      "Technical survey",
+      "Connect quantization, pruning, distillation, and parallel inference to their costs."
+    ],
+    "awq": [
+      "MIT Han Lab",
+      "AWQ: Activation-aware Weight Quantization",
+      "https://hanlab.mit.edu/projects/awq",
+      "Research project and paper",
+      "Understand activation-informed scaling to protect salient weights during low-bit compression."
+    ],
+    "smoothquant": [
+      "MIT Han Lab / NVIDIA",
+      "SmoothQuant",
+      "https://hanlab.mit.edu/projects/smoothquant",
+      "Research project and paper",
+      "Explain how moving quantization difficulty from activations to weights enables W8A8 inference."
+    ],
+    "inferencebook": [
+      "Scaling Book authors",
+      "All About Transformer Inference",
+      "https://jax-ml.github.io/scaling-book/inference/",
+      "Worked technical chapter",
+      "Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs."
+    ]
+  },
+  "subtopics": {
+    "27.1": [
+      "cache",
+      "inferencebook",
+      "gqa"
+    ],
+    "27.2": [
+      "paged",
+      "kvstrategies",
+      "inferencebook"
+    ],
+    "27.3": [
+      "kvquant",
+      "kvstrategies",
+      "mla"
+    ],
+    "27.4": [
+      "inferencebook",
+      "kvquant",
+      "tritonattention"
+    ],
+    "28.1": [
+      "flash",
+      "brrr",
+      "tritonattention"
+    ],
+    "28.2": [
+      "brrr",
+      "tritonattention",
+      "flash3"
+    ],
+    "28.3": [
+      "flash3",
+      "tritonattention",
+      "longtheory"
+    ],
+    "29.1": [
+      "int8",
+      "qlora",
+      "smoothquant"
+    ],
+    "29.2": [
+      "gptq",
+      "awq",
+      "smoothquant"
+    ],
+    "29.3": [
+      "inferopt",
+      "awq",
+      "kvquant"
+    ]
+  }
+}

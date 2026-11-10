@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 90 of 204 subtopics curated.
+Updated 2026-11-11. 100 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -1262,7 +1262,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Cache indexing, RoPE positions, and attention masks
 - [ ] Prefill-created versus decode-appended KV entries
 
-Reading-list review pending; see the original index for candidate links.
+1. [How caching works](https://huggingface.co/docs/transformers/cache_explanation) — Hugging Face · Technical guide. Understand why autoregressive decoding reuses keys and values and how masks change.
+2. [All About Transformer Inference](https://jax-ml.github.io/scaling-book/inference/) — Scaling Book authors · Worked technical chapter. Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.
+3. [Grouped-Query Attention](https://www.sebastianraschka.com/llms-from-scratch/ch04/04_gqa/) — Sebastian Raschka · From-scratch guide. Implement shared key-value heads and quantify KV-cache memory savings.
 
 ### 27.2 Cache memory architectures
 
@@ -1273,7 +1275,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Cache eviction, swapping, and compaction
 - [ ] Host/device offload and hierarchical KV storage
 
-Reading-list review pending; see the original index for candidate links.
+1. [vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention](https://vllm.ai/blog/2023-06-20-vllm) — vLLM team · Engineering article. Understand block tables, fragmentation, shared prefixes, and copy-on-write caching.
+2. [Cache strategies](https://huggingface.co/docs/transformers/kv_cache) — Hugging Face · Implementation guide. Choose dynamic, static, offloaded, and quantized caches and understand their tradeoffs.
+3. [All About Transformer Inference](https://jax-ml.github.io/scaling-book/inference/) — Scaling Book authors · Worked technical chapter. Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.
 
 ### 27.3 KV compression and advanced caching
 
@@ -1284,7 +1288,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Cross-request cache reuse and cache correctness
 - [ ] Distributed KV transfers and prefill–decode disaggregation
 
-Reading-list review pending; see the original index for candidate links.
+1. [Unlocking Longer Generation with Key-Value Cache Quantization](https://huggingface.co/blog/kv-cache-quantization) — Hugging Face · Engineering article. Compare cache precision, memory savings, and generation quality with implementation examples.
+2. [Cache strategies](https://huggingface.co/docs/transformers/kv_cache) — Hugging Face · Implementation guide. Choose dynamic, static, offloaded, and quantized caches and understand their tradeoffs.
+3. [Multi-Head Latent Attention](https://sebastianraschka.com/llm-architecture-gallery/mla/) — Sebastian Raschka · Architecture explainer. Understand compressed key-value representations and their cache tradeoffs.
 
 ### 27.4 Cache performance and validation
 
@@ -1295,7 +1301,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Speculative decoding cache rollback
 - [ ] Memory profiler calculations and capacity planning
 
-Reading-list review pending; see the original index for candidate links.
+1. [All About Transformer Inference](https://jax-ml.github.io/scaling-book/inference/) — Scaling Book authors · Worked technical chapter. Calculate prefill and decode costs, KV memory, batching benefits, and parallelism tradeoffs.
+2. [Unlocking Longer Generation with Key-Value Cache Quantization](https://huggingface.co/blog/kv-cache-quantization) — Hugging Face · Engineering article. Compare cache precision, memory savings, and generation quality with implementation examples.
+3. [Fused Attention](https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html) — Triton · Code tutorial. Implement tiled attention and compare numerical correctness and benchmark performance.
 
 ## 28. Efficient attention kernels and GPU optimization
 
@@ -1308,7 +1316,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] FlashDecoding and incremental attention
 - [ ] Memory traffic analysis and arithmetic intensity
 
-Reading-list review pending; see the original index for candidate links.
+1. [FlashAttention: Fast Transformer Training with Long Sequences](https://hazyresearch.stanford.edu/blog/2023-01-12-flashattention-long-sequences) — Tri Dao / Hazy Research · Illustrated article. See how tiling and sequence parallelism reduce memory traffic for exact attention.
+2. [Making Deep Learning Go Brrrr From First Principles](https://horace.io/brrr_intro.html) — Horace He · Conceptual tutorial. Identify compute, memory bandwidth, and launch-overhead bottlenecks before optimizing.
+3. [Fused Attention](https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html) — Triton · Code tutorial. Implement tiled attention and compare numerical correctness and benchmark performance.
 
 ### 28.2 GPU kernel engineering
 
@@ -1319,7 +1329,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] CUDA graphs and launch-overhead elimination
 - [ ] Kernel autotuning and architecture-specific optimization
 
-Reading-list review pending; see the original index for candidate links.
+1. [Making Deep Learning Go Brrrr From First Principles](https://horace.io/brrr_intro.html) — Horace He · Conceptual tutorial. Identify compute, memory bandwidth, and launch-overhead bottlenecks before optimizing.
+2. [Fused Attention](https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html) — Triton · Code tutorial. Implement tiled attention and compare numerical correctness and benchmark performance.
+3. [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://tridao.me/blog/2024/flash3/) — Tri Dao · Engineering article. Study asynchronous Hopper execution, low precision, and attention-kernel benchmarks.
 
 ### 28.3 Attention alternatives and benchmarking
 
@@ -1330,7 +1342,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Kernel correctness under different masks and shapes
 - [ ] Roofline analysis, throughput, and memory profiling
 
-Reading-list review pending; see the original index for candidate links.
+1. [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://tridao.me/blog/2024/flash3/) — Tri Dao · Engineering article. Study asynchronous Hopper execution, low precision, and attention-kernel benchmarks.
+2. [Fused Attention](https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html) — Triton · Code tutorial. Implement tiled attention and compare numerical correctness and benchmark performance.
+3. [Sparse Attention and Long Context](https://www.theorempath.com/topics/sparse-attention-and-long-context) — TheoremPath · Theory guide. Study sparse patterns, distributed attention, streaming, and context-extension limitations.
 
 ## 29. Quantization, pruning, sparsity, and distillation
 
@@ -1343,7 +1357,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Zero points, clipping, and calibration
 - [ ] Quantization error and outlier activation distributions
 
-Reading-list review pending; see the original index for candidate links.
+1. [A Gentle Introduction to 8-bit Matrix Multiplication](https://huggingface.co/blog/hf-bitsandbytes-integration) — Tim Dettmers / Hugging Face · Illustrated tutorial. Build intuition for quantization scales, outliers, and mixed-precision matrix multiplication.
+2. [Making LLMs even more accessible with 4-bit quantization and QLoRA](https://huggingface.co/blog/4bit-transformers-bitsandbytes) — Hugging Face & bitsandbytes · Technical tutorial. Understand frozen quantized weights, low-rank adapters, and memory-efficient fine-tuning.
+3. [SmoothQuant](https://hanlab.mit.edu/projects/smoothquant) — MIT Han Lab / NVIDIA · Research project and paper. Explain how moving quantization difficulty from activations to weights enables W8A8 inference.
 
 ### 29.2 Weight and activation quantization
 
@@ -1355,7 +1371,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] GGUF/GGML ecosystem and portable formats
 - [ ] NF4 and double quantization in QLoRA
 
-Reading-list review pending; see the original index for candidate links.
+1. [Making LLMs lighter with AutoGPTQ and transformers](https://huggingface.co/blog/gptq-integration) — Hugging Face · Historical implementation article. Learn GPTQ calibration and weight-only compression; package instructions reflect the original release.
+2. [AWQ: Activation-aware Weight Quantization](https://hanlab.mit.edu/projects/awq) — MIT Han Lab · Research project and paper. Understand activation-informed scaling to protect salient weights during low-bit compression.
+3. [SmoothQuant](https://hanlab.mit.edu/projects/smoothquant) — MIT Han Lab / NVIDIA · Research project and paper. Explain how moving quantization difficulty from activations to weights enables W8A8 inference.
 
 ### 29.3 Inference-oriented compression
 
@@ -1366,7 +1384,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Structured/unstructured pruning and N:M sparsity
 - [ ] Low-rank factorization and neural compression
 
-Reading-list review pending; see the original index for candidate links.
+1. [Large Transformer Model Inference Optimization](https://lilianweng.github.io/posts/2023-01-10-inference-optimization/) — Lilian Weng · Technical survey. Connect quantization, pruning, distillation, and parallel inference to their costs.
+2. [AWQ: Activation-aware Weight Quantization](https://hanlab.mit.edu/projects/awq) — MIT Han Lab · Research project and paper. Understand activation-informed scaling to protect salient weights during low-bit compression.
+3. [Unlocking Longer Generation with Key-Value Cache Quantization](https://huggingface.co/blog/kv-cache-quantization) — Hugging Face · Engineering article. Compare cache precision, memory savings, and generation quality with implementation examples.
 
 ### 29.4 Distillation and compact modeling
 
