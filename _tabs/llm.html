@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>50 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>60 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -749,10 +749,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="17.1-3"><span>Learning-rate warmup, decay, and cooldown</span></label></li>
 <li><label><input type="checkbox" data-key="17.1-4"><span>Gradient norm monitoring, clipping, and anomaly detection</span></label></li>
 <li><label><input type="checkbox" data-key="17.1-5"><span>Dropout, regularization, and mixed-precision training</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/data-and-beyond/i-traced-every-gradient-through-attention-here-they-all-are-d284e494623a">I Traced Every Gradient Through Attention (2026)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://karpathy.github.io/2019/04/25/recipe/">A Recipe for Training Neural Networks</a><small>Andrej Karpathy · Practical article</small><p>Debug data, establish baselines, overfit a tiny batch, and add complexity deliberately.</p></li>
+<li class="curated-resource"><a href="https://github.com/karpathy/nanoGPT">nanoGPT</a><small>Andrej Karpathy · Compact implementation</small><p>Read a complete GPT training loop with accumulation, scheduling, checkpointing, and distributed execution.</p></li>
+<li class="curated-resource"><a href="https://www.ruder.io/optimizing-gradient-descent/">An overview of gradient descent optimization algorithms</a><small>Sebastian Ruder · Technical article</small><p>Compare SGD, momentum, adaptive optimizers, and practical optimization difficulties.</p></li>
 </ol></div></section>
 <section class="subtopic" id="172-stability-and-debugging"><h3><a href="#172-stability-and-debugging">17.2</a> Stability and debugging</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="17.2-0"><span>Loss spikes, gradient explosions, and divergence</span></label></li>
@@ -761,10 +761,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="17.2-3"><span>Batch-size changes and optimization rescaling</span></label></li>
 <li><label><input type="checkbox" data-key="17.2-4"><span>Data-quality anomalies and anomalous batches</span></label></li>
 <li><label><input type="checkbox" data-key="17.2-5"><span>Seed control, determinism, and reproducibility</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-and-beyond/i-traced-every-gradient-through-attention-here-they-all-are-d284e494623a">I Traced Every Gradient Through Attention (2026)</a></li>
-<li><a href="https://medium.com/%40wasowski.jarek/a-decade-of-misplaced-sacred-cows-in-neural-networks-residuals-norms-1a4f85749a0d">Residual Connections and Normalization in Transformers (2026)</a></li>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://karpathy.github.io/2019/04/25/recipe/">A Recipe for Training Neural Networks</a><small>Andrej Karpathy · Practical article</small><p>Debug data, establish baselines, overfit a tiny batch, and add complexity deliberately.</p></li>
+<li class="curated-resource"><a href="https://docs.pytorch.org/docs/stable/notes/randomness.html">Reproducibility</a><small>PyTorch · Engineering guide</small><p>Identify randomness sources and the costs and limits of deterministic execution.</p></li>
+<li class="curated-resource"><a href="https://huggingfacetb-smol-training-playbook.hf.space/">The Smol Training Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.</p></li>
 </ol></div></section>
 <section class="subtopic" id="173-training-stages-and-checkpoints"><h3><a href="#173-training-stages-and-checkpoints">17.3</a> Training stages and checkpoints</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="17.3-0"><span>Warmup, steady-state training, and cooldown</span></label></li>
@@ -773,10 +773,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="17.3-3"><span>Checkpoint frequency, retention, and restart</span></label></li>
 <li><label><input type="checkbox" data-key="17.3-4"><span>Optimizer-state checkpointing and resumption fidelity</span></label></li>
 <li><label><input type="checkbox" data-key="17.3-5"><span>Intermediate evaluation and checkpoint selection</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/an-ontological-examination-of-pre-training-and-post-training-phases-in-transformer-based-language-7c7fb786d805">Pretraining vs Post-training phases (2025)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html">Saving and Loading Models</a><small>PyTorch · Practical tutorial</small><p>Save model and optimizer state and distinguish inference loading from training resumption.</p></li>
+<li class="curated-resource"><a href="https://github.com/karpathy/nanoGPT">nanoGPT</a><small>Andrej Karpathy · Compact implementation</small><p>Read a complete GPT training loop with accumulation, scheduling, checkpointing, and distributed execution.</p></li>
+<li class="curated-resource"><a href="https://huggingfacetb-smol-training-playbook.hf.space/">The Smol Training Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="18-training-hardware-and-distributed-systems"><summary><span class="number">18</span><span class="topic-title">Training hardware and distributed systems<small>4 subtopics · 25 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -787,10 +787,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="18.1-3"><span>GPU occupancy, warp execution, and kernel launch overhead</span></label></li>
 <li><label><input type="checkbox" data-key="18.1-4"><span>BF16, FP16, FP8, and lower-precision training</span></label></li>
 <li><label><input type="checkbox" data-key="18.1-5"><span>Activation, parameter, gradient, and optimizer-state memory</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40ar.taneja/llm-inference-on-a-gpu-explained-from-scratch-b8a478924687">LLM Inference on a GPU from Scratch (2026)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/">How to Scale Your Model</a><small>Google DeepMind authors · Systems textbook</small><p>Relate accelerator hardware, communication, model math, and training or inference costs.</p></li>
+<li class="curated-resource"><a href="https://nanotron-ultrascale-playbook.static.hf.space/index.html">The Ultra-Scale Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Work through memory, communication, and combinations of distributed-training parallelism.</p></li>
+<li class="curated-resource"><a href="https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/">Introducing Fully Sharded Data Parallel</a><small>PyTorch · Engineering article</small><p>Understand how sharding parameters, gradients, and optimizer state reduces per-device memory.</p></li>
 </ol></div></section>
 <section class="subtopic" id="182-parallelism-strategies"><h3><a href="#182-parallelism-strategies">18.2</a> Parallelism strategies</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="18.2-0"><span>Data parallelism and distributed data parallel (DDP)</span></label></li>
@@ -800,10 +800,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="18.2-4"><span>Expert parallelism for MoE</span></label></li>
 <li><label><input type="checkbox" data-key="18.2-5"><span>ZeRO optimizer stages and FSDP sharding</span></label></li>
 <li><label><input type="checkbox" data-key="18.2-6"><span>3D/4D/5D parallelism combinations</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://nanotron-ultrascale-playbook.static.hf.space/index.html">The Ultra-Scale Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Work through memory, communication, and combinations of distributed-training parallelism.</p></li>
+<li class="curated-resource"><a href="https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/">Introducing Fully Sharded Data Parallel</a><small>PyTorch · Engineering article</small><p>Understand how sharding parameters, gradients, and optimizer state reduces per-device memory.</p></li>
+<li class="curated-resource"><a href="https://jax-ml.github.io/scaling-book/">How to Scale Your Model</a><small>Google DeepMind authors · Systems textbook</small><p>Relate accelerator hardware, communication, model math, and training or inference costs.</p></li>
 </ol></div></section>
 <section class="subtopic" id="183-memory-and-runtime-optimization"><h3><a href="#183-memory-and-runtime-optimization">18.3</a> Memory and runtime optimization</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="18.3-0"><span>Gradient checkpointing / activation recomputation</span></label></li>
@@ -812,10 +812,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="18.3-3"><span>Sequence packing, bucketing, and dynamic batching</span></label></li>
 <li><label><input type="checkbox" data-key="18.3-4"><span>Fused optimizers, fused normalization, and fused MLPs</span></label></li>
 <li><label><input type="checkbox" data-key="18.3-5"><span>Distributed checkpointing and sharded state</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-llm-serving-gets-fast-flashattention-pagedattention-continuous-batching-speculative-cd980096daf2">How LLM Serving Gets Fast (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://pytorch.org/blog/activation-checkpointing-techniques/">Current and New Activation Checkpointing Techniques</a><small>PyTorch · Engineering article</small><p>Visualize the memory-compute tradeoff of recomputation and selective checkpointing.</p></li>
+<li class="curated-resource"><a href="https://nanotron-ultrascale-playbook.static.hf.space/index.html">The Ultra-Scale Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Work through memory, communication, and combinations of distributed-training parallelism.</p></li>
+<li class="curated-resource"><a href="https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html">Saving and Loading Models</a><small>PyTorch · Practical tutorial</small><p>Save model and optimizer state and distinguish inference loading from training resumption.</p></li>
 </ol></div></section>
 <section class="subtopic" id="184-operational-training-infrastructure"><h3><a href="#184-operational-training-infrastructure">18.4</a> Operational training infrastructure</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="18.4-0"><span>PyTorch distributed, DeepSpeed, Megatron, FSDP, and JAX ecosystems</span></label></li>
@@ -824,10 +824,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="18.4-3"><span>Data-loader throughput and streaming data pipelines</span></label></li>
 <li><label><input type="checkbox" data-key="18.4-4"><span>Performance profiling, traces, and bottleneck diagnosis</span></label></li>
 <li><label><input type="checkbox" data-key="18.4-5"><span>Energy usage, utilization, cost, and carbon accounting</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40punitvara/the-ultimate-cs336-resource-list-for-llms-training-inference-and-evaluation-3dfbd0f88b29">The CS336 Resource List for LLM Training Inference Evaluation (2026)</a></li>
-<li><a href="https://medium.com/%40gourish.deshpande/training-the-tiny-transformer-properly-7dfafb712f9a">Training the Tiny Transformer Properly (2025)</a></li>
-<li><a href="https://medium.com/data-science-collective/what-really-limits-llm-inference-performance-3d04ae41fe3e">What Really Limits LLM Inference Performance (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://nanotron-ultrascale-playbook.static.hf.space/index.html">The Ultra-Scale Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Work through memory, communication, and combinations of distributed-training parallelism.</p></li>
+<li class="curated-resource"><a href="https://huggingfacetb-smol-training-playbook.hf.space/">The Smol Training Playbook</a><small>Hugging Face · Engineering deep dive</small><p>Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.</p></li>
+<li class="curated-resource"><a href="https://docs.pytorch.org/docs/stable/notes/randomness.html">Reproducibility</a><small>PyTorch · Engineering guide</small><p>Identify randomness sources and the costs and limits of deterministic execution.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="19-fine-tuning-adaptation-and-transfer-learning"><summary><span class="number">19</span><span class="topic-title">Fine-tuning, adaptation, and transfer learning<small>4 subtopics · 24 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -838,10 +838,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="19.1-3"><span>Domain-adaptive and task-adaptive fine-tuning</span></label></li>
 <li><label><input type="checkbox" data-key="19.1-4"><span>Multitask fine-tuning and dataset mixtures</span></label></li>
 <li><label><input type="checkbox" data-key="19.1-5"><span>Continual learning, catastrophic forgetting, and replay</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40izzetcansorna/parameter-efficient-fine-tuning-how-lora-qlora-and-dora-made-large-models-adaptable-d9835411f1c2">LoRA QLoRA and DoRA Parameter Efficient Fine Tuning (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/an-ontological-examination-of-pre-training-and-post-training-phases-in-transformer-based-language-7c7fb786d805">Pretraining vs Post-training phases (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://cs231n.github.io/transfer-learning/">Transfer Learning</a><small>Stanford CS231n · Practical tutorial</small><p>Distinguish frozen feature extraction from fine-tuning; examples use vision networks.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms">Practical Tips for Finetuning LLMs Using LoRA</a><small>Sebastian Raschka / Ahead of AI · Experimental article</small><p>Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/how-to-train">How to train a new language model from scratch</a><small>Julien Chaumond / Hugging Face · Hands-on article</small><p>Connect a custom tokenizer to model configuration and masked-language-model training.</p></li>
 </ol></div></section>
 <section class="subtopic" id="192-parameter-efficient-fine-tuning-peft"><h3><a href="#192-parameter-efficient-fine-tuning-peft">19.2</a> Parameter-efficient fine-tuning (PEFT)</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="19.2-0"><span>Low-rank adaptation (LoRA) mathematics</span></label></li>
@@ -850,10 +850,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="19.2-3"><span>DoRA, AdaLoRA, rsLoRA, and low-rank variants</span></label></li>
 <li><label><input type="checkbox" data-key="19.2-4"><span>IA3, adapters, prefix tuning, and prompt tuning</span></label></li>
 <li><label><input type="checkbox" data-key="19.2-5"><span>BitFit, selective fine-tuning, and layer freezing</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40izzetcansorna/parameter-efficient-fine-tuning-how-lora-qlora-and-dora-made-large-models-adaptable-d9835411f1c2">LoRA QLoRA and DoRA Parameter Efficient Fine Tuning (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40rubenszimbres/fine-tuning-vaultgemma-with-differential-privacy-using-a-colab-runtime-in-vscode-2a01d39d2821">Fine Tuning VaultGemma with Differential Privacy (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms">Practical Tips for Finetuning LLMs Using LoRA</a><small>Sebastian Raschka / Ahead of AI · Experimental article</small><p>Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/4bit-transformers-bitsandbytes">Making LLMs even more accessible with 4-bit quantization and QLoRA</a><small>Hugging Face &amp; bitsandbytes · Technical tutorial</small><p>Understand frozen quantized weights, low-rank adapters, and memory-efficient fine-tuning.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/peft/developer_guides/lora">LoRA configuration and methods</a><small>Hugging Face PEFT · Implementation reference</small><p>Inspect ranks, target modules, scaling, initialization, and supported adapter variants.</p></li>
 </ol></div></section>
 <section class="subtopic" id="193-adapter-composition-and-deployment"><h3><a href="#193-adapter-composition-and-deployment">19.3</a> Adapter composition and deployment</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="19.3-0"><span>LoRA merging and unmerging</span></label></li>
@@ -862,10 +862,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="19.3-3"><span>TIES, DARE, and merging conflicts</span></label></li>
 <li><label><input type="checkbox" data-key="19.3-4"><span>Mixtures of adapters, gating, and routing</span></label></li>
 <li><label><input type="checkbox" data-key="19.3-5"><span>Adapter interpolation, transfer, and interference</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40izzetcansorna/parameter-efficient-fine-tuning-how-lora-qlora-and-dora-made-large-models-adaptable-d9835411f1c2">LoRA QLoRA and DoRA Parameter Efficient Fine Tuning (2026)</a></li>
-<li><a href="https://maciejzalwert.medium.com/modern-fine-tuning-strategies-for-large-language-models-from-sft-to-grpo-with-explanation-and-f00b54ce2133">Modern Fine Tuning Strategies from SFT to GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40wojdylak.michal/llm-inference-benchmarks-vllm-vs-sglang-vs-tensorrt-llm-on-a-single-l40s-8976d46a7ef3">LLM Inference vLLM vs SGLang vs TensorRT-LLM L40S (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/peft_merging">PEFT welcomes new merging methods</a><small>Hugging Face · Engineering tutorial</small><p>Compare adapter merging strategies including task arithmetic, TIES, and DARE.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/peft/developer_guides/hotswapping">Hotswapping adapters</a><small>Hugging Face PEFT · Implementation guide</small><p>Swap LoRA adapters in a running model and understand compilation constraints.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/peft/developer_guides/lora">LoRA configuration and methods</a><small>Hugging Face PEFT · Implementation reference</small><p>Inspect ranks, target modules, scaling, initialization, and supported adapter variants.</p></li>
 </ol></div></section>
 <section class="subtopic" id="194-fine-tuning-quality-controls"><h3><a href="#194-fine-tuning-quality-controls">19.4</a> Fine-tuning quality controls</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="19.4-0"><span>Chat template and tokenizer consistency</span></label></li>

@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "recipe": [
+      "Andrej Karpathy",
+      "A Recipe for Training Neural Networks",
+      "https://karpathy.github.io/2019/04/25/recipe/",
+      "Practical article",
+      "Debug data, establish baselines, overfit a tiny batch, and add complexity deliberately."
+    ],
+    "nano": [
+      "Andrej Karpathy",
+      "nanoGPT",
+      "https://github.com/karpathy/nanoGPT",
+      "Compact implementation",
+      "Read a complete GPT training loop with accumulation, scheduling, checkpointing, and distributed execution."
+    ],
+    "qlora": [
+      "Hugging Face & bitsandbytes",
+      "Making LLMs even more accessible with 4-bit quantization and QLoRA",
+      "https://huggingface.co/blog/4bit-transformers-bitsandbytes",
+      "Technical tutorial",
+      "Understand frozen quantized weights, low-rank adapters, and memory-efficient fine-tuning."
+    ],
+    "lora": [
+      "Hugging Face PEFT",
+      "LoRA configuration and methods",
+      "https://huggingface.co/docs/peft/developer_guides/lora",
+      "Implementation reference",
+      "Inspect ranks, target modules, scaling, initialization, and supported adapter variants."
+    ],
+    "merge": [
+      "Hugging Face",
+      "PEFT welcomes new merging methods",
+      "https://huggingface.co/blog/peft_merging",
+      "Engineering tutorial",
+      "Compare adapter merging strategies including task arithmetic, TIES, and DARE."
+    ],
+    "scalehw": [
+      "Google DeepMind authors",
+      "How to Scale Your Model",
+      "https://jax-ml.github.io/scaling-book/",
+      "Systems textbook",
+      "Relate accelerator hardware, communication, model math, and training or inference costs."
+    ],
+    "actcheck": [
+      "PyTorch",
+      "Current and New Activation Checkpointing Techniques",
+      "https://pytorch.org/blog/activation-checkpointing-techniques/",
+      "Engineering article",
+      "Visualize the memory-compute tradeoff of recomputation and selective checkpointing."
+    ],
+    "fsdp": [
+      "PyTorch",
+      "Introducing Fully Sharded Data Parallel",
+      "https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/",
+      "Engineering article",
+      "Understand how sharding parameters, gradients, and optimizer state reduces per-device memory."
+    ],
+    "checkpoint": [
+      "PyTorch",
+      "Saving and Loading Models",
+      "https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html",
+      "Practical tutorial",
+      "Save model and optimizer state and distinguish inference loading from training resumption."
+    ],
+    "random": [
+      "PyTorch",
+      "Reproducibility",
+      "https://docs.pytorch.org/docs/stable/notes/randomness.html",
+      "Engineering guide",
+      "Identify randomness sources and the costs and limits of deterministic execution."
+    ],
+    "finetips": [
+      "Sebastian Raschka / Ahead of AI",
+      "Practical Tips for Finetuning LLMs Using LoRA",
+      "https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms",
+      "Experimental article",
+      "Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs."
+    ],
+    "hotswap": [
+      "Hugging Face PEFT",
+      "Hotswapping adapters",
+      "https://huggingface.co/docs/peft/developer_guides/hotswapping",
+      "Implementation guide",
+      "Swap LoRA adapters in a running model and understand compilation constraints."
+    ]
+  },
+  "subtopics": {
+    "17.1": [
+      "recipe",
+      "nano",
+      "optim"
+    ],
+    "17.2": [
+      "recipe",
+      "random",
+      "smol"
+    ],
+    "17.3": [
+      "checkpoint",
+      "nano",
+      "smol"
+    ],
+    "18.1": [
+      "scalehw",
+      "ultrascale",
+      "fsdp"
+    ],
+    "18.2": [
+      "ultrascale",
+      "fsdp",
+      "scalehw"
+    ],
+    "18.3": [
+      "actcheck",
+      "ultrascale",
+      "checkpoint"
+    ],
+    "18.4": [
+      "ultrascale",
+      "smol",
+      "random"
+    ],
+    "19.1": [
+      "transfer",
+      "finetips",
+      "trainfrom"
+    ],
+    "19.2": [
+      "finetips",
+      "qlora",
+      "lora"
+    ],
+    "19.3": [
+      "merge",
+      "hotswap",
+      "lora"
+    ]
+  }
+}

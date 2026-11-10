@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 50 of 204 subtopics curated.
+Updated 2026-11-11. 60 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -720,7 +720,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Gradient norm monitoring, clipping, and anomaly detection
 - [ ] Dropout, regularization, and mixed-precision training
 
-Reading-list review pending; see the original index for candidate links.
+1. [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/) — Andrej Karpathy · Practical article. Debug data, establish baselines, overfit a tiny batch, and add complexity deliberately.
+2. [nanoGPT](https://github.com/karpathy/nanoGPT) — Andrej Karpathy · Compact implementation. Read a complete GPT training loop with accumulation, scheduling, checkpointing, and distributed execution.
+3. [An overview of gradient descent optimization algorithms](https://www.ruder.io/optimizing-gradient-descent/) — Sebastian Ruder · Technical article. Compare SGD, momentum, adaptive optimizers, and practical optimization difficulties.
 
 ### 17.2 Stability and debugging
 
@@ -731,7 +733,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Data-quality anomalies and anomalous batches
 - [ ] Seed control, determinism, and reproducibility
 
-Reading-list review pending; see the original index for candidate links.
+1. [A Recipe for Training Neural Networks](https://karpathy.github.io/2019/04/25/recipe/) — Andrej Karpathy · Practical article. Debug data, establish baselines, overfit a tiny batch, and add complexity deliberately.
+2. [Reproducibility](https://docs.pytorch.org/docs/stable/notes/randomness.html) — PyTorch · Engineering guide. Identify randomness sources and the costs and limits of deterministic execution.
+3. [The Smol Training Playbook](https://huggingfacetb-smol-training-playbook.hf.space/) — Hugging Face · Engineering deep dive. Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.
 
 ### 17.3 Training stages and checkpoints
 
@@ -742,7 +746,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Optimizer-state checkpointing and resumption fidelity
 - [ ] Intermediate evaluation and checkpoint selection
 
-Reading-list review pending; see the original index for candidate links.
+1. [Saving and Loading Models](https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html) — PyTorch · Practical tutorial. Save model and optimizer state and distinguish inference loading from training resumption.
+2. [nanoGPT](https://github.com/karpathy/nanoGPT) — Andrej Karpathy · Compact implementation. Read a complete GPT training loop with accumulation, scheduling, checkpointing, and distributed execution.
+3. [The Smol Training Playbook](https://huggingfacetb-smol-training-playbook.hf.space/) — Hugging Face · Engineering deep dive. Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.
 
 ## 18. Training hardware and distributed systems
 
@@ -755,7 +761,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] BF16, FP16, FP8, and lower-precision training
 - [ ] Activation, parameter, gradient, and optimizer-state memory
 
-Reading-list review pending; see the original index for candidate links.
+1. [How to Scale Your Model](https://jax-ml.github.io/scaling-book/) — Google DeepMind authors · Systems textbook. Relate accelerator hardware, communication, model math, and training or inference costs.
+2. [The Ultra-Scale Playbook](https://nanotron-ultrascale-playbook.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Work through memory, communication, and combinations of distributed-training parallelism.
+3. [Introducing Fully Sharded Data Parallel](https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/) — PyTorch · Engineering article. Understand how sharding parameters, gradients, and optimizer state reduces per-device memory.
 
 ### 18.2 Parallelism strategies
 
@@ -767,7 +775,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] ZeRO optimizer stages and FSDP sharding
 - [ ] 3D/4D/5D parallelism combinations
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Ultra-Scale Playbook](https://nanotron-ultrascale-playbook.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Work through memory, communication, and combinations of distributed-training parallelism.
+2. [Introducing Fully Sharded Data Parallel](https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/) — PyTorch · Engineering article. Understand how sharding parameters, gradients, and optimizer state reduces per-device memory.
+3. [How to Scale Your Model](https://jax-ml.github.io/scaling-book/) — Google DeepMind authors · Systems textbook. Relate accelerator hardware, communication, model math, and training or inference costs.
 
 ### 18.3 Memory and runtime optimization
 
@@ -778,7 +788,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Fused optimizers, fused normalization, and fused MLPs
 - [ ] Distributed checkpointing and sharded state
 
-Reading-list review pending; see the original index for candidate links.
+1. [Current and New Activation Checkpointing Techniques](https://pytorch.org/blog/activation-checkpointing-techniques/) — PyTorch · Engineering article. Visualize the memory-compute tradeoff of recomputation and selective checkpointing.
+2. [The Ultra-Scale Playbook](https://nanotron-ultrascale-playbook.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Work through memory, communication, and combinations of distributed-training parallelism.
+3. [Saving and Loading Models](https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html) — PyTorch · Practical tutorial. Save model and optimizer state and distinguish inference loading from training resumption.
 
 ### 18.4 Operational training infrastructure
 
@@ -789,7 +801,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Performance profiling, traces, and bottleneck diagnosis
 - [ ] Energy usage, utilization, cost, and carbon accounting
 
-Reading-list review pending; see the original index for candidate links.
+1. [The Ultra-Scale Playbook](https://nanotron-ultrascale-playbook.static.hf.space/index.html) — Hugging Face · Engineering deep dive. Work through memory, communication, and combinations of distributed-training parallelism.
+2. [The Smol Training Playbook](https://huggingfacetb-smol-training-playbook.hf.space/) — Hugging Face · Engineering deep dive. Follow a real model through data decisions, pretraining, post-training, and infrastructure debugging.
+3. [Reproducibility](https://docs.pytorch.org/docs/stable/notes/randomness.html) — PyTorch · Engineering guide. Identify randomness sources and the costs and limits of deterministic execution.
 
 ## 19. Fine-tuning, adaptation, and transfer learning
 
@@ -802,7 +816,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multitask fine-tuning and dataset mixtures
 - [ ] Continual learning, catastrophic forgetting, and replay
 
-Reading-list review pending; see the original index for candidate links.
+1. [Transfer Learning](https://cs231n.github.io/transfer-learning/) — Stanford CS231n · Practical tutorial. Distinguish frozen feature extraction from fine-tuning; examples use vision networks.
+2. [Practical Tips for Finetuning LLMs Using LoRA](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms) — Sebastian Raschka / Ahead of AI · Experimental article. Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.
+3. [How to train a new language model from scratch](https://huggingface.co/blog/how-to-train) — Julien Chaumond / Hugging Face · Hands-on article. Connect a custom tokenizer to model configuration and masked-language-model training.
 
 ### 19.2 Parameter-efficient fine-tuning (PEFT)
 
@@ -813,7 +829,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] IA3, adapters, prefix tuning, and prompt tuning
 - [ ] BitFit, selective fine-tuning, and layer freezing
 
-Reading-list review pending; see the original index for candidate links.
+1. [Practical Tips for Finetuning LLMs Using LoRA](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms) — Sebastian Raschka / Ahead of AI · Experimental article. Evaluate LoRA ranks, target layers, precision choices, and adaptation tradeoffs.
+2. [Making LLMs even more accessible with 4-bit quantization and QLoRA](https://huggingface.co/blog/4bit-transformers-bitsandbytes) — Hugging Face & bitsandbytes · Technical tutorial. Understand frozen quantized weights, low-rank adapters, and memory-efficient fine-tuning.
+3. [LoRA configuration and methods](https://huggingface.co/docs/peft/developer_guides/lora) — Hugging Face PEFT · Implementation reference. Inspect ranks, target modules, scaling, initialization, and supported adapter variants.
 
 ### 19.3 Adapter composition and deployment
 
@@ -824,7 +842,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Mixtures of adapters, gating, and routing
 - [ ] Adapter interpolation, transfer, and interference
 
-Reading-list review pending; see the original index for candidate links.
+1. [PEFT welcomes new merging methods](https://huggingface.co/blog/peft_merging) — Hugging Face · Engineering tutorial. Compare adapter merging strategies including task arithmetic, TIES, and DARE.
+2. [Hotswapping adapters](https://huggingface.co/docs/peft/developer_guides/hotswapping) — Hugging Face PEFT · Implementation guide. Swap LoRA adapters in a running model and understand compilation constraints.
+3. [LoRA configuration and methods](https://huggingface.co/docs/peft/developer_guides/lora) — Hugging Face PEFT · Implementation reference. Inspect ranks, target modules, scaling, initialization, and supported adapter variants.
 
 ### 19.4 Fine-tuning quality controls
 
