@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 130 of 204 subtopics curated.
+Updated 2026-11-11. 140 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -1809,7 +1809,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Shared embedding spaces and contrastive alignment
 - [ ] Modality-specific preprocessing and patching
 
-Reading-list review pending; see the original index for candidate links.
+1. [Vision Language Models Explained](https://huggingface.co/blog/vlms) — Hugging Face · Illustrated tutorial. Understand vision encoders, language decoders, alignment, evaluation, and fine-tuning.
+2. [Generalized Visual Language Models](https://lilianweng.github.io/posts/2022-06-09-vlm/) — Lilian Weng · Technical survey. Compare embedding prefixes, cross-attention fusion, and joint vision-language training.
+3. [Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf) — Kyutai · Technical report. Study neural audio codecs, aligned text/audio tokens, and full-duplex dialogue.
 
 ### 39.2 Multimodal training
 
@@ -1820,7 +1822,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Cross-modal grounding and hallucination mitigation
 - [ ] Multimodal preference optimization and reward modeling
 
-Reading-list review pending; see the original index for candidate links.
+1. [LLaVA: Visual Instruction Tuning](https://llava-vl.github.io/) — Liu et al. · Research walkthrough. Follow visual instruction-data construction and the encoder-projector-language-model design.
+2. [Generalized Visual Language Models](https://lilianweng.github.io/posts/2022-06-09-vlm/) — Lilian Weng · Technical survey. Compare embedding prefixes, cross-attention fusion, and joint vision-language training.
+3. [Vision Language Models Explained](https://huggingface.co/blog/vlms) — Hugging Face · Illustrated tutorial. Understand vision encoders, language decoders, alignment, evaluation, and fine-tuning.
 
 ### 39.3 Evaluation and integration
 
@@ -1831,7 +1835,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Robustness to low-quality input and missing modalities
 - [ ] Multimodal safety and privacy evaluation
 
-Reading-list review pending; see the original index for candidate links.
+1. [Vision Language Models: Better, faster, stronger](https://huggingface.co/blog/vlms-2025) — Hugging Face · Technical survey. Explore document understanding, video, multimodal retrieval, and model design tradeoffs.
+2. [MMMU: Multimodal Understanding and Reasoning Benchmark](https://mmmu-benchmark.github.io/) — MMMU team · Benchmark and examples. Inspect diverse diagrams and discipline-specific tasks that test visual reasoning.
+3. [Vision language models are blind](https://vlmsareblind.github.io/) — Rahmanzadehgervi et al. · Interactive research examples. Test counting and geometric perception failures hidden by broad benchmark scores.
 
 ## 40. Vision-language models (VLMs) and documents
 
@@ -1844,7 +1850,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Perceiver resampling and token compression
 - [ ] Variable-resolution and dynamic visual tokens
 
-Reading-list review pending; see the original index for candidate links.
+1. [Generalized Visual Language Models](https://lilianweng.github.io/posts/2022-06-09-vlm/) — Lilian Weng · Technical survey. Compare embedding prefixes, cross-attention fusion, and joint vision-language training.
+2. [LLaVA: Visual Instruction Tuning](https://llava-vl.github.io/) — Liu et al. · Research walkthrough. Follow visual instruction-data construction and the encoder-projector-language-model design.
+3. [Qwen2.5-VL](https://qwenlm.github.io/blog/qwen2.5-vl/) — Qwen team · Model engineering article. Study dynamic resolution, temporal video encoding, grounding, and document parsing examples.
 
 ### 40.2 VLM capabilities
 
@@ -1855,7 +1863,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Multi-image comparison and visual reasoning
 - [ ] GUI/screen understanding and screenshot-based agents
 
-Reading-list review pending; see the original index for candidate links.
+1. [Qwen2.5-VL](https://qwenlm.github.io/blog/qwen2.5-vl/) — Qwen team · Model engineering article. Study dynamic resolution, temporal video encoding, grounding, and document parsing examples.
+2. [Vision Language Models: Better, faster, stronger](https://huggingface.co/blog/vlms-2025) — Hugging Face · Technical survey. Explore document understanding, video, multimodal retrieval, and model design tradeoffs.
+3. [Docling document](https://docling-project.github.io/docling/concepts/docling_document/) — Docling project · Concept and examples. Represent document structure, tables, pictures, and provenance before chunking.
 
 ### 40.3 Vision-specific limitations
 
@@ -1866,7 +1876,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Adversarial image and embedded-text injection
 - [ ] Evaluation of vision reasoning and document accuracy
 
-Reading-list review pending; see the original index for candidate links.
+1. [Vision language models are blind](https://vlmsareblind.github.io/) — Rahmanzadehgervi et al. · Interactive research examples. Test counting and geometric perception failures hidden by broad benchmark scores.
+2. [MMMU: Multimodal Understanding and Reasoning Benchmark](https://mmmu-benchmark.github.io/) — MMMU team · Benchmark and examples. Inspect diverse diagrams and discipline-specific tasks that test visual reasoning.
+3. [Vision Language Models: Better, faster, stronger](https://huggingface.co/blog/vlms-2025) — Hugging Face · Technical survey. Explore document understanding, video, multimodal retrieval, and model design tradeoffs.
 
 ## 41. Audio, speech, music, and spoken language models
 
@@ -1879,7 +1891,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Audio embeddings and speech encoders
 - [ ] Cross-modal audio–text alignment
 
-Reading-list review pending; see the original index for candidate links.
+1. [Working with audio data](https://huggingface.co/learn/audio-course/en/chapter1/introduction) — Hugging Face · Hands-on course chapter. Learn sampling, waveforms, spectrograms, loading, and audio preprocessing.
+2. [Sequence Modeling with CTC](https://distill.pub/2017/ctc/) — Awni Hannun / Distill · Interactive visual explanation. Understand unaligned audio-text sequences, blank tokens, and dynamic programming.
+3. [Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf) — Kyutai · Technical report. Study neural audio codecs, aligned text/audio tokens, and full-duplex dialogue.
 
 ### 41.2 Speech tasks and models
 
@@ -1890,7 +1904,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Voice activity and turn-taking prediction
 - [ ] Speaker identification, diarization, and separation
 
-Reading-list review pending; see the original index for candidate links.
+1. [Fine-Tune Whisper For Multilingual ASR](https://huggingface.co/blog/fine-tune-whisper) — Sanchit Gandhi / Hugging Face · Code tutorial. Prepare audio, train a speech recognizer, and evaluate transcription error.
+2. [Fine-tuning SpeechT5](https://huggingface.co/learn/audio-course/en/chapter6/fine-tuning) — Hugging Face · Code tutorial. Build a text-to-speech training pipeline with speaker embeddings and acoustic features.
+3. [Sequence Modeling with CTC](https://distill.pub/2017/ctc/) — Awni Hannun / Distill · Interactive visual explanation. Understand unaligned audio-text sequences, blank tokens, and dynamic programming.
 
 ### 41.3 Real-time voice systems
 
@@ -1901,7 +1917,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Prosody, emotion, and voice consistency
 - [ ] Audio safety, spoofing, and voice consent
 
-Reading-list review pending; see the original index for candidate links.
+1. [Moshi: a speech-text foundation model for real-time dialogue](https://kyutai.org/Moshi.pdf) — Kyutai · Technical report. Study neural audio codecs, aligned text/audio tokens, and full-duplex dialogue.
+2. [Turns overview](https://docs.livekit.io/agents/logic/turns/) — LiveKit · Implementation guide. Handle voice activity, endpointing, interruptions, and conversational turn-taking.
+3. [Working with audio data](https://huggingface.co/learn/audio-course/en/chapter1/introduction) — Hugging Face · Hands-on course chapter. Learn sampling, waveforms, spectrograms, loading, and audio preprocessing.
 
 ## 42. Video, real-time multimodal systems, and embodied agents
 
@@ -1914,7 +1932,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Long-video summarization and retrieval
 - [ ] Audio–video synchronization
 
-Reading-list review pending; see the original index for candidate links.
+1. [Video-text-to-text](https://huggingface.co/docs/transformers/en/tasks/video_text_to_text) — Hugging Face · Code tutorial. Sample frames and process video inputs for multimodal generation.
+2. [Qwen2.5-VL](https://qwenlm.github.io/blog/qwen2.5-vl/) — Qwen team · Model engineering article. Study dynamic resolution, temporal video encoding, grounding, and document parsing examples.
+3. [Vision Language Models: Better, faster, stronger](https://huggingface.co/blog/vlms-2025) — Hugging Face · Technical survey. Explore document understanding, video, multimodal retrieval, and model design tradeoffs.
 
 ### 42.2 Real-time multimodal interaction
 

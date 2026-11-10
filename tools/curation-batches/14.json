@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "vlm": [
+      "Hugging Face",
+      "Vision Language Models Explained",
+      "https://huggingface.co/blog/vlms",
+      "Illustrated tutorial",
+      "Understand vision encoders, language decoders, alignment, evaluation, and fine-tuning."
+    ],
+    "vlmweng": [
+      "Lilian Weng",
+      "Generalized Visual Language Models",
+      "https://lilianweng.github.io/posts/2022-06-09-vlm/",
+      "Technical survey",
+      "Compare embedding prefixes, cross-attention fusion, and joint vision-language training."
+    ],
+    "vlm2025": [
+      "Hugging Face",
+      "Vision Language Models: Better, faster, stronger",
+      "https://huggingface.co/blog/vlms-2025",
+      "Technical survey",
+      "Explore document understanding, video, multimodal retrieval, and model design tradeoffs."
+    ],
+    "llava": [
+      "Liu et al.",
+      "LLaVA: Visual Instruction Tuning",
+      "https://llava-vl.github.io/",
+      "Research walkthrough",
+      "Follow visual instruction-data construction and the encoder-projector-language-model design."
+    ],
+    "qwenvision": [
+      "Qwen team",
+      "Qwen2.5-VL",
+      "https://qwenlm.github.io/blog/qwen2.5-vl/",
+      "Model engineering article",
+      "Study dynamic resolution, temporal video encoding, grounding, and document parsing examples."
+    ],
+    "blind": [
+      "Rahmanzadehgervi et al.",
+      "Vision language models are blind",
+      "https://vlmsareblind.github.io/",
+      "Interactive research examples",
+      "Test counting and geometric perception failures hidden by broad benchmark scores."
+    ],
+    "mmmu": [
+      "MMMU team",
+      "MMMU: Multimodal Understanding and Reasoning Benchmark",
+      "https://mmmu-benchmark.github.io/",
+      "Benchmark and examples",
+      "Inspect diverse diagrams and discipline-specific tasks that test visual reasoning."
+    ],
+    "audiofoundation": [
+      "Hugging Face",
+      "Working with audio data",
+      "https://huggingface.co/learn/audio-course/en/chapter1/introduction",
+      "Hands-on course chapter",
+      "Learn sampling, waveforms, spectrograms, loading, and audio preprocessing."
+    ],
+    "ctc": [
+      "Awni Hannun / Distill",
+      "Sequence Modeling with CTC",
+      "https://distill.pub/2017/ctc/",
+      "Interactive visual explanation",
+      "Understand unaligned audio-text sequences, blank tokens, and dynamic programming."
+    ],
+    "whisper": [
+      "Sanchit Gandhi / Hugging Face",
+      "Fine-Tune Whisper For Multilingual ASR",
+      "https://huggingface.co/blog/fine-tune-whisper",
+      "Code tutorial",
+      "Prepare audio, train a speech recognizer, and evaluate transcription error."
+    ],
+    "tts": [
+      "Hugging Face",
+      "Fine-tuning SpeechT5",
+      "https://huggingface.co/learn/audio-course/en/chapter6/fine-tuning",
+      "Code tutorial",
+      "Build a text-to-speech training pipeline with speaker embeddings and acoustic features."
+    ],
+    "moshi": [
+      "Kyutai",
+      "Moshi: a speech-text foundation model for real-time dialogue",
+      "https://kyutai.org/Moshi.pdf",
+      "Technical report",
+      "Study neural audio codecs, aligned text/audio tokens, and full-duplex dialogue."
+    ],
+    "turns": [
+      "LiveKit",
+      "Turns overview",
+      "https://docs.livekit.io/agents/logic/turns/",
+      "Implementation guide",
+      "Handle voice activity, endpointing, interruptions, and conversational turn-taking."
+    ],
+    "videotext": [
+      "Hugging Face",
+      "Video-text-to-text",
+      "https://huggingface.co/docs/transformers/en/tasks/video_text_to_text",
+      "Code tutorial",
+      "Sample frames and process video inputs for multimodal generation."
+    ]
+  },
+  "subtopics": {
+    "39.1": [
+      "vlm",
+      "vlmweng",
+      "moshi"
+    ],
+    "39.2": [
+      "llava",
+      "vlmweng",
+      "vlm"
+    ],
+    "39.3": [
+      "vlm2025",
+      "mmmu",
+      "blind"
+    ],
+    "40.1": [
+      "vlmweng",
+      "llava",
+      "qwenvision"
+    ],
+    "40.2": [
+      "qwenvision",
+      "vlm2025",
+      "docling"
+    ],
+    "40.3": [
+      "blind",
+      "mmmu",
+      "vlm2025"
+    ],
+    "41.1": [
+      "audiofoundation",
+      "ctc",
+      "moshi"
+    ],
+    "41.2": [
+      "whisper",
+      "tts",
+      "ctc"
+    ],
+    "41.3": [
+      "moshi",
+      "turns",
+      "audiofoundation"
+    ],
+    "42.1": [
+      "videotext",
+      "qwenvision",
+      "vlm2025"
+    ]
+  }
+}
