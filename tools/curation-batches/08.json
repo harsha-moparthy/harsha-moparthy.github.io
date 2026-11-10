@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "grpo": [
+      "Hugging Face TRL",
+      "GRPO Trainer",
+      "https://huggingface.co/docs/trl/grpo_trainer",
+      "Implementation guide",
+      "Inspect group-relative advantages, custom rewards, rollout settings, and loss variants."
+    ],
+    "reason": [
+      "Sebastian Raschka / Ahead of AI",
+      "Understanding Reasoning LLMs",
+      "https://magazine.sebastianraschka.com/p/understanding-reasoning-llms",
+      "Research explainer",
+      "Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches."
+    ],
+    "hacking": [
+      "Lilian Weng",
+      "Reward Hacking in Reinforcement Learning",
+      "https://lilianweng.github.io/posts/2024-11-28-reward-hacking/",
+      "Research explainer",
+      "Understand proxy exploitation, evaluator gaming, and mitigation limits."
+    ],
+    "decode": [
+      "Patrick von Platen / Hugging Face",
+      "How to generate text",
+      "https://huggingface.co/blog/how-to-generate",
+      "Code walkthrough",
+      "Compare greedy decoding, beam search, temperature, top-k, and nucleus sampling."
+    ],
+    "openr1": [
+      "Hugging Face",
+      "Open-R1: a fully open reproduction of DeepSeek-R1",
+      "https://huggingface.co/blog/open-r1",
+      "Project article",
+      "Study the data, verifiers, and reproducibility challenges of reasoning-model training."
+    ],
+    "agentweng": [
+      "Lilian Weng",
+      "LLM Powered Autonomous Agents",
+      "https://lilianweng.github.io/posts/2023-06-23-agent/",
+      "Conceptual article",
+      "Connect planning, reflection, memory, and tools in an agent architecture."
+    ],
+    "alphaproof": [
+      "Google DeepMind",
+      "AI achieves silver-medal standard solving IMO problems",
+      "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/",
+      "Research case study",
+      "Contrast formal proof search and geometry systems with unconstrained text reasoning."
+    ],
+    "faith": [
+      "Anthropic",
+      "Measuring faithfulness in Chain-of-Thought reasoning",
+      "https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning",
+      "Research article",
+      "Learn why a plausible written rationale need not faithfully explain a model's answer."
+    ],
+    "testtime": [
+      "Hugging Face H4",
+      "Scaling test-time compute",
+      "https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute",
+      "Experimental article",
+      "Compare search and verifier-guided inference under explicit compute budgets."
+    ],
+    "verl": [
+      "verl authors",
+      "verl: flexible and efficient RL for LLMs",
+      "https://verl.readthedocs.io/en/latest/",
+      "Implementation guide",
+      "Explore rollout, actor, critic, and distributed execution in a practical RL stack."
+    ],
+    "verifier": [
+      "TheoremPath",
+      "Verifier Design and Process Reward",
+      "https://theorempath.com/topics/verifier-design-and-process-reward",
+      "Theory guide",
+      "Distinguish outcome checks from intermediate-step rewards and verifier failure modes."
+    ],
+    "lean": [
+      "Lean community",
+      "Theorem Proving in Lean 4",
+      "https://leanprover.github.io/theorem_proving_in_lean4/",
+      "Hands-on textbook",
+      "Practice machine-checkable proofs and understand the formal verifier behind proof-search systems."
+    ],
+    "promptweng": [
+      "Lilian Weng",
+      "Prompt Engineering",
+      "https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/",
+      "Research explainer",
+      "Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies."
+    ]
+  },
+  "subtopics": {
+    "22.2": [
+      "policy",
+      "grpo",
+      "ppodetails"
+    ],
+    "22.3": [
+      "verifier",
+      "grpo",
+      "openr1"
+    ],
+    "22.4": [
+      "hacking",
+      "grpo",
+      "faith"
+    ],
+    "22.5": [
+      "verl",
+      "grpo",
+      "ppodetails"
+    ],
+    "23.1": [
+      "reason",
+      "promptweng",
+      "faith"
+    ],
+    "23.2": [
+      "promptweng",
+      "reason",
+      "agentweng"
+    ],
+    "23.3": [
+      "testtime",
+      "verifier",
+      "reason"
+    ],
+    "23.4": [
+      "reason",
+      "beyond",
+      "faith"
+    ],
+    "23.5": [
+      "alphaproof",
+      "lean",
+      "verifier"
+    ],
+    "24.1": [
+      "decode",
+      "gpt2",
+      "info"
+    ]
+  }
+}

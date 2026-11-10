@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 70 of 204 subtopics curated.
+Updated 2026-11-11. 80 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -992,7 +992,9 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] REINFORCE++ and critic-free variants
 - [ ] PPO versus GRPO versus DPO conceptual comparisons
 
-Reading-list review pending; see the original index for candidate links.
+1. [Policy Gradient Algorithms](https://lilianweng.github.io/posts/2018-04-08-policy-gradient/) — Lilian Weng · Mathematical explainer. Derive REINFORCE, actor-critic methods, and clipped policy optimization.
+2. [GRPO Trainer](https://huggingface.co/docs/trl/grpo_trainer) — Hugging Face TRL · Implementation guide. Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.
+3. [The N Implementation Details of RLHF with PPO](https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo) — Shengyi Huang et al. / Hugging Face · Reproduction article. Inspect reward normalization, KL control, sampling, and implementation-sensitive PPO behavior.
 
 ### 22.3 Training with verifiers and environments
 
@@ -1003,7 +1005,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Process-level and step-level rewards
 - [ ] Reward shaping and sparse terminal rewards
 
-Reading-list review pending; see the original index for candidate links.
+1. [Verifier Design and Process Reward](https://theorempath.com/topics/verifier-design-and-process-reward) — TheoremPath · Theory guide. Distinguish outcome checks from intermediate-step rewards and verifier failure modes.
+2. [GRPO Trainer](https://huggingface.co/docs/trl/grpo_trainer) — Hugging Face TRL · Implementation guide. Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.
+3. [Open-R1: a fully open reproduction of DeepSeek-R1](https://huggingface.co/blog/open-r1) — Hugging Face · Project article. Study the data, verifiers, and reproducibility challenges of reasoning-model training.
 
 ### 22.4 Reasoning-RL pathologies
 
@@ -1014,7 +1018,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Incorrect answer extraction and false negatives
 - [ ] Goodhart's law and benchmark-specific overfitting
 
-Reading-list review pending; see the original index for candidate links.
+1. [Reward Hacking in Reinforcement Learning](https://lilianweng.github.io/posts/2024-11-28-reward-hacking/) — Lilian Weng · Research explainer. Understand proxy exploitation, evaluator gaming, and mitigation limits.
+2. [GRPO Trainer](https://huggingface.co/docs/trl/grpo_trainer) — Hugging Face TRL · Implementation guide. Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.
+3. [Measuring faithfulness in Chain-of-Thought reasoning](https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning) — Anthropic · Research article. Learn why a plausible written rationale need not faithfully explain a model's answer.
 
 ### 22.5 Online RL engineering
 
@@ -1025,7 +1031,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] vLLM/SGLang-backed rollouts and distributed training
 - [ ] Reproducible seeds, reward logging, and checkpoint analysis
 
-Reading-list review pending; see the original index for candidate links.
+1. [verl: flexible and efficient RL for LLMs](https://verl.readthedocs.io/en/latest/) — verl authors · Implementation guide. Explore rollout, actor, critic, and distributed execution in a practical RL stack.
+2. [GRPO Trainer](https://huggingface.co/docs/trl/grpo_trainer) — Hugging Face TRL · Implementation guide. Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.
+3. [The N Implementation Details of RLHF with PPO](https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo) — Shengyi Huang et al. / Hugging Face · Reproduction article. Inspect reward normalization, KL control, sampling, and implementation-sensitive PPO behavior.
 
 ## 23. Reasoning, planning, and test-time computation
 
@@ -1038,7 +1046,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Planning and search versus pattern completion
 - [ ] Reasoning faithfulness and unfaithful explanations
 
-Reading-list review pending; see the original index for candidate links.
+1. [Understanding Reasoning LLMs](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.
+2. [Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/) — Lilian Weng · Research explainer. Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.
+3. [Measuring faithfulness in Chain-of-Thought reasoning](https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning) — Anthropic · Research article. Learn why a plausible written rationale need not faithfully explain a model's answer.
 
 ### 23.2 Prompt-level reasoning strategies
 
@@ -1049,7 +1059,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] ReAct-style interleaved reasoning and actions
 - [ ] Debate, critique, and self-refinement
 
-Reading-list review pending; see the original index for candidate links.
+1. [Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/) — Lilian Weng · Research explainer. Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.
+2. [Understanding Reasoning LLMs](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.
+3. [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) — Lilian Weng · Conceptual article. Connect planning, reflection, memory, and tools in an agent architecture.
 
 ### 23.3 Search and inference-time algorithms
 
@@ -1060,7 +1072,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Process reward guided search
 - [ ] Dynamic compute budgets and early stopping
 
-Reading-list review pending; see the original index for candidate links.
+1. [Scaling test-time compute](https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute) — Hugging Face H4 · Experimental article. Compare search and verifier-guided inference under explicit compute budgets.
+2. [Verifier Design and Process Reward](https://theorempath.com/topics/verifier-design-and-process-reward) — TheoremPath · Theory guide. Distinguish outcome checks from intermediate-step rewards and verifier failure modes.
+3. [Understanding Reasoning LLMs](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.
 
 ### 23.4 Advanced reasoning paradigms
 
@@ -1071,7 +1085,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Verifier–generator systems and proof checking
 - [ ] Test-time training and adaptation
 
-Reading-list review pending; see the original index for candidate links.
+1. [Understanding Reasoning LLMs](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.
+2. [Beyond Standard LLMs](https://magazine.sebastianraschka.com/p/beyond-standard-llms) — Sebastian Raschka / Ahead of AI · Research explainer. Explore alternatives to conventional transformers and their architectural tradeoffs.
+3. [Measuring faithfulness in Chain-of-Thought reasoning](https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning) — Anthropic · Research article. Learn why a plausible written rationale need not faithfully explain a model's answer.
 
 ### 23.5 Math and formal reasoning
 
@@ -1082,7 +1098,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Robustness to superficial math perturbations
 - [ ] Measuring reasoning depth and out-of-distribution transfer
 
-Reading-list review pending; see the original index for candidate links.
+1. [AI achieves silver-medal standard solving IMO problems](https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/) — Google DeepMind · Research case study. Contrast formal proof search and geometry systems with unconstrained text reasoning.
+2. [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/) — Lean community · Hands-on textbook. Practice machine-checkable proofs and understand the formal verifier behind proof-search systems.
+3. [Verifier Design and Process Reward](https://theorempath.com/topics/verifier-design-and-process-reward) — TheoremPath · Theory guide. Distinguish outcome checks from intermediate-step rewards and verifier failure modes.
 
 ## 24. Autoregressive generation and decoding
 
@@ -1095,7 +1113,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Repetition, frequency, and presence penalties
 - [ ] Logit bias, bad-token masks, and stop sequences
 
-Reading-list review pending; see the original index for candidate links.
+1. [How to generate text](https://huggingface.co/blog/how-to-generate) — Patrick von Platen / Hugging Face · Code walkthrough. Compare greedy decoding, beam search, temperature, top-k, and nucleus sampling.
+2. [The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/) — Jay Alammar · Visual guide. Follow tokens through a decoder-only model and understand how next-token predictions are produced.
+3. [Visual Information Theory](https://colah.github.io/posts/2015-09-Visual-Information/) — Christopher Olah · Visual guide. Understand entropy, cross-entropy, and KL divergence through probability diagrams.
 
 ### 24.2 Search and multiple candidates
 

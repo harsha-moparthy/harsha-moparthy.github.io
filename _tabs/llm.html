@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>70 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>80 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -1001,10 +1001,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="22.2-3"><span>GSPO and sequence-level policy optimization</span></label></li>
 <li><label><input type="checkbox" data-key="22.2-4"><span>REINFORCE++ and critic-free variants</span></label></li>
 <li><label><input type="checkbox" data-key="22.2-5"><span>PPO versus GRPO versus DPO conceptual comparisons</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
-<li><a href="https://medium.com/%40brayannjoroge259/implementing-direct-preference-optimization-dpo-149360bd2e9b">Implementing DPO from Scratch (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2018-04-08-policy-gradient/">Policy Gradient Algorithms</a><small>Lilian Weng · Mathematical explainer</small><p>Derive REINFORCE, actor-critic methods, and clipped policy optimization.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/grpo_trainer">GRPO Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo">The N Implementation Details of RLHF with PPO</a><small>Shengyi Huang et al. / Hugging Face · Reproduction article</small><p>Inspect reward normalization, KL control, sampling, and implementation-sensitive PPO behavior.</p></li>
 </ol></div></section>
 <section class="subtopic" id="223-training-with-verifiers-and-environments"><h3><a href="#223-training-with-verifiers-and-environments">22.3</a> Training with verifiers and environments</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="22.3-0"><span>Exact-match and programmatic reward functions</span></label></li>
@@ -1013,10 +1013,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="22.3-3"><span>Tool-call outcomes and environment feedback</span></label></li>
 <li><label><input type="checkbox" data-key="22.3-4"><span>Process-level and step-level rewards</span></label></li>
 <li><label><input type="checkbox" data-key="22.3-5"><span>Reward shaping and sparse terminal rewards</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://theorempath.com/topics/verifier-design-and-process-reward">Verifier Design and Process Reward</a><small>TheoremPath · Theory guide</small><p>Distinguish outcome checks from intermediate-step rewards and verifier failure modes.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/grpo_trainer">GRPO Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/open-r1">Open-R1: a fully open reproduction of DeepSeek-R1</a><small>Hugging Face · Project article</small><p>Study the data, verifiers, and reproducibility challenges of reasoning-model training.</p></li>
 </ol></div></section>
 <section class="subtopic" id="224-reasoning-rl-pathologies"><h3><a href="#224-reasoning-rl-pathologies">22.4</a> Reasoning-RL pathologies</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="22.4-0"><span>Reward hacking and exploitable verifiers</span></label></li>
@@ -1025,10 +1025,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="22.4-3"><span>KL drift, policy lag, and stale rollouts</span></label></li>
 <li><label><input type="checkbox" data-key="22.4-4"><span>Incorrect answer extraction and false negatives</span></label></li>
 <li><label><input type="checkbox" data-key="22.4-5"><span>Goodhart&#x27;s law and benchmark-specific overfitting</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40sarathc225/why-does-rlhf-make-models-verbose-length-bias-in-reward-models-dpo-and-grpo-ac4a4c8c07d6">Length Bias in Reward Models DPO GRPO (2026)</a></li>
-<li><a href="https://medium.com/%40shahnawaz43778/when-an-ai-model-gets-a-higher-reward-score-is-it-actually-getting-better-68672d39db25">Higher Reward Not Necessarily Better Answers (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2024-11-28-reward-hacking/">Reward Hacking in Reinforcement Learning</a><small>Lilian Weng · Research explainer</small><p>Understand proxy exploitation, evaluator gaming, and mitigation limits.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/grpo_trainer">GRPO Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning">Measuring faithfulness in Chain-of-Thought reasoning</a><small>Anthropic · Research article</small><p>Learn why a plausible written rationale need not faithfully explain a model&#x27;s answer.</p></li>
 </ol></div></section>
 <section class="subtopic" id="225-online-rl-engineering"><h3><a href="#225-online-rl-engineering">22.5</a> Online RL engineering</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="22.5-0"><span>Rollout generation versus gradient-update workers</span></label></li>
@@ -1037,10 +1037,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="22.5-3"><span>Reward service scaling and sandboxed evaluation</span></label></li>
 <li><label><input type="checkbox" data-key="22.5-4"><span>vLLM/SGLang-backed rollouts and distributed training</span></label></li>
 <li><label><input type="checkbox" data-key="22.5-5"><span>Reproducible seeds, reward logging, and checkpoint analysis</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
-<li><a href="https://medium.com/%40brayannjoroge259/implementing-direct-preference-optimization-dpo-149360bd2e9b">Implementing DPO from Scratch (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://verl.readthedocs.io/en/latest/">verl: flexible and efficient RL for LLMs</a><small>verl authors · Implementation guide</small><p>Explore rollout, actor, critic, and distributed execution in a practical RL stack.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/docs/trl/grpo_trainer">GRPO Trainer</a><small>Hugging Face TRL · Implementation guide</small><p>Inspect group-relative advantages, custom rewards, rollout settings, and loss variants.</p></li>
+<li class="curated-resource"><a href="https://huggingface.co/blog/the_n_implementation_details_of_rlhf_with_ppo">The N Implementation Details of RLHF with PPO</a><small>Shengyi Huang et al. / Hugging Face · Reproduction article</small><p>Inspect reward normalization, KL control, sampling, and implementation-sensitive PPO behavior.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="23-reasoning-planning-and-test-time-computation"><summary><span class="number">23</span><span class="topic-title">Reasoning, planning, and test-time computation<small>5 subtopics · 30 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1051,10 +1051,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="23.1-3"><span>Formal proofs versus natural-language explanations</span></label></li>
 <li><label><input type="checkbox" data-key="23.1-4"><span>Planning and search versus pattern completion</span></label></li>
 <li><label><input type="checkbox" data-key="23.1-5"><span>Reasoning faithfulness and unfaithful explanations</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40adnanmasood/general-knowledge-and-reasoning-a-field-guide-to-llm-benchmarks-b9ec02dea520">General Knowledge and Reasoning Benchmarks Field Guide (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
-<li><a href="https://medium.com/%40madhuriagarwal723/in-context-learning-induction-head-1279b36934fb">In Context Learning: Induction Head (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/understanding-reasoning-llms">Understanding Reasoning LLMs</a><small>Sebastian Raschka / Ahead of AI · Research explainer</small><p>Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/">Prompt Engineering</a><small>Lilian Weng · Research explainer</small><p>Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning">Measuring faithfulness in Chain-of-Thought reasoning</a><small>Anthropic · Research article</small><p>Learn why a plausible written rationale need not faithfully explain a model&#x27;s answer.</p></li>
 </ol></div></section>
 <section class="subtopic" id="232-prompt-level-reasoning-strategies"><h3><a href="#232-prompt-level-reasoning-strategies">23.2</a> Prompt-level reasoning strategies</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="23.2-0"><span>Zero-shot and few-shot reasoning prompts</span></label></li>
@@ -1063,10 +1063,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="23.2-3"><span>Self-consistency and majority voting</span></label></li>
 <li><label><input type="checkbox" data-key="23.2-4"><span>ReAct-style interleaved reasoning and actions</span></label></li>
 <li><label><input type="checkbox" data-key="23.2-5"><span>Debate, critique, and self-refinement</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/codetodeploy/prompt-engineering-2026-series-0-introduction-3e331e955433">Prompt Engineering 2026: Introduction (2026)</a></li>
-<li><a href="https://medium.com/%40madhuriagarwal723/in-context-learning-induction-head-1279b36934fb">In Context Learning: Induction Head (2025)</a></li>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/">Prompt Engineering</a><small>Lilian Weng · Research explainer</small><p>Compare demonstrations, chain-of-thought, self-consistency, and prompt-selection strategies.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/understanding-reasoning-llms">Understanding Reasoning LLMs</a><small>Sebastian Raschka / Ahead of AI · Research explainer</small><p>Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a><small>Lilian Weng · Conceptual article</small><p>Connect planning, reflection, memory, and tools in an agent architecture.</p></li>
 </ol></div></section>
 <section class="subtopic" id="233-search-and-inference-time-algorithms"><h3><a href="#233-search-and-inference-time-algorithms">23.3</a> Search and inference-time algorithms</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="23.3-0"><span>Best-of-N and rejection sampling</span></label></li>
@@ -1075,10 +1075,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="23.3-3"><span>Monte Carlo tree search for language tasks</span></label></li>
 <li><label><input type="checkbox" data-key="23.3-4"><span>Process reward guided search</span></label></li>
 <li><label><input type="checkbox" data-key="23.3-5"><span>Dynamic compute budgets and early stopping</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/general-knowledge-and-reasoning-a-field-guide-to-llm-benchmarks-b9ec02dea520">General Knowledge and Reasoning Benchmarks Field Guide (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/spaces/HuggingFaceH4/blogpost-scaling-test-time-compute">Scaling test-time compute</a><small>Hugging Face H4 · Experimental article</small><p>Compare search and verifier-guided inference under explicit compute budgets.</p></li>
+<li class="curated-resource"><a href="https://theorempath.com/topics/verifier-design-and-process-reward">Verifier Design and Process Reward</a><small>TheoremPath · Theory guide</small><p>Distinguish outcome checks from intermediate-step rewards and verifier failure modes.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/understanding-reasoning-llms">Understanding Reasoning LLMs</a><small>Sebastian Raschka / Ahead of AI · Research explainer</small><p>Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.</p></li>
 </ol></div></section>
 <section class="subtopic" id="234-advanced-reasoning-paradigms"><h3><a href="#234-advanced-reasoning-paradigms">23.4</a> Advanced reasoning paradigms</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="23.4-0"><span>Latent-space versus verbalized reasoning</span></label></li>
@@ -1087,10 +1087,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="23.4-3"><span>Parallel versus sequential thinking</span></label></li>
 <li><label><input type="checkbox" data-key="23.4-4"><span>Verifier–generator systems and proof checking</span></label></li>
 <li><label><input type="checkbox" data-key="23.4-5"><span>Test-time training and adaptation</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
-<li><a href="https://medium.com/codetodeploy/prompt-engineering-2026-series-0-introduction-3e331e955433">Prompt Engineering 2026: Introduction (2026)</a></li>
-<li><a href="https://medium.com/%40madhuriagarwal723/in-context-learning-induction-head-1279b36934fb">In Context Learning: Induction Head (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/understanding-reasoning-llms">Understanding Reasoning LLMs</a><small>Sebastian Raschka / Ahead of AI · Research explainer</small><p>Separate prompting, search, supervised reasoning traces, and reinforcement-learning approaches.</p></li>
+<li class="curated-resource"><a href="https://magazine.sebastianraschka.com/p/beyond-standard-llms">Beyond Standard LLMs</a><small>Sebastian Raschka / Ahead of AI · Research explainer</small><p>Explore alternatives to conventional transformers and their architectural tradeoffs.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning">Measuring faithfulness in Chain-of-Thought reasoning</a><small>Anthropic · Research article</small><p>Learn why a plausible written rationale need not faithfully explain a model&#x27;s answer.</p></li>
 </ol></div></section>
 <section class="subtopic" id="235-math-and-formal-reasoning"><h3><a href="#235-math-and-formal-reasoning">23.5</a> Math and formal reasoning</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="23.5-0"><span>Symbolic algebra and numerical tool augmentation</span></label></li>
@@ -1099,10 +1099,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="23.5-3"><span>Constraint solving and SAT/SMT integration</span></label></li>
 <li><label><input type="checkbox" data-key="23.5-4"><span>Robustness to superficial math perturbations</span></label></li>
 <li><label><input type="checkbox" data-key="23.5-5"><span>Measuring reasoning depth and out-of-distribution transfer</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40adnanmasood/general-knowledge-and-reasoning-a-field-guide-to-llm-benchmarks-b9ec02dea520">General Knowledge and Reasoning Benchmarks Field Guide (2026)</a></li>
-<li><a href="https://medium.com/%40sarathc225/grpo-vs-ppo-vs-dapo-which-rl-algorithm-should-you-use-to-train-a-reasoning-model-41dae134e141">GRPO vs PPO vs DAPO for Reasoning Models (2026)</a></li>
-<li><a href="https://medium.com/%40can.demir/ppo-and-grpo-why-improving-a-policy-is-mostly-about-not-ruining-it-0d41386b3515">PPO and GRPO: Improving a Policy (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/">AI achieves silver-medal standard solving IMO problems</a><small>Google DeepMind · Research case study</small><p>Contrast formal proof search and geometry systems with unconstrained text reasoning.</p></li>
+<li class="curated-resource"><a href="https://leanprover.github.io/theorem_proving_in_lean4/">Theorem Proving in Lean 4</a><small>Lean community · Hands-on textbook</small><p>Practice machine-checkable proofs and understand the formal verifier behind proof-search systems.</p></li>
+<li class="curated-resource"><a href="https://theorempath.com/topics/verifier-design-and-process-reward">Verifier Design and Process Reward</a><small>TheoremPath · Theory guide</small><p>Distinguish outcome checks from intermediate-step rewards and verifier failure modes.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="24-autoregressive-generation-and-decoding"><summary><span class="number">24</span><span class="topic-title">Autoregressive generation and decoding<small>4 subtopics · 24 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1113,10 +1113,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="24.1-3"><span>Min-p, typical sampling, and alternative truncation rules</span></label></li>
 <li><label><input type="checkbox" data-key="24.1-4"><span>Repetition, frequency, and presence penalties</span></label></li>
 <li><label><input type="checkbox" data-key="24.1-5"><span>Logit bias, bad-token masks, and stop sequences</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://harshitdawar.medium.com/top-p-vs-top-k-vs-temperature-60494480b9d5">Top P vs Top K vs Temperature (2026)</a></li>
-<li><a href="https://medium.com/%40ayushyajnik2/decoding-the-decoder-top-k-top-p-temperature-beam-search-hallucinations-in-llms-e54963eb3de7">Decoding the Decoder: Top k Top p Beam Search (2025)</a></li>
-<li><a href="https://medium.com/%40CyberGee/choosing-between-top-k-top-p-temperature-53fa89f71ae5">Choosing between Top K Top P Temperature (2025)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://huggingface.co/blog/how-to-generate">How to generate text</a><small>Patrick von Platen / Hugging Face · Code walkthrough</small><p>Compare greedy decoding, beam search, temperature, top-k, and nucleus sampling.</p></li>
+<li class="curated-resource"><a href="https://jalammar.github.io/illustrated-gpt2/">The Illustrated GPT-2</a><small>Jay Alammar · Visual guide</small><p>Follow tokens through a decoder-only model and understand how next-token predictions are produced.</p></li>
+<li class="curated-resource"><a href="https://colah.github.io/posts/2015-09-Visual-Information/">Visual Information Theory</a><small>Christopher Olah · Visual guide</small><p>Understand entropy, cross-entropy, and KL divergence through probability diagrams.</p></li>
 </ol></div></section>
 <section class="subtopic" id="242-search-and-multiple-candidates"><h3><a href="#242-search-and-multiple-candidates">24.2</a> Search and multiple candidates</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="24.2-0"><span>Beam search and length penalties</span></label></li>
