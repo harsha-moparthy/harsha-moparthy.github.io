@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-11",
+  "sources": {
+    "multiagent": [
+      "Anthropic",
+      "How we built our multi-agent research system",
+      "https://www.anthropic.com/research/multi-agent-research-system",
+      "Production case study",
+      "Study delegation, context isolation, evaluation, and coordination costs in a research agent."
+    ],
+    "harness": [
+      "Anthropic",
+      "Effective harnesses for long-running agents",
+      "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "Engineering article",
+      "Use durable artifacts and incremental verification to continue work across context windows."
+    ],
+    "agentevals": [
+      "Anthropic",
+      "Demystifying evals for AI agents",
+      "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+      "Engineering tutorial",
+      "Design tasks, trials, graders, and outcome checks for stochastic multi-step systems."
+    ],
+    "trifecta": [
+      "Simon Willison",
+      "The lethal trifecta for AI agents",
+      "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+      "Security explanation",
+      "Trace how untrusted content, private data, and outbound tools combine into exfiltration risk."
+    ],
+    "mcp": [
+      "Model Context Protocol",
+      "Architecture overview",
+      "https://modelcontextprotocol.io/docs/learn/architecture",
+      "Protocol explanation",
+      "Understand hosts, clients, servers, transport, discovery, tools, and resources."
+    ],
+    "a2a": [
+      "A2A project",
+      "Core Concepts",
+      "https://a2a-protocol.org/latest/topics/key-concepts/",
+      "Protocol explanation",
+      "Distinguish agent cards, tasks, messages, artifacts, and asynchronous communication."
+    ],
+    "memorytypes": [
+      "LangChain",
+      "Memory overview",
+      "https://docs.langchain.com/oss/python/concepts/memory",
+      "Conceptual guide",
+      "Distinguish thread state from semantic, episodic, and procedural long-term memory."
+    ],
+    "persistence": [
+      "LangGraph",
+      "Persistence",
+      "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "Implementation guide",
+      "Use checkpointers and stores for resumability, interruptions, and durable state."
+    ],
+    "react": [
+      "Yao et al.",
+      "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "https://react-lm.github.io/",
+      "Illustrated research project",
+      "Follow concrete reasoning-action-observation trajectories and inspect failure examples."
+    ]
+  },
+  "subtopics": {
+    "35.3": [
+      "trifecta",
+      "writetools",
+      "retries",
+      "agentevals"
+    ],
+    "36.1": [
+      "effective",
+      "react",
+      "agentweng"
+    ],
+    "36.2": [
+      "effective",
+      "react",
+      "persistence"
+    ],
+    "36.3": [
+      "harness",
+      "agentevals",
+      "trifecta"
+    ],
+    "37.1": [
+      "multiagent",
+      "effective",
+      "a2a"
+    ],
+    "37.2": [
+      "mcp",
+      "a2a",
+      "mcpexec"
+    ],
+    "37.3": [
+      "multiagent",
+      "agentevals",
+      "hamelevals"
+    ],
+    "38.1": [
+      "memorytypes",
+      "memory",
+      "agentweng"
+    ],
+    "38.2": [
+      "memorytypes",
+      "persistence",
+      "context"
+    ],
+    "38.3": [
+      "harness",
+      "persistence",
+      "agentevals"
+    ]
+  }
+}

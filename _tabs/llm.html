@@ -84,7 +84,7 @@ permalink: /llm/
 <div class="stats" aria-label="Index coverage"><div><strong>60</strong><span>major topics</span></div><div><strong>204</strong><span>subtopic groups</span></div><div><strong>1,240</strong><span>learning concepts</span></div></div>
 <section class="progress-panel" aria-label="Your learning progress"><div><strong>Your learning journey</strong><p id="progress-label">0 of 1,240 concepts explored</p></div><progress id="progress" max="1240" value="0" aria-label="Concepts completed"></progress><span id="percent">0%</span><p id="storage-note">Saved on this browser</p></section>
 <section class="index-tools" aria-label="Find topics"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search topics, concepts, or resources…" aria-label="Search topics, concepts, or resources"></label><div class="tool-row"><p id="results" role="status">60 topics to explore</p><div><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button></div></div></section>
-<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>120 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
+<div class="ranking-note"><strong>Read for understanding, not rankings</strong><p>130 of 204 subtopics now have curated learning paths with author, format, and a reason to read each source. Lists progress from explanation to practice or deeper theory. Remaining lists are original Medium candidates awaiting review. <a href="#source-notes">Methodology &amp; original source ?</a></p></div>
 <noscript><p>Browse the topics below without JavaScript. Search and saved progress require JavaScript.</p></noscript>
 <div id="topics"><details class="topic" id="01-llm-landscape-concepts-and-lifecycle"><summary><span class="number">01</span><span class="topic-title">LLM landscape, concepts, and lifecycle<small>3 subtopics · 23 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
 <section class="subtopic" id="011-definitions-and-model-taxonomy"><h3><a href="#011-definitions-and-model-taxonomy">01.1</a> Definitions and model taxonomy</h3><ul class="checklist">
@@ -1629,10 +1629,11 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="35.3-3"><span>Tool-call trace auditing and replay</span></label></li>
 <li><label><input type="checkbox" data-key="35.3-4"><span>Transaction boundaries and compensation actions</span></label></li>
 <li><label><input type="checkbox" data-key="35.3-5"><span>Tool-call benchmark design and pass/fail criteria</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/ai-agent-engineering/what-is-ai-agent-tool-calling-84e17decfe14">AI Agent Tool Calling: MCP Function Calling A2A (2026)</a></li>
-<li><a href="https://medium.com/%40Micheal-Lanham/tools-in-2026-why-picking-the-right-action-is-the-new-planning-problem-d28d8443bf3f">Tools in 2026: Action Selection (2026)</a></li>
-<li><a href="https://medium.com/%40Rakeshjoshi7/owasp-top-10-for-llm-applications-the-complete-2026-guide-c4b5dd95575a">OWASP Top 10 for LLM Applications 2026 (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">The lethal trifecta for AI agents</a><small>Simon Willison · Security explanation</small><p>Trace how untrusted content, private data, and outbound tools combine into exfiltration risk.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/writing-tools-for-agents">Writing effective tools for agents — with agents</a><small>Anthropic · Engineering article</small><p>Improve tool boundaries, descriptions, response formats, and evaluation tasks.</p></li>
+<li class="curated-resource"><a href="https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/">Timeouts, retries, and backoff with jitter</a><small>Marc Brooker / AWS · Distributed-systems article</small><p>Handle transient failures without amplifying overload or repeating unsafe side effects.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/demystifying-evals-for-ai-agents">Demystifying evals for AI agents</a><small>Anthropic · Engineering tutorial</small><p>Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="36-llm-agents-and-workflow-architectures"><summary><span class="number">36</span><span class="topic-title">LLM agents and workflow architectures<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1643,10 +1644,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="36.1-3"><span>Workflow orchestration versus autonomous agents</span></label></li>
 <li><label><input type="checkbox" data-key="36.1-4"><span>Tool-augmented execution and environment interaction</span></label></li>
 <li><label><input type="checkbox" data-key="36.1-5"><span>Task completion, stopping conditions, and verification</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/ai-agent-engineering/what-is-ai-agent-tool-calling-84e17decfe14">AI Agent Tool Calling: MCP Function Calling A2A (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/building-a-financial-ai-agent-with-google-adk-a2a-and-mcp-084f5937f1e8">Building an Agent with Google ADK A2A and MCP (2026)</a></li>
-<li><a href="https://medium.com/%40thimayarohit/how-i-built-a-devin-style-cloud-coding-agent-and-tested-it-on-swe-bench-a1581cef47fa">Built a Cloud Coding Agent Tested on SWE-bench (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents</a><small>Anthropic · Engineering article</small><p>Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.</p></li>
+<li class="curated-resource"><a href="https://react-lm.github.io/">ReAct: Synergizing Reasoning and Acting in Language Models</a><small>Yao et al. · Illustrated research project</small><p>Follow concrete reasoning-action-observation trajectories and inspect failure examples.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a><small>Lilian Weng · Conceptual article</small><p>Connect planning, reflection, memory, and tools in an agent architecture.</p></li>
 </ol></div></section>
 <section class="subtopic" id="362-agent-patterns"><h3><a href="#362-agent-patterns">36.2</a> Agent patterns</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="36.2-0"><span>Plan-and-execute agents</span></label></li>
@@ -1655,10 +1656,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="36.2-3"><span>Supervisor–worker and hierarchical orchestration</span></label></li>
 <li><label><input type="checkbox" data-key="36.2-4"><span>Event-driven agents and durable workflows</span></label></li>
 <li><label><input type="checkbox" data-key="36.2-5"><span>Graph-based state-machine orchestrators</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40thimayarohit/how-i-built-a-devin-style-cloud-coding-agent-and-tested-it-on-swe-bench-a1581cef47fa">Built a Cloud Coding Agent Tested on SWE-bench (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/building-a-financial-ai-agent-with-google-adk-a2a-and-mcp-084f5937f1e8">Building an Agent with Google ADK A2A and MCP (2026)</a></li>
-<li><a href="https://medium.com/%40Micheal-Lanham/tools-in-2026-why-picking-the-right-action-is-the-new-planning-problem-d28d8443bf3f">Tools in 2026: Action Selection (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents</a><small>Anthropic · Engineering article</small><p>Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.</p></li>
+<li class="curated-resource"><a href="https://react-lm.github.io/">ReAct: Synergizing Reasoning and Acting in Language Models</a><small>Yao et al. · Illustrated research project</small><p>Follow concrete reasoning-action-observation trajectories and inspect failure examples.</p></li>
+<li class="curated-resource"><a href="https://docs.langchain.com/oss/python/langgraph/persistence">Persistence</a><small>LangGraph · Implementation guide</small><p>Use checkpointers and stores for resumability, interruptions, and durable state.</p></li>
 </ol></div></section>
 <section class="subtopic" id="363-reliability-and-governance"><h3><a href="#363-reliability-and-governance">36.3</a> Reliability and governance</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="36.3-0"><span>State persistence, checkpoints, and resumability</span></label></li>
@@ -1667,10 +1668,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="36.3-3"><span>Human-in-the-loop review and escalation</span></label></li>
 <li><label><input type="checkbox" data-key="36.3-4"><span>Agent evaluation by trajectory, outcome, and cost</span></label></li>
 <li><label><input type="checkbox" data-key="36.3-5"><span>Agent sandboxing and permission boundaries</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/how-to-build-an-agent-eval-you-can-trust-b306940b02f2">How to Build an Agent Eval You Can Trust (2026)</a></li>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/the-hardest-easy-problem-in-ai-the-state-of-computer-use-agents-a7e3aea7fa3a">The State of Computer Use Agents (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-harnesses-for-long-running-agents">Effective harnesses for long-running agents</a><small>Anthropic · Engineering article</small><p>Use durable artifacts and incremental verification to continue work across context windows.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/demystifying-evals-for-ai-agents">Demystifying evals for AI agents</a><small>Anthropic · Engineering tutorial</small><p>Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.</p></li>
+<li class="curated-resource"><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">The lethal trifecta for AI agents</a><small>Simon Willison · Security explanation</small><p>Trace how untrusted content, private data, and outbound tools combine into exfiltration risk.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="37-multi-agent-systems-coordination-and-protocols"><summary><span class="number">37</span><span class="topic-title">Multi-agent systems, coordination, and protocols<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1681,10 +1682,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="37.1-3"><span>Collaborative blackboard and shared-memory systems</span></label></li>
 <li><label><input type="checkbox" data-key="37.1-4"><span>Negotiation, delegation, and task decomposition</span></label></li>
 <li><label><input type="checkbox" data-key="37.1-5"><span>Coordination overhead and emergent failure modes</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/google-cloud/building-a-financial-ai-agent-with-google-adk-a2a-and-mcp-084f5937f1e8">Building an Agent with Google ADK A2A and MCP (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/a2a-joins-aaif-90047ccdf731">A2A Joins AAIF (2026)</a></li>
-<li><a href="https://medium.com/ai-agent-engineering/what-is-ai-agent-tool-calling-84e17decfe14">AI Agent Tool Calling: MCP Function Calling A2A (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/multi-agent-research-system">How we built our multi-agent research system</a><small>Anthropic · Production case study</small><p>Study delegation, context isolation, evaluation, and coordination costs in a research agent.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents</a><small>Anthropic · Engineering article</small><p>Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.</p></li>
+<li class="curated-resource"><a href="https://a2a-protocol.org/latest/topics/key-concepts/">Core Concepts</a><small>A2A project · Protocol explanation</small><p>Distinguish agent cards, tasks, messages, artifacts, and asynchronous communication.</p></li>
 </ol></div></section>
 <section class="subtopic" id="372-agent-communication-and-interoperability"><h3><a href="#372-agent-communication-and-interoperability">37.2</a> Agent communication and interoperability</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="37.2-0"><span>Agent-to-agent message schemas and contracts</span></label></li>
@@ -1693,10 +1694,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="37.2-3"><span>Tool discovery and capability registries</span></label></li>
 <li><label><input type="checkbox" data-key="37.2-4"><span>Stateful handoffs, provenance, and correlation IDs</span></label></li>
 <li><label><input type="checkbox" data-key="37.2-5"><span>Trust boundaries and authenticated inter-agent messaging</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/google-cloud/a2a-joins-aaif-90047ccdf731">A2A Joins AAIF (2026)</a></li>
-<li><a href="https://medium.com/ai-agent-engineering/what-is-ai-agent-tool-calling-84e17decfe14">AI Agent Tool Calling: MCP Function Calling A2A (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/building-a-financial-ai-agent-with-google-adk-a2a-and-mcp-084f5937f1e8">Building an Agent with Google ADK A2A and MCP (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://modelcontextprotocol.io/docs/learn/architecture">Architecture overview</a><small>Model Context Protocol · Protocol explanation</small><p>Understand hosts, clients, servers, transport, discovery, tools, and resources.</p></li>
+<li class="curated-resource"><a href="https://a2a-protocol.org/latest/topics/key-concepts/">Core Concepts</a><small>A2A project · Protocol explanation</small><p>Distinguish agent cards, tasks, messages, artifacts, and asynchronous communication.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/code-execution-with-mcp">Code execution with MCP: Building more efficient agents</a><small>Anthropic · Engineering article</small><p>Use executable programs to compose tools and filter large results before they enter context.</p></li>
 </ol></div></section>
 <section class="subtopic" id="373-agent-evaluation-and-optimization"><h3><a href="#373-agent-evaluation-and-optimization">37.3</a> Agent evaluation and optimization</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="37.3-0"><span>Single-agent versus multi-agent baselines</span></label></li>
@@ -1705,10 +1706,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="37.3-3"><span>Redundant work, conflicts, and deadlock avoidance</span></label></li>
 <li><label><input type="checkbox" data-key="37.3-4"><span>Trace-level analysis and root-cause attribution</span></label></li>
 <li><label><input type="checkbox" data-key="37.3-5"><span>Failover, human override, and orchestration policies</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/how-to-build-an-agent-eval-you-can-trust-b306940b02f2">How to Build an Agent Eval You Can Trust (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/routing-160-telco-intents-in-gecx-can-we-use-systemone-thinking-models-6f4eaf3dc0cf">Token Cost of Routing Agent Intents (2026)</a></li>
-<li><a href="https://medium.com/google-cloud/building-a-financial-ai-agent-with-google-adk-a2a-and-mcp-084f5937f1e8">Building an Agent with Google ADK A2A and MCP (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/multi-agent-research-system">How we built our multi-agent research system</a><small>Anthropic · Production case study</small><p>Study delegation, context isolation, evaluation, and coordination costs in a research agent.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/demystifying-evals-for-ai-agents">Demystifying evals for AI agents</a><small>Anthropic · Engineering tutorial</small><p>Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.</p></li>
+<li class="curated-resource"><a href="https://hamel.dev/blog/posts/evals/">Your AI Product Needs Evals</a><small>Hamel Husain · Case-study tutorial</small><p>Build task-specific evaluations from traces, human review, and automated checks.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="38-agent-memory-state-and-long-horizon-autonomy"><summary><span class="number">38</span><span class="topic-title">Agent memory, state, and long-horizon autonomy<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">
@@ -1719,10 +1720,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="38.1-3"><span>Procedural memory, learned skills, and reusable workflows</span></label></li>
 <li><label><input type="checkbox" data-key="38.1-4"><span>Model-internal knowledge versus external storage</span></label></li>
 <li><label><input type="checkbox" data-key="38.1-5"><span>Shared versus per-agent memories</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/agent-memory-frameworks-showdown-cognee-vs-mem0-vs-zep-vs-letta-0f439b56f282">Agent Memory Frameworks: Mem0 Zep Letta Cognee (2026)</a></li>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://medium.com/beyond-the-algorithm/prompt-engineering-vs-context-engineering-what-the-research-actually-says-c4637e46c98b">Prompt Engineering vs Context Engineering: Research (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://docs.langchain.com/oss/python/concepts/memory">Memory overview</a><small>LangChain · Conceptual guide</small><p>Distinguish thread state from semantic, episodic, and procedural long-term memory.</p></li>
+<li class="curated-resource"><a href="https://www.letta.com/blog/agent-memory/">Agent Memory: How to Build Agents That Learn and Remember</a><small>Letta · Engineering explainer</small><p>Distinguish message buffers, core memory, searchable history, and external knowledge.</p></li>
+<li class="curated-resource"><a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a><small>Lilian Weng · Conceptual article</small><p>Connect planning, reflection, memory, and tools in an agent architecture.</p></li>
 </ol></div></section>
 <section class="subtopic" id="382-memory-operations"><h3><a href="#382-memory-operations">38.2</a> Memory operations</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="38.2-0"><span>Memory write policy and salience selection</span></label></li>
@@ -1731,10 +1732,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="38.2-3"><span>Temporal decay, forgetting, and memory expiration</span></label></li>
 <li><label><input type="checkbox" data-key="38.2-4"><span>Attribution, provenance, and uncertainty metadata</span></label></li>
 <li><label><input type="checkbox" data-key="38.2-5"><span>User correction, deletion, and memory access control</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/data-science-collective/agent-memory-frameworks-showdown-cognee-vs-mem0-vs-zep-vs-letta-0f439b56f282">Agent Memory Frameworks: Mem0 Zep Letta Cognee (2026)</a></li>
-<li><a href="https://medium.com/oracledevs/what-is-context-engineering-the-four-operations-that-decide-whether-your-agent-survives-production-e803bb8ddf17">Context Engineering: Four Operations (2026)</a></li>
-<li><a href="https://medium.com/%40adnanmasood/the-hardest-easy-problem-in-ai-the-state-of-computer-use-agents-a7e3aea7fa3a">The State of Computer Use Agents (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://docs.langchain.com/oss/python/concepts/memory">Memory overview</a><small>LangChain · Conceptual guide</small><p>Distinguish thread state from semantic, episodic, and procedural long-term memory.</p></li>
+<li class="curated-resource"><a href="https://docs.langchain.com/oss/python/langgraph/persistence">Persistence</a><small>LangGraph · Implementation guide</small><p>Use checkpointers and stores for resumability, interruptions, and durable state.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a><small>Anthropic · Engineering article</small><p>Select useful context and manage retrieval, compaction, and persistent notes.</p></li>
 </ol></div></section>
 <section class="subtopic" id="383-long-horizon-execution"><h3><a href="#383-long-horizon-execution">38.3</a> Long-horizon execution</h3><ul class="checklist">
 <li><label><input type="checkbox" data-key="38.3-0"><span>Durable plans and hierarchical task tracking</span></label></li>
@@ -1743,10 +1744,10 @@ permalink: /llm/
 <li><label><input type="checkbox" data-key="38.3-3"><span>Subgoal decomposition and progress verification</span></label></li>
 <li><label><input type="checkbox" data-key="38.3-4"><span>Stuck-agent detection and recovery</span></label></li>
 <li><label><input type="checkbox" data-key="38.3-5"><span>Memory poisoning defenses and permissioned recall</span></label></li>
-</ul><div class="reading"><h4>Recommended reading <span>Original candidates</span></h4><ol>
-<li><a href="https://medium.com/%40adnanmasood/the-hardest-easy-problem-in-ai-the-state-of-computer-use-agents-a7e3aea7fa3a">The State of Computer Use Agents (2026)</a></li>
-<li><a href="https://medium.com/%40thimayarohit/how-i-built-a-devin-style-cloud-coding-agent-and-tested-it-on-swe-bench-a1581cef47fa">Built a Cloud Coding Agent Tested on SWE-bench (2026)</a></li>
-<li><a href="https://medium.com/data-science-collective/how-to-build-an-agent-eval-you-can-trust-b306940b02f2">How to Build an Agent Eval You Can Trust (2026)</a></li>
+</ul><div class="reading"><h4>Recommended reading <span>Curated path</span></h4><ol>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/effective-harnesses-for-long-running-agents">Effective harnesses for long-running agents</a><small>Anthropic · Engineering article</small><p>Use durable artifacts and incremental verification to continue work across context windows.</p></li>
+<li class="curated-resource"><a href="https://docs.langchain.com/oss/python/langgraph/persistence">Persistence</a><small>LangGraph · Implementation guide</small><p>Use checkpointers and stores for resumability, interruptions, and durable state.</p></li>
+<li class="curated-resource"><a href="https://www.anthropic.com/research/demystifying-evals-for-ai-agents">Demystifying evals for AI agents</a><small>Anthropic · Engineering tutorial</small><p>Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.</p></li>
 </ol></div></section>
 </div></details>
 <details class="topic" id="39-multimodal-llm-fundamentals"><summary><span class="number">39</span><span class="topic-title">Multimodal LLM fundamentals<small>3 subtopics · 18 concepts</small></span><span class="chevron" aria-hidden="true">+</span></summary><div class="topic-body">

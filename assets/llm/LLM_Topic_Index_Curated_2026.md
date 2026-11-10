@@ -1,6 +1,6 @@
 # LLM Atlas: Curated Reading Guide
 
-Updated 2026-11-11. 120 of 204 subtopics curated.
+Updated 2026-11-11. 130 of 204 subtopics curated.
 
 Read each list in order: orientation, explanation, implementation, or deeper theory. These are editorial learning paths, not popularity rankings. Sources were inspected through publisher pages or search excerpts; this is not a claim that every technical statement was independently reproduced. Older articles remain where they explain durable foundations. No claim of exhaustive concept coverage is made. Original Medium candidates are retained in the source index, not endorsed by this guide.
 
@@ -1670,7 +1670,10 @@ Read each list in order: orientation, explanation, implementation, or deeper the
 - [ ] Transaction boundaries and compensation actions
 - [ ] Tool-call benchmark design and pass/fail criteria
 
-Reading-list review pending; see the original index for candidate links.
+1. [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) — Simon Willison · Security explanation. Trace how untrusted content, private data, and outbound tools combine into exfiltration risk.
+2. [Writing effective tools for agents — with agents](https://www.anthropic.com/research/writing-tools-for-agents) — Anthropic · Engineering article. Improve tool boundaries, descriptions, response formats, and evaluation tasks.
+3. [Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) — Marc Brooker / AWS · Distributed-systems article. Handle transient failures without amplifying overload or repeating unsafe side effects.
+4. [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) — Anthropic · Engineering tutorial. Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.
 
 ## 36. LLM agents and workflow architectures
 
@@ -1683,7 +1686,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Tool-augmented execution and environment interaction
 - [ ] Task completion, stopping conditions, and verification
 
-Reading-list review pending; see the original index for candidate links.
+1. [Building effective agents](https://www.anthropic.com/research/building-effective-agents) — Anthropic · Engineering article. Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.
+2. [ReAct: Synergizing Reasoning and Acting in Language Models](https://react-lm.github.io/) — Yao et al. · Illustrated research project. Follow concrete reasoning-action-observation trajectories and inspect failure examples.
+3. [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) — Lilian Weng · Conceptual article. Connect planning, reflection, memory, and tools in an agent architecture.
 
 ### 36.2 Agent patterns
 
@@ -1694,7 +1699,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Event-driven agents and durable workflows
 - [ ] Graph-based state-machine orchestrators
 
-Reading-list review pending; see the original index for candidate links.
+1. [Building effective agents](https://www.anthropic.com/research/building-effective-agents) — Anthropic · Engineering article. Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.
+2. [ReAct: Synergizing Reasoning and Acting in Language Models](https://react-lm.github.io/) — Yao et al. · Illustrated research project. Follow concrete reasoning-action-observation trajectories and inspect failure examples.
+3. [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence) — LangGraph · Implementation guide. Use checkpointers and stores for resumability, interruptions, and durable state.
 
 ### 36.3 Reliability and governance
 
@@ -1705,7 +1712,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Agent evaluation by trajectory, outcome, and cost
 - [ ] Agent sandboxing and permission boundaries
 
-Reading-list review pending; see the original index for candidate links.
+1. [Effective harnesses for long-running agents](https://www.anthropic.com/research/effective-harnesses-for-long-running-agents) — Anthropic · Engineering article. Use durable artifacts and incremental verification to continue work across context windows.
+2. [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) — Anthropic · Engineering tutorial. Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.
+3. [The lethal trifecta for AI agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) — Simon Willison · Security explanation. Trace how untrusted content, private data, and outbound tools combine into exfiltration risk.
 
 ## 37. Multi-agent systems, coordination, and protocols
 
@@ -1718,7 +1727,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Negotiation, delegation, and task decomposition
 - [ ] Coordination overhead and emergent failure modes
 
-Reading-list review pending; see the original index for candidate links.
+1. [How we built our multi-agent research system](https://www.anthropic.com/research/multi-agent-research-system) — Anthropic · Production case study. Study delegation, context isolation, evaluation, and coordination costs in a research agent.
+2. [Building effective agents](https://www.anthropic.com/research/building-effective-agents) — Anthropic · Engineering article. Compare prompt chains, routing, parallel workers, and evaluator-optimizer workflows.
+3. [Core Concepts](https://a2a-protocol.org/latest/topics/key-concepts/) — A2A project · Protocol explanation. Distinguish agent cards, tasks, messages, artifacts, and asynchronous communication.
 
 ### 37.2 Agent communication and interoperability
 
@@ -1729,7 +1740,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Stateful handoffs, provenance, and correlation IDs
 - [ ] Trust boundaries and authenticated inter-agent messaging
 
-Reading-list review pending; see the original index for candidate links.
+1. [Architecture overview](https://modelcontextprotocol.io/docs/learn/architecture) — Model Context Protocol · Protocol explanation. Understand hosts, clients, servers, transport, discovery, tools, and resources.
+2. [Core Concepts](https://a2a-protocol.org/latest/topics/key-concepts/) — A2A project · Protocol explanation. Distinguish agent cards, tasks, messages, artifacts, and asynchronous communication.
+3. [Code execution with MCP: Building more efficient agents](https://www.anthropic.com/research/code-execution-with-mcp) — Anthropic · Engineering article. Use executable programs to compose tools and filter large results before they enter context.
 
 ### 37.3 Agent evaluation and optimization
 
@@ -1740,7 +1753,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Trace-level analysis and root-cause attribution
 - [ ] Failover, human override, and orchestration policies
 
-Reading-list review pending; see the original index for candidate links.
+1. [How we built our multi-agent research system](https://www.anthropic.com/research/multi-agent-research-system) — Anthropic · Production case study. Study delegation, context isolation, evaluation, and coordination costs in a research agent.
+2. [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) — Anthropic · Engineering tutorial. Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.
+3. [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) — Hamel Husain · Case-study tutorial. Build task-specific evaluations from traces, human review, and automated checks.
 
 ## 38. Agent memory, state, and long-horizon autonomy
 
@@ -1753,7 +1768,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Model-internal knowledge versus external storage
 - [ ] Shared versus per-agent memories
 
-Reading-list review pending; see the original index for candidate links.
+1. [Memory overview](https://docs.langchain.com/oss/python/concepts/memory) — LangChain · Conceptual guide. Distinguish thread state from semantic, episodic, and procedural long-term memory.
+2. [Agent Memory: How to Build Agents That Learn and Remember](https://www.letta.com/blog/agent-memory/) — Letta · Engineering explainer. Distinguish message buffers, core memory, searchable history, and external knowledge.
+3. [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) — Lilian Weng · Conceptual article. Connect planning, reflection, memory, and tools in an agent architecture.
 
 ### 38.2 Memory operations
 
@@ -1764,7 +1781,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Attribution, provenance, and uncertainty metadata
 - [ ] User correction, deletion, and memory access control
 
-Reading-list review pending; see the original index for candidate links.
+1. [Memory overview](https://docs.langchain.com/oss/python/concepts/memory) — LangChain · Conceptual guide. Distinguish thread state from semantic, episodic, and procedural long-term memory.
+2. [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence) — LangGraph · Implementation guide. Use checkpointers and stores for resumability, interruptions, and durable state.
+3. [Effective context engineering for AI agents](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents) — Anthropic · Engineering article. Select useful context and manage retrieval, compaction, and persistent notes.
 
 ### 38.3 Long-horizon execution
 
@@ -1775,7 +1794,9 @@ Reading-list review pending; see the original index for candidate links.
 - [ ] Stuck-agent detection and recovery
 - [ ] Memory poisoning defenses and permissioned recall
 
-Reading-list review pending; see the original index for candidate links.
+1. [Effective harnesses for long-running agents](https://www.anthropic.com/research/effective-harnesses-for-long-running-agents) — Anthropic · Engineering article. Use durable artifacts and incremental verification to continue work across context windows.
+2. [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence) — LangGraph · Implementation guide. Use checkpointers and stores for resumability, interruptions, and durable state.
+3. [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) — Anthropic · Engineering tutorial. Design tasks, trials, graders, and outcome checks for stochastic multi-step systems.
 
 ## 39. Multimodal LLM fundamentals
 
